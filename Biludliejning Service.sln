@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{323FECCA-89F2-43EE-873B-C499200E693B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{6DE6E047-2C2D-4471-889B-1E90FBB53C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Shared\Entities\Entities.csproj", "{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biludliejning Service", "Biludliejning Service\Biludliejning Service.csproj", "{328E8CD7-5864-49F0-BB43-E49A2FBE6567}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328E8CD7-5864-49F0-BB43-E49A2FBE6567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328E8CD7-5864-49F0-BB43-E49A2FBE6567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328E8CD7-5864-49F0-BB43-E49A2FBE6567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328E8CD7-5864-49F0-BB43-E49A2FBE6567}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BC20508-C4BF-4EB3-AEFF-30BAA02C7B93} = {323FECCA-89F2-43EE-873B-C499200E693B}
+	EndGlobalSection
+EndGlobal
