@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car Management Service", "Car Management Service\Car Management Service.csproj", "{CEDFBD85-EDFE-40C1-8409-510D16CB4F9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEDFBD85-EDFE-40C1-8409-510D16CB4F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDFBD85-EDFE-40C1-8409-510D16CB4F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDFBD85-EDFE-40C1-8409-510D16CB4F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDFBD85-EDFE-40C1-8409-510D16CB4F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
