@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj": {}
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj": {
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
+        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
         "projectName": "Car Management Service",
-        "projectPath": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
+        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
         "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service\\obj\\",
+        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
