@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Konfigurer Entity Framework og SQLite
-builder.Services.AddDbContext<CarManagementDbContext>(options => 
+builder.Services.AddDbContext<CarDatabase>(options => 
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();

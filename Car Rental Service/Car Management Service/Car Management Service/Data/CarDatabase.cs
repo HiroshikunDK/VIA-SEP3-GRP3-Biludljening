@@ -3,9 +3,9 @@ using Car_Management_Service.Models;
 
 namespace Car_Management_Service.Data;
 
-public class CarManagementDbContext : DbContext
+public class CarDatabase : DbContext
 {
-    public CarManagementDbContext(DbContextOptions<CarManagementDbContext> options) : base(options) {}
+    public CarDatabase(DbContextOptions<CarDatabase> options) : base(options) {}
     
     public DbSet<Car> Cars { get; set; }
 }
