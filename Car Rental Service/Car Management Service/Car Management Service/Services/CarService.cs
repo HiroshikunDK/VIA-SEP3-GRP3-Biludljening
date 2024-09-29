@@ -6,19 +6,25 @@ using CarEntity = Car_Management_Service.Models.Car;
 
 namespace Car_Management_Service.Services;
 
+// gRPC service for at håndtere car entities.
+// Giver metoder til at lave CRUD operationer via gRPC.
 public class CarService : CarManagementService.CarService.CarServiceBase
 {
     private readonly Data.CarDatabase _context;
 
+    // Constructor
     public CarService(Data.CarDatabase context)
     {
         _context = context;
     }
 
+    // Henter alle biler fra databasen og returner et gRPC respons
     public override async Task<CarList> GetAllCars(Empty request, ServerCallContext context)
     {
         var cars = await _context.Cars.ToListAsync();
         var carList = new CarList();
+        
+        // Mapper Car objekter til gRPC car objektet, og tilføjer dem til responslisten
         carList.Cars.AddRange(cars.Select(car => new GrpcCar
         {
             Id = car.Id,
@@ -31,6 +37,7 @@ public class CarService : CarManagementService.CarService.CarServiceBase
         return carList;
     }
 
+    // Henter en specifik bil vha. dens ID og returnere et gRPC respons
     public override async Task<Car> GetCarByID(CarRequest request, ServerCallContext context)
     {
         Console.WriteLine($"Received GetCarByID request with ID: {request.Id}");
@@ -51,8 +58,7 @@ public class CarService : CarManagementService.CarService.CarServiceBase
         };
     }
 
-
-
+    // Tilføjer en ny bil til databasen via gRPC
     public override async Task<CarResponse> AddCar(GrpcCar request, ServerCallContext context)
     {
         var car = new CarEntity
@@ -73,6 +79,7 @@ public class CarService : CarManagementService.CarService.CarServiceBase
         };
     }
 
+    // Opdatere en eksisterende bil i databasen via gRPC
     public override async Task<CarResponse> UpdateCar(GrpcCar request, ServerCallContext context)
     {
         var car = await _context.Cars.FindAsync(request.Id);
@@ -100,6 +107,7 @@ public class CarService : CarManagementService.CarService.CarServiceBase
         };
     }
 
+    // Sletter en bil fra databasen vha. dens ID via gRPC
     public override async Task<CarResponse> DeleteCar(CarRequest request, ServerCallContext context)
     {
         var car = await _context.Cars.FindAsync(request.Id);

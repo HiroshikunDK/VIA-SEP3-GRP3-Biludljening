@@ -5,12 +5,16 @@ namespace Car_Management_Service.DummyData
 {
     public static class DatabaseSeeder
     {
+        // Seeder databasen med dummy data
         public static void SeedDatabase(CarDatabase context)
         {
+            // Sikre at databasen er lavet før seed
             context.Database.EnsureCreated();
             
+            // Tjekker om Cars tabellen er tom før seed
             if (!context.Cars.Any())
             {
+                // Tilføjer en liste af biler til Cars tabellen
                 context.Cars.AddRange(
                     new Car
                     {
@@ -41,7 +45,7 @@ namespace Car_Management_Service.DummyData
                         Status = "Available"
                     }
                 );
-
+                // Gemmer ændringerne til databasen
                 context.SaveChanges();
             }
         }
