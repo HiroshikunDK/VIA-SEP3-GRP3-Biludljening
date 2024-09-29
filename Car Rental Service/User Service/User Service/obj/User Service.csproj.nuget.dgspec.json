@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\User Service\\User Service\\User Service\\User Service.csproj": {}
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\User Service\\User Service\\User Service\\User Service.csproj": {
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\User Service\\User Service\\User Service\\User Service.csproj",
+        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj",
         "projectName": "User Service",
-        "projectPath": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\User Service\\User Service\\User Service\\User Service.csproj",
+        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj",
         "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nebul\\Desktop\\Car Rental Service\\User Service\\User Service\\User Service\\obj\\",
+        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,13 +45,35 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
+            "Google.Protobuf": {
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[3.28.2, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Grpc.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[2.66.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.66.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.29.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.29.0, )"
             }
           },
           "imports": [
