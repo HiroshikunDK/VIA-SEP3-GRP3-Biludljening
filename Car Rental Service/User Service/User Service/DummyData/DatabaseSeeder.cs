@@ -5,12 +5,16 @@ namespace User_Service
 {
     public static class DatabaseSeeder
     {
+        // Seeder databasen med dummy data
         public static void SeedDatabase(UserDatabase context)
         {
+            // Sikre at databasen er lavet før seed
             context.Database.EnsureCreated();
             
+            // Tjekker om User tabellen er tom før seed
             if (!context.Users.Any())
             {
+                // Tilføjer en liste af brugere til Users tabellen
                 context.Users.AddRange(
                     new User
                     {
@@ -27,6 +31,7 @@ namespace User_Service
                         Role = "Admin"
                     }
                 );
+                // Gemmer ændringerne til databasen
                 context.SaveChanges();
             }
         }
