@@ -4,12 +4,6 @@ namespace Car_Management_Service.Models;
 
 public class LocationHub
 {
-    public string address;
-    public string city;
-    public int cityCode;
-    public char[] phoneNr;
-    public string email;
-
     public string Address{
         get { return Address; }
         set
@@ -45,5 +39,13 @@ public class LocationHub
             Email = value;
         }    
     }
+
+    public List<Booking> Bookings{
+        get { return Bookings; }
+        set
+        {
+            Bookings = value;
+        }    
+    }   
 
 }

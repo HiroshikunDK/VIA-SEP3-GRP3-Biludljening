@@ -4,11 +4,27 @@ namespace Car_Management_Service.Models;
 
 public class HeadOffice
 {
-    public string address;
-    public string city;
-    public int cityCode;
-    public char[] phoneNr;
-    public string email;
+    public List<LocationHub> Locations{ 
+        get{ return Locations; }
+        set
+        {
+            Locations = value;
+        }    
+    }
+    public List<Customer> Customers{ 
+        get{ return Customers; }
+        set
+        {
+            Customers = value;
+        }    
+    }
+    public List<Employee> Employees{ 
+        get{ return Employees; }
+        set
+        {
+            Employees = value;
+        }    
+    }
 
     public string Address{
         get { return Address; }
@@ -31,7 +47,7 @@ public class HeadOffice
             CityCode = value;
         }    
     }
-    public string PhoneNr{
+    public char[] PhoneNr{
         get { return PhoneNr; }
         set
         {
