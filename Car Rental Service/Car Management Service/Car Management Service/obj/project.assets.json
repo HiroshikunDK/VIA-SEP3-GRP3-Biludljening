@@ -2059,26 +2059,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nebul\\.nuget\\packages\\": {}
+    "C:\\Users\\thoma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
       "projectName": "Car Management Service",
-      "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
-      "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\obj\\",
+      "projectPath": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\Car Management Service.csproj",
+      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Car Management Service\\Car Management Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2152,7 +2150,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
