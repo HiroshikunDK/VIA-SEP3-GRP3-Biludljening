@@ -25,7 +25,7 @@ public class LocationHub
             CityCode = value;
         }    
     }
-    public string PhoneNr{
+    public char[] PhoneNr{
         get { return PhoneNr; }
         set
         {
@@ -45,6 +45,13 @@ public class LocationHub
         set
         {
             Bookings = value;
+        }    
+    }
+    public List<Vehicle> Vehicles{
+        get { return Vehicles; }
+        set
+        {
+            Vehicles = value;
         }    
     }   
 
