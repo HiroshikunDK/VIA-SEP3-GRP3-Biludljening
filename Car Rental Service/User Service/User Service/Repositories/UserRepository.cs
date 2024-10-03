@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using User_Service.Data;
 using User_Service.Models;
+using User_Service.Repositories.Interfaces;
 
 namespace User_Service.Services 
 {

@@ -1,8 +1,8 @@
 ﻿using User_Service.Models;
 
-namespace User_Service.Services
+namespace User_Service.Repositories.Interfaces
 {
-    // Interface for UserRepository, og definere de forskellige CRUD operatione
+    // Interface for UserRepository, og definer de forskellige CRUD operatione
     public interface IUserRepository
     {
         // Henter en bruger vha. deres ID

@@ -1,6 +1,7 @@
 ﻿using Grpc.Core;
 using User_Service.Services;
 using User_Service.Helpers;
+using User_Service.Repositories.Interfaces;
 using UserManagementService;
 using User = User_Service.Models.User;
 
