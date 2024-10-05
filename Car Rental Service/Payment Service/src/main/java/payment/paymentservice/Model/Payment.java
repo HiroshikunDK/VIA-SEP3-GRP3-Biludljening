@@ -19,7 +19,7 @@ public class Payment {
     private LocalDateTime paymentDate;
     private String paymentStatus;
 
-    public Payment() {
+    public Payment(int i, String test1, double v) {
     }
 
     public Payment(String userId, String carId, double amount, LocalDateTime paymentDate, String paymentStatus) {
@@ -29,8 +29,6 @@ public class Payment {
         this.paymentDate = paymentDate;
         this.paymentStatus = paymentStatus;
     }
-
-    // Getters and Setters
 
     public Long getId() {
         return id;
