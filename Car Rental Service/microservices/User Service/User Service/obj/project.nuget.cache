@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/zbH1XEGDY8=",
+  "dgSpecHash": "Q3+7XoXTiiI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj",
+  "projectFilePath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\User Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nebul\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Nebul\\.nuget\\packages\\google.protobuf\\3.28.2\\google.protobuf.3.28.2.nupkg.sha512",

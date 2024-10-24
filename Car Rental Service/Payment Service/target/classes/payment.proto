@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "payment.paymentservice.grpc";
+option java_outer_classname = "PaymentServiceProto";
+
+service PaymentService {
+  rpc CreatePayment (PaymentRequest) returns (PaymentResponse);
+  rpc GetPaymentById (PaymentRequestById) returns (PaymentResponse);
+  rpc UpdatePaymentStatus (PaymentStatusUpdateRequest) returns (PaymentResponse);
+  rpc ListPayments (Empty) returns (PaymentListResponse);
+}
+
+message PaymentRequest {
+  string userId = 1;
+  string carId = 2;
+  double amount = 3;
+}
+
+message PaymentRequestById {
+  int64 id = 1;
+}
+
+message PaymentStatusUpdateRequest {
+  int64 id = 1;
+  string status = 2;
+}
+
+message PaymentResponse {
+  int64 id = 1;
+  string userId = 2;
+  string carId = 3;
+  double amount = 4;
+  string paymentDate = 5;
+  string paymentStatus = 6;
+}
+
+message PaymentListResponse {
+  repeated PaymentResponse payments = 1;
+}
+
+message Empty {}

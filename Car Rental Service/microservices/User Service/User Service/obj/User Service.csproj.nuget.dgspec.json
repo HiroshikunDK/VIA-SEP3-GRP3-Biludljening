@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj": {}
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\User Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj": {
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\User Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj",
+        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\User Service.csproj",
         "projectName": "User Service",
-        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\User Service.csproj",
+        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\User Service.csproj",
         "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\User Service\\User Service\\obj\\",
+        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\microservices\\User Service\\User Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -97,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Nebul\\.dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
