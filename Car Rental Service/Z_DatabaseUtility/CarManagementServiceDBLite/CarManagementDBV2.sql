@@ -1,24 +1,15 @@
-CREATE DOMAIN CRS_ID BIGINT;
-CREATE DOMAIN CRS_NAME VARCHAR(128);
-CREATE DOMAIN CRS_PHONE VARCHAR(128);
-CREATE DOMAIN CRS_ADDRESS VARCHAR(128);
-CREATE DOMAIN CRS_EMAIL VARCHAR(256);
-CREATE DOMAIN CRS_PASSWORD VARCHAR(1024);
-CREATE DOMAIN CRS_DESCRIPTION VARCHAR(2048);
-CREATE DOMAIN CRS_CURRENCY DECIMAL(19,4);
+--CREATE DOMAIN CRS_ID BIGINT;
+--CREATE DOMAIN CRS_NAME VARCHAR(128);
+--CREATE DOMAIN CRS_PHONE VARCHAR(128);
+--CREATE DOMAIN CRS_ADDRESS VARCHAR(128);
+--CREATE DOMAIN CRS_EMAIL VARCHAR(256);
+--CREATE DOMAIN CRS_PASSWORD VARCHAR(1024);
+--CREATE DOMAIN CRS_DESCRIPTION VARCHAR(2048);
+--CREATE DOMAIN CRS_CURRENCY DECIMAL(19,4);
 
 --Tables for Car Mangement ER diagram 
 
---CREATE TABLE customer (
---    customer_id CRS_ID PRIMARY KEY,
---    crs_name CRS_NAME NOT NULL,
---	crs_lastname CRS_NAME NOT NULL,
---    username CRS_NAME, --Added as 
---    password CRS_PASSWORD , --should be encrypted 
---    email CRS_EMAIL UNIQUE,
---    phonenr CRS_PHONE,
---);
-
+/*
 CREATE TABLE booking_car (
     bookingnr CRS_ID NOT NULL PRIMARY KEY,
     status CRS_NAME NOT NULL,
@@ -42,9 +33,9 @@ CREATE TABLE car (
     color CRS_NAME,
     altname CRS_NAME,
     seats TINYINT,
-    range INT,
+    car_range INT,
     localhubref CRS_ID,
-    FOREIGN KEY localhubref REFERENCES localhub(id)
+    FOREIGN KEY (localhubref) REFERENCES localhub(id)
 );
 
 CREATE TABLE localhub (
@@ -58,13 +49,13 @@ CREATE TABLE localhub (
     carcapacity INT
 );
 
-
+*/
 -- Dummy Data for car mangement
 
 
 
 
-INSERT INTO car (car_id, vin, yearproduced, manufactor, model, color, altname, seats, range, localhubref) VALUES
+INSERT INTO car (car_id, vin, yearproduced, manufactor, model, color, altname, seats, car_range, localhubref) VALUES
 (1, '1HGCM82633A123456', 2020, 'Honda', 'Accord', 'Blue', 'Accord LX', 5, 400, 1),
 (2, '1FMCU9J91CUB12345', 2019, 'Ford', 'Escape', 'Red', 'Escape SE', 5, 350, 1),
 (3, '2C4RDGCG5ER123456', 2021, 'Chrysler', 'Pacifica', 'White', 'Pacifica Limited', 7, 500, 2),

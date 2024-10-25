@@ -1,3 +1,4 @@
+/*
 CREATE DOMAIN CRS_ID BIGINT;
 CREATE DOMAIN CRS_NAME VARCHAR(128);
 CREATE DOMAIN CRS_PHONE VARCHAR(128);
@@ -6,15 +7,17 @@ CREATE DOMAIN CRS_EMAIL VARCHAR(256);
 CREATE DOMAIN CRS_PASSWORD VARCHAR(1024);
 CREATE DOMAIN CRS_DESCRIPTION VARCHAR(2048);
 CREATE DOMAIN CRS_CURRENCY DECIMAL(19,4);
-
+*/
+/*
 CREATE TABLE creditcard (
 
     creditcard_id CRS_ID PRIMARY KEY,
     creditcardnr CRS_PASSWORD, --encrypted like 
 	cc_name CRS_NAME,
 	cc_lastname CRS_NAME,
-    customerid CRS_ID, --Added as a part of unitofwork 
+    customerid CRS_ID --Added as a part of unitofwork 
 );
+*/
 
 CREATE TABLE payment (
     id CRS_ID PRIMARY KEY,
@@ -23,7 +26,7 @@ CREATE TABLE payment (
     booking CRS_ID,
     status TEXT, --is it payed or not
     creditcardref CRS_PASSWORD,
-    FOREIGN KEY creditcardref REFERENCES creditcard(creditcard_id)
+    FOREIGN KEY (creditcardref) REFERENCES creditcard(creditcard_id)
 );
 
 

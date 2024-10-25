@@ -25,6 +25,7 @@ CREATE TABLE available_rideshare (
     bookingref CRS_ID -- from car booking table
  );
 
+
 CREATE TABLE booking_rideshare (
     bookingid CRS_ID PRIMARY KEY,
     status CRS_NAME,
@@ -35,7 +36,7 @@ CREATE TABLE booking_rideshare (
     price CRS_CURRENCY, --customer price
     customerid CRS_ID,
     bookingref CRS_ID,
-    FOREIGN KEY bookingref REFERENCES available_rideshare(bookingid)
+    FOREIGN KEY (bookingref) REFERENCES available_rideshare(bookingid)
 );
 
 
