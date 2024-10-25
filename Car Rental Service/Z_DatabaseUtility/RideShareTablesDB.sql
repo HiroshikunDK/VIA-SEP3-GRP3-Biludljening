@@ -13,8 +13,8 @@ CREATE DOMAIN CRS_CURRENCY DECIMAL(19,4);
 
 CREATE TABLE customer (
     customer_id CRS_ID PRIMARY KEY,
-    crs_name CRS_NAME NOT NULL,
-	crs_lastname CRS_NAME NOT NULL,
+    crs_name CRS_NAME ,
+	crs_lastname CRS_NAME ,
     username CRS_NAME, --Added as 
     password CRS_PASSWORD , --should be encrypted 
     email CRS_EMAIL UNIQUE,
@@ -25,10 +25,10 @@ CREATE TABLE booking_rideshare (
     bookingnr CRS_ID NOT NULL PRIMARY KEY,
     status CRS_NAME NOT NULL,
     startdato DATE,
-    starttime DATE,
+    starttime TIMESTAMP,
 	startlocation CRS_ADDRESS,
-    enddate TIME,
-    endtime TIME,
+    enddate DATE,
+    endtime TIMESTAMP,
 	endlocation CRS_ADDRESS,
     price CRS_CURRENCY,
     customerid CRS_ID,
