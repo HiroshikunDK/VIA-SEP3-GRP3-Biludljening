@@ -22,19 +22,53 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.29.0" />
+        <PackageReference Include="Npgsql" Version="8.0.5" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.29.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Controllers\" />
-        <Folder Include="Database\" />
-        <Folder Include="Data\" />
-        <Folder Include="DTOs\" />
-        <Folder Include="DummyData\" />
-        <Folder Include="Models\" />
-        <Folder Include="Repositories\" />
-        <Folder Include="Services\" />
-        <Folder Include="Utility\" />
+      <Compile Remove="DummyData\**" />
+      <Compile Remove="Utility\**" />
+      <Compile Remove="Services\**" />
+      <Compile Remove="Repositories\**" />
+      <Compile Remove="Models\**" />
+      <Compile Remove="DTOs\**" />
+      <Compile Remove="Data\**" />
+      <Compile Remove="Controllers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="DummyData\**" />
+      <EmbeddedResource Remove="Utility\**" />
+      <EmbeddedResource Remove="Services\**" />
+      <EmbeddedResource Remove="Repositories\**" />
+      <EmbeddedResource Remove="Models\**" />
+      <EmbeddedResource Remove="DTOs\**" />
+      <EmbeddedResource Remove="Data\**" />
+      <EmbeddedResource Remove="Controllers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="DummyData\**" />
+      <Content Remove="Utility\**" />
+      <Content Remove="Services\**" />
+      <Content Remove="Repositories\**" />
+      <Content Remove="Models\**" />
+      <Content Remove="DTOs\**" />
+      <Content Remove="Data\**" />
+      <Content Remove="Controllers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DummyData\**" />
+      <None Remove="Utility\**" />
+      <None Remove="Services\**" />
+      <None Remove="Repositories\**" />
+      <None Remove="Models\**" />
+      <None Remove="DTOs\**" />
+      <None Remove="Data\**" />
+      <None Remove="Controllers\**" />
     </ItemGroup>
 
 </Project>
