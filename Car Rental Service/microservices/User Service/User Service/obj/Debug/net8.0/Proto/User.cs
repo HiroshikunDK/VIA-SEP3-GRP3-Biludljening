@@ -27,16 +27,17 @@ namespace UserManagementService {
             "ChBQcm90by91c2VyLnByb3RvIgcKBUVtcHR5IhkKC1VzZXJSZXF1ZXN0EgoK",
             "AmlkGAEgASgFIjIKDExvZ2luUmVxdWVzdBIQCgh1c2VybmFtZRgBIAEoCRIQ",
             "CghwYXNzd29yZBgCIAEoCSIeCg1Mb2dpblJlc3BvbnNlEg0KBXRva2VuGAEg",
-            "ASgJIkEKBFVzZXISCgoCaWQYASABKAUSEAoIdXNlcm5hbWUYAiABKAkSDQoF",
-            "ZW1haWwYAyABKAkSDAoEcm9sZRgEIAEoCSIwCgxVc2VyUmVzcG9uc2USDwoH",
-            "c3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJIiAKCFVzZXJMaXN0EhQK",
-            "BXVzZXJzGAEgAygLMgUuVXNlcjL5AQoLVXNlclNlcnZpY2USKwoMUmVnaXN0",
-            "ZXJVc2VyEgwuVXNlclJlcXVlc3QaDS5Vc2VyUmVzcG9uc2USKgoJTG9naW5V",
-            "c2VyEg0uTG9naW5SZXF1ZXN0Gg4uTG9naW5SZXNwb25zZRIiCgtHZXRVc2Vy",
-            "QnlJZBIMLlVzZXJSZXF1ZXN0GgUuVXNlchIiCgpVcGRhdGVVc2VyEgUuVXNl",
-            "choNLlVzZXJSZXNwb25zZRIpCgpEZWxldGVVc2VyEgwuVXNlclJlcXVlc3Qa",
-            "DS5Vc2VyUmVzcG9uc2USHgoJTGlzdFVzZXJzEgYuRW1wdHkaCS5Vc2VyTGlz",
-            "dEIYqgIVVXNlck1hbmFnZW1lbnRTZXJ2aWNlYgZwcm90bzM="));
+            "ASgJIlMKBFVzZXISCgoCaWQYASABKAUSEAoIdXNlcm5hbWUYAiABKAkSDQoF",
+            "ZW1haWwYAyABKAkSDAoEcm9sZRgEIAEoCRIQCghwYXNzd29yZBgFIAEoCSJF",
+            "CgxVc2VyUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIg",
+            "ASgJEhMKBHVzZXIYAyABKAsyBS5Vc2VyIiAKCFVzZXJMaXN0EhQKBXVzZXJz",
+            "GAEgAygLMgUuVXNlcjL6AQoLVXNlclNlcnZpY2USJAoMUmVnaXN0ZXJVc2Vy",
+            "EgUuVXNlchoNLlVzZXJSZXNwb25zZRIqCglMb2dpblVzZXISDS5Mb2dpblJl",
+            "cXVlc3QaDi5Mb2dpblJlc3BvbnNlEioKC0dldFVzZXJCeUlkEgwuVXNlclJl",
+            "cXVlc3QaDS5Vc2VyUmVzcG9uc2USIgoKVXBkYXRlVXNlchIFLlVzZXIaDS5V",
+            "c2VyUmVzcG9uc2USKQoKRGVsZXRlVXNlchIMLlVzZXJSZXF1ZXN0Gg0uVXNl",
+            "clJlc3BvbnNlEh4KCUxpc3RVc2VycxIGLkVtcHR5GgkuVXNlckxpc3RCGKoC",
+            "FVVzZXJNYW5hZ2VtZW50U2VydmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,8 +45,8 @@ namespace UserManagementService {
             new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.UserRequest), global::UserManagementService.UserRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.LoginRequest), global::UserManagementService.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.LoginResponse), global::UserManagementService.LoginResponse.Parser, new[]{ "Token" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.User), global::UserManagementService.User.Parser, new[]{ "Id", "Username", "Email", "Role" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.UserResponse), global::UserManagementService.UserResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.User), global::UserManagementService.User.Parser, new[]{ "Id", "Username", "Email", "Role", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.UserResponse), global::UserManagementService.UserResponse.Parser, new[]{ "Success", "Message", "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UserManagementService.UserList), global::UserManagementService.UserList.Parser, new[]{ "Users" }, null, null, null, null)
           }));
     }
@@ -884,6 +885,7 @@ namespace UserManagementService {
       username_ = other.username_;
       email_ = other.email_;
       role_ = other.role_;
+      password_ = other.password_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -941,6 +943,18 @@ namespace UserManagementService {
       }
     }
 
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 5;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -960,6 +974,7 @@ namespace UserManagementService {
       if (Username != other.Username) return false;
       if (Email != other.Email) return false;
       if (Role != other.Role) return false;
+      if (Password != other.Password) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -971,6 +986,7 @@ namespace UserManagementService {
       if (Username.Length != 0) hash ^= Username.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
       if (Role.Length != 0) hash ^= Role.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1005,6 +1021,10 @@ namespace UserManagementService {
         output.WriteRawTag(34);
         output.WriteString(Role);
       }
+      if (Password.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Password);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1031,6 +1051,10 @@ namespace UserManagementService {
         output.WriteRawTag(34);
         output.WriteString(Role);
       }
+      if (Password.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Password);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1052,6 +1076,9 @@ namespace UserManagementService {
       }
       if (Role.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Role);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1076,6 +1103,9 @@ namespace UserManagementService {
       }
       if (other.Role.Length != 0) {
         Role = other.Role;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1112,6 +1142,10 @@ namespace UserManagementService {
             Role = input.ReadString();
             break;
           }
+          case 42: {
+            Password = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1145,6 +1179,10 @@ namespace UserManagementService {
           }
           case 34: {
             Role = input.ReadString();
+            break;
+          }
+          case 42: {
+            Password = input.ReadString();
             break;
           }
         }
@@ -1191,6 +1229,7 @@ namespace UserManagementService {
     public UserResponse(UserResponse other) : this() {
       success_ = other.success_;
       message_ = other.message_;
+      user_ = other.user_ != null ? other.user_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1224,6 +1263,18 @@ namespace UserManagementService {
       }
     }
 
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 3;
+    private global::UserManagementService.User user_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::UserManagementService.User User {
+      get { return user_; }
+      set {
+        user_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1241,6 +1292,7 @@ namespace UserManagementService {
       }
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
+      if (!object.Equals(User, other.User)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1250,6 +1302,7 @@ namespace UserManagementService {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (user_ != null) hash ^= User.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1276,6 +1329,10 @@ namespace UserManagementService {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (user_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(User);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1294,6 +1351,10 @@ namespace UserManagementService {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (user_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(User);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1309,6 +1370,9 @@ namespace UserManagementService {
       }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (user_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1327,6 +1391,12 @@ namespace UserManagementService {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
+      }
+      if (other.user_ != null) {
+        if (user_ == null) {
+          User = new global::UserManagementService.User();
+        }
+        User.MergeFrom(other.User);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1355,6 +1425,13 @@ namespace UserManagementService {
             Message = input.ReadString();
             break;
           }
+          case 26: {
+            if (user_ == null) {
+              User = new global::UserManagementService.User();
+            }
+            input.ReadMessage(User);
+            break;
+          }
         }
       }
     #endif
@@ -1380,6 +1457,13 @@ namespace UserManagementService {
           }
           case 18: {
             Message = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (user_ == null) {
+              User = new global::UserManagementService.User();
+            }
+            input.ReadMessage(User);
             break;
           }
         }

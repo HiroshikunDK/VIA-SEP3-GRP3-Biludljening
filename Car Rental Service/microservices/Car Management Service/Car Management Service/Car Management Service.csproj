@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Proto\car.proto" GrpcServices="Server" />
+        <Protobuf Include="Proto\car.proto" Include="Proto/customer.proto" GrpcServices="Server" />
         <PackageReference Include="Google.Protobuf" Version="3.28.2" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.66.0" />
         <PackageReference Include="Grpc.Tools" Version="2.66.0">

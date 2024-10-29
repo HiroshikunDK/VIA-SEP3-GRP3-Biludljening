@@ -3,9 +3,9 @@
 option csharp_namespace = "UserManagementService";
 
 service UserService {
-  rpc RegisterUser (UserRequest) returns (UserResponse);
+  rpc RegisterUser (User) returns (UserResponse);
   rpc LoginUser (LoginRequest) returns (LoginResponse);
-  rpc GetUserById (UserRequest) returns (User);
+  rpc GetUserById (UserRequest) returns (UserResponse);
   rpc UpdateUser (User) returns (UserResponse);
   rpc DeleteUser (UserRequest) returns (UserResponse);
   rpc ListUsers (Empty) returns (UserList);
@@ -31,11 +31,13 @@ message User {
   string username = 2;
   string email = 3;
   string role = 4;
+  string password = 5;
 }
 
 message UserResponse {
   bool success = 1;
   string message = 2;
+  User user = 3;
 }
 
 message UserList {

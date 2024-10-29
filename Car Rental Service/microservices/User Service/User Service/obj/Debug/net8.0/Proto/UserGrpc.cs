@@ -46,7 +46,7 @@ namespace UserManagementService {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::UserManagementService.UserRequest> __Marshaller_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.UserRequest.Parser));
+    static readonly grpc::Marshaller<global::UserManagementService.User> __Marshaller_User = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.User.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserManagementService.UserResponse> __Marshaller_UserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.UserResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -54,18 +54,18 @@ namespace UserManagementService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserManagementService.LoginResponse> __Marshaller_LoginResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.LoginResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::UserManagementService.User> __Marshaller_User = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.User.Parser));
+    static readonly grpc::Marshaller<global::UserManagementService.UserRequest> __Marshaller_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.UserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserManagementService.Empty> __Marshaller_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserManagementService.UserList> __Marshaller_UserList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserManagementService.UserList.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse> __Method_RegisterUser = new grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse>(
+    static readonly grpc::Method<global::UserManagementService.User, global::UserManagementService.UserResponse> __Method_RegisterUser = new grpc::Method<global::UserManagementService.User, global::UserManagementService.UserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RegisterUser",
-        __Marshaller_UserRequest,
+        __Marshaller_User,
         __Marshaller_UserResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -77,12 +77,12 @@ namespace UserManagementService {
         __Marshaller_LoginResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.User> __Method_GetUserById = new grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.User>(
+    static readonly grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse> __Method_GetUserById = new grpc::Method<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetUserById",
         __Marshaller_UserRequest,
-        __Marshaller_User);
+        __Marshaller_UserResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::UserManagementService.User, global::UserManagementService.UserResponse> __Method_UpdateUser = new grpc::Method<global::UserManagementService.User, global::UserManagementService.UserResponse>(
@@ -119,7 +119,7 @@ namespace UserManagementService {
     public abstract partial class UserServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::UserManagementService.UserResponse> RegisterUser(global::UserManagementService.UserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserManagementService.UserResponse> RegisterUser(global::UserManagementService.User request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -131,7 +131,7 @@ namespace UserManagementService {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::UserManagementService.User> GetUserById(global::UserManagementService.UserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserManagementService.UserResponse> GetUserById(global::UserManagementService.UserRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -177,9 +177,9 @@ namespace UserManagementService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse>(serviceImpl.RegisterUser));
+      serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.User, global::UserManagementService.UserResponse>(serviceImpl.RegisterUser));
       serviceBinder.AddMethod(__Method_LoginUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.LoginRequest, global::UserManagementService.LoginResponse>(serviceImpl.LoginUser));
-      serviceBinder.AddMethod(__Method_GetUserById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.UserRequest, global::UserManagementService.User>(serviceImpl.GetUserById));
+      serviceBinder.AddMethod(__Method_GetUserById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse>(serviceImpl.GetUserById));
       serviceBinder.AddMethod(__Method_UpdateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.User, global::UserManagementService.UserResponse>(serviceImpl.UpdateUser));
       serviceBinder.AddMethod(__Method_DeleteUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.UserRequest, global::UserManagementService.UserResponse>(serviceImpl.DeleteUser));
       serviceBinder.AddMethod(__Method_ListUsers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserManagementService.Empty, global::UserManagementService.UserList>(serviceImpl.ListUsers));
