@@ -11,9 +11,14 @@ service PaymentService {
 }
 
 message PaymentRequest {
-  string userId = 1;
-  string carId = 2;
-  double amount = 3;
+  //string userId = 1;
+  //string carId = 2;
+  //double amount = 3;
+  int64 creditcard_id = 1;
+  string creditcardnr = 2;
+  string cc_name = 3;
+  string cc_lastname = 4;
+  int64 customerid = 5;
 }
 
 message PaymentRequestById {
@@ -26,12 +31,19 @@ message PaymentStatusUpdateRequest {
 }
 
 message PaymentResponse {
+//  int64 id = 1;
+//  string userId = 2;
+//  string carId = 3;
+//  double amount = 4;
+//  string paymentDate = 5;
+//  string paymentStatus = 6;
   int64 id = 1;
-  string userId = 2;
-  string carId = 3;
-  double amount = 4;
-  string paymentDate = 5;
-  string paymentStatus = 6;
+  int64 creditcard_id = 2;
+  string creditcardnr = 3;
+  string cc_name = 4;
+  string cc_lastname = 5;
+  int64 customerid = 6;
+  string paymentStatus = 7;
 }
 
 message PaymentListResponse {
