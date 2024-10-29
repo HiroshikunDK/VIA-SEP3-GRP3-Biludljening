@@ -1,46 +1,46 @@
 using Microsoft.EntityFrameworkCore;
 using User_Service;
-using User_Service.Data;
-using User_Service.Repositories.Interfaces;
-using User_Service.Services;
-
+using User_Service.Database;
+using UserManagementService;
 var builder = WebApplication.CreateBuilder(args);
 
-// Tilføjer gRPC service
+// Tilføjer gRPC-service til applikationen
 builder.Services.AddGrpc();
 
-// Konfigurer database context til at bruge SQLite
-// Bruger en connection string fra appsettings.json (defaultconnection)
-builder.Services.AddDbContext<UserDatabase>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Registrer UserRepository 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+// Konfigurerer databasekonteksten til at bruge PostgreSQL med den rigtige forbindelsesstreng
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // Brug UseNpgsql til PostgreSQL
 
 var app = builder.Build();
 
-// Grim developer page til fejl
+// Aktiverer udvikler-fejlside til debugging (valgfrit)
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
 
-// Seeder databasen med dummy data
-SeedDatabase(app);
+// Mapper gRPC-servicen til applikationen
+app.MapGrpcService<UserServiceImp>();
 
-// Mapper gPRC service til applikationen
-app.MapGrpcService<UserService>();
-
-// Default route til Root URL, for at give simpel information om service
-app.MapGet("/", () => "User Service: Use a gRPC client to interact with the service.");
-
-// Vroom vroom - den kører applikationen
-app.Run();
-
-// Database Seed
-void SeedDatabase(IHost app)
+// Test af databaseforbindelse ved start af applikationen
+using (var scope = app.Services.CreateScope())
 {
-    using var scope = app.Services.CreateScope();
-    var context = scope.ServiceProvider.GetRequiredService<UserDatabase>();
-    DatabaseSeeder.SeedDatabase(context);
+    var dbContext = scope.ServiceProvider.GetRequiredService<UserDbContext>();
+
+    try
+    {
+        // Forsøger at hente brugere fra databasen
+        var users = dbContext.users.ToList();
+        Console.WriteLine("Databaseforbindelse er aktiv, og data blev hentet.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Fejl ved forbindelse til databasen: {ex.Message}");
+    }
 }
+
+// Standardrute, der viser simpel information om servicen
+app.MapGet("/", () => "User Service: Brug en gRPC-klient til at interagere med servicen.");
+
+// Starter applikationen
+app.Run();
