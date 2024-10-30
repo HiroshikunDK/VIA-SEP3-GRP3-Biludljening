@@ -1,17 +1,20 @@
 syntax = "proto3";
 
-option java_package = "UserService.grpc";
+package userservice;
+
+
 
 service UserService {
   rpc RegisterUser (User) returns (UserResponse);
-  rpc LoginUser (LoginRequest) returns (LoginResponse);
+  rpc LoginUser (LoginRequest) returns (loginResponse);
   rpc GetUserById (UserRequest) returns (UserResponse);
   rpc UpdateUser (User) returns (UserResponse);
   rpc DeleteUser (UserRequest) returns (UserResponse);
-  rpc ListUsers (Empty) returns (UserList);
+  rpc ListUsers (empty) returns (UserList); // Use the standard Empty
 }
 
-message Empty {}
+message empty{}
+
 
 message UserRequest {
   int32 id = 1;
@@ -22,16 +25,16 @@ message LoginRequest {
   string password = 2;
 }
 
-message LoginResponse {
-  string token = 1;
-}
-
 message User {
   int32 id = 1;
-  string username = 2;
-  string email = 3;
-  string role = 4;
-  string password = 5;
+  string userFirstname = 2;
+  string userLastname = 3;
+  string title = 4;
+  string email = 5;
+  int32 phonenr = 6;
+  string username = 7;
+  string password = 8;
+  string userpermission = 9;
 }
 
 message UserResponse {
@@ -43,3 +46,6 @@ message UserResponse {
 message UserList {
   repeated User users = 1;
 }
+message loginResponse{
+  string token =1;
+    }
