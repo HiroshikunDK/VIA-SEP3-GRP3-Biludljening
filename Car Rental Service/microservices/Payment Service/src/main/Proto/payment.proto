@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option java_package = "payment.paymentservice.grpc";
-option java_outer_classname = "PaymentServiceProto";
+option java_package = "PaymentService.grpc";
+
 
 service PaymentService {
   rpc CreatePayment (PaymentRequest) returns (PaymentResponse);
@@ -31,12 +31,12 @@ message PaymentStatusUpdateRequest {
 }
 
 message PaymentResponse {
-//  int64 id = 1;
-//  string userId = 2;
-//  string carId = 3;
-//  double amount = 4;
-//  string paymentDate = 5;
-//  string paymentStatus = 6;
+  //  int64 id = 1;
+  //  string userId = 2;
+  //  string carId = 3;
+  //  double amount = 4;
+  //  string paymentDate = 5;
+  //  string paymentStatus = 6;
   int64 id = 1;
   int64 creditcard_id = 2;
   string creditcardnr = 3;

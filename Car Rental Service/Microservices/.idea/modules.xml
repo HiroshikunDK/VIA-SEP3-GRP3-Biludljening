@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Car Management Service/Car Management Service.iml" filepath="$PROJECT_DIR$/Car Management Service/Car Management Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Microservices.iml" filepath="$PROJECT_DIR$/.idea/Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Payment Service/Payment Service.iml" filepath="$PROJECT_DIR$/Payment Service/Payment Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rideshare Service/Rideshare Service.iml" filepath="$PROJECT_DIR$/Rideshare Service/Rideshare Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shared/Shared.iml" filepath="$PROJECT_DIR$/Shared/Shared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User Service/User Service.iml" filepath="$PROJECT_DIR$/User Service/User Service.iml" />
+    </modules>
+  </component>
+</project>
