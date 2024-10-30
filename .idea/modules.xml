@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/VIA-SEP3-GRP3-Biludljening.iml" filepath="$PROJECT_DIR$/.idea/VIA-SEP3-GRP3-Biludljening.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Car Rental Service/microservices/Payment Service/paymentservice.iml" filepath="$PROJECT_DIR$/Car Rental Service/microservices/Payment Service/paymentservice.iml" />
     </modules>
   </component>
 </project>

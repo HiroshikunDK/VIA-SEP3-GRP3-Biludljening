@@ -11,11 +11,12 @@ service PaymentService {
 }
 
 message PaymentRequest {
-  int64 creditcard_id = 1;
-  string creditcardnr = 2;
-  string cc_name = 3;
-  string cc_lastname = 4;
-  int64 customerid = 5;
+  int64 id = 1;
+  int64 customer = 2;
+  int32 bookingType = 3;
+  int64 booking = 4;
+  string status = 5;
+  int64 creditcardref = 6;
 }
 
 message PaymentRequestById {
@@ -29,12 +30,11 @@ message PaymentStatusUpdateRequest {
 
 message PaymentResponse {
   int64 id = 1;
-  int64 creditcard_id = 2;
-  string creditcardnr = 3;
-  string cc_name = 4;
-  string cc_lastname = 5;
-  int64 customerid = 6;
-  string paymentStatus = 7;
+  int64 customer = 2;           // Kunde ID
+  int32 bookingType = 3;
+  int64 booking = 4;             // Booking ID
+  string status = 5;             // Status, 'paid' eller 'not paid'
+  int64 creditcardref = 6;       // Kreditkort reference ID
 }
 
 message PaymentListResponse {
