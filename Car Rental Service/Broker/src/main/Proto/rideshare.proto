@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package rideshare;
+
+option java_package = "rideshare.rideshareservice.grpc";
+option java_outer_classname = "RideShareServiceProto";
+
+service RideShareService {
+  rpc OfferRide (OfferRideRequest) returns (OfferRideResponse);
+  rpc BookSeat (BookSeatRequest) returns (BookSeatResponse);
+}
+
+// Define messages for the request and response
+message OfferRideRequest {
+  string carId = 1;
+  int32 seatsAvailable = 2;
+  string route = 3;
+}
+
+message OfferRideResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message BookSeatRequest {
+  string rideId = 1;
+  string userId = 2;
+}
+
+message BookSeatResponse {
+  bool success = 1;
+  string message = 2;
+}

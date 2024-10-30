@@ -1,0 +1,57 @@
+﻿syntax = "proto3";
+
+package userservice;
+
+service UserService {
+
+  rpc RegisterUser (RegisterUserRequest) returns (RegisterUserResponse);
+  
+  rpc LoginUser (LoginUserRequest) returns (LoginUserResponse);
+  
+  rpc GetUserProfile (GetUserProfileRequest) returns (GetUserProfileResponse);
+  
+  rpc UpdateUserProfile (UpdateUserProfileRequest) returns (UpdateUserProfileResponse);
+}
+
+message RegisterUserRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+}
+
+message RegisterUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message LoginUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginUserResponse {
+  bool success = 1;
+  string token = 2;
+  string message = 3;
+}
+
+message GetUserProfileRequest {
+  string userId = 1;
+}
+
+message GetUserProfileResponse {
+  string username = 1;
+  string email = 2;
+  string message = 3;
+}
+
+message UpdateUserProfileRequest {
+  string userId = 1;
+  string newUsername = 2;
+  string newEmail = 3;
+}
+
+message UpdateUserProfileResponse {
+  bool success = 1;
+  string message = 2;
+}

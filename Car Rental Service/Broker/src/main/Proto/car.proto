@@ -1,0 +1,51 @@
+﻿syntax = "proto3";
+
+package carservice;
+
+service CarManagementService {
+  rpc AddCar (AddCarRequest) returns (AddCarResponse);
+  rpc UpdateCar (UpdateCarRequest) returns (UpdateCarResponse);
+  rpc GetAvailableCars (GetAvailableCarsRequest) returns (GetAvailableCarsResponse);
+}
+
+message AddCarRequest {
+  string make = 1;
+  string model = 2;
+  string year = 3;
+  string location = 4;
+}
+
+message AddCarResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UpdateCarRequest {
+  string carId = 1;
+  string make = 2;
+  string model = 3;
+  string year = 4;
+  string location = 5;
+}
+
+message UpdateCarResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetAvailableCarsRequest {
+  string location = 1;
+}
+
+message GetAvailableCarsResponse {
+  repeated Car cars = 1;
+}
+
+message Car {
+  string carId = 1;
+  string make = 2;
+  string model = 3;
+  string year = 4;
+  string location = 5;
+  bool available = 6;
+}
