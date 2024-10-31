@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DataBaseHelper implements Database
 {
   //private static final String URL ="jdbc:sqlite:Car Rental Service/Z_DatabaseUtility/CarManagementServiceDBLite/CarManagementServiceDBV2.db";
-  private static final String URL ="jdbc:sqlite:Car Rental Service/Z_DatabaseUtility/CarManagementServiceDBLite/CarManagementServiceDBV2.db";
+  private static final String URL ="jdbc:sqlite:/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Code2/Car Rental Service/Z_DatabaseUtility/CarManagementServiceDBLite/CarManagementServiceDBV2.db";
 
   public Connection getConnection() {
     try {
@@ -37,7 +37,7 @@ public class DataBaseHelper implements Database
     try (Connection connection = getConnection();
         PreparedStatement statement = connection.prepareStatement(query)) {
 
-      statement.setString(1, car.getCarId());
+      statement.setInt(1, car.getCarId());
       statement.setString(2, car.getVin());
       statement.setInt(3, car.getYearProduced());
       statement.setString(4, car.getManufacturer());

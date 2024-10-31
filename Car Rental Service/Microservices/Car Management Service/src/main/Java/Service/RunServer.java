@@ -8,7 +8,7 @@ import java.io.IOException;
 public class RunServer
 {
   public static void main(String[] args)
-      throws IOException, InterruptedException, InterruptedException
+      throws IOException, InterruptedException
   {
     DataBaseHelper dataBaseHelper = new DataBaseHelper();
     CarService carService = new CarService(dataBaseHelper);

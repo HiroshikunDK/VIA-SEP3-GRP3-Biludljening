@@ -120,7 +120,7 @@ message CarRequest {
 }
 
 message Car {
-  string car_id = 1;
+  int32 car_id = 1;
   string vin = 2;
   int32 yearproduced = 3;
   string manufactor = 4;

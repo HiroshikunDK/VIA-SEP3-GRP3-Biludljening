@@ -1,7 +1,7 @@
 package Model;
 
 public class Car {
-   private String carId;
+   private int carId;
     private String vin;
     private int yearProduced;
     private String manufacturer;
@@ -12,7 +12,7 @@ public class Car {
     private int carRange;
     private int locationHubRef;
 
-  public Car(String carId, String vin, int yearProduced, String manufacturer,
+  public Car(int carId, String vin, int yearProduced, String manufacturer,
       String model, String color, String altName, int seats, int carRange,
       int locationHubRef)
   {
@@ -29,11 +29,11 @@ public class Car {
   }
 
   // Getters and Setters
-    public String getCarId() {
+    public int getCarId() {
       return carId;
     }
 
-    public void setCarId(String carId) {
+    public void setCarId(int carId) {
       this.carId = carId;
     }
 
