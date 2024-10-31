@@ -20,22 +20,22 @@ service BookingCarService {
   rpc DeleteBookingCar (BookingCarRequest) returns (BookingCarResponse);
 }
 
-// CustomerService
-service CustomerService {
+// CustomerService - Bliver ikke længere brugt her
+/*service CustomerService {
   rpc GetAllCustomers (Empty) returns (CustomerList);
   rpc GetCustomerByID (CustomerRequest) returns (Customer);
   rpc AddCustomer (Customer) returns (CustomerResponse);
   rpc UpdateCustomer (Customer) returns (CustomerResponse);
   rpc DeleteCustomer (CustomerRequest) returns (CustomerResponse);
-}
+}*/
 
 // CarService
 service CarService {
-  rpc GetAllCars (Empty) returns (CarList);
-  rpc GetCarByID (CarRequest) returns (Car);
-  rpc AddCar (Car) returns (CarResponse);
-  rpc UpdateCar (Car) returns (CarResponse);
-  rpc DeleteCar (CarRequest) returns (CarResponse);
+  rpc getAllCars (Empty) returns (CarList);
+  rpc getCarByID (CarRequest) returns (CarResponse);
+  rpc addCar (Car) returns (CarResponse);
+  rpc updateCar (Car) returns (CarResponse);
+  rpc deleteCar (CarRequest) returns (CarResponse);
 }
 
 // Shared Messages
@@ -74,10 +74,12 @@ message BookingCar {
   string status = 2;
   string startdato = 3;
   string starttime = 4;
-  string endtime = 5;
-  string price = 6;
-  int32 carid = 7;
-  int32 customerid = 8;
+  string enddate = 5;
+  string endtime = 6;
+  string price = 7;
+  int32 greenshare = 8;
+  int32 carid = 9;
+  int32 customerid = 10;
 }
 
 message BookingCarList {
@@ -89,11 +91,12 @@ message BookingCarResponse {
   string message = 2;
 }
 
-message CustomerRequest {
+/*message CustomerRequest {
   int32 customer_id = 1;
-}
+}*/
 
-message Customer {
+// Bliver ikke længere anvendt her
+/*message Customer {
   int32 customer_id = 1;
   string crs_name = 2;
   string crs_lastname = 3;
@@ -101,31 +104,32 @@ message Customer {
   string password = 5;
   string email = 6;
   string phonenr = 7;
-}
+}*/
 
-message CustomerList {
+/*message CustomerList {
   repeated Customer customers = 1;
-}
+}*/
 
-message CustomerResponse {
+/*message CustomerResponse {
   bool success = 1;
   string message = 2;
-}
+}*/
 
 message CarRequest {
-  int32 car_id = 1;
+  string car_id = 1;
 }
 
 message Car {
-  int32 car_id = 1;
-  int32 vin = 2;
+  string car_id = 1;
+  string vin = 2;
   int32 yearproduced = 3;
-  string model = 4;
-  string color = 5;
-  string altname = 6;
-  int32 seats = 7;
-  int32 carrange = 8;
-  int32 locationhubref = 9;
+  string manufactor = 4;
+  string model = 5;
+  string color = 6;
+  string altname = 7;
+  int32 seats = 8;
+  int32 carrange = 9;
+  int32 locationhubref = 10;
 }
 
 message CarList {
