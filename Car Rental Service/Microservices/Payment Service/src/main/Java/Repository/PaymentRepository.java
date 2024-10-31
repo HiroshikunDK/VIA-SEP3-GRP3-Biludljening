@@ -5,7 +5,9 @@ import Persistance.Databasehelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +36,7 @@ public class PaymentRepository implements IPaymentRepository
     }
     catch (SQLException e)
     {
-      throw new RuntimeException(e);
+      throw new RuntimeException(e.getMessage());
     };
 
     return payment;
@@ -42,7 +44,28 @@ public class PaymentRepository implements IPaymentRepository
 
   @Override public List<Payment> getAllPayments()
   {
-    return List.of();
+    List<Payment> payments = new ArrayList<>();
+    String query = "SELECT * FROM payment";
+
+    try (Connection connection = databasehelper.getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(query);
+      ResultSet resultSet = statement.executeQuery();
+
+      while(resultSet.next())
+      {
+        Payment payment = new Payment(resultSet.getLong("id"),resultSet.getLong("customer"),
+            resultSet.getInt("bookingType"),resultSet.getLong("booking"),
+            resultSet.getString("status"),
+            resultSet.getLong("creditcardref"));
+        payments.add(payment);
+      }
+    }
+    catch (SQLException e)
+    {
+      throw new RuntimeException(e.getMessage());
+    }
+    return payments;
   }
 
   @Override public Optional<Payment> getPaymentById(int id)
