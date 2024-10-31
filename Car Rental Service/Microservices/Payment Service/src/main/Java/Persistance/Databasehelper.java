@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Databasehelper
 {
-  private static final String URL ="jdbc:sqlite:C:/Users/sakaa/IdeaProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/Z_DatabaseUtility/PaymentServiceDBLite";
+  private static final String URL ="jdbc:sqlite:C:/Users/sakaa/IdeaProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/Z_DatabaseUtility/PaymentServiceDBLite/PaymentServiceDBV2.db";
   //private static final String URL = "jdbc:sqlite:Car Rental Service/Z_DatabaseUtility/PaymentServiceDBLite/PaymentServiceDB.db";
 
   public Connection getConnection()

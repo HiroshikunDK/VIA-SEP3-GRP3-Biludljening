@@ -21,7 +21,7 @@ public class PaymentRepository implements IPaymentRepository
     databasehelper = new Databasehelper();
   }
 
-  @Override public Payment createPayment(Payment payment)
+  @Override public Boolean createPayment(Payment payment)
   {
     String query = "INSERT INTO payment (customer, bookingType, booking, status, creditcardref) VALUES (?, ?, ?, ?, ?)";
     try (Connection connection = databasehelper.getConnection()) {
@@ -32,14 +32,13 @@ public class PaymentRepository implements IPaymentRepository
       statement.setLong(3, payment.getBooking());
       statement.setString(4, payment.getStatus());
       statement.setLong(5, payment.getCreditcardref());
-      statement.executeUpdate();
+      return statement.executeUpdate()>0;
     }
     catch (SQLException e)
     {
-      throw new RuntimeException(e.getMessage());
-    };
-
-    return payment;
+     e.printStackTrace();
+      return false;
+    }
   }
 
   @Override public List<Payment> getAllPayments()

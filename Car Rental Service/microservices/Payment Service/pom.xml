@@ -15,7 +15,15 @@
   </properties>
 
   <dependencies>
-    <!-- Fra Exercise -->
+
+    <!-- SQLite JDBC Dependency -->
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.42.0.0</version>
+    </dependency>
+
+    <!-- gRPC dependencies -->
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http2</artifactId>
@@ -29,8 +37,7 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <version>1.66.0</version>
-    </dependency>
+      <version>1.66.0</version> </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
@@ -44,24 +51,6 @@
 
 
 
-    <!-- SQLite JDBC Dependency -->
-    <dependency>
-      <groupId>org.xerial</groupId>
-      <artifactId>sqlite-jdbc</artifactId>
-      <version>3.42.0.0</version>
-    </dependency>
-
-    <!-- gRPC dependencies -->
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-      <version>${protobuf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-      <version>${grpc.version}</version>
-    </dependency>
 
     <!-- Hibernate dialects for SQLite support -->
     <dependency>
@@ -71,6 +60,8 @@
     </dependency>
   </dependencies>
 
+
+
   <build>
     <extensions>
       <extension>
@@ -79,8 +70,26 @@
         <version>1.6.1</version>
       </extension>
     </extensions>
-
     <plugins>
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.6.1</version>
+        <configuration>
+          <!--suppress UnresolvedMavenProperty -->
+          <protocArtifact> com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier} </protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <!--suppress UnresolvedMavenProperty -->
+          <pluginArtifact> io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier} </pluginArtifact>
+        </configuration>
+        <executions>
+          <execution>
+            <goals> <goal>compile</goal>
+              <goal>compile-custom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
 
       <!-- Protobuf plugin for gRPC -->
@@ -89,8 +98,10 @@
         <artifactId>protobuf-maven-plugin</artifactId>
         <version>0.6.1</version>
         <configuration>
+          <!--suppress UnresolvedMavenProperty -->
           <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
           <pluginId>grpc-java</pluginId>
+          <!--suppress UnresolvedMavenProperty -->
           <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
         </configuration>
         <executions>
@@ -110,8 +121,7 @@
         <version>1.7.0</version>
         <extensions>true</extensions>
       </plugin>
-
     </plugins>
-  </build>
 
+  </build>
 </project>

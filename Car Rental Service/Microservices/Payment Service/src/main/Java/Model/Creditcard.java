@@ -7,7 +7,6 @@ public class Creditcard
   private String cc_name;
   private String cc_lastname;
   private Long customerid;
-
   public Creditcard()
   {
 

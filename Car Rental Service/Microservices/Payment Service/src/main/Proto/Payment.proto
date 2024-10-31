@@ -57,6 +57,7 @@ message PaymentResponse {
   int64 booking = 4;
   string status = 5; // Aktuel betalingsstatus
   int64 creditcardref = 6;
+  bool success = 7; //indikere om den gik igennem
 }
 
 message PaymentListResponse {
