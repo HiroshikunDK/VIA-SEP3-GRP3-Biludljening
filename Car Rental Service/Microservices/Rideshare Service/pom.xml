@@ -2,11 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>payment</groupId>
-  <artifactId>paymentservice</artifactId>
+
+  <groupId>RideShareService</groupId>
+  <artifactId>rideshareserviceservice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Payment Service</name>
-  <description>Payment Service</description>
+  <name>Ride Share Service</name>
+  <description>Micro service handling posting and matching Ride Shares</description>
 
   <properties>
     <java.version>21</java.version>
@@ -29,6 +30,13 @@
       <artifactId>protobuf-java</artifactId>
       <version>${protobuf.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>1.68.1</version>
+    </dependency>
+
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
