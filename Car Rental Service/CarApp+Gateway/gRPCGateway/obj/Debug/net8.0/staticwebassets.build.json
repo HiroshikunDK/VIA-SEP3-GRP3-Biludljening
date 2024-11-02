@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "UvsNPfEz9har8UCs8qq+rrTQQnQXWN8K+rYV4YbnrRE=",
+  "Source": "gRPCGateway",
+  "BasePath": "_content/gRPCGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
