@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>payment</groupId>
-  <artifactId>paymentservice</artifactId>
+  <groupId>carmanagement</groupId>
+  <artifactId>carservice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Payment Service</name>
-  <description>Payment Service</description>
+  <name>Car Service</name>
+  <description>Car Service</description>
 
   <properties>
     <java.version>21</java.version>
@@ -15,7 +15,6 @@
   </properties>
 
   <dependencies>
-
     <!-- SQLite JDBC Dependency -->
     <dependency>
       <groupId>org.xerial</groupId>
@@ -34,6 +33,26 @@
       <artifactId>grpc-netty-shaded</artifactId>
       <version>${grpc.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
 
     <!-- Hibernate dialects for SQLite support -->
     <dependency>
@@ -45,8 +64,6 @@
 
   <build>
     <plugins>
-
-
       <!-- Protobuf plugin for gRPC -->
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
@@ -73,6 +90,17 @@
         <artifactId>os-maven-plugin</artifactId>
         <version>1.7.0</version>
         <extensions>true</extensions>
+      </plugin>
+
+      <!-- Compiler plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>

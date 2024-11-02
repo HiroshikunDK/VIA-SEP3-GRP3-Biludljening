@@ -3,27 +3,40 @@ syntax = "proto3";
 option java_package = "RideShareService.grpc";
 
 service RideShareService {
-  rpc OfferRide (OfferRideRequest) returns (OfferRideResponse);
-  rpc BookSeat (BookSeatRequest) returns (BookSeatResponse);
+  rpc CreateRideShare (CreateRideShareRequest) returns (RideShareResponse);
+  rpc JoinRideShare (JoinRideShareRequest) returns (RideShareResponse);
+  rpc ListRideShares (ListRideSharesRequest) returns (RideShareListResponse);
 }
 
-message OfferRideRequest {
-  string carId = 1;
-  int32 seatsAvailable = 2;
-  string route = 3;
+message CreateRideShareRequest {
+  int32 car_id = 1;
+  string driver_username = 2;
+  int32 available_seats = 3;
 }
 
-message OfferRideResponse {
+message JoinRideShareRequest {
+  int32 ride_id = 1;
+  string passenger_username = 2;
+}
+
+message ListRideSharesRequest {
+  int32 car_id = 1;
+}
+
+message RideShareResponse {
   bool success = 1;
   string message = 2;
+  RideShare ride_share = 3;
 }
 
-message BookSeatRequest {
-  string rideId = 1;
-  string userId = 2;
+message RideShare {
+  int32 ride_id = 1;
+  int32 car_id = 2;
+  string driver_username = 3;
+  int32 available_seats = 4;
+  repeated string passengers = 5;
 }
 
-message BookSeatResponse {
-  bool success = 1;
-  string message = 2;
+message RideShareListResponse {
+  repeated RideShare ride_shares = 1;
 }
