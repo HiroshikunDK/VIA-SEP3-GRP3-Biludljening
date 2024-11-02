@@ -1,0 +1,125 @@
+﻿<!-- Tutorial followed is https://www.youtube.com/watch?v=SjhzOauYC80 */ -->
+
+@page "/AddCar"
+@inject IJSRuntime JsRuntime
+@using YourGreenCar.Components.Shared.DTO
+@using YourGreenCar.Components.Pages
+
+<PageTitle>Add Car</PageTitle>
+
+<h2>Add Car</h2>
+
+<form class="addcarform">
+    <div class="form-group">
+        <h3>Enter Car ID</h3>
+        <label asp-for="CarId" class="control-label"></label>
+        <input @bind="IDValue" asp-for="CarId" class="form-control" />
+        <span asp-validation-for="CarId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter Car Model</h3>
+        <label asp-for="Model" class="control-label"></label>
+        <input @bind="ModelValue" asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter Car Color</h3>
+        <label asp-for="Color" class="control-label"></label>
+        <input @bind="ColorValue" asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter Number of Seats</h3>
+        <label asp-for="Seats" class="control-label"></label>
+        <input @bind="SeatsValue" asp-for="Seats" class="form-control" type="number" />
+        <span asp-validation-for="Seats" class="text-danger"></span>
+    </div>
+
+    <button type="submit" onclick="@PostCar()" class="btn btn-primary">Add Car</button>
+</form>
+
+<div class="CarList">
+<h2>Cars List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Car ID</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var car in tempCarList)
+        {
+            <tr>
+                <td>@car.CarId</td>
+                <td>@car.Model</td>
+                <td>@car.Color</td>
+                <td>@car.Seats</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+<!-- Javascript -->
+<script>
+    function showAlert(message) {
+        alert(message);
+    }
+</script>
+
+<!-- C# definitions-->
+
+@code{
+    public AddCarRequestDto tempCar;
+    public List<AddCarRequestDto> tempCarList = new List<AddCarRequestDto>()        {
+        new AddCarRequestDto { CarId = 1, Model = "Toyota Camry", Color = "Blue", Seats = 5 },
+        new AddCarRequestDto { CarId = 2, Model = "Honda Accord", Color = "Red", Seats = 5 },
+        new AddCarRequestDto { CarId = 3, Model = "Ford Explorer", Color = "Black", Seats = 7 }
+        };
+
+
+
+    new HttpClient httpClient = new HttpClient();
+
+    public async Task PostCar()
+    {
+        await httpClient.PostAsJsonAsync<AddCarRequestDto>("localhost:5002/api/AddCarRequestDto",tempCar);
+
+        var apiUrl = "http://localhost:5002/api/AddCarRequestDto";
+
+        // Send a POST request with the tempUser data
+        var response = await httpClient.PostAsJsonAsync(apiUrl, tempCar);
+        if (response.IsSuccessStatusCode)
+        {
+            await JsRuntime.InvokeVoidAsync("Alert", ("Post of Car " + tempCar.Model + " was Succesful"));
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("Alert", ("Post of Car " + tempCar.Model + " Failed"));
+        }
+    }
+
+    /*
+    public async Task GetCarList()
+    {
+        var response = await httpClient.GetFromJsonAsync<AddCarRequestDto>("localhost:5002/api/AddCarRequestDto");
+        response.
+    }
+
+    */
+    private string IDValue;
+    private string ModelValue;
+    private string ColorValue;
+    private string SeatsValue;
+
+
+
+
+}
