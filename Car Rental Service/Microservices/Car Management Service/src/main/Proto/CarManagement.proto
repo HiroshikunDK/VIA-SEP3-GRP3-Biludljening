@@ -2,6 +2,33 @@ syntax = "proto3";
 
 option java_package = "CarManagementService.grpc";
 
+// LocationHubService
+service LocationHubService {
+  rpc GetAllLocationHubs (Empty) returns (LocationHubList);
+  rpc GetLocationHubByID (LocationHubRequest) returns (LocationHub);
+  rpc AddLocationHub (LocationHub) returns (LocationHubResponse);
+  rpc UpdateLocationHub (LocationHub) returns (LocationHubResponse);
+  rpc DeleteLocationHub (LocationHubRequest) returns (LocationHubResponse);
+}
+
+// BookingCarService
+service BookingCarService {
+  rpc GetAllBookingCars (Empty) returns (BookingCarList);
+  rpc GetBookingCarByID (BookingCarRequest) returns (BookingCar);
+  rpc AddBookingCar (BookingCar) returns (BookingCarResponse);
+  rpc UpdateBookingCar (BookingCar) returns (BookingCarResponse);
+  rpc DeleteBookingCar (BookingCarRequest) returns (BookingCarResponse);
+}
+
+// CustomerService - Bliver ikke længere brugt her
+/*service CustomerService {
+  rpc GetAllCustomers (Empty) returns (CustomerList);
+  rpc GetCustomerByID (CustomerRequest) returns (Customer);
+  rpc AddCustomer (Customer) returns (CustomerResponse);
+  rpc UpdateCustomer (Customer) returns (CustomerResponse);
+  rpc DeleteCustomer (CustomerRequest) returns (CustomerResponse);
+}*/
+
 // CarService
 service CarService {
   rpc getAllCars (Empty) returns (CarList);
@@ -14,15 +41,95 @@ service CarService {
 // Shared Messages
 message Empty {}
 
+message LocationHubRequest {
+  int32 id = 1;
+}
+
+message LocationHub {
+  int32 id = 1;
+  string locationname = 2;
+  string address = 3;
+  string city = 4;
+  string country = 5;
+  string email = 6;
+  string phonenr = 7;
+  int32 carcapacity = 8;
+}
+
+message LocationHubList {
+  repeated LocationHub locationhub = 1;
+}
+
+message LocationHubResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message BookingCarRequest {
+  int32 bookingnr = 1;
+}
+
+message BookingCar {
+  int32 bookingnr = 1;
+  string status = 2;
+  string startdato = 3;
+  string starttime = 4;
+  string enddate = 5;
+  string endtime = 6;
+  string price = 7;
+  int32 greenshare = 8;
+  int32 carid = 9;
+  int32 customerid = 10;
+}
+
+message BookingCarList {
+  repeated BookingCar booking_cars = 1;
+}
+
+message BookingCarResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+/*message CustomerRequest {
+  int32 customer_id = 1;
+}*/
+
+// Bliver ikke længere anvendt her
+/*message Customer {
+  int32 customer_id = 1;
+  string crs_name = 2;
+  string crs_lastname = 3;
+  string username = 4;
+  string password = 5;
+  string email = 6;
+  string phonenr = 7;
+}*/
+
+/*message CustomerList {
+  repeated Customer customers = 1;
+}*/
+
+/*message CustomerResponse {
+  bool success = 1;
+  string message = 2;
+}*/
+
 message CarRequest {
   string car_id = 1;
 }
 
 message Car {
   int32 car_id = 1;
-  string model = 2;
-  string color = 3;
-  int32 seats = 4;
+  string vin = 2;
+  int32 yearproduced = 3;
+  string manufactor = 4;
+  string model = 5;
+  string color = 6;
+  string altname = 7;
+  int32 seats = 8;
+  int32 carrange = 9;
+  int32 locationhubref = 10;
 }
 
 message CarList {
@@ -32,5 +139,4 @@ message CarList {
 message CarResponse {
   bool success = 1;
   string message = 2;
-  Car car = 3;
 }
