@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|c:\\users\\thoma\\documents\\via\\_sep3\\via-sep3-grp3-biludljening\\car rental service\\blazor front end\\yourgreencar\\components\\pages\\addcar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|solutionrelative:components\\pages\\addcar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|c:\\users\\thoma\\documents\\via\\_sep3\\via-sep3-grp3-biludljening\\car rental service\\blazor front end\\yourgreencar\\components\\pages\\registeruser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|solutionrelative:components\\pages\\registeruser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|c:\\users\\thoma\\documents\\via\\_sep3\\via-sep3-grp3-biludljening\\car rental service\\blazor front end\\yourgreencar\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{208AE5E2-CBFD-47D2-95DA-85BFC17A069F}|YourGreenCar.csproj|solutionrelative:wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddCar.razor",
+              "DocumentMoniker": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\Components\\Pages\\AddCar.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\AddCar.razor",
+              "ToolTip": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\Components\\Pages\\AddCar.razor",
+              "RelativeToolTip": "Components\\Pages\\AddCar.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T15:10:58.189Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterUser.razor",
+              "DocumentMoniker": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\Components\\Pages\\RegisterUser.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\RegisterUser.razor",
+              "ToolTip": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\Components\\Pages\\RegisterUser.razor",
+              "RelativeToolTip": "Components\\Pages\\RegisterUser.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T18:34:47.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\thoma\\Documents\\VIA\\_SEP3\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\Blazor Front End\\YourGreenCar\\wwwroot\\app.css",
+              "RelativeToolTip": "wwwroot\\app.css",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-02T16:26:15.676Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
