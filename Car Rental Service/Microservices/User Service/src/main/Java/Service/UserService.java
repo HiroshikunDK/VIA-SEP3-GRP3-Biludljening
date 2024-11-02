@@ -1,143 +1,126 @@
-
-
 package Service;
 
+import UserService.grpc.UserOuterClass;
+import UserService.grpc.UserServiceGrpc;
+import UserService.grpc.UserOuterClass.UserRequest;
+import UserService.grpc.UserOuterClass.UserResponse;
+import UserService.grpc.UserOuterClass.LoginRequest;
+import UserService.grpc.UserOuterClass.LoginResponse;
+import UserService.grpc.UserOuterClass.UserList;
+import UserService.grpc.UserOuterClass.Empty;
+import Repository.IUserRepository;
 import Model.User;
-import databasehelper.Databasehelper;
 import io.grpc.stub.StreamObserver;
-import userservice.UserOuterClass;
-import userservice.UserServiceGrpc;
 
-import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
-public class UserService extends UserServiceGrpc.UserServiceImplBase
-{
-  private final Databasehelper dbHelper;
+public class UserService extends UserServiceGrpc.UserServiceImplBase {
+    private final IUserRepository userRepository;
 
-  public UserService(Databasehelper dbHelper) {
-    this.dbHelper = dbHelper;
-  }
-
-  @Override
-  public void registerUser(UserOuterClass.User request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Create a User object from the gRPC request
-    User newUser = new User(
-       request.getId(),
-        request.getUserFirstname(),
-        request.getUserLastname(),
-        request.getTitle(),
-        request.getEmail(),
-        request.getPhonenr(),
-        request.getUsername(),
-        request.getPassword(),
-        request.getUserpermission()
-    );
-
-    // Attempt to add the user to the database
-    boolean success = dbHelper.addUser(newUser);
-
-    // Prepare the response
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(success);
-
-    if (success) {
-      responseBuilder.setMessage("User registered successfully.")
-          .setUser(request);
-    } else {
-      responseBuilder.setMessage("Failed to register user.");
+    public UserService(IUserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    // Send the response
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
-  }
+    @Override
+    public void registerUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
+        // Convert from proto User to model User
+        User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), request.getPassword());
+        userRepository.addUser(newUser);
 
+        // Convert model User back to proto User
+        UserResponse response = UserResponse.newBuilder()
+                .setSuccess(true)
+                .setMessage("User registered successfully")
+                .setUser(convertToProtoUser(newUser))
+                .build();
 
-
-  @Override
-  public void getUserById(UserOuterClass.UserRequest request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Fetch user by ID
-    User user = dbHelper.getUserById(request.getId());
-
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(user != null);
-
-    if (user != null) {
-      responseBuilder.setMessage("User found.").getUser().getUserFirstname();
-    } else {
-      responseBuilder.setMessage("User not found.");
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
-  }
+    @Override
+    public void loginUser(LoginRequest request, StreamObserver<LoginResponse> responseObserver) {
+        Optional<User> userOptional = userRepository.getUserByUsername(request.getUsername());
 
-  @Override public void updateUser(User request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Update user information
-    boolean success = dbHelper.updateUser(request);
+        LoginResponse response;
+        if (userOptional.isPresent() && userOptional.get().getPassword().equals(request.getPassword())) {
+            response = LoginResponse.newBuilder()
+                    .setToken("dummy-token-for-" + request.getUsername())
+                    .build();
+        } else {
+            response = LoginResponse.newBuilder().setToken("").build();
+        }
 
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(success);
-
-    if (success) {
-      responseBuilder.setMessage("User updated successfully.");
-    } else {
-      responseBuilder.setMessage("Failed to update user.");
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
-  }
+    @Override
+    public void getUserById(UserRequest request, StreamObserver<UserResponse> responseObserver) {
+        Optional<User> userOptional = userRepository.getUserById(request.getId());
 
-  @Override
-  public void deleteUser(UserOuterClass.UserRequest request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Delete user by ID
-    boolean success = dbHelper.deleteUser(request.getId());
+        UserResponse response = userOptional.map(user -> UserResponse.newBuilder()
+                        .setSuccess(true)
+                        .setMessage("User found")
+                        .setUser(convertToProtoUser(user))
+                        .build())
+                .orElse(UserResponse.newBuilder()
+                        .setSuccess(false)
+                        .setMessage("User not found")
+                        .build());
 
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(success);
-
-    if (success) {
-      responseBuilder.setMessage("User deleted successfully.");
-    } else {
-      responseBuilder.setMessage("Failed to delete user.");
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
-  }
+    @Override
+    public void updateUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
+        User updatedUser = new User(request.getId(), request.getUsername(), request.getEmail(), request.getRole(), request.getPassword());
+        userRepository.updateUser(updatedUser);
 
-  @Override
-  public void listUsers(UserOuterClass.empty request, StreamObserver<UserOuterClass.UserList> responseObserver) {
-    // Get all users from the database
-    List<User> users = dbHelper.getAllUsers();
+        UserResponse response = UserResponse.newBuilder()
+                .setSuccess(true)
+                .setMessage("User updated successfully")
+                .setUser(convertToProtoUser(updatedUser))
+                .build();
 
-    // Use the generated UserList builder
-    UserOuterClass.UserList.Builder responseBuilder = UserOuterClass.UserList.newBuilder();
-
-    // Iterate through the users and add them to the response
-    for (User user : users) {
-      // Create a new User object using the generated protobuf class
-      UserOuterClass.User userResponse = UserOuterClass.User.newBuilder()
-          .setId(user.getId())
-          .setUserFirstname(user.getUserFirstname())
-          .setUserLastname(user.getUserLastname())
-          .setTitle(user.getTitle())
-          .setEmail(user.getEmail())
-          .setPhonenr(user.getPhonenr())
-          .setUsername(user.getUsername())
-          .setPassword(user.getPassword()) // Consider removing this for security reasons
-          .setUserpermission(user.getUserpermission())
-          .build();
-
-      // Add the user to the response builder
-      responseBuilder.addUsers(userResponse);
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
-    // Send the response back to the client
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
-  }
+    @Override
+    public void deleteUser(UserRequest request, StreamObserver<UserResponse> responseObserver) {
+        boolean success = userRepository.deleteUser(request.getId());
+
+        UserResponse response = UserResponse.newBuilder()
+                .setSuccess(success)
+                .setMessage(success ? "User deleted successfully" : "User not found")
+                .build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void listUsers(Empty request, StreamObserver<UserList> responseObserver) {
+        UserList userList = UserList.newBuilder()
+                .addAllUsers(userRepository.getAllUsers().stream()
+                        .map(this::convertToProtoUser)
+                        .collect(Collectors.toList()))
+                .build();
+
+        responseObserver.onNext(userList);
+        responseObserver.onCompleted();
+    }
+
+    private UserOuterClass.User convertToProtoUser(User user) {
+        return UserOuterClass.User.newBuilder()
+                .setId(user.getId())
+                .setUsername(user.getUsername())
+                .setEmail(user.getEmail())
+                .setRole(user.getRole())
+                .setPassword(user.getPassword())
+                .build();
+    }
 }
-
-
