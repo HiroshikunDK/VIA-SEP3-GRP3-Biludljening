@@ -1,70 +1,118 @@
 package Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  private int id;
+  private String userFirstname;
+  private String userLastname;
+  private String title;
+  private String email;
+  private int phonenr;
+  private String username;
+  private String password;
+  private String userpermission;
 
-    private String username;
-    private String email;
-    private String role;
-    private String password;
+  public User(int id, String userFirstname, String userLastname, String title,
+      String email, int phonenr, String username, String password,
+      String userpermission)
+  {
+    this.id = id;
+    this.userFirstname = userFirstname;
+    this.userLastname = userLastname;
+    this.title = title;
+    this.email = email;
+    this.phonenr = phonenr;
+    this.username = username;
+    this.password = password;
+    this.userpermission = userpermission;
+  }
 
-    public User() {}
+  public String getUserpermission()
+  {
+    return userpermission;
+  }
 
-    public User(int id, String username, String email, String role, String password) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.role = role;
-        this.password = password;
-    }
+  public void setUserpermission(String userpermission)
+  {
+    this.userpermission = userpermission;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public String getUserFirstname()
+  {
+    return userFirstname;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setUserFirstname(String userFirstname)
+  {
+    this.userFirstname = userFirstname;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public int getId()
+  {
+    return id;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public void setId(int id)
+  {
+    this.id = id;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getUserLastname()
+  {
+    return userLastname;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setUserLastname(String userLastname)
+  {
+    this.userLastname = userLastname;
+  }
 
-    public String getRole() {
-        return role;
-    }
+  public String getTitle()
+  {
+    return title;
+  }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+  public void setTitle(String title)
+  {
+    this.title = title;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getEmail()
+  {
+    return email;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setEmail(String email)
+  {
+    this.email = email;
+  }
+
+  public int getPhonenr()
+  {
+    return phonenr;
+  }
+
+  public void setPhonenr(int phonenr)
+  {
+    this.phonenr = phonenr;
+  }
+
+  public String getUsername()
+  {
+    return username;
+  }
+
+  public void setUsername(String username)
+  {
+    this.username = username;
+  }
+
+  public String getPassword()
+  {
+    return password;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
+  }
 }
