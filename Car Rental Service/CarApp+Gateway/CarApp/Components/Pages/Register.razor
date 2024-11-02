@@ -1,0 +1,59 @@
+﻿@page "/register"
+@inject HttpClient Http
+
+<h3>Register</h3>
+
+<EditForm Model="registerModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="username">Username:</label>
+        <InputText id="username" @bind-Value="registerModel.Username" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="registerModel.Email" />
+    </div>
+    <div>
+        <label for="role">Role:</label>
+        <InputText id="role" @bind-Value="registerModel.Role" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <InputText id="password" type="password" @bind-Value="registerModel.Password" />
+    </div>
+    <button type="submit">Register</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(resultMessage))
+{
+    <p>@resultMessage</p>
+}
+
+@code {
+    private RegisterModel registerModel = new();
+    private string resultMessage;
+
+    private async Task HandleValidSubmit()
+    {
+        var response = await Http.PostAsJsonAsync("api/user/register", registerModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            resultMessage = "Registration successful!";
+        }
+        else
+        {
+            resultMessage = "Failed to register.";
+        }
+    }
+
+    public class RegisterModel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+        public string Password { get; set; }
+    }
+}
