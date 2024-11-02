@@ -10,11 +10,8 @@ service PaymentService {
 
   rpc CreateCreditcard (CreditcardRequest) returns (CreditcardResponse);
   rpc GetCreditcardById (CreditcardRequestById) returns (CreditcardResponse);
-
-  rpc DeletePayment (PaymentRequestById) returns (PaymentResponse);
 }
-
-// Credit card messages
+// Besked til oprettelse af et kreditkort
 message CreditcardRequest {
   int64 creditcard_id = 1;
   string creditcardnr = 2;
@@ -35,11 +32,10 @@ message CreditcardRequestById {
   int64 creditcard_id = 1;
 }
 
-// Payment messages
 message PaymentRequest {
   int64 id = 1;
   int64 customer = 2;
-  int32 bookingType = 3;
+  int32 bookingType = 3; // 0 for car, 1 for greenshare
   int64 booking = 4;
   string status = 5;
   int64 creditcardref = 6;
@@ -59,10 +55,9 @@ message PaymentResponse {
   int64 customer = 2;
   int32 bookingType = 3;
   int64 booking = 4;
-  string status = 5;
+  string status = 5; // Aktuel betalingsstatus
   int64 creditcardref = 6;
-  bool success = 7;
-  string message = 8;
+  bool success = 7; //indikere om den gik igennem
 }
 
 message PaymentListResponse {
