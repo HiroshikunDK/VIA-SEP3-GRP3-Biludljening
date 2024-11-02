@@ -1,11 +1,11 @@
 package Repository;
 
-import Model.Creditcard;
+import Model.CreditCard;
 
 import java.util.List;
 
-public interface ICreditcardRepository
+public interface ICreditCardRepository
 {
-  void addCreditcard(Creditcard creditcard);
-  List<Creditcard> getallCreditcards();
+    void addCreditcard(CreditCard creditcard);
+    List<CreditCard> getallCreditcards();
 }

@@ -1,28 +1,33 @@
-import Persistance.Databasehelper;
-import Repository.CreditcardRepository;
 import Repository.PaymentRepository;
-import Service.CreditcardService;
 import Service.PaymentService;
+import Persistance.HibernateUtility;
+import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import org.hibernate.SessionFactory;
 
 import java.io.IOException;
 
 public class Main {
-  public static void main(String[] args)
-      throws IOException, InterruptedException
-  {
-    PaymentRepository pr = new PaymentRepository();
-    CreditcardRepository cr = new CreditcardRepository();
-    PaymentService paymentService = new PaymentService(pr);
-    CreditcardService creditcardService = new CreditcardService(cr);
+    public static void main(String[] args) throws IOException, InterruptedException {
+        SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
 
-    io.grpc.Server server = ServerBuilder.forPort(5005)
-        .addService(paymentService)
-        .addService(creditcardService)
-        .build();
-    server.start();
-    System.out.println("Server running..");
+        PaymentRepository paymentRepository = new PaymentRepository(sessionFactory);
+        PaymentService paymentService = new PaymentService(paymentRepository, sessionFactory);
 
-    server.awaitTermination();
-  }
+        Server server = ServerBuilder.forPort(5005)
+                .addService(paymentService)
+                .build()
+                .start();
+
+        System.out.println("PaymentService gRPC server started on port " + server.getPort());
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Shutting down PaymentService gRPC server...");
+            server.shutdown();
+            HibernateUtility.shutdown();
+            System.out.println("Server shut down successfully.");
+        }));
+
+        server.awaitTermination();
+    }
 }
