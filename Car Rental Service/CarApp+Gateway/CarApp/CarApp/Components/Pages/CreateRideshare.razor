@@ -1,0 +1,67 @@
+﻿@page "/createrideshare"
+@inject HttpClient Http
+@using Shared.Dto
+
+<h3>Create Rideshare</h3>
+
+<div>
+    <EditForm Model="@rideshareRequest" OnValidSubmit="SubmitRideshare">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label for="carId">Car ID</label>
+            <InputNumber @bind-Value="rideshareRequest.CarId" id="carId" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="driverUsername">Driver Username</label>
+            <InputText @bind-Value="rideshareRequest.DriverUsername" id="driverUsername" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="availableSeats">Available Seats</label>
+            <InputNumber @bind-Value="rideshareRequest.AvailableSeats" id="availableSeats" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Create Rideshare</button>
+    </EditForm>
+
+    @if (!string.IsNullOrEmpty(successMessage))
+    {
+    <p class="text-success">@successMessage</p>
+    }
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+    <p class="text-danger">@errorMessage</p>
+    }
+</div>
+
+@code {
+private CreateRideshareRequestDto rideshareRequest = new CreateRideshareRequestDto();
+private string? successMessage;
+private string? errorMessage;
+
+private async Task SubmitRideshare()
+{
+try
+{
+var response = await Http.PostAsJsonAsync("api/rideshare/create", rideshareRequest);
+
+if (response.IsSuccessStatusCode)
+{
+successMessage = "Rideshare created successfully!";
+errorMessage = null;
+}
+else
+{
+errorMessage = "Failed to create rideshare.";
+successMessage = null;
+}
+}
+catch (Exception ex)
+{
+errorMessage = $"Error: {ex.Message}";
+successMessage = null;
+}
+}
+}
