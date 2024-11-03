@@ -56,55 +56,16 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase
 
   @Override
   public void getUserById(UserOuterClass.UserRequest request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Fetch user by ID
-    User user = dbHelper.getUserById(request.getId());
 
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(user != null);
-
-    if (user != null) {
-      responseBuilder.setMessage("User found.").getUser().getUserFirstname();
-    } else {
-      responseBuilder.setMessage("User not found.");
-    }
-
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
   }
 
   @Override public void updateUser(User request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Update user information
-    boolean success = dbHelper.updateUser(request);
 
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(success);
-
-    if (success) {
-      responseBuilder.setMessage("User updated successfully.");
-    } else {
-      responseBuilder.setMessage("Failed to update user.");
-    }
-
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
   }
 
   @Override
   public void deleteUser(UserOuterClass.UserRequest request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
-    // Delete user by ID
-    boolean success = dbHelper.deleteUser(request.getId());
 
-    UserOuterClass.UserResponse.Builder responseBuilder = UserOuterClass.UserResponse.newBuilder()
-        .setSuccess(success);
-
-    if (success) {
-      responseBuilder.setMessage("User deleted successfully.");
-    } else {
-      responseBuilder.setMessage("Failed to delete user.");
-    }
-
-    responseObserver.onNext(responseBuilder.build());
-    responseObserver.onCompleted();
   }
 
   @Override
