@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCGateway", "gRPCGateway\gRPCGateway.csproj", "{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarApp", "CarApp", "{35E10920-4778-41C6-AF6C-6C0599A00F75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Broker", "Broker", "{79A0CD07-D3A8-479D-9613-81C4E88642FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{FFEC0074-903B-4BDD-ABA9-143F59890726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A0FFDDF-4726-49E3-8239-4FCA2F98C5AD} = {79A0CD07-D3A8-479D-9613-81C4E88642FD}
+		{5D491BCF-3631-4DE4-9F7C-DA0ECC9DD792} = {FFEC0074-903B-4BDD-ABA9-143F59890726}
+	EndGlobalSection
+EndGlobal

@@ -1,64 +1,101 @@
 package Repository;
 
 import Model.Rideshare;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
+import Persistence.DatabaseHelper;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class RideshareRepository implements IRideshareRepository {
-    private final SessionFactory sessionFactory;
+    private final DatabaseHelper dbHelper;
 
-    public RideshareRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public RideshareRepository(DatabaseHelper dbHelper) {
+        this.dbHelper = dbHelper;
     }
 
     @Override
     public Rideshare createRideshare(Rideshare rideshare) {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            session.persist(rideshare);
-            transaction.commit();
-            return rideshare;
-        } catch (Exception e) {
-            if (transaction != null) transaction.rollback();
+        String sql = "INSERT INTO rideshares (car_id, driver_username, available_seats) VALUES (?, ?, ?)";
+
+        try (Connection conn = dbHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            pstmt.setInt(1, rideshare.getCarId());
+            pstmt.setString(2, rideshare.getDriverUsername());
+            pstmt.setInt(3, rideshare.getAvailableSeats());
+            pstmt.executeUpdate();
+
+            try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    rideshare.setRideId(generatedKeys.getInt(1));
+                }
+            }
+        } catch (SQLException e) {
             throw new RuntimeException("Error creating Rideshare", e);
         }
+        return rideshare;
     }
 
     @Override
     public Optional<Rideshare> getRideshareById(int rideId) {
-        try (Session session = sessionFactory.openSession()) {
-            Rideshare rideshare = session.get(Rideshare.class, rideId);
-            return Optional.ofNullable(rideshare);
+        String sql = "SELECT * FROM rideshares WHERE ride_id = ?";
+
+        try (Connection conn = dbHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, rideId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    Rideshare rideshare = new Rideshare(
+                            rs.getInt("ride_id"),
+                            rs.getInt("car_id"),
+                            rs.getString("driver_username"),
+                            rs.getInt("available_seats"));
+                    return Optional.of(rideshare);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving Rideshare by ID", e);
         }
+        return Optional.empty();
     }
 
     @Override
     public List<Rideshare> listRideshares(int carId) {
-        try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM Rideshare WHERE carId = :carId", Rideshare.class)
-                    .setParameter("carId", carId)
-                    .list();
+        List<Rideshare> rideshares = new ArrayList<>();
+        String sql = "SELECT * FROM rideshares WHERE car_id = ?";
+
+        try (Connection conn = dbHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, carId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    Rideshare rideshare = new Rideshare(
+                            rs.getInt("ride_id"),
+                            rs.getInt("car_id"),
+                            rs.getString("driver_username"),
+                            rs.getInt("available_seats"));
+                    rideshares.add(rideshare);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error listing Rideshares", e);
         }
+        return rideshares;
     }
 
     @Override
     public void addPassenger(int rideId, String passengerUsername) {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Rideshare rideshare = session.get(Rideshare.class, rideId);
-            if (rideshare != null && rideshare.getAvailableSeats() > 0) {
-                rideshare.addPassenger(passengerUsername);
-                session.merge(rideshare);  // Update the entity
-                transaction.commit();
-            }
-        } catch (Exception e) {
-            if (transaction != null) transaction.rollback();
+        String sql = "INSERT INTO passengers (ride_id, passenger_username) VALUES (?, ?)";
+
+        try (Connection conn = dbHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, rideId);
+            pstmt.setString(2, passengerUsername);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
             throw new RuntimeException("Error adding passenger to Rideshare", e);
         }
     }

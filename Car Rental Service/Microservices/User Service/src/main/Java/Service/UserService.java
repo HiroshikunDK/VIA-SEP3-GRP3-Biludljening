@@ -1,10 +1,15 @@
 package Service;
 
-import Model.User;
-import Repository.IUserRepository;
 import UserService.grpc.UserOuterClass;
-import UserService.grpc.UserOuterClass.*;
 import UserService.grpc.UserServiceGrpc;
+import UserService.grpc.UserOuterClass.UserRequest;
+import UserService.grpc.UserOuterClass.UserResponse;
+import UserService.grpc.UserOuterClass.LoginRequest;
+import UserService.grpc.UserOuterClass.LoginResponse;
+import UserService.grpc.UserOuterClass.UserList;
+import UserService.grpc.UserOuterClass.Empty;
+import Repository.IUserRepository;
+import Model.User;
 import io.grpc.stub.StreamObserver;
 
 import java.util.Optional;

@@ -6,11 +6,4 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-<<<<<<< HEAD
-=======
-    <ItemGroup>
-      <ProjectReference Include="..\Shared\Shared.csproj" />
-    </ItemGroup>
-
->>>>>>> Alexander
 </Project>

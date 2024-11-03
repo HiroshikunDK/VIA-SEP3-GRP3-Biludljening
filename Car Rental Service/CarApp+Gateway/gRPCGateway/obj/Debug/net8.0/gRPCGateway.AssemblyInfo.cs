@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("gRPCGateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b552a5d465647005fe12615126eeb0988ef5168")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9481a3aa0ba568638d5939ca5777128b9ce9ae9")]
->>>>>>> Alexander
 [assembly: System.Reflection.AssemblyProductAttribute("gRPCGateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("gRPCGateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

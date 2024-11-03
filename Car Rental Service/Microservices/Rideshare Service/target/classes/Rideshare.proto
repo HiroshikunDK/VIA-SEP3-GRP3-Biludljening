@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-<<<<<<< HEAD
 option java_multiple_files = true;
 option java_package = "RideShareService.grpcspringbootexample";
 import "google/protobuf/wrappers.proto";
@@ -135,45 +134,3 @@ message Location {
   string altname = 6;
 }
 */
-=======
-option java_package = "RideShareService.grpc";
-
-service RideShareService {
-  rpc CreateRideShare (CreateRideShareRequest) returns (RideShareResponse);
-  rpc JoinRideShare (JoinRideShareRequest) returns (RideShareResponse);
-  rpc ListRideShares (ListRideSharesRequest) returns (RideShareListResponse);
-}
-
-message CreateRideShareRequest {
-  int32 car_id = 1;
-  string driver_username = 2;
-  int32 available_seats = 3;
-}
-
-message JoinRideShareRequest {
-  int32 ride_id = 1;
-  string passenger_username = 2;
-}
-
-message ListRideSharesRequest {
-  int32 car_id = 1;
-}
-
-message RideShareResponse {
-  bool success = 1;
-  string message = 2;
-  RideShare ride_share = 3;
-}
-
-message RideShare {
-  int32 ride_id = 1;
-  int32 car_id = 2;
-  string driver_username = 3;
-  int32 available_seats = 4;
-  repeated string passengers = 5;
-}
-
-message RideShareListResponse {
-  repeated RideShare ride_shares = 1;
-}
->>>>>>> Alexander

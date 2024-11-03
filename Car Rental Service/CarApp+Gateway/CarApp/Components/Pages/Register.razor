@@ -1,63 +1,59 @@
 ﻿@page "/register"
-@inject HttpClient HttpClient
-@using Shared.Dto 
+@inject HttpClient Http
 
 <h3>Register</h3>
 
-<EditForm Model="registerUser" OnValidSubmit="HandleRegister">
+<EditForm Model="registerModel" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div>
-        <label>Username:</label>
-        <InputText @bind-Value="registerUser.Username" />
+        <label for="username">Username:</label>
+        <InputText id="username" @bind-Value="registerModel.Username" />
     </div>
-    
     <div>
-        <label>Email:</label>
-        <InputText @bind-Value="registerUser.Email" />
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="registerModel.Email" />
     </div>
-    
     <div>
-        <label>Password:</label>
-        <InputText @bind-Value="registerUser.Password" type="password" />
+        <label for="role">Role:</label>
+        <InputText id="role" @bind-Value="registerModel.Role" />
     </div>
-    
     <div>
-        <label>Role:</label>
-        <InputText @bind-Value="registerUser.Role" />
+        <label for="password">Password:</label>
+        <InputText id="password" type="password" @bind-Value="registerModel.Password" />
     </div>
-    
     <button type="submit">Register</button>
 </EditForm>
 
-@if (registrationMessage != null)
+@if (!string.IsNullOrEmpty(resultMessage))
 {
-    <p>@registrationMessage</p>
+    <p>@resultMessage</p>
 }
 
 @code {
-    private RegisterUserRequestDto registerUser = new RegisterUserRequestDto();
-    private string registrationMessage;
+    private RegisterModel registerModel = new();
+    private string resultMessage;
 
-    private async Task HandleRegister()
+    private async Task HandleValidSubmit()
     {
-        try
-        {
-            var response = await HttpClient.PostAsJsonAsync("api/user/register", registerUser);
+        var response = await Http.PostAsJsonAsync("api/user/register", registerModel);
 
-            if (response.IsSuccessStatusCode)
-            {
-                registrationMessage = "Registration successful!";
-            }
-            else
-            {
-                registrationMessage = "Registration failed. Please try again.";
-            }
-        }
-        catch (Exception ex)
+        if (response.IsSuccessStatusCode)
         {
-            registrationMessage = $"Error: {ex.Message}";
+            resultMessage = "Registration successful!";
         }
+        else
+        {
+            resultMessage = "Failed to register.";
+        }
+    }
+
+    public class RegisterModel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+        public string Password { get; set; }
     }
 }

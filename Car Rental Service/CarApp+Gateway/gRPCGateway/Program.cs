@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpcClient<RideShareService.RideShareServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5008"); // Rideshare backend service
+    options.Address = new Uri("http://localhost:5007"); // Rideshare backend service
 });
 
 builder.Services.AddGrpcClient<UserService.UserServiceClient>(options =>
