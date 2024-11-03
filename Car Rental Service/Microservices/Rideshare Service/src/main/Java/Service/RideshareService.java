@@ -18,7 +18,7 @@ public class RideshareService extends RideShareServiceGrpc.RideShareServiceImplB
 
     @Override
     public void createRideShare(Rideshare.CreateRideShareRequest request, StreamObserver<Rideshare.RideShareResponse> responseObserver) {
-        Model.Rideshare rideshare = new Model.Rideshare(0, request.getCarId(), request.getDriverUsername(), request.getAvailableSeats());
+        Model.Rideshare rideshare = new Model.Rideshare(request.getCarId(), request.getDriverUsername(), request.getAvailableSeats());
         rideshareRepository.createRideshare(rideshare);
 
         Rideshare.RideShareResponse response = Rideshare.RideShareResponse.newBuilder()
