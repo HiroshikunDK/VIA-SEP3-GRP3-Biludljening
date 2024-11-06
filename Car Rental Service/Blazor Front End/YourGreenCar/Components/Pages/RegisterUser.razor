@@ -1,0 +1,112 @@
+﻿@page "/RegisterUser"
+@inject IJSRuntime JsRuntime
+@using YourGreenCar.Components.Shared.DTO
+@using YourGreenCar.Components.Pages
+
+<PageTitle>Add User</PageTitle>
+
+<h2>Add User</h2>
+
+<form class="addCarForm">
+    <div class="form-group">
+        <h3>Enter User Username</h3>
+        <label asp-for="Username" class="control-label"></label>
+        <input @bind="Username" asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter User Email</h3>
+        <label asp-for="Email" class="control-label"></label>
+        <input @bind="Email" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter User Role</h3>
+        <label asp-for="Role" class="control-label"></label>
+        <input @bind="Role" asp-for="Role" class="form-control" />
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h3>Enter User Password</h3>
+        <label asp-for="Password" class="control-label"></label>
+        <input @bind="Password" asp-for="Password" class="form-control" type="text" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add User</button>
+</form>
+
+<div class="CarList"> 
+<h2>Registered Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+            @foreach (var user in registeredUserList)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>@user.Password</td>
+                </tr>
+            }
+
+
+    </tbody>
+</table>
+</div>
+
+
+<script>
+    function showAlert(message) {
+        alert(message);
+    }
+</script>
+
+
+@code {
+    private string Username;
+    private string Email;
+    private string Role;
+    private string Password;
+
+    public RegisterUserRequestDto tempUser;
+    public List<RegisterUserRequestDto> registeredUserList = new List<RegisterUserRequestDto>()
+{
+    new RegisterUserRequestDto { Username = "john_doe", Email = "john@example.com", Role = "User", Password = "password123" },
+    new RegisterUserRequestDto { Username = "jane_smith", Email = "jane@example.com", Role = "Admin", Password = "adminpass" }
+};
+
+    private HttpClient httpClient = new HttpClient();
+
+    public async Task PostUser()
+    {
+
+        var apiUrl = "http://localhost:5002/api/user";
+
+        // Send a POST request with the tempUser data
+        var response = await httpClient.PostAsJsonAsync(apiUrl, tempUser);
+        if (response.IsSuccessStatusCode)
+        {
+            await JsRuntime.InvokeVoidAsync("Alert", ("Post of User " + tempUser.Username + " was Succesful"));
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("Alert", ("Post of User " + tempUser.Username + " Failed"));
+        }
+
+    }
+
+}

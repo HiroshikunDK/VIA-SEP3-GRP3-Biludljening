@@ -1,0 +1,63 @@
+﻿@page "/createpayment"
+@using Shared.Dto
+@inject HttpClient Http
+@using Shared.Dto
+@code {
+    private CreatePaymentRequestDto payment = new CreatePaymentRequestDto();
+    private string message = "";
+
+    private async Task SubmitPayment()
+    {
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/payment/create", payment);
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Payment created successfully!";
+                payment = new CreatePaymentRequestDto(); // Clear form
+            }
+            else
+            {
+                message = "Failed to create payment.";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+}
+
+<h3>Create Payment</h3>
+
+<div class="form-group">
+    <label>Customer ID:</label>
+    <input @bind="payment.Customer" class="form-control" type="number" />
+</div>
+
+<div class="form-group">
+    <label>Booking Type (0 for Car, 1 for GreenShare):</label>
+    <input @bind="payment.BookingType" class="form-control" type="number" />
+</div>
+
+<div class="form-group">
+    <label>Booking ID:</label>
+    <input @bind="payment.Booking" class="form-control" type="number" />
+</div>
+
+<div class="form-group">
+    <label>Status:</label>
+    <input @bind="payment.Status" class="form-control" type="text" />
+</div>
+
+<div class="form-group">
+    <label>Credit Card Reference:</label>
+    <input @bind="payment.CreditCardRef" class="form-control" type="number" />
+</div>
+
+<button class="btn btn-primary" @onclick="SubmitPayment">Submit Payment</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
