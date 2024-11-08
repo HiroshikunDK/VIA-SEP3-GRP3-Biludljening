@@ -1,0 +1,125 @@
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.exe
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.deps.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.runtimeconfig.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.AssemblyReference.cache
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfoInputs.cache
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfo.cs
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.CoreCompileInputs.cache
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.gRPCGateway.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.gRPCGateway.props
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.gRPCGateway.props
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.gRPCGateway.props
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\scopedcss\bundle\gRPCGateway.styles.css
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGate.3E328F5F.Up2Date
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\refint\gRPCGateway.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.genruntimeconfig.cache
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\obj\Debug\net8.0\ref\gRPCGateway.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Shared.dll
+C:\Users\Nebul\RiderProjects\gRPC Gateway\gRPCGateway\bin\Debug\net8.0\Shared.pdb
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.exe
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.deps.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.runtimeconfig.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Shared.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Shared.pdb
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.AssemblyReference.cache
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfoInputs.cache
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfo.cs
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.CoreCompileInputs.cache
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.sourcelink.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.gRPCGateway.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.gRPCGateway.props
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.gRPCGateway.props
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.gRPCGateway.props
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\scopedcss\bundle\gRPCGateway.styles.css
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGate.3E328F5F.Up2Date
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\refint\gRPCGateway.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.genruntimeconfig.cache
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\ref\gRPCGateway.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.exe
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.deps.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.runtimeconfig.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Shared.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Shared.pdb
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.AssemblyReference.cache
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfoInputs.cache
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.AssemblyInfo.cs
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.csproj.CoreCompileInputs.cache
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.sourcelink.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.gRPCGateway.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.gRPCGateway.props
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.gRPCGateway.props
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.gRPCGateway.props
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\scopedcss\bundle\gRPCGateway.styles.css
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGate.3E328F5F.Up2Date
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\refint\gRPCGateway.dll
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.pdb
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.genruntimeconfig.cache
+C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\ref\gRPCGateway.dll
