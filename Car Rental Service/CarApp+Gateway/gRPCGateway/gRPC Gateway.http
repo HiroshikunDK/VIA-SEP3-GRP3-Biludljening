@@ -1,6 +1,0 @@
-@gRPC_Gateway_HostAddress = http://localhost:5002
-
-GET {{gRPC_Gateway_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
