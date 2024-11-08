@@ -10,8 +10,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
-        // Configure Razor Components without enforcing global anti-forgery validation
+        
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
@@ -32,11 +31,10 @@ public class Program
             });
 
         builder.Services.AddAuthorization();
-
-        // Add Anti-Forgery services but only use them on POST forms, not globally
+        
         builder.Services.AddAntiforgery(options =>
         {
-            options.HeaderName = "X-CSRF-TOKEN"; // Define header for anti-forgery token
+            options.HeaderName = "X-CSRF-TOKEN"; 
         });
 
         var app = builder.Build();
@@ -54,8 +52,8 @@ public class Program
         app.UseAuthorization();
 
         app.UseRouting();
-
-        // Map Razor Components without enforcing anti-forgery globally
+        app.UseAntiforgery();
+        
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();
 

@@ -25,50 +25,51 @@
         <InputText @bind-Value="registerUser.Password" type="password" />
     </div>
 
-    <div>
-        <label>Role:</label>
-        <InputText @bind-Value="registerUser.Role" />
-    </div>
-
     <button type="submit">Register</button>
 </EditForm>
 
 @if (registrationMessage != null)
 {
-<p>@registrationMessage</p>
+    <p>@registrationMessage</p>
 }
 
 @code {
-private RegisterUserRequestDto registerUser = new RegisterUserRequestDto();
-private string registrationMessage;
+    private RegisterUserRequestDto registerUser = new RegisterUserRequestDto();
+    private string registrationMessage;
 
-private async Task HandleRegister()
-{
-try
-{
-// Retrieve the anti-forgery token from the Broker
-var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
+    private async Task HandleRegister()
+    {
+        try
+        {
+            // Retrieve the anti-forgery token
+            var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
+            Console.WriteLine("Retrieved token:", token); // Check if token is retrieved correctly
 
-// Add the anti-forgery token to the headers
-HttpClient.DefaultRequestHeaders.Add("X-CSRF-TOKEN", token);
+            // Create a new HttpRequestMessage to ensure the header is only added for this request
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
+            {
+                Content = JsonContent.Create(registerUser)
+            };
+            requestMessage.Headers.Add("X-CSRF-TOKEN", token); // Set token header
 
-// Make the POST request
-var response = await HttpClient.PostAsJsonAsync("api/user/register", registerUser);
+            // Send the request and log response status
+            var response = await HttpClient.SendAsync(requestMessage);
+            Console.WriteLine("Registration response status:", response.StatusCode);
 
-if (response.IsSuccessStatusCode)
-{
-registrationMessage = "Registration successful!";
-NavigationManager.NavigateTo("/login");
-}
-else
-{
-var errorResponse = await response.Content.ReadAsStringAsync();
-registrationMessage = $"Registration failed: {errorResponse}";
-}
-}
-catch (Exception ex)
-{
-registrationMessage = $"Error: {ex.Message}";
-}
-}
+            if (response.IsSuccessStatusCode)
+            {
+                registrationMessage = "Registration successful!";
+                NavigationManager.NavigateTo("/login");
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                registrationMessage = $"Registration failed: {errorResponse}";
+            }
+        }
+        catch (Exception ex)
+        {
+            registrationMessage = $"Error: {ex.Message}";
+        }
+    }
 }

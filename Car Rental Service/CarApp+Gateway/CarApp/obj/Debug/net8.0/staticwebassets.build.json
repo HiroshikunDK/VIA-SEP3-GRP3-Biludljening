@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eJZ6PeCYuR49v3BTsXY85z3M1OjgR498pXeC0UK0+7Y=",
+  "Hash": "4q8zZGX2W7hFAmFBRGLlJ36fUYG0u7EKFZCnj2EXuoI=",
   "Source": "CarApp",
   "BasePath": "_content/CarApp",
   "Mode": "Default",
@@ -53,25 +53,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CarApp.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\_Host.cshtml",
-      "SourceId": "CarApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
-      "BasePath": "_content/CarApp",
-      "RelativePath": "_Host.cshtml",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "wwwroot\\_Host.cshtml"
     },
     {
       "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\app.css",

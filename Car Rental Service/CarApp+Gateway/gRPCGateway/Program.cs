@@ -4,6 +4,17 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5125")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 builder.Services.AddGrpcClient<RideShareService.RideShareServiceClient>(options =>
 {
     options.Address = new Uri("http://localhost:5008");
@@ -52,6 +63,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+app.UseCors();
 app.UseRouting();
 
 app.UseAuthentication();

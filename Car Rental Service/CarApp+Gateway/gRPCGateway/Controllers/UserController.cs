@@ -19,20 +19,20 @@ public class UserController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto request)
     {
-        var role = string.IsNullOrEmpty(request.Role) ? "Customer" : request.Role;
-
+        // Set the role to "Customer" directly
         var grpcUser = new User()
         {
             Username = request.Username,
             Email = request.Email,
-            Role = role,
-            Password = request.Password
+            Password = request.Password,
+            Role = "Customer" 
         };
-        
+    
         var response = await _userClient.RegisterUserAsync(grpcUser);
-        
+    
         return Ok(new { response.Message, response.Success });
     }
+
 
     [HttpPost("login")]
     [AllowAnonymous] 

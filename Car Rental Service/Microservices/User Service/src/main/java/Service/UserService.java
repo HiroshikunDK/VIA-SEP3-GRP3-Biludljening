@@ -22,7 +22,8 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
     @Override
     public void registerUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
         String hashedPassword = PasswordHelper.hashPassword(request.getPassword());
-        User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), hashedPassword);
+
+        User newUser = new User(0, request.getUsername(), request.getEmail(), "Customer", hashedPassword);
         userRepository.addUser(newUser);
 
         UserResponse response = UserResponse.newBuilder()
@@ -34,6 +35,7 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     @Override
     public void loginUser(LoginRequest request, StreamObserver<LoginResponse> responseObserver) {
