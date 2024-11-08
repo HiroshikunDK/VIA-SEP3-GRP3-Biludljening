@@ -1,0 +1,72 @@
+﻿@page "/login"
+@inject HttpClient HttpClient
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@using Shared.Dto
+
+<h3>Login</h3>
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Username:</label>
+        <InputText @bind-Value="loginModel.Username" />
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="loginModel.Password" type="password" />
+    </div>
+
+    <button type="submit">Login</button>
+</EditForm>
+
+@if (loginMessage != null)
+{
+<p>@loginMessage</p>
+}
+
+@code {
+private LoginRequestDto loginModel = new LoginRequestDto();
+private string loginMessage;
+
+private async Task HandleLogin()
+{
+try
+{
+// Retrieve the anti-forgery token from the Broker
+var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
+
+// Add the anti-forgery token to the headers
+HttpClient.DefaultRequestHeaders.Add("X-CSRF-TOKEN", token);
+
+// Make the POST request
+var response = await HttpClient.PostAsJsonAsync("api/user/login", loginModel);
+
+if (response.IsSuccessStatusCode)
+{
+var result = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
+
+if (result != null && result.Success)
+{
+await JS.InvokeVoidAsync("localStorage.setItem", "authToken", result.Token);
+NavigationManager.NavigateTo("/");
+}
+else
+{
+loginMessage = "Login failed. Please check your credentials.";
+}
+}
+else
+{
+loginMessage = "Login failed. Please try again.";
+}
+}
+catch (Exception ex)
+{
+    loginMessage = $"Error: {ex.Message}";
+}
+}
+}

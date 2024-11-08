@@ -1,6 +1,8 @@
 ﻿@page "/register"
 @inject HttpClient HttpClient
-@using Shared.Dto 
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@using Shared.Dto
 
 <h3>Register</h3>
 
@@ -12,52 +14,61 @@
         <label>Username:</label>
         <InputText @bind-Value="registerUser.Username" />
     </div>
-    
+
     <div>
         <label>Email:</label>
         <InputText @bind-Value="registerUser.Email" />
     </div>
-    
+
     <div>
         <label>Password:</label>
         <InputText @bind-Value="registerUser.Password" type="password" />
     </div>
-    
+
     <div>
         <label>Role:</label>
         <InputText @bind-Value="registerUser.Role" />
     </div>
-    
+
     <button type="submit">Register</button>
 </EditForm>
 
 @if (registrationMessage != null)
 {
-    <p>@registrationMessage</p>
+<p>@registrationMessage</p>
 }
 
 @code {
-    private RegisterUserRequestDto registerUser = new RegisterUserRequestDto();
-    private string registrationMessage;
+private RegisterUserRequestDto registerUser = new RegisterUserRequestDto();
+private string registrationMessage;
 
-    private async Task HandleRegister()
-    {
-        try
-        {
-            var response = await HttpClient.PostAsJsonAsync("api/user/register", registerUser);
+private async Task HandleRegister()
+{
+try
+{
+// Retrieve the anti-forgery token from the Broker
+var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
 
-            if (response.IsSuccessStatusCode)
-            {
-                registrationMessage = "Registration successful!";
-            }
-            else
-            {
-                registrationMessage = "Registration failed. Please try again.";
-            }
-        }
-        catch (Exception ex)
-        {
-            registrationMessage = $"Error: {ex.Message}";
-        }
-    }
+// Add the anti-forgery token to the headers
+HttpClient.DefaultRequestHeaders.Add("X-CSRF-TOKEN", token);
+
+// Make the POST request
+var response = await HttpClient.PostAsJsonAsync("api/user/register", registerUser);
+
+if (response.IsSuccessStatusCode)
+{
+registrationMessage = "Registration successful!";
+NavigationManager.NavigateTo("/login");
+}
+else
+{
+var errorResponse = await response.Content.ReadAsStringAsync();
+registrationMessage = $"Registration failed: {errorResponse}";
+}
+}
+catch (Exception ex)
+{
+registrationMessage = $"Error: {ex.Message}";
+}
+}
 }

@@ -1,0 +1,10 @@
+﻿<script>
+    async function getAntiForgeryToken() {
+        const response = await fetch('http://localhost:5002/api/antiforgery/token', {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const token = await response.text();
+        return token;
+    }
+</script>

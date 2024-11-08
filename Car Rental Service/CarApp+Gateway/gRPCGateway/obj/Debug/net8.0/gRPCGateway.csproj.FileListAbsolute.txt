@@ -123,3 +123,11 @@ C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rent
 C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.pdb
 C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\gRPCGateway.genruntimeconfig.cache
 C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\obj\Debug\net8.0\ref\gRPCGateway.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\gRPCGateway\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

@@ -2,6 +2,7 @@ package Service;
 
 import Model.User;
 import Persistence.PasswordHelper;
+import Persistence.TokenHelper;
 import Repository.IUserRepository;
 import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.*;
@@ -20,7 +21,6 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
 
     @Override
     public void registerUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
-        // Hash the password before saving
         String hashedPassword = PasswordHelper.hashPassword(request.getPassword());
         User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), hashedPassword);
         userRepository.addUser(newUser);
@@ -42,16 +42,25 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
         LoginResponse response;
         if (userOptional.isPresent() &&
                 PasswordHelper.checkPassword(request.getPassword(), userOptional.get().getPassword())) {
+
+            User user = userOptional.get();
+
+            String token = TokenHelper.generateToken(user.getUsername(), user.getRole());
+
             response = LoginResponse.newBuilder()
-                    .setToken("dummy-token-for-" + request.getUsername())
+                    .setToken(token)
+                    .setRole(user.getRole())
                     .build();
         } else {
-            response = LoginResponse.newBuilder().setToken("").build();
+            response = LoginResponse.newBuilder()
+                    .setToken("")
+                    .build();
         }
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     @Override
     public void getUserById(UserRequest request, StreamObserver<UserResponse> responseObserver) {

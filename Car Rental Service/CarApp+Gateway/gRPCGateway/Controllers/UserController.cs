@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace gRPC_Gateway.Controllers;
 
@@ -15,13 +16,16 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("register")]
+    [AllowAnonymous]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto request)
     {
+        var role = string.IsNullOrEmpty(request.Role) ? "Customer" : request.Role;
+
         var grpcUser = new User()
         {
             Username = request.Username,
             Email = request.Email,
-            Role = request.Role,
+            Role = role,
             Password = request.Password
         };
         
@@ -30,8 +34,8 @@ public class UserController : ControllerBase
         return Ok(new { response.Message, response.Success });
     }
 
-
     [HttpPost("login")]
+    [AllowAnonymous] 
     public async Task<IActionResult> LoginUser([FromBody] LoginRequest request)
     {
         var response = await _userClient.LoginUserAsync(request);
@@ -39,6 +43,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin,Customer")]
     public async Task<IActionResult> GetUserById(int id)
     {
         var request = new UserRequest { Id = id };
@@ -47,6 +52,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("update")]
+    [Authorize(Roles = "Admin")] 
     public async Task<IActionResult> UpdateUser([FromBody] User request)
     {
         var response = await _userClient.UpdateUserAsync(request);
@@ -54,6 +60,7 @@ public class UserController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")] 
     public async Task<IActionResult> DeleteUser(int id)
     {
         var request = new UserRequest { Id = id };
