@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj": {}
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj": {
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj",
+        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj",
         "projectName": "CarApp",
-        "projectPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj",
+        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\CarApp.csproj",
         "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\",
+        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj"
+              "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj"
               }
             }
           }
@@ -69,22 +71,24 @@
         }
       }
     },
-    "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj": {
+    "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -1,6 +1,7 @@
 package Service;
 
 import Model.User;
+import Persistence.PasswordHelper;
 import Repository.IUserRepository;
 import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.*;
@@ -19,11 +20,11 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
 
     @Override
     public void registerUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
-        // Convert from proto User to model User
-        User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), request.getPassword());
+        // Hash the password before saving
+        String hashedPassword = PasswordHelper.hashPassword(request.getPassword());
+        User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), hashedPassword);
         userRepository.addUser(newUser);
 
-        // Convert model User back to proto User
         UserResponse response = UserResponse.newBuilder()
                 .setSuccess(true)
                 .setMessage("User registered successfully")
@@ -39,7 +40,8 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
         Optional<User> userOptional = userRepository.getUserByUsername(request.getUsername());
 
         LoginResponse response;
-        if (userOptional.isPresent() && userOptional.get().getPassword().equals(request.getPassword())) {
+        if (userOptional.isPresent() &&
+                PasswordHelper.checkPassword(request.getPassword(), userOptional.get().getPassword())) {
             response = LoginResponse.newBuilder()
                     .setToken("dummy-token-for-" + request.getUsername())
                     .build();
