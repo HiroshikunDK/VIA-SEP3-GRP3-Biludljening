@@ -1,47 +1,40 @@
 package Model;
-
 import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "rideshares")
-public class RideShareOffer{
-
+@Table(name = "RideShareRequests")
+public class RideShareRequest{
     @Id
     @Column(name = "ride_id")
-    private String rideId;
-    @Column(name = "available_spaces")
-    private int availableSpaces;
+    private String rideId; // CRS_ID, default value as per your example
     @Column(name = "status")
-    private String status; //full, partially booked or cancelled
+    private String status; // Status (only for internal use)
     @Column(name = "start_date")
     private String startDate; // DATE as string in YYYY-MM-DD format
     @Column(name = "start_time")
     private String startTime; // TIME as string in HH:MM:SS format
     @Column(name = "start_location")
-    private String startLocation;
+    private String startLocation; // CRS_ADDRESS
     @Column(name = "end_date")
     private String endDate; // DATE as string in YYYY-MM-DD format
     @Column(name = "end_time")
     private String endTime; // TIME as string in HH:MM:SS format
     @Column(name = "end_location")
-    private String endLocation;
+    private String endLocation; // CRS_ADDRESS
     @Column(name = "price")
-    private float price;
+    private float price; // CRS_CURRENCY (customer price)
     @Column(name = "customer_id")
-    private String customerId; // Reference to User Table
+    private String customerId; // CRS_ID (Reference to Usertable)
     @Column(name = "booking_ref")
-    private String bookingRef; //Reference to car booking table
-
+    private String bookingRef; // CRS_ID (reference to RideshareOffer)
     // Default constructor
-    public RideShareOffer() {}
+    public RideShareRequest() {}
 
     // Constructor with parameters
-    public RideShareOffer(String rideId, int availableSpaces, String status, String startDate,
-                          String startTime, String startLocation, String endDate, String endTime,
-                          String endLocation, float price, String customerId, String bookingRef) {
+    public RideShareRequest(String rideId, String status, String startDate, String startTime, String startLocation,
+                            String endDate, String endTime, String endLocation, float price, String customerId, String bookingRef) {
         this.rideId = rideId;
-        this.availableSpaces = availableSpaces;
         this.status = status;
         this.startDate = startDate;
         this.startTime = startTime;
@@ -61,14 +54,6 @@ public class RideShareOffer{
 
     public void setRideId(String rideId) {
         this.rideId = rideId;
-    }
-
-    public int getAvailableSpaces() {
-        return availableSpaces;
-    }
-
-    public void setAvailableSpaces(int availableSpaces) {
-        this.availableSpaces = availableSpaces;
     }
 
     public String getStatus() {
@@ -153,9 +138,8 @@ public class RideShareOffer{
 
     @Override
     public String toString() {
-        return "RideShareOffer{" +
+        return "RideshareRequest{" +
                 "rideId='" + rideId + '\'' +
-                ", availableSpaces=" + availableSpaces +
                 ", status='" + status + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", startTime='" + startTime + '\'' +
@@ -169,4 +153,3 @@ public class RideShareOffer{
                 '}';
     }
 }
-

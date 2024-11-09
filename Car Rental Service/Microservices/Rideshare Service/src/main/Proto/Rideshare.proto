@@ -1,25 +1,26 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
 option java_package = "RideShareService.grpc";
 
 service RideShareService {
-  rpc CreateRideShare (CreateRideShareRequest) returns (RideShareResponse);
+  rpc CreateRideShare (CreateRideShareRequestTest) returns (RideShareResponse);
   rpc JoinRideShare (JoinRideShareRequest) returns (RideShareResponse);
   rpc ListRideShares (ListRideSharesRequest) returns (RideShareListResponse);
 
   //RideShareOffer CRUD functions
   rpc CreateRideShareOffer (RideshareOffer) returns (RideShareResponse);
-  rpc ReadRideShareOffer (RideShareIDRequest) returns (RideShareResponse);
-  rpc ReadAllRideShareOffer (RideShareIDRequest) returns (RideshareOfferList);
+  rpc ReadRideShareOffer (RideShareIDRequest) returns (RideshareOffer);
+  rpc ReadAllRideShareOffer (google.protobuf.Empty) returns (RideshareOfferList);
   rpc UpdateRideShareOffer (RideshareOffer) returns (RideShareResponse);
   rpc DeleteRideShareOffer (RideShareIDRequest) returns (RideShareResponse);
 
   //RideShareRequest CRUD functions
-  rpc CreateRideShareRequest (RideshareOffer) returns (RideShareResponse);
-  rpc ReadRideShareRequest (RideshareOffer) returns (RideShareResponse);
-  rpc ReadAllRideShareRequest (RideshareOffer) returns (RideShareResponse);
-  rpc UpdateRideShareRequest (RideshareOffer) returns (RideShareResponse);
-  rpc DeleteRideShareRequest (RideshareOffer) returns (RideShareResponse);
+  rpc CreateRideShareRequest (RideshareRequest) returns (RideShareResponse);
+  rpc ReadRideShareRequest (RideShareIDRequest) returns (RideshareRequest);
+  rpc ReadAllRideShareRequest (google.protobuf.Empty) returns (RideShareRequestList);
+  rpc UpdateRideShareRequest (RideshareRequest) returns (RideShareResponse);
+  rpc DeleteRideShareRequest (RideShareIDRequest) returns (RideShareResponse);
 
   //Functions for better search in
   rpc GetClosestRideShareRequest (RideshareRequest) returns (RideshareOfferList);
@@ -93,7 +94,7 @@ message RouteInfo{
 }
 */
 
-message CreateRideShareRequest {
+message CreateRideShareRequestTest {
   int32 car_id = 1;
   string driver_username = 2;
   int32 available_seats = 3;
