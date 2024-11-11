@@ -17,6 +17,27 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase
   public UserService(Databasehelper dbHelper) {
     this.dbHelper = dbHelper;
   }
+  @Override
+  public void loginUser(UserOuterClass.LoginRequest request, StreamObserver<UserOuterClass.loginResponse> responseObserver) {
+    User user = dbHelper.getUserByName(request.getUsername());
+
+    if (user != null && user.getPassword().equals(request.getPassword())) {
+      String token = "sample-jwt-token";
+
+      UserOuterClass.loginResponse response = UserOuterClass.loginResponse.newBuilder()
+          .setToken(token)
+          .build();
+
+      responseObserver.onNext(response);
+      responseObserver.onCompleted();
+    } else {
+      UserOuterClass.loginResponse response = UserOuterClass.loginResponse.newBuilder()
+          .setToken("")
+          .build();
+      responseObserver.onNext(response);
+      responseObserver.onCompleted();
+    }
+  }
 
   @Override
   public void registerUser(UserOuterClass.User request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {

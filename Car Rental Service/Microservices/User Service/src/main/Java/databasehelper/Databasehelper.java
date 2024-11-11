@@ -269,4 +269,35 @@ public class Databasehelper
       return false;
     }
   }
+
+  public User getUserByName(String username)
+  {
+    String query = "SELECT * FROM user WHERE username = ?";
+    try (Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement(query)) {
+
+      statement.setString(1, username);
+      ResultSet resultSet = statement.executeQuery();
+
+      if (resultSet.next()) {
+        User user = new User(
+            resultSet.getInt("userid"),
+            resultSet.getString("userFirstname"),
+            resultSet.getString("userLastname"),
+            resultSet.getString("title"),
+            resultSet.getString("email"),
+            resultSet.getInt("phonenr"),
+            resultSet.getString("username"),
+            resultSet.getString("password"),
+            resultSet.getString("userpermissions")
+        );
+        return user;
+      }
+
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
 }
