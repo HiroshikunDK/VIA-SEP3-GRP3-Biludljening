@@ -21,5 +21,7 @@
 
         <!-- Add the Car entity mapping -->
         <mapping class="Model.Car"/>
+        <mapping class="Model.BookingCar"/>
+        <mapping class="Model.LocationHub"/>
     </session-factory>
 </hibernate-configuration>
