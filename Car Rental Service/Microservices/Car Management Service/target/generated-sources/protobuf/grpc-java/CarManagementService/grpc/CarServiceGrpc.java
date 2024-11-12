@@ -7,7 +7,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * CarService
  * </pre>
  */
-@jakarta.annotation.Generated(
+@javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.56.0)",
     comments = "Source: CarManagement.proto")
 @io.grpc.stub.annotations.GrpcGenerated
