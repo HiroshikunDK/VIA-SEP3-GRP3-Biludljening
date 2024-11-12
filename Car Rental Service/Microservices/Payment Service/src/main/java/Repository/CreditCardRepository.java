@@ -28,10 +28,25 @@ public class CreditCardRepository implements ICreditCardRepository {
         }
     }
 
+    @Override public CreditCard getCreditcardById(long id)
+    {
+        try
+        {
+            CreditCard creditcard = entityManager.find(CreditCard.class, id);
+            return creditcard;
+        }
+        catch (Exception e) {
+            // Håndter eventuelle fejl og log dem, hvis nødvendigt
+            System.out.println("Error finding credit card: " + e.getMessage());
+            return null; // Eller kast en ny RuntimeException afhængigt af kravene
+        }
+    }
+
     @Override
     public List<CreditCard> getallCreditcards() {
         String jpql = "SELECT c FROM CreditCard c";
         TypedQuery<CreditCard> query = entityManager.createQuery(jpql, CreditCard.class);
         return query.getResultList();
     }
+
 }

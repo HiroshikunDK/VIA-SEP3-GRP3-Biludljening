@@ -10,6 +10,7 @@ service PaymentService {
 
   rpc CreateCreditcard (CreditcardRequest) returns (CreditcardResponse);
   rpc GetCreditcardById (CreditcardRequestById) returns (CreditcardResponse);
+  rpc GetAllCreditcards (Empty) returns (CreditcardListResponse);
 
   rpc DeletePayment (PaymentRequestById) returns (PaymentResponse);
 }
@@ -29,6 +30,8 @@ message CreditcardResponse {
   string cc_name = 3;
   string cc_lastname = 4;
   int64 customerid = 5;
+  bool success = 6; // Tilføjet for succes
+  string message = 7; // Tilføjet for besked
 }
 
 message CreditcardRequestById {
@@ -67,6 +70,11 @@ message PaymentResponse {
 
 message PaymentListResponse {
   repeated PaymentResponse payments = 1;
+}
+
+message CreditcardListResponse {
+  repeated CreditcardResponse creditcards = 1;
+  string message = 2;
 }
 
 message Empty {}

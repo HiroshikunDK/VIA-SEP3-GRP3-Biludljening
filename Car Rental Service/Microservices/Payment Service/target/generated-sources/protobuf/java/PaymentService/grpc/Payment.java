@@ -1070,6 +1070,36 @@ public final class Payment {
      * @return The customerid.
      */
     long getCustomerid();
+
+    /**
+     * <pre>
+     * Tilføjet for succes
+     * </pre>
+     *
+     * <code>bool success = 6;</code>
+     * @return The success.
+     */
+    boolean getSuccess();
+
+    /**
+     * <pre>
+     * Tilføjet for besked
+     * </pre>
+     *
+     * <code>string message = 7;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * Tilføjet for besked
+     * </pre>
+     *
+     * <code>string message = 7;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
   }
   /**
    * Protobuf type {@code CreditcardResponse}
@@ -1087,6 +1117,7 @@ public final class Payment {
       creditcardnr_ = "";
       ccName_ = "";
       ccLastname_ = "";
+      message_ = "";
     }
 
     @java.lang.Override
@@ -1253,6 +1284,68 @@ public final class Payment {
       return customerid_;
     }
 
+    public static final int SUCCESS_FIELD_NUMBER = 6;
+    private boolean success_ = false;
+    /**
+     * <pre>
+     * Tilføjet for succes
+     * </pre>
+     *
+     * <code>bool success = 6;</code>
+     * @return The success.
+     */
+    @java.lang.Override
+    public boolean getSuccess() {
+      return success_;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <pre>
+     * Tilføjet for besked
+     * </pre>
+     *
+     * <code>string message = 7;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Tilføjet for besked
+     * </pre>
+     *
+     * <code>string message = 7;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1282,6 +1375,12 @@ public final class Payment {
       if (customerid_ != 0L) {
         output.writeInt64(5, customerid_);
       }
+      if (success_ != false) {
+        output.writeBool(6, success_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, message_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1308,6 +1407,13 @@ public final class Payment {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, customerid_);
       }
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, success_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, message_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1333,6 +1439,10 @@ public final class Payment {
           .equals(other.getCcLastname())) return false;
       if (getCustomerid()
           != other.getCustomerid()) return false;
+      if (getSuccess()
+          != other.getSuccess()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1356,6 +1466,11 @@ public final class Payment {
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCustomerid());
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1490,6 +1605,8 @@ public final class Payment {
         ccName_ = "";
         ccLastname_ = "";
         customerid_ = 0L;
+        success_ = false;
+        message_ = "";
         return this;
       }
 
@@ -1537,6 +1654,12 @@ public final class Payment {
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.customerid_ = customerid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.success_ = success_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.message_ = message_;
         }
       }
 
@@ -1605,6 +1728,14 @@ public final class Payment {
         if (other.getCustomerid() != 0L) {
           setCustomerid(other.getCustomerid());
         }
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1656,6 +1787,16 @@ public final class Payment {
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+              case 48: {
+                success_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 58: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1949,6 +2090,142 @@ public final class Payment {
       public Builder clearCustomerid() {
         bitField0_ = (bitField0_ & ~0x00000010);
         customerid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean success_ ;
+      /**
+       * <pre>
+       * Tilføjet for succes
+       * </pre>
+       *
+       * <code>bool success = 6;</code>
+       * @return The success.
+       */
+      @java.lang.Override
+      public boolean getSuccess() {
+        return success_;
+      }
+      /**
+       * <pre>
+       * Tilføjet for succes
+       * </pre>
+       *
+       * <code>bool success = 6;</code>
+       * @param value The success to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccess(boolean value) {
+        
+        success_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tilføjet for succes
+       * </pre>
+       *
+       * <code>bool success = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccess() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        success_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * Tilføjet for besked
+       * </pre>
+       *
+       * <code>string message = 7;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Tilføjet for besked
+       * </pre>
+       *
+       * <code>string message = 7;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Tilføjet for besked
+       * </pre>
+       *
+       * <code>string message = 7;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tilføjet for besked
+       * </pre>
+       *
+       * <code>string message = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tilføjet for besked
+       * </pre>
+       *
+       * <code>string message = 7;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -6456,6 +6733,939 @@ public final class Payment {
 
   }
 
+  public interface CreditcardListResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CreditcardListResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    java.util.List<PaymentService.grpc.Payment.CreditcardResponse> 
+        getCreditcardsList();
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    PaymentService.grpc.Payment.CreditcardResponse getCreditcards(int index);
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    int getCreditcardsCount();
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    java.util.List<? extends PaymentService.grpc.Payment.CreditcardResponseOrBuilder> 
+        getCreditcardsOrBuilderList();
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    PaymentService.grpc.Payment.CreditcardResponseOrBuilder getCreditcardsOrBuilder(
+        int index);
+
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code CreditcardListResponse}
+   */
+  public static final class CreditcardListResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CreditcardListResponse)
+      CreditcardListResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreditcardListResponse.newBuilder() to construct.
+    private CreditcardListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreditcardListResponse() {
+      creditcards_ = java.util.Collections.emptyList();
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreditcardListResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return PaymentService.grpc.Payment.internal_static_CreditcardListResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return PaymentService.grpc.Payment.internal_static_CreditcardListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              PaymentService.grpc.Payment.CreditcardListResponse.class, PaymentService.grpc.Payment.CreditcardListResponse.Builder.class);
+    }
+
+    public static final int CREDITCARDS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<PaymentService.grpc.Payment.CreditcardResponse> creditcards_;
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<PaymentService.grpc.Payment.CreditcardResponse> getCreditcardsList() {
+      return creditcards_;
+    }
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends PaymentService.grpc.Payment.CreditcardResponseOrBuilder> 
+        getCreditcardsOrBuilderList() {
+      return creditcards_;
+    }
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    @java.lang.Override
+    public int getCreditcardsCount() {
+      return creditcards_.size();
+    }
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    @java.lang.Override
+    public PaymentService.grpc.Payment.CreditcardResponse getCreditcards(int index) {
+      return creditcards_.get(index);
+    }
+    /**
+     * <code>repeated .CreditcardResponse creditcards = 1;</code>
+     */
+    @java.lang.Override
+    public PaymentService.grpc.Payment.CreditcardResponseOrBuilder getCreditcardsOrBuilder(
+        int index) {
+      return creditcards_.get(index);
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < creditcards_.size(); i++) {
+        output.writeMessage(1, creditcards_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < creditcards_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, creditcards_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof PaymentService.grpc.Payment.CreditcardListResponse)) {
+        return super.equals(obj);
+      }
+      PaymentService.grpc.Payment.CreditcardListResponse other = (PaymentService.grpc.Payment.CreditcardListResponse) obj;
+
+      if (!getCreditcardsList()
+          .equals(other.getCreditcardsList())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCreditcardsCount() > 0) {
+        hash = (37 * hash) + CREDITCARDS_FIELD_NUMBER;
+        hash = (53 * hash) + getCreditcardsList().hashCode();
+      }
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static PaymentService.grpc.Payment.CreditcardListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(PaymentService.grpc.Payment.CreditcardListResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CreditcardListResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CreditcardListResponse)
+        PaymentService.grpc.Payment.CreditcardListResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return PaymentService.grpc.Payment.internal_static_CreditcardListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return PaymentService.grpc.Payment.internal_static_CreditcardListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                PaymentService.grpc.Payment.CreditcardListResponse.class, PaymentService.grpc.Payment.CreditcardListResponse.Builder.class);
+      }
+
+      // Construct using PaymentService.grpc.Payment.CreditcardListResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (creditcardsBuilder_ == null) {
+          creditcards_ = java.util.Collections.emptyList();
+        } else {
+          creditcards_ = null;
+          creditcardsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        message_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return PaymentService.grpc.Payment.internal_static_CreditcardListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public PaymentService.grpc.Payment.CreditcardListResponse getDefaultInstanceForType() {
+        return PaymentService.grpc.Payment.CreditcardListResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public PaymentService.grpc.Payment.CreditcardListResponse build() {
+        PaymentService.grpc.Payment.CreditcardListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public PaymentService.grpc.Payment.CreditcardListResponse buildPartial() {
+        PaymentService.grpc.Payment.CreditcardListResponse result = new PaymentService.grpc.Payment.CreditcardListResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(PaymentService.grpc.Payment.CreditcardListResponse result) {
+        if (creditcardsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            creditcards_ = java.util.Collections.unmodifiableList(creditcards_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.creditcards_ = creditcards_;
+        } else {
+          result.creditcards_ = creditcardsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(PaymentService.grpc.Payment.CreditcardListResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.message_ = message_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof PaymentService.grpc.Payment.CreditcardListResponse) {
+          return mergeFrom((PaymentService.grpc.Payment.CreditcardListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(PaymentService.grpc.Payment.CreditcardListResponse other) {
+        if (other == PaymentService.grpc.Payment.CreditcardListResponse.getDefaultInstance()) return this;
+        if (creditcardsBuilder_ == null) {
+          if (!other.creditcards_.isEmpty()) {
+            if (creditcards_.isEmpty()) {
+              creditcards_ = other.creditcards_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCreditcardsIsMutable();
+              creditcards_.addAll(other.creditcards_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.creditcards_.isEmpty()) {
+            if (creditcardsBuilder_.isEmpty()) {
+              creditcardsBuilder_.dispose();
+              creditcardsBuilder_ = null;
+              creditcards_ = other.creditcards_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              creditcardsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCreditcardsFieldBuilder() : null;
+            } else {
+              creditcardsBuilder_.addAllMessages(other.creditcards_);
+            }
+          }
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                PaymentService.grpc.Payment.CreditcardResponse m =
+                    input.readMessage(
+                        PaymentService.grpc.Payment.CreditcardResponse.parser(),
+                        extensionRegistry);
+                if (creditcardsBuilder_ == null) {
+                  ensureCreditcardsIsMutable();
+                  creditcards_.add(m);
+                } else {
+                  creditcardsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<PaymentService.grpc.Payment.CreditcardResponse> creditcards_ =
+        java.util.Collections.emptyList();
+      private void ensureCreditcardsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          creditcards_ = new java.util.ArrayList<PaymentService.grpc.Payment.CreditcardResponse>(creditcards_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          PaymentService.grpc.Payment.CreditcardResponse, PaymentService.grpc.Payment.CreditcardResponse.Builder, PaymentService.grpc.Payment.CreditcardResponseOrBuilder> creditcardsBuilder_;
+
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public java.util.List<PaymentService.grpc.Payment.CreditcardResponse> getCreditcardsList() {
+        if (creditcardsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(creditcards_);
+        } else {
+          return creditcardsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public int getCreditcardsCount() {
+        if (creditcardsBuilder_ == null) {
+          return creditcards_.size();
+        } else {
+          return creditcardsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public PaymentService.grpc.Payment.CreditcardResponse getCreditcards(int index) {
+        if (creditcardsBuilder_ == null) {
+          return creditcards_.get(index);
+        } else {
+          return creditcardsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder setCreditcards(
+          int index, PaymentService.grpc.Payment.CreditcardResponse value) {
+        if (creditcardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCreditcardsIsMutable();
+          creditcards_.set(index, value);
+          onChanged();
+        } else {
+          creditcardsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder setCreditcards(
+          int index, PaymentService.grpc.Payment.CreditcardResponse.Builder builderForValue) {
+        if (creditcardsBuilder_ == null) {
+          ensureCreditcardsIsMutable();
+          creditcards_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          creditcardsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder addCreditcards(PaymentService.grpc.Payment.CreditcardResponse value) {
+        if (creditcardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCreditcardsIsMutable();
+          creditcards_.add(value);
+          onChanged();
+        } else {
+          creditcardsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder addCreditcards(
+          int index, PaymentService.grpc.Payment.CreditcardResponse value) {
+        if (creditcardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCreditcardsIsMutable();
+          creditcards_.add(index, value);
+          onChanged();
+        } else {
+          creditcardsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder addCreditcards(
+          PaymentService.grpc.Payment.CreditcardResponse.Builder builderForValue) {
+        if (creditcardsBuilder_ == null) {
+          ensureCreditcardsIsMutable();
+          creditcards_.add(builderForValue.build());
+          onChanged();
+        } else {
+          creditcardsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder addCreditcards(
+          int index, PaymentService.grpc.Payment.CreditcardResponse.Builder builderForValue) {
+        if (creditcardsBuilder_ == null) {
+          ensureCreditcardsIsMutable();
+          creditcards_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          creditcardsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder addAllCreditcards(
+          java.lang.Iterable<? extends PaymentService.grpc.Payment.CreditcardResponse> values) {
+        if (creditcardsBuilder_ == null) {
+          ensureCreditcardsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, creditcards_);
+          onChanged();
+        } else {
+          creditcardsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder clearCreditcards() {
+        if (creditcardsBuilder_ == null) {
+          creditcards_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          creditcardsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public Builder removeCreditcards(int index) {
+        if (creditcardsBuilder_ == null) {
+          ensureCreditcardsIsMutable();
+          creditcards_.remove(index);
+          onChanged();
+        } else {
+          creditcardsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public PaymentService.grpc.Payment.CreditcardResponse.Builder getCreditcardsBuilder(
+          int index) {
+        return getCreditcardsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public PaymentService.grpc.Payment.CreditcardResponseOrBuilder getCreditcardsOrBuilder(
+          int index) {
+        if (creditcardsBuilder_ == null) {
+          return creditcards_.get(index);  } else {
+          return creditcardsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public java.util.List<? extends PaymentService.grpc.Payment.CreditcardResponseOrBuilder> 
+           getCreditcardsOrBuilderList() {
+        if (creditcardsBuilder_ != null) {
+          return creditcardsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(creditcards_);
+        }
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public PaymentService.grpc.Payment.CreditcardResponse.Builder addCreditcardsBuilder() {
+        return getCreditcardsFieldBuilder().addBuilder(
+            PaymentService.grpc.Payment.CreditcardResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public PaymentService.grpc.Payment.CreditcardResponse.Builder addCreditcardsBuilder(
+          int index) {
+        return getCreditcardsFieldBuilder().addBuilder(
+            index, PaymentService.grpc.Payment.CreditcardResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CreditcardResponse creditcards = 1;</code>
+       */
+      public java.util.List<PaymentService.grpc.Payment.CreditcardResponse.Builder> 
+           getCreditcardsBuilderList() {
+        return getCreditcardsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          PaymentService.grpc.Payment.CreditcardResponse, PaymentService.grpc.Payment.CreditcardResponse.Builder, PaymentService.grpc.Payment.CreditcardResponseOrBuilder> 
+          getCreditcardsFieldBuilder() {
+        if (creditcardsBuilder_ == null) {
+          creditcardsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              PaymentService.grpc.Payment.CreditcardResponse, PaymentService.grpc.Payment.CreditcardResponse.Builder, PaymentService.grpc.Payment.CreditcardResponseOrBuilder>(
+                  creditcards_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          creditcards_ = null;
+        }
+        return creditcardsBuilder_;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CreditcardListResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:CreditcardListResponse)
+    private static final PaymentService.grpc.Payment.CreditcardListResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new PaymentService.grpc.Payment.CreditcardListResponse();
+    }
+
+    public static PaymentService.grpc.Payment.CreditcardListResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreditcardListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreditcardListResponse>() {
+      @java.lang.Override
+      public CreditcardListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreditcardListResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreditcardListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public PaymentService.grpc.Payment.CreditcardListResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface EmptyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Empty)
       com.google.protobuf.MessageOrBuilder {
@@ -6897,6 +8107,11 @@ public final class Payment {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PaymentListResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreditcardListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreditcardListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Empty_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6913,22 +8128,25 @@ public final class Payment {
       "\n\rPayment.proto\"z\n\021CreditcardRequest\022\025\n\r" +
       "creditcard_id\030\001 \001(\003\022\024\n\014creditcardnr\030\002 \001(" +
       "\t\022\017\n\007cc_name\030\003 \001(\t\022\023\n\013cc_lastname\030\004 \001(\t\022" +
-      "\022\n\ncustomerid\030\005 \001(\003\"{\n\022CreditcardRespons" +
-      "e\022\025\n\rcreditcard_id\030\001 \001(\003\022\024\n\014creditcardnr" +
-      "\030\002 \001(\t\022\017\n\007cc_name\030\003 \001(\t\022\023\n\013cc_lastname\030\004" +
-      " \001(\t\022\022\n\ncustomerid\030\005 \001(\003\".\n\025CreditcardRe" +
-      "questById\022\025\n\rcreditcard_id\030\001 \001(\003\"{\n\016Paym" +
-      "entRequest\022\n\n\002id\030\001 \001(\003\022\020\n\010customer\030\002 \001(\003" +
-      "\022\023\n\013bookingType\030\003 \001(\005\022\017\n\007booking\030\004 \001(\003\022\016" +
-      "\n\006status\030\005 \001(\t\022\025\n\rcreditcardref\030\006 \001(\003\" \n" +
-      "\022PaymentRequestById\022\n\n\002id\030\001 \001(\003\"8\n\032Payme" +
-      "ntStatusUpdateRequest\022\n\n\002id\030\001 \001(\003\022\016\n\006sta" +
-      "tus\030\002 \001(\t\"\236\001\n\017PaymentResponse\022\n\n\002id\030\001 \001(" +
-      "\003\022\020\n\010customer\030\002 \001(\003\022\023\n\013bookingType\030\003 \001(\005" +
-      "\022\017\n\007booking\030\004 \001(\003\022\016\n\006status\030\005 \001(\t\022\025\n\rcre" +
-      "ditcardref\030\006 \001(\003\022\017\n\007success\030\007 \001(\010\022\017\n\007mes" +
-      "sage\030\010 \001(\t\"9\n\023PaymentListResponse\022\"\n\010pay" +
-      "ments\030\001 \003(\0132\020.PaymentResponse\"\007\n\005Empty2\250" +
+      "\022\n\ncustomerid\030\005 \001(\003\"\235\001\n\022CreditcardRespon" +
+      "se\022\025\n\rcreditcard_id\030\001 \001(\003\022\024\n\014creditcardn" +
+      "r\030\002 \001(\t\022\017\n\007cc_name\030\003 \001(\t\022\023\n\013cc_lastname\030" +
+      "\004 \001(\t\022\022\n\ncustomerid\030\005 \001(\003\022\017\n\007success\030\006 \001" +
+      "(\010\022\017\n\007message\030\007 \001(\t\".\n\025CreditcardRequest" +
+      "ById\022\025\n\rcreditcard_id\030\001 \001(\003\"{\n\016PaymentRe" +
+      "quest\022\n\n\002id\030\001 \001(\003\022\020\n\010customer\030\002 \001(\003\022\023\n\013b" +
+      "ookingType\030\003 \001(\005\022\017\n\007booking\030\004 \001(\003\022\016\n\006sta" +
+      "tus\030\005 \001(\t\022\025\n\rcreditcardref\030\006 \001(\003\" \n\022Paym" +
+      "entRequestById\022\n\n\002id\030\001 \001(\003\"8\n\032PaymentSta" +
+      "tusUpdateRequest\022\n\n\002id\030\001 \001(\003\022\016\n\006status\030\002" +
+      " \001(\t\"\236\001\n\017PaymentResponse\022\n\n\002id\030\001 \001(\003\022\020\n\010" +
+      "customer\030\002 \001(\003\022\023\n\013bookingType\030\003 \001(\005\022\017\n\007b" +
+      "ooking\030\004 \001(\003\022\016\n\006status\030\005 \001(\t\022\025\n\rcreditca" +
+      "rdref\030\006 \001(\003\022\017\n\007success\030\007 \001(\010\022\017\n\007message\030" +
+      "\010 \001(\t\"9\n\023PaymentListResponse\022\"\n\010payments" +
+      "\030\001 \003(\0132\020.PaymentResponse\"S\n\026CreditcardLi" +
+      "stResponse\022(\n\013creditcards\030\001 \003(\0132\023.Credit" +
+      "cardResponse\022\017\n\007message\030\002 \001(\t\"\007\n\005Empty2\336" +
       "\003\n\016PaymentService\0222\n\rCreatePayment\022\017.Pay" +
       "mentRequest\032\020.PaymentResponse\0227\n\016GetPaym" +
       "entById\022\023.PaymentRequestById\032\020.PaymentRe" +
@@ -6938,9 +8156,10 @@ public final class Payment {
       "se\022;\n\020CreateCreditcard\022\022.CreditcardReque" +
       "st\032\023.CreditcardResponse\022@\n\021GetCreditcard" +
       "ById\022\026.CreditcardRequestById\032\023.Creditcar" +
-      "dResponse\0226\n\rDeletePayment\022\023.PaymentRequ" +
-      "estById\032\020.PaymentResponseB\025\n\023PaymentServ" +
-      "ice.grpcb\006proto3"
+      "dResponse\0224\n\021GetAllCreditcards\022\006.Empty\032\027" +
+      ".CreditcardListResponse\0226\n\rDeletePayment" +
+      "\022\023.PaymentRequestById\032\020.PaymentResponseB" +
+      "\025\n\023PaymentService.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6957,7 +8176,7 @@ public final class Payment {
     internal_static_CreditcardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreditcardResponse_descriptor,
-        new java.lang.String[] { "CreditcardId", "Creditcardnr", "CcName", "CcLastname", "Customerid", });
+        new java.lang.String[] { "CreditcardId", "Creditcardnr", "CcName", "CcLastname", "Customerid", "Success", "Message", });
     internal_static_CreditcardRequestById_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_CreditcardRequestById_fieldAccessorTable = new
@@ -6994,8 +8213,14 @@ public final class Payment {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PaymentListResponse_descriptor,
         new java.lang.String[] { "Payments", });
-    internal_static_Empty_descriptor =
+    internal_static_CreditcardListResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_CreditcardListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreditcardListResponse_descriptor,
+        new java.lang.String[] { "Creditcards", "Message", });
+    internal_static_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,
