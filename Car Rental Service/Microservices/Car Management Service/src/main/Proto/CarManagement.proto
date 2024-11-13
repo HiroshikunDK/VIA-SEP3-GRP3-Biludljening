@@ -44,14 +44,14 @@ message CarResponse {
 // BookingCarService
 service BookingCarService {
   rpc GetAllBookingCars (Empty) returns (BookingCarList);
-  rpc GetBookingCarByID (BookingCarRequest) returns (BookingCar);
+  rpc GetBookingCarByID (BookingCarRequest) returns (BookingCarResponse);
   rpc AddBookingCar (BookingCar) returns (BookingCarResponse);
   rpc UpdateBookingCar (BookingCar) returns (BookingCarResponse);
   rpc DeleteBookingCar (BookingCarRequest) returns (BookingCarResponse);
 }
 
 message BookingCarRequest {
-  int32 bookingnr = 1;
+  int32 bookingNr = 1;
 }
 
 message BookingCar {
