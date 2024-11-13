@@ -18,6 +18,8 @@ public class Car {
     private String altName;
     private int seats;
     private int carRange;
+
+    // locationHubRef as an integer ID (no foreign key relationship)
     private int locationHubRef;
 
     // Default constructor
@@ -118,5 +120,21 @@ public class Car {
 
     public void setLocationHubRef(int locationHubRef) {
         this.locationHubRef = locationHubRef;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+            "carId=" + carId +
+            ", vin='" + vin + '\'' +
+            ", yearProduced=" + yearProduced +
+            ", manufacturer='" + manufacturer + '\'' +
+            ", model='" + model + '\'' +
+            ", color='" + color + '\'' +
+            ", altName='" + altName + '\'' +
+            ", seats=" + seats +
+            ", carRange=" + carRange +
+            ", locationHubRef=" + locationHubRef +
+            '}';
     }
 }
