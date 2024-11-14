@@ -8146,8 +8146,8 @@ public final class Payment {
       "\010 \001(\t\"9\n\023PaymentListResponse\022\"\n\010payments" +
       "\030\001 \003(\0132\020.PaymentResponse\"S\n\026CreditcardLi" +
       "stResponse\022(\n\013creditcards\030\001 \003(\0132\023.Credit" +
-      "cardResponse\022\017\n\007message\030\002 \001(\t\"\007\n\005Empty2\336" +
-      "\003\n\016PaymentService\0222\n\rCreatePayment\022\017.Pay" +
+      "cardResponse\022\017\n\007message\030\002 \001(\t\"\007\n\005Empty2\237" +
+      "\004\n\016PaymentService\0222\n\rCreatePayment\022\017.Pay" +
       "mentRequest\032\020.PaymentResponse\0227\n\016GetPaym" +
       "entById\022\023.PaymentRequestById\032\020.PaymentRe" +
       "sponse\022D\n\023UpdatePaymentStatus\022\033.PaymentS" +
@@ -8158,8 +8158,10 @@ public final class Payment {
       "ById\022\026.CreditcardRequestById\032\023.Creditcar" +
       "dResponse\0224\n\021GetAllCreditcards\022\006.Empty\032\027" +
       ".CreditcardListResponse\0226\n\rDeletePayment" +
-      "\022\023.PaymentRequestById\032\020.PaymentResponseB" +
-      "\025\n\023PaymentService.grpcb\006proto3"
+      "\022\023.PaymentRequestById\032\020.PaymentResponse\022" +
+      "?\n\020DeleteCreditcard\022\026.CreditcardRequestB" +
+      "yId\032\023.CreditcardResponseB\025\n\023PaymentServi" +
+      "ce.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

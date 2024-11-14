@@ -13,6 +13,7 @@ service PaymentService {
   rpc GetAllCreditcards (Empty) returns (CreditcardListResponse);
 
   rpc DeletePayment (PaymentRequestById) returns (PaymentResponse);
+  rpc DeleteCreditcard (CreditcardRequestById) returns (CreditcardResponse);
 }
 
 // Credit card messages

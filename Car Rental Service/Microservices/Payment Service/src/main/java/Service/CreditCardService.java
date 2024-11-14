@@ -142,4 +142,27 @@ public class CreditCardService extends PaymentServiceGrpc.PaymentServiceImplBase
       responseObserver.onCompleted();
     }
   }
+
+  public void deleteCreditcard(Payment.CreditcardRequestById request,
+      StreamObserver<Payment.CreditcardResponse> responseObserver)
+  {
+    boolean success = false;
+    String message;
+    try {
+      creditCardRepository.deleteCreditcard(request.getCreditcardId());
+      success = true;
+      message = "Credit card deleted successfully";
+    }
+    catch (Exception e)
+    {
+        message = "Failed to delete credit card: " + e.getMessage();
+        e.printStackTrace();
+    }
+    Payment.CreditcardResponse response = Payment.CreditcardResponse.newBuilder()
+        .setSuccess(success)
+        .setMessage(message)
+        .build();
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
 }

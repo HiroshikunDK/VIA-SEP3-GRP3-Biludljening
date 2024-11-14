@@ -14,13 +14,17 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
     private final PaymentRepository repository;
     private final SessionFactory sessionFactory;
 
+
     public PaymentService(PaymentRepository repository, SessionFactory sessionFactory) {
+        System.out.println("konstruktor");
         this.repository = repository;
         this.sessionFactory = sessionFactory;
     }
 
+
     @Override
     public void createPayment(Payment.PaymentRequest paymentRequest, StreamObserver<Payment.PaymentResponse> responseObserver) {
+       System.out.println("ReACHED CREATE");
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -90,6 +94,7 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
     @Override
     public void listPayments(Payment.Empty request, StreamObserver<Payment.PaymentListResponse> responseObserver) {
         try (Session session = sessionFactory.openSession()) {
+            System.out.println("reached List");
             List<Model.Payment> payments = session.createQuery("FROM Payment", Model.Payment.class).list();
 
             Payment.PaymentListResponse.Builder responseBuilder = Payment.PaymentListResponse.newBuilder();
@@ -110,6 +115,7 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
 
             responseObserver.onNext(responseBuilder.build());
         } catch (Exception e) {
+            System.out.println("Error reaching List: " + e.getMessage());
             e.printStackTrace();
             responseObserver.onNext(Payment.PaymentListResponse.newBuilder()
                     .addPayments(Payment.PaymentResponse.newBuilder()

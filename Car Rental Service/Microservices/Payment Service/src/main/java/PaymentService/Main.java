@@ -15,12 +15,12 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
-        EntityManager entityManager = sessionFactory.createEntityManager();
+       // EntityManager entityManager = sessionFactory.createEntityManager();
 
         PaymentRepository paymentRepository = new PaymentRepository(sessionFactory);
         PaymentService paymentService = new PaymentService(paymentRepository, sessionFactory);
 
-        CreditCardRepository creditCardRepository = new CreditCardRepository(entityManager);
+        CreditCardRepository creditCardRepository = new CreditCardRepository(sessionFactory);
         CreditCardService creditCardService = new CreditCardService(sessionFactory, creditCardRepository);
 
 
