@@ -27,7 +27,7 @@ public class Main {
 
         Server server = ServerBuilder.forPort(5005)
                 .addService(paymentService)
-            .addService(creditCardService)
+           .addService(creditCardService)
                 .build()
                 .start();
 

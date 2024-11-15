@@ -7,12 +7,12 @@ service PaymentService {
   rpc GetPaymentById (PaymentRequestById) returns (PaymentResponse);
   rpc UpdatePaymentStatus (PaymentStatusUpdateRequest) returns (PaymentResponse);
   rpc ListPayments (Empty) returns (PaymentListResponse);
-
+  rpc DeletePayment (PaymentRequestById) returns (PaymentResponse);
+}
+service CreditCardService {
   rpc CreateCreditcard (CreditcardRequest) returns (CreditcardResponse);
   rpc GetCreditcardById (CreditcardRequestById) returns (CreditcardResponse);
   rpc GetAllCreditcards (Empty) returns (CreditcardListResponse);
-
-  rpc DeletePayment (PaymentRequestById) returns (PaymentResponse);
   rpc DeleteCreditcard (CreditcardRequestById) returns (CreditcardResponse);
 }
 
