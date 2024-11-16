@@ -1,6 +1,8 @@
 ﻿@page "/register"
 @inject HttpClient HttpClient
-@using Shared.Dto 
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@using Shared.Dto
 
 <h3>Register</h3>
 
@@ -12,22 +14,17 @@
         <label>Username:</label>
         <InputText @bind-Value="registerUser.Username" />
     </div>
-    
+
     <div>
         <label>Email:</label>
         <InputText @bind-Value="registerUser.Email" />
     </div>
-    
+
     <div>
         <label>Password:</label>
         <InputText @bind-Value="registerUser.Password" type="password" />
     </div>
-    
-    <div>
-        <label>Role:</label>
-        <InputText @bind-Value="registerUser.Role" />
-    </div>
-    
+
     <button type="submit">Register</button>
 </EditForm>
 
@@ -44,15 +41,30 @@
     {
         try
         {
-            var response = await HttpClient.PostAsJsonAsync("api/user/register", registerUser);
+            // Retrieve the anti-forgery token
+            var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
+            Console.WriteLine("Retrieved token:", token); // Check if token is retrieved correctly
+
+            // Create a new HttpRequestMessage to ensure the header is only added for this request
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
+            {
+                Content = JsonContent.Create(registerUser)
+            };
+            requestMessage.Headers.Add("X-CSRF-TOKEN", token); // Set token header
+
+            // Send the request and log response status
+            var response = await HttpClient.SendAsync(requestMessage);
+            Console.WriteLine("Registration response status:", response.StatusCode);
 
             if (response.IsSuccessStatusCode)
             {
                 registrationMessage = "Registration successful!";
+                NavigationManager.NavigateTo("/login");
             }
             else
             {
-                registrationMessage = "Registration failed. Please try again.";
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                registrationMessage = $"Registration failed: {errorResponse}";
             }
         }
         catch (Exception ex)

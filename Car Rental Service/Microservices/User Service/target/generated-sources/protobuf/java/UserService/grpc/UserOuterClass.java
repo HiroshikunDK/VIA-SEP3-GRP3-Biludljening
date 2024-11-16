@@ -1611,6 +1611,18 @@ public final class UserOuterClass {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>string role = 2;</code>
+     * @return The role.
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 2;</code>
+     * @return The bytes for role.
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
   }
   /**
    * Protobuf type {@code LoginResponse}
@@ -1626,6 +1638,7 @@ public final class UserOuterClass {
     }
     private LoginResponse() {
       token_ = "";
+      role_ = "";
     }
 
     @java.lang.Override
@@ -1692,6 +1705,45 @@ public final class UserOuterClass {
       }
     }
 
+    public static final int ROLE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object role_ = "";
+    /**
+     * <code>string role = 2;</code>
+     * @return The role.
+     */
+    @java.lang.Override
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 2;</code>
+     * @return The bytes for role.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1709,6 +1761,9 @@ public final class UserOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1720,6 +1775,9 @@ public final class UserOuterClass {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1738,6 +1796,8 @@ public final class UserOuterClass {
 
       if (!getToken()
           .equals(other.getToken())) return false;
+      if (!getRole()
+          .equals(other.getRole())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1751,6 +1811,8 @@ public final class UserOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1881,6 +1943,7 @@ public final class UserOuterClass {
         super.clear();
         bitField0_ = 0;
         token_ = "";
+        role_ = "";
         return this;
       }
 
@@ -1916,6 +1979,9 @@ public final class UserOuterClass {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.token_ = token_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.role_ = role_;
         }
       }
 
@@ -1968,6 +2034,11 @@ public final class UserOuterClass {
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1999,6 +2070,11 @@ public final class UserOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 18: {
+                role_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2084,6 +2160,78 @@ public final class UserOuterClass {
         checkByteStringIsUtf8(value);
         token_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 2;</code>
+       * @return The role.
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @return The bytes for role.
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        role_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRole() {
+        role_ = getDefaultInstance().getRole();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @param value The bytes for role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        role_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4877,20 +5025,20 @@ public final class UserOuterClass {
     java.lang.String[] descriptorData = {
       "\n\nUser.proto\"\007\n\005Empty\"\031\n\013UserRequest\022\n\n\002" +
       "id\030\001 \001(\005\"2\n\014LoginRequest\022\020\n\010username\030\001 \001" +
-      "(\t\022\020\n\010password\030\002 \001(\t\"\036\n\rLoginResponse\022\r\n" +
-      "\005token\030\001 \001(\t\"S\n\004User\022\n\n\002id\030\001 \001(\005\022\020\n\010user" +
-      "name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\014\n\004role\030\004 \001(\t\022" +
-      "\020\n\010password\030\005 \001(\t\"E\n\014UserResponse\022\017\n\007suc" +
-      "cess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\023\n\004user\030\003 \001(" +
-      "\0132\005.User\" \n\010UserList\022\024\n\005users\030\001 \003(\0132\005.Us" +
-      "er2\372\001\n\013UserService\022$\n\014RegisterUser\022\005.Use" +
-      "r\032\r.UserResponse\022*\n\tLoginUser\022\r.LoginReq" +
-      "uest\032\016.LoginResponse\022*\n\013GetUserById\022\014.Us" +
-      "erRequest\032\r.UserResponse\022\"\n\nUpdateUser\022\005" +
-      ".User\032\r.UserResponse\022)\n\nDeleteUser\022\014.Use" +
-      "rRequest\032\r.UserResponse\022\036\n\tListUsers\022\006.E" +
-      "mpty\032\t.UserListB\022\n\020UserService.grpcb\006pro" +
-      "to3"
+      "(\t\022\020\n\010password\030\002 \001(\t\",\n\rLoginResponse\022\r\n" +
+      "\005token\030\001 \001(\t\022\014\n\004role\030\002 \001(\t\"S\n\004User\022\n\n\002id" +
+      "\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022" +
+      "\014\n\004role\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\"E\n\014UserR" +
+      "esponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(" +
+      "\t\022\023\n\004user\030\003 \001(\0132\005.User\" \n\010UserList\022\024\n\005us" +
+      "ers\030\001 \003(\0132\005.User2\372\001\n\013UserService\022$\n\014Regi" +
+      "sterUser\022\005.User\032\r.UserResponse\022*\n\tLoginU" +
+      "ser\022\r.LoginRequest\032\016.LoginResponse\022*\n\013Ge" +
+      "tUserById\022\014.UserRequest\032\r.UserResponse\022\"" +
+      "\n\nUpdateUser\022\005.User\032\r.UserResponse\022)\n\nDe" +
+      "leteUser\022\014.UserRequest\032\r.UserResponse\022\036\n" +
+      "\tListUsers\022\006.Empty\032\t.UserListB\022\n\020UserSer" +
+      "vice.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4919,7 +5067,7 @@ public final class UserOuterClass {
     internal_static_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginResponse_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { "Token", "Role", });
     internal_static_User_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_User_fieldAccessorTable = new

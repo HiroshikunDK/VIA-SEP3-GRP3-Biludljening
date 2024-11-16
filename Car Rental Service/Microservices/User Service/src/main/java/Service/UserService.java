@@ -1,6 +1,8 @@
 package Service;
 
 import Model.User;
+import Persistence.PasswordHelper;
+import Persistence.TokenHelper;
 import Repository.IUserRepository;
 import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.*;
@@ -19,11 +21,11 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
 
     @Override
     public void registerUser(UserOuterClass.User request, StreamObserver<UserResponse> responseObserver) {
-        // Convert from proto User to model User
-        User newUser = new User(0, request.getUsername(), request.getEmail(), request.getRole(), request.getPassword());
+        String hashedPassword = PasswordHelper.hashPassword(request.getPassword());
+
+        User newUser = new User(0, request.getUsername(), request.getEmail(), "Customer", hashedPassword);
         userRepository.addUser(newUser);
 
-        // Convert model User back to proto User
         UserResponse response = UserResponse.newBuilder()
                 .setSuccess(true)
                 .setMessage("User registered successfully")
@@ -34,22 +36,33 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
         responseObserver.onCompleted();
     }
 
+
     @Override
     public void loginUser(LoginRequest request, StreamObserver<LoginResponse> responseObserver) {
         Optional<User> userOptional = userRepository.getUserByUsername(request.getUsername());
 
         LoginResponse response;
-        if (userOptional.isPresent() && userOptional.get().getPassword().equals(request.getPassword())) {
+        if (userOptional.isPresent() &&
+                PasswordHelper.checkPassword(request.getPassword(), userOptional.get().getPassword())) {
+
+            User user = userOptional.get();
+
+            String token = TokenHelper.generateToken(user.getUsername(), user.getRole());
+
             response = LoginResponse.newBuilder()
-                    .setToken("dummy-token-for-" + request.getUsername())
+                    .setToken(token)
+                    .setRole(user.getRole())
                     .build();
         } else {
-            response = LoginResponse.newBuilder().setToken("").build();
+            response = LoginResponse.newBuilder()
+                    .setToken("")
+                    .build();
         }
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     @Override
     public void getUserById(UserRequest request, StreamObserver<UserResponse> responseObserver) {

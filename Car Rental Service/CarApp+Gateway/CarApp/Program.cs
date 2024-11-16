@@ -1,4 +1,7 @@
 using CarApp.Components;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace CarApp;
 
@@ -10,10 +13,32 @@ public class Program
         
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
+
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002") });
 
-        var app = builder.Build();
+        // Configure JWT Authentication
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DenErHemmelig"))
+                };
+            });
+
+        builder.Services.AddAuthorization();
         
+        builder.Services.AddAntiforgery(options =>
+        {
+            options.HeaderName = "X-CSRF-TOKEN"; 
+        });
+
+        var app = builder.Build();
+
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error");
@@ -21,10 +46,14 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
         app.UseStaticFiles();
-        app.UseAntiforgery();
 
+        app.UseAuthentication();
+        app.UseAuthorization();
+
+        app.UseRouting();
+        app.UseAntiforgery();
+        
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();
 

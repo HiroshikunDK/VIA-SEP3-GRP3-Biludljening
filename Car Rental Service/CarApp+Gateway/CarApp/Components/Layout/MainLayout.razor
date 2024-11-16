@@ -21,3 +21,16 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+<script>
+    async function getAntiForgeryToken() {
+        console.log("getAntiForgeryToken called"); // Debugging log
+        const response = await fetch('http://localhost:5002/api/antiforgery/token', {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const token = await response.text();
+        console.log("Anti-forgery token:", token);
+        return token;
+    }
+</script>
