@@ -163,4 +163,68 @@ public class CreditCardService extends CreditCardServiceGrpc.CreditCardServiceIm
     responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
+  @Override
+  public void updateCreditcard(Payment.CreditcardRequest request, StreamObserver<Payment.CreditcardResponse> responseObserver)
+  {
+    Transaction transaction = null;
+    try(Session session = sessionFactory.openSession())
+    {
+      transaction = session.beginTransaction();
+      CreditCard existingCard = creditCardRepository.getCreditcardById(request.getCreditcardId());
+
+      if(existingCard != null)
+      {
+        //Opdater eksisterende data
+        existingCard.setCreditcard_id(request.getCreditcardId());
+        existingCard.setCreditcardnr(request.getCreditcardnr());
+        existingCard.setCc_name(request.getCcName());
+        existingCard.setCc_lastname(request.getCcLastname());
+        existingCard.setCustomerid(request.getCustomerid());
+
+        //gem ændringerne i db
+        creditCardRepository.updateCreditcard(existingCard);
+        transaction.commit();
+
+        //Lav response
+
+        Payment.CreditcardResponse response = Payment.CreditcardResponse.newBuilder()
+            .setCreditcardId(existingCard.getCreditcard_id())
+            .setCreditcardnr(existingCard.getCreditcardnr())
+            .setCcName(existingCard.getCc_name())
+            .setCcLastname(existingCard.getCc_lastname())
+            .setCustomerid(existingCard.getCustomerid())
+            .setSuccess(true)
+            .setMessage("Credit card updated successfully").build();
+
+        //Send response til client
+        responseObserver.onNext(response);
+      }
+      else {
+        Payment.CreditcardResponse response = Payment.CreditcardResponse.newBuilder()
+            .setSuccess(false)
+            .setMessage("Credit card not found")
+            .build();
+
+        responseObserver.onNext(response);
+      }
+    }
+    catch (Exception e)
+    {
+      if (transaction != null) {
+        transaction.rollback();
+      }
+      // Send en fejlrespons tilbage til klienten
+      Payment.CreditcardResponse response = Payment.CreditcardResponse.newBuilder()
+          .setSuccess(false)
+          .setMessage("Failed to update credit card: " + e.getMessage())
+          .build();
+
+      responseObserver.onNext(response);
+    }
+    finally {
+      responseObserver.onCompleted();
+    }
+
+  }
+
 }

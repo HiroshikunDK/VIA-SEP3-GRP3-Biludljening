@@ -5975,6 +5975,18 @@ public final class Payment {
      */
     PaymentService.grpc.Payment.PaymentResponseOrBuilder getPaymentsOrBuilder(
         int index);
+
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
   }
   /**
    * Protobuf type {@code PaymentListResponse}
@@ -5990,6 +6002,7 @@ public final class Payment {
     }
     private PaymentListResponse() {
       payments_ = java.util.Collections.emptyList();
+      message_ = "";
     }
 
     @java.lang.Override
@@ -6058,6 +6071,45 @@ public final class Payment {
       return payments_.get(index);
     }
 
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6075,6 +6127,9 @@ public final class Payment {
       for (int i = 0; i < payments_.size(); i++) {
         output.writeMessage(1, payments_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6087,6 +6142,9 @@ public final class Payment {
       for (int i = 0; i < payments_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, payments_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6105,6 +6163,8 @@ public final class Payment {
 
       if (!getPaymentsList()
           .equals(other.getPaymentsList())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6120,6 +6180,8 @@ public final class Payment {
         hash = (37 * hash) + PAYMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getPaymentsList().hashCode();
       }
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6256,6 +6318,7 @@ public final class Payment {
           paymentsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        message_ = "";
         return this;
       }
 
@@ -6302,6 +6365,9 @@ public final class Payment {
 
       private void buildPartial0(PaymentService.grpc.Payment.PaymentListResponse result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.message_ = message_;
+        }
       }
 
       @java.lang.Override
@@ -6374,6 +6440,11 @@ public final class Payment {
             }
           }
         }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6413,6 +6484,11 @@ public final class Payment {
                 }
                 break;
               } // case 10
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6668,6 +6744,78 @@ public final class Payment {
           payments_ = null;
         }
         return paymentsBuilder_;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8143,25 +8291,27 @@ public final class Payment {
       "customer\030\002 \001(\003\022\023\n\013bookingType\030\003 \001(\005\022\017\n\007b" +
       "ooking\030\004 \001(\003\022\016\n\006status\030\005 \001(\t\022\025\n\rcreditca" +
       "rdref\030\006 \001(\003\022\017\n\007success\030\007 \001(\010\022\017\n\007message\030" +
-      "\010 \001(\t\"9\n\023PaymentListResponse\022\"\n\010payments" +
-      "\030\001 \003(\0132\020.PaymentResponse\"S\n\026CreditcardLi" +
-      "stResponse\022(\n\013creditcards\030\001 \003(\0132\023.Credit" +
-      "cardResponse\022\017\n\007message\030\002 \001(\t\"\007\n\005Empty2\251" +
-      "\002\n\016PaymentService\0222\n\rCreatePayment\022\017.Pay" +
-      "mentRequest\032\020.PaymentResponse\0227\n\016GetPaym" +
-      "entById\022\023.PaymentRequestById\032\020.PaymentRe" +
-      "sponse\022D\n\023UpdatePaymentStatus\022\033.PaymentS" +
-      "tatusUpdateRequest\032\020.PaymentResponse\022,\n\014" +
-      "ListPayments\022\006.Empty\032\024.PaymentListRespon" +
-      "se\0226\n\rDeletePayment\022\023.PaymentRequestById" +
-      "\032\020.PaymentResponse2\211\002\n\021CreditCardService" +
-      "\022;\n\020CreateCreditcard\022\022.CreditcardRequest" +
-      "\032\023.CreditcardResponse\022@\n\021GetCreditcardBy" +
-      "Id\022\026.CreditcardRequestById\032\023.CreditcardR" +
-      "esponse\0224\n\021GetAllCreditcards\022\006.Empty\032\027.C" +
-      "reditcardListResponse\022?\n\020DeleteCreditcar" +
-      "d\022\026.CreditcardRequestById\032\023.CreditcardRe" +
-      "sponseB\025\n\023PaymentService.grpcb\006proto3"
+      "\010 \001(\t\"J\n\023PaymentListResponse\022\"\n\010payments" +
+      "\030\001 \003(\0132\020.PaymentResponse\022\017\n\007message\030\002 \001(" +
+      "\t\"S\n\026CreditcardListResponse\022(\n\013creditcar" +
+      "ds\030\001 \003(\0132\023.CreditcardResponse\022\017\n\007message" +
+      "\030\002 \001(\t\"\007\n\005Empty2\251\002\n\016PaymentService\0222\n\rCr" +
+      "eatePayment\022\017.PaymentRequest\032\020.PaymentRe" +
+      "sponse\0227\n\016GetPaymentById\022\023.PaymentReques" +
+      "tById\032\020.PaymentResponse\022D\n\023UpdatePayment" +
+      "Status\022\033.PaymentStatusUpdateRequest\032\020.Pa" +
+      "ymentResponse\022,\n\014ListPayments\022\006.Empty\032\024." +
+      "PaymentListResponse\0226\n\rDeletePayment\022\023.P" +
+      "aymentRequestById\032\020.PaymentResponse2\306\002\n\021" +
+      "CreditCardService\022;\n\020CreateCreditcard\022\022." +
+      "CreditcardRequest\032\023.CreditcardResponse\022@" +
+      "\n\021GetCreditcardById\022\026.CreditcardRequestB" +
+      "yId\032\023.CreditcardResponse\0224\n\021GetAllCredit" +
+      "cards\022\006.Empty\032\027.CreditcardListResponse\022?" +
+      "\n\020DeleteCreditcard\022\026.CreditcardRequestBy" +
+      "Id\032\023.CreditcardResponse\022;\n\020UpdateCreditc" +
+      "ard\022\022.CreditcardRequest\032\023.CreditcardResp" +
+      "onseB\025\n\023PaymentService.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8214,7 +8364,7 @@ public final class Payment {
     internal_static_PaymentListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PaymentListResponse_descriptor,
-        new java.lang.String[] { "Payments", });
+        new java.lang.String[] { "Payments", "Message", });
     internal_static_CreditcardListResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_CreditcardListResponse_fieldAccessorTable = new

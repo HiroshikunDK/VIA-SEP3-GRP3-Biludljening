@@ -14,6 +14,7 @@ service CreditCardService {
   rpc GetCreditcardById (CreditcardRequestById) returns (CreditcardResponse);
   rpc GetAllCreditcards (Empty) returns (CreditcardListResponse);
   rpc DeleteCreditcard (CreditcardRequestById) returns (CreditcardResponse);
+  rpc UpdateCreditcard (CreditcardRequest) returns (CreditcardResponse);
 }
 
 // Credit card messages
@@ -71,6 +72,7 @@ message PaymentResponse {
 
 message PaymentListResponse {
   repeated PaymentResponse payments = 1;
+  string message = 2;
 }
 
 message CreditcardListResponse {

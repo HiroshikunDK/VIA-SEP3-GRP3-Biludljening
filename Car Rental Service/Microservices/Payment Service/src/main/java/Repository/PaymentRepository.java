@@ -41,7 +41,7 @@ public class PaymentRepository implements IPaymentRepository {
   }
 
   @Override
-  public Optional<Payment> getPaymentById(int id) {
+  public Optional<Payment> getPaymentById(long id) {
     try (Session session = sessionFactory.openSession()) {
       Payment payment = session.get(Payment.class, id);
       return Optional.ofNullable(payment);
@@ -62,7 +62,7 @@ public class PaymentRepository implements IPaymentRepository {
   }
 
   @Override
-  public void deletePayment(int id) {
+  public void deletePayment(long id) {
     Transaction transaction = null;
     try (Session session = sessionFactory.openSession()) {
       transaction = session.beginTransaction();
