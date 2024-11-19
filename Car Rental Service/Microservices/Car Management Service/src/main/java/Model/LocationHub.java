@@ -22,7 +22,7 @@ public class LocationHub {
   public LocationHub() {}
 
   // Parameterized constructor
-  public LocationHub(String locationName, String address, String city, String country,
+  public LocationHub(int locationHubId, String locationName, String address, String city, String country,
       String email, String phoneNr, int carCapacity) {
     this.locationName = locationName;
     this.address = address;
@@ -31,6 +31,7 @@ public class LocationHub {
     this.email = email;
     this.phoneNr = phoneNr;
     this.carCapacity = carCapacity;
+    this.id = locationHubId;
   }
 
   // Getters and Setters
