@@ -4098,10 +4098,10 @@ public final class CarManagement {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 bookingnr = 1;</code>
-     * @return The bookingnr.
+     * <code>int32 bookingNr = 1;</code>
+     * @return The bookingNr.
      */
-    int getBookingnr();
+    int getBookingNr();
   }
   /**
    * Protobuf type {@code BookingCarRequest}
@@ -4144,14 +4144,14 @@ public final class CarManagement {
     }
 
     public static final int BOOKINGNR_FIELD_NUMBER = 1;
-    private int bookingnr_ = 0;
+    private int bookingNr_ = 0;
     /**
-     * <code>int32 bookingnr = 1;</code>
-     * @return The bookingnr.
+     * <code>int32 bookingNr = 1;</code>
+     * @return The bookingNr.
      */
     @java.lang.Override
-    public int getBookingnr() {
-      return bookingnr_;
+    public int getBookingNr() {
+      return bookingNr_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4168,8 +4168,8 @@ public final class CarManagement {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bookingnr_ != 0) {
-        output.writeInt32(1, bookingnr_);
+      if (bookingNr_ != 0) {
+        output.writeInt32(1, bookingNr_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4180,9 +4180,9 @@ public final class CarManagement {
       if (size != -1) return size;
 
       size = 0;
-      if (bookingnr_ != 0) {
+      if (bookingNr_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, bookingnr_);
+          .computeInt32Size(1, bookingNr_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4199,8 +4199,8 @@ public final class CarManagement {
       }
       CarManagementService.grpc.CarManagement.BookingCarRequest other = (CarManagementService.grpc.CarManagement.BookingCarRequest) obj;
 
-      if (getBookingnr()
-          != other.getBookingnr()) return false;
+      if (getBookingNr()
+          != other.getBookingNr()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4213,7 +4213,7 @@ public final class CarManagement {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BOOKINGNR_FIELD_NUMBER;
-      hash = (53 * hash) + getBookingnr();
+      hash = (53 * hash) + getBookingNr();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4343,7 +4343,7 @@ public final class CarManagement {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        bookingnr_ = 0;
+        bookingNr_ = 0;
         return this;
       }
 
@@ -4378,7 +4378,7 @@ public final class CarManagement {
       private void buildPartial0(CarManagementService.grpc.CarManagement.BookingCarRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.bookingnr_ = bookingnr_;
+          result.bookingNr_ = bookingNr_;
         }
       }
 
@@ -4426,8 +4426,8 @@ public final class CarManagement {
 
       public Builder mergeFrom(CarManagementService.grpc.CarManagement.BookingCarRequest other) {
         if (other == CarManagementService.grpc.CarManagement.BookingCarRequest.getDefaultInstance()) return this;
-        if (other.getBookingnr() != 0) {
-          setBookingnr(other.getBookingnr());
+        if (other.getBookingNr() != 0) {
+          setBookingNr(other.getBookingNr());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4456,7 +4456,7 @@ public final class CarManagement {
                 done = true;
                 break;
               case 8: {
-                bookingnr_ = input.readInt32();
+                bookingNr_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -4477,34 +4477,34 @@ public final class CarManagement {
       }
       private int bitField0_;
 
-      private int bookingnr_ ;
+      private int bookingNr_ ;
       /**
-       * <code>int32 bookingnr = 1;</code>
-       * @return The bookingnr.
+       * <code>int32 bookingNr = 1;</code>
+       * @return The bookingNr.
        */
       @java.lang.Override
-      public int getBookingnr() {
-        return bookingnr_;
+      public int getBookingNr() {
+        return bookingNr_;
       }
       /**
-       * <code>int32 bookingnr = 1;</code>
-       * @param value The bookingnr to set.
+       * <code>int32 bookingNr = 1;</code>
+       * @param value The bookingNr to set.
        * @return This builder for chaining.
        */
-      public Builder setBookingnr(int value) {
+      public Builder setBookingNr(int value) {
         
-        bookingnr_ = value;
+        bookingNr_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 bookingnr = 1;</code>
+       * <code>int32 bookingNr = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBookingnr() {
+      public Builder clearBookingNr() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        bookingnr_ = 0;
+        bookingNr_ = 0;
         onChanged();
         return this;
       }
@@ -11374,7 +11374,7 @@ public final class CarManagement {
       "\001(\005\"\035\n\007CarList\022\022\n\004cars\030\001 \003(\0132\004.Car\"B\n\013Ca" +
       "rResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 " +
       "\001(\t\022\021\n\003car\030\003 \001(\0132\004.Car\"&\n\021BookingCarRequ" +
-      "est\022\021\n\tbookingnr\030\001 \001(\005\"\275\001\n\nBookingCar\022\021\n" +
+      "est\022\021\n\tbookingNr\030\001 \001(\005\"\275\001\n\nBookingCar\022\021\n" +
       "\tbookingnr\030\001 \001(\005\022\016\n\006status\030\002 \001(\t\022\021\n\tstar" +
       "tdato\030\003 \001(\t\022\021\n\tstarttime\030\004 \001(\t\022\017\n\007enddat" +
       "e\030\005 \001(\t\022\017\n\007endtime\030\006 \001(\t\022\r\n\005price\030\007 \001(\t\022" +
@@ -11395,23 +11395,24 @@ public final class CarManagement {
       "mpty\032\010.CarList\022\'\n\ngetCarByID\022\013.CarReques" +
       "t\032\014.CarResponse\022\034\n\006addCar\022\004.Car\032\014.CarRes" +
       "ponse\022\037\n\tupdateCar\022\004.Car\032\014.CarResponse\022&" +
-      "\n\tdeleteCar\022\013.CarRequest\032\014.CarResponse2\235" +
+      "\n\tdeleteCar\022\013.CarRequest\032\014.CarResponse2\245" +
       "\002\n\021BookingCarService\022,\n\021GetAllBookingCar" +
-      "s\022\006.Empty\032\017.BookingCarList\0224\n\021GetBooking" +
-      "CarByID\022\022.BookingCarRequest\032\013.BookingCar" +
-      "\0221\n\rAddBookingCar\022\013.BookingCar\032\023.Booking" +
-      "CarResponse\0224\n\020UpdateBookingCar\022\013.Bookin" +
-      "gCar\032\023.BookingCarResponse\022;\n\020DeleteBooki" +
-      "ngCar\022\022.BookingCarRequest\032\023.BookingCarRe" +
-      "sponse2\254\002\n\022LocationHubService\022.\n\022GetAllL" +
-      "ocationHubs\022\006.Empty\032\020.LocationHubList\0227\n" +
-      "\022GetLocationHubByID\022\023.LocationHubRequest" +
-      "\032\014.LocationHub\0224\n\016AddLocationHub\022\014.Locat" +
-      "ionHub\032\024.LocationHubResponse\0227\n\021UpdateLo" +
-      "cationHub\022\014.LocationHub\032\024.LocationHubRes" +
-      "ponse\022>\n\021DeleteLocationHub\022\023.LocationHub" +
-      "Request\032\024.LocationHubResponseB\033\n\031CarMana" +
-      "gementService.grpcb\006proto3"
+      "s\022\006.Empty\032\017.BookingCarList\022<\n\021GetBooking" +
+      "CarByID\022\022.BookingCarRequest\032\023.BookingCar" +
+      "Response\0221\n\rAddBookingCar\022\013.BookingCar\032\023" +
+      ".BookingCarResponse\0224\n\020UpdateBookingCar\022" +
+      "\013.BookingCar\032\023.BookingCarResponse\022;\n\020Del" +
+      "eteBookingCar\022\022.BookingCarRequest\032\023.Book" +
+      "ingCarResponse2\264\002\n\022LocationHubService\022.\n" +
+      "\022GetAllLocationHubs\022\006.Empty\032\020.LocationHu" +
+      "bList\022?\n\022GetLocationHubByID\022\023.LocationHu" +
+      "bRequest\032\024.LocationHubResponse\0224\n\016AddLoc" +
+      "ationHub\022\014.LocationHub\032\024.LocationHubResp" +
+      "onse\0227\n\021UpdateLocationHub\022\014.LocationHub\032" +
+      "\024.LocationHubResponse\022>\n\021DeleteLocationH" +
+      "ub\022\023.LocationHubRequest\032\024.LocationHubRes" +
+      "ponseB\033\n\031CarManagementService.grpcb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11452,7 +11453,7 @@ public final class CarManagement {
     internal_static_BookingCarRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BookingCarRequest_descriptor,
-        new java.lang.String[] { "Bookingnr", });
+        new java.lang.String[] { "BookingNr", });
     internal_static_BookingCar_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_BookingCar_fieldAccessorTable = new

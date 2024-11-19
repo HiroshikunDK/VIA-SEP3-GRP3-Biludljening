@@ -83,7 +83,14 @@ public class LocationHubService extends LocationHubServiceGrpc.LocationHubServic
     responseObserver.onCompleted();
   }
 
-
+  @Override public void deleteLocationHub(CarManagement.LocationHubRequest request,
+      StreamObserver<CarManagement.LocationHubResponse> responseObserver)
+  {
+    boolean success = locationsHubRepository.deleteLocationHub(request.getId());
+    CarManagement.LocationHubResponse response = CarManagement.LocationHubResponse.newBuilder().setSuccess(true).setMessage("LocationHub deleted").build();
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
 
 
 

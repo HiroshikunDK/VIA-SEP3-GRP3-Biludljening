@@ -80,7 +80,7 @@ message BookingCarResponse {
 // LocationHubService
 service LocationHubService {
   rpc GetAllLocationHubs (Empty) returns (LocationHubList);
-  rpc GetLocationHubByID (LocationHubRequest) returns (LocationHub);
+  rpc GetLocationHubByID (LocationHubRequest) returns (LocationHubResponse);
   rpc AddLocationHub (LocationHub) returns (LocationHubResponse);
   rpc UpdateLocationHub (LocationHub) returns (LocationHubResponse);
   rpc DeleteLocationHub (LocationHubRequest) returns (LocationHubResponse);

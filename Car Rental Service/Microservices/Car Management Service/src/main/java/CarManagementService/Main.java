@@ -1,7 +1,9 @@
 package CarManagementService;
 
 import Repository.BookingCarRepository;
+import Repository.LocationsHubRepository;
 import Service.BookingCarService;
+import Service.LocationHubService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import Service.CarService;
@@ -19,14 +21,16 @@ public class Main {
         EntityManager entityManager = HibernateUtility.getSessionFactory().createEntityManager();
         CarRepository carRepository = new CarRepository(entityManager);
         BookingCarRepository bookingCarRepository = new BookingCarRepository(entityManager);
+        LocationsHubRepository locationsHubRepository = new LocationsHubRepository(entityManager);
 
         // Initialize CarService
         CarService carService = new CarService(carRepository);
         BookingCarService bookingCarService = new BookingCarService(bookingCarRepository);
+        LocationHubService locationHubService = new LocationHubService(locationsHubRepository);
 
         // Start gRPC server
         Server server = ServerBuilder.forPort(5004)
-                .addService(carService).addService(bookingCarService)
+                .addService(carService).addService(bookingCarService).addService(locationHubService)
                 .build()
                 .start();
 
