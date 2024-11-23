@@ -1,81 +1,56 @@
 package Repository;
 
 import Model.User;
-import Persistence.HibernateUtility;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
-import java.util.List;
 import java.util.Optional;
 
 public class UserRepository implements IUserRepository {
-    private final Session session;
+  private final EntityManager entityManager;
 
-    public UserRepository() {
-        this.session = HibernateUtility.getSessionFactory().openSession();
-    }
+  public UserRepository(EntityManager entityManager) {
+    this.entityManager = entityManager;
+  }
 
-    @Override
-    public User addUser(User user) {
-        Transaction transaction = session.beginTransaction();
-        try {
-            session.persist(user);
-            transaction.commit();
-        } catch (Exception e) {
-            transaction.rollback();
-            throw new RuntimeException("Error adding user", e);
-        }
-        return user;
+  @Override
+  public User addUser(User user) {
+    try {
+      entityManager.getTransaction().begin();
+      entityManager.persist(user); // Persist bruges her for at oprette nye poster
+      entityManager.getTransaction().commit();
+      return user;
+    } catch (Exception e) {
+      if (entityManager.getTransaction().isActive()) {
+        entityManager.getTransaction().rollback();
+      }
+      throw new RuntimeException("Error adding user", e);
     }
+  }
 
-    @Override
-    public Optional<User> getUserById(int id) {
-        User user = session.get(User.class, id);
-        return Optional.ofNullable(user);
+  @Override
+  public Optional<User> getUserById(int id) {
+    try {
+      User user = entityManager.find(User.class, id); // Brug kun id
+      return Optional.ofNullable(user);
+    } catch (Exception e) {
+      throw new RuntimeException("Error retrieving user by ID", e);
     }
+  }
 
-    @Override
-    public Optional<User> getUserByUsername(String username) {
-        String hql = "FROM User u WHERE u.username = :username";
-        User user = session.createQuery(hql, User.class)
-                .setParameter("username", username)
-                .uniqueResult();
-        return Optional.ofNullable(user);
-    }
 
-    @Override
-    public User updateUser(User user) {
-        Transaction transaction = session.beginTransaction();
-        try {
-            session.merge(user);
-            transaction.commit();
-        } catch (Exception e) {
-            transaction.rollback();
-            throw new RuntimeException("Error updating user", e);
-        }
-        return user;
-    }
+  @Override
+  public Optional<User> getUserByUsername(String username) {
+    try {
+      // Ret HQL-forespørgslen til at bruge den nye struktur
+      String jpql = "SELECT u FROM User u WHERE u.username = :username";
+      TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
+      query.setParameter("username", username);
 
-    @Override
-    public boolean deleteUser(int id) {
-        Transaction transaction = session.beginTransaction();
-        try {
-            User user = session.get(User.class, id);
-            if (user != null) {
-                session.remove(user);
-                transaction.commit();
-                return true;
-            }
-            transaction.rollback();
-            return false;
-        } catch (Exception e) {
-            transaction.rollback();
-            throw new RuntimeException("Error deleting user", e);
-        }
+      // Returner første resultat som Optional
+      return query.getResultList().stream().findFirst();
+    } catch (Exception e) {
+      throw new RuntimeException("Error retrieving user by username", e);
     }
-
-    @Override
-    public List<User> getAllUsers() {
-        return session.createQuery("FROM User", User.class).list();
-    }
+  }
 }

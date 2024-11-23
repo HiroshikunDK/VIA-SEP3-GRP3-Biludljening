@@ -139,68 +139,6 @@ public final class PaymentServiceGrpc {
     return getListPaymentsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequest,
-      PaymentService.grpc.Payment.CreditcardResponse> getCreateCreditcardMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateCreditcard",
-      requestType = PaymentService.grpc.Payment.CreditcardRequest.class,
-      responseType = PaymentService.grpc.Payment.CreditcardResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequest,
-      PaymentService.grpc.Payment.CreditcardResponse> getCreateCreditcardMethod() {
-    io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequest, PaymentService.grpc.Payment.CreditcardResponse> getCreateCreditcardMethod;
-    if ((getCreateCreditcardMethod = PaymentServiceGrpc.getCreateCreditcardMethod) == null) {
-      synchronized (PaymentServiceGrpc.class) {
-        if ((getCreateCreditcardMethod = PaymentServiceGrpc.getCreateCreditcardMethod) == null) {
-          PaymentServiceGrpc.getCreateCreditcardMethod = getCreateCreditcardMethod =
-              io.grpc.MethodDescriptor.<PaymentService.grpc.Payment.CreditcardRequest, PaymentService.grpc.Payment.CreditcardResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCreditcard"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PaymentService.grpc.Payment.CreditcardRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PaymentService.grpc.Payment.CreditcardResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new PaymentServiceMethodDescriptorSupplier("CreateCreditcard"))
-              .build();
-        }
-      }
-    }
-    return getCreateCreditcardMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequestById,
-      PaymentService.grpc.Payment.CreditcardResponse> getGetCreditcardByIdMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetCreditcardById",
-      requestType = PaymentService.grpc.Payment.CreditcardRequestById.class,
-      responseType = PaymentService.grpc.Payment.CreditcardResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequestById,
-      PaymentService.grpc.Payment.CreditcardResponse> getGetCreditcardByIdMethod() {
-    io.grpc.MethodDescriptor<PaymentService.grpc.Payment.CreditcardRequestById, PaymentService.grpc.Payment.CreditcardResponse> getGetCreditcardByIdMethod;
-    if ((getGetCreditcardByIdMethod = PaymentServiceGrpc.getGetCreditcardByIdMethod) == null) {
-      synchronized (PaymentServiceGrpc.class) {
-        if ((getGetCreditcardByIdMethod = PaymentServiceGrpc.getGetCreditcardByIdMethod) == null) {
-          PaymentServiceGrpc.getGetCreditcardByIdMethod = getGetCreditcardByIdMethod =
-              io.grpc.MethodDescriptor.<PaymentService.grpc.Payment.CreditcardRequestById, PaymentService.grpc.Payment.CreditcardResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCreditcardById"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PaymentService.grpc.Payment.CreditcardRequestById.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PaymentService.grpc.Payment.CreditcardResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new PaymentServiceMethodDescriptorSupplier("GetCreditcardById"))
-              .build();
-        }
-      }
-    }
-    return getGetCreditcardByIdMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<PaymentService.grpc.Payment.PaymentRequestById,
       PaymentService.grpc.Payment.PaymentResponse> getDeletePaymentMethod;
 
@@ -230,6 +168,37 @@ public final class PaymentServiceGrpc {
       }
     }
     return getDeletePaymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<PaymentService.grpc.Payment.PaymentListByCustomerRequest,
+      PaymentService.grpc.Payment.PaymentListResponse> getListPaymentsByCustomerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPaymentsByCustomer",
+      requestType = PaymentService.grpc.Payment.PaymentListByCustomerRequest.class,
+      responseType = PaymentService.grpc.Payment.PaymentListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<PaymentService.grpc.Payment.PaymentListByCustomerRequest,
+      PaymentService.grpc.Payment.PaymentListResponse> getListPaymentsByCustomerMethod() {
+    io.grpc.MethodDescriptor<PaymentService.grpc.Payment.PaymentListByCustomerRequest, PaymentService.grpc.Payment.PaymentListResponse> getListPaymentsByCustomerMethod;
+    if ((getListPaymentsByCustomerMethod = PaymentServiceGrpc.getListPaymentsByCustomerMethod) == null) {
+      synchronized (PaymentServiceGrpc.class) {
+        if ((getListPaymentsByCustomerMethod = PaymentServiceGrpc.getListPaymentsByCustomerMethod) == null) {
+          PaymentServiceGrpc.getListPaymentsByCustomerMethod = getListPaymentsByCustomerMethod =
+              io.grpc.MethodDescriptor.<PaymentService.grpc.Payment.PaymentListByCustomerRequest, PaymentService.grpc.Payment.PaymentListResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPaymentsByCustomer"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PaymentService.grpc.Payment.PaymentListByCustomerRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PaymentService.grpc.Payment.PaymentListResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PaymentServiceMethodDescriptorSupplier("ListPaymentsByCustomer"))
+              .build();
+        }
+      }
+    }
+    return getListPaymentsByCustomerMethod;
   }
 
   /**
@@ -310,23 +279,16 @@ public final class PaymentServiceGrpc {
 
     /**
      */
-    default void createCreditcard(PaymentService.grpc.Payment.CreditcardRequest request,
-        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCreditcardMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void getCreditcardById(PaymentService.grpc.Payment.CreditcardRequestById request,
-        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCreditcardByIdMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void deletePayment(PaymentService.grpc.Payment.PaymentRequestById request,
         io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePaymentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listPaymentsByCustomer(PaymentService.grpc.Payment.PaymentListByCustomerRequest request,
+        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentListResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPaymentsByCustomerMethod(), responseObserver);
     }
   }
 
@@ -391,26 +353,18 @@ public final class PaymentServiceGrpc {
 
     /**
      */
-    public void createCreditcard(PaymentService.grpc.Payment.CreditcardRequest request,
-        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateCreditcardMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void getCreditcardById(PaymentService.grpc.Payment.CreditcardRequestById request,
-        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCreditcardByIdMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void deletePayment(PaymentService.grpc.Payment.PaymentRequestById request,
         io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePaymentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listPaymentsByCustomer(PaymentService.grpc.Payment.PaymentListByCustomerRequest request,
+        io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentListResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPaymentsByCustomerMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -460,23 +414,16 @@ public final class PaymentServiceGrpc {
 
     /**
      */
-    public PaymentService.grpc.Payment.CreditcardResponse createCreditcard(PaymentService.grpc.Payment.CreditcardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateCreditcardMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public PaymentService.grpc.Payment.CreditcardResponse getCreditcardById(PaymentService.grpc.Payment.CreditcardRequestById request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCreditcardByIdMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public PaymentService.grpc.Payment.PaymentResponse deletePayment(PaymentService.grpc.Payment.PaymentRequestById request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePaymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public PaymentService.grpc.Payment.PaymentListResponse listPaymentsByCustomer(PaymentService.grpc.Payment.PaymentListByCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPaymentsByCustomerMethod(), getCallOptions(), request);
     }
   }
 
@@ -530,26 +477,18 @@ public final class PaymentServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<PaymentService.grpc.Payment.CreditcardResponse> createCreditcard(
-        PaymentService.grpc.Payment.CreditcardRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateCreditcardMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<PaymentService.grpc.Payment.CreditcardResponse> getCreditcardById(
-        PaymentService.grpc.Payment.CreditcardRequestById request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCreditcardByIdMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<PaymentService.grpc.Payment.PaymentResponse> deletePayment(
         PaymentService.grpc.Payment.PaymentRequestById request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePaymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<PaymentService.grpc.Payment.PaymentListResponse> listPaymentsByCustomer(
+        PaymentService.grpc.Payment.PaymentListByCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPaymentsByCustomerMethod(), getCallOptions()), request);
     }
   }
 
@@ -557,9 +496,8 @@ public final class PaymentServiceGrpc {
   private static final int METHODID_GET_PAYMENT_BY_ID = 1;
   private static final int METHODID_UPDATE_PAYMENT_STATUS = 2;
   private static final int METHODID_LIST_PAYMENTS = 3;
-  private static final int METHODID_CREATE_CREDITCARD = 4;
-  private static final int METHODID_GET_CREDITCARD_BY_ID = 5;
-  private static final int METHODID_DELETE_PAYMENT = 6;
+  private static final int METHODID_DELETE_PAYMENT = 4;
+  private static final int METHODID_LIST_PAYMENTS_BY_CUSTOMER = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -594,17 +532,13 @@ public final class PaymentServiceGrpc {
           serviceImpl.listPayments((PaymentService.grpc.Payment.Empty) request,
               (io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentListResponse>) responseObserver);
           break;
-        case METHODID_CREATE_CREDITCARD:
-          serviceImpl.createCreditcard((PaymentService.grpc.Payment.CreditcardRequest) request,
-              (io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse>) responseObserver);
-          break;
-        case METHODID_GET_CREDITCARD_BY_ID:
-          serviceImpl.getCreditcardById((PaymentService.grpc.Payment.CreditcardRequestById) request,
-              (io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.CreditcardResponse>) responseObserver);
-          break;
         case METHODID_DELETE_PAYMENT:
           serviceImpl.deletePayment((PaymentService.grpc.Payment.PaymentRequestById) request,
               (io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PAYMENTS_BY_CUSTOMER:
+          serviceImpl.listPaymentsByCustomer((PaymentService.grpc.Payment.PaymentListByCustomerRequest) request,
+              (io.grpc.stub.StreamObserver<PaymentService.grpc.Payment.PaymentListResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -653,26 +587,19 @@ public final class PaymentServiceGrpc {
               PaymentService.grpc.Payment.PaymentListResponse>(
                 service, METHODID_LIST_PAYMENTS)))
         .addMethod(
-          getCreateCreditcardMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              PaymentService.grpc.Payment.CreditcardRequest,
-              PaymentService.grpc.Payment.CreditcardResponse>(
-                service, METHODID_CREATE_CREDITCARD)))
-        .addMethod(
-          getGetCreditcardByIdMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              PaymentService.grpc.Payment.CreditcardRequestById,
-              PaymentService.grpc.Payment.CreditcardResponse>(
-                service, METHODID_GET_CREDITCARD_BY_ID)))
-        .addMethod(
           getDeletePaymentMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               PaymentService.grpc.Payment.PaymentRequestById,
               PaymentService.grpc.Payment.PaymentResponse>(
                 service, METHODID_DELETE_PAYMENT)))
+        .addMethod(
+          getListPaymentsByCustomerMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              PaymentService.grpc.Payment.PaymentListByCustomerRequest,
+              PaymentService.grpc.Payment.PaymentListResponse>(
+                service, METHODID_LIST_PAYMENTS_BY_CUSTOMER)))
         .build();
   }
 
@@ -725,9 +652,8 @@ public final class PaymentServiceGrpc {
               .addMethod(getGetPaymentByIdMethod())
               .addMethod(getUpdatePaymentStatusMethod())
               .addMethod(getListPaymentsMethod())
-              .addMethod(getCreateCreditcardMethod())
-              .addMethod(getGetCreditcardByIdMethod())
               .addMethod(getDeletePaymentMethod())
+              .addMethod(getListPaymentsByCustomerMethod())
               .build();
         }
       }

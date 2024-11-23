@@ -41,12 +41,25 @@ public class PaymentRepository implements IPaymentRepository {
   }
 
   @Override
-  public Optional<Payment> getPaymentById(int id) {
+  public Optional<Payment> getPaymentById(long id) {
     try (Session session = sessionFactory.openSession()) {
       Payment payment = session.get(Payment.class, id);
       return Optional.ofNullable(payment);
     }
   }
+
+  public List<Payment> getPaymentsByCustomer(long customerId) {
+    try (Session session = sessionFactory.openSession()) {
+      String hql = "FROM Payment WHERE customer = :customerId";
+      return session.createQuery(hql, Payment.class)
+              .setParameter("customerId", customerId)
+              .list();
+    } catch (Exception e) {
+      e.printStackTrace();
+      return List.of();
+    }
+  }
+
 
   @Override
   public void updatePayment(Payment payment) {
@@ -62,7 +75,7 @@ public class PaymentRepository implements IPaymentRepository {
   }
 
   @Override
-  public void deletePayment(int id) {
+  public void deletePayment(long id) {
     Transaction transaction = null;
     try (Session session = sessionFactory.openSession()) {
       transaction = session.beginTransaction();

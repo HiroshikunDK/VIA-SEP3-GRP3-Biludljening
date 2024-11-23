@@ -47,42 +47,63 @@ public class CarService extends CarServiceGrpc.CarServiceImplBase {
 
     @Override
     public void addCar(CarManagement.Car request, StreamObserver<CarManagement.CarResponse> responseObserver) {
+        // Create a new Car instance using all fields from the request
         Car newCar = new Car(
-                0,
-                request.getModel(),
-                request.getColor(),
-                request.getSeats()
+            0,
+            request.getVin(),
+            request.getYearproduced(),
+            request.getManufactor(),
+            request.getModel(),
+            request.getColor(),
+            request.getAltname(),
+            request.getSeats(),
+            request.getCarrange(),
+            request.getLocationhubref()
         );
 
-        newCar = carRepository.addCar(newCar);
+        // Add business logic to save 'newCar' to the database, e.g., using Hibernate
+        carRepository.addCar(newCar);
 
+        // Build and return a response
         CarManagement.CarResponse response = CarManagement.CarResponse.newBuilder()
-                .setSuccess(true)
-                .setMessage("Car added successfully")
-                .setCar(convertToProtoCar(newCar))
-                .build();
+            .setSuccess(true)
+            .setMessage("Car added successfully.")
+            .build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     @Override
     public void updateCar(CarManagement.Car request, StreamObserver<CarManagement.CarResponse> responseObserver) {
+        // Create an updated Car instance using all fields from the request
         Car updatedCar = new Car(
-                request.getCarId(),
-                request.getModel(),
-                request.getColor(),
-                request.getSeats());
+            request.getCarId(),
+            request.getVin(),
+            request.getYearproduced(),
+            request.getManufactor(),
+            request.getModel(),
+            request.getColor(),
+            request.getAltname(),
+            request.getSeats(),
+            request.getCarrange(),
+            request.getLocationhubref()
+        );
 
+        // Call the repository to update the car in the database
         carRepository.updateCar(updatedCar);
+
+        // Build and return a response
         CarManagement.CarResponse response = CarManagement.CarResponse.newBuilder()
-                .setSuccess(true)
-                .setMessage("Car updated successfully")
-                .build();
+            .setSuccess(true)
+            .setMessage("Car updated successfully")
+            .build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     @Override
     public void deleteCar(CarManagement.CarRequest request, StreamObserver<CarManagement.CarResponse> responseObserver) {

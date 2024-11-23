@@ -1,66 +1,111 @@
 package Model;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class User implements Serializable {
 
-    private String username;
-    private String email;
-    private String role;
-    private String password;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY) // Hibernate genererer ID automatisk
+  private int id;
 
-    public User() {}
+  @Column(nullable = false, unique = true)
+  private String username;
 
-    public User(int id, String username, String email, String role, String password) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.role = role;
-        this.password = password;
-    }
+  private String email;
+  private String password;
+  private int phonenr;
+  private String title;
+  private String userFirstname;
+  private String userLastname;
+  private String role;
 
-    public int getId() {
-        return id;
-    }
+  public User() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public User(String username, String email, String password, int phonenr, String title, String userFirstname, String userLastname, String role) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.phonenr = phonenr;
+    this.title = title;
+    this.userFirstname = userFirstname;
+    this.userLastname = userLastname;
+    this.role = role;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  // Getters and Setters
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public String getRole() {
-        return role;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public int getPhonenr() {
+    return phonenr;
+  }
+
+  public void setPhonenr(int phonenr) {
+    this.phonenr = phonenr;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getUserFirstname() {
+    return userFirstname;
+  }
+
+  public void setUserFirstname(String userFirstname) {
+    this.userFirstname = userFirstname;
+  }
+
+  public String getUserLastname() {
+    return userLastname;
+  }
+
+  public void setUserLastname(String userLastname) {
+    this.userLastname = userLastname;
+  }
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
+  }
 }

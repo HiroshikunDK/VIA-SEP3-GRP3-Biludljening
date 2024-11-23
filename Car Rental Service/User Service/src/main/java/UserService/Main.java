@@ -6,13 +6,21 @@ import Persistence.HibernateUtility;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
+import jakarta.persistence.EntityManager;
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        UserRepository userRepository = new UserRepository();
+        // Get EntityManager from HibernateUtility
+        EntityManager entityManager = HibernateUtility.getEntityManager();
+
+        // Create UserRepository with EntityManager
+        UserRepository userRepository = new UserRepository(entityManager);
+
+        // Create UserService with UserRepository
         UserService userService = new UserService(userRepository);
 
+        // Start the gRPC server
         Server server = ServerBuilder.forPort(5006)
                 .addService(userService)
                 .build()
@@ -20,6 +28,7 @@ public class Main {
 
         System.out.println("UserService gRPC server started on port " + server.getPort());
 
+        // Add a shutdown hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Shutting down UserService gRPC server...");
             server.shutdown();
