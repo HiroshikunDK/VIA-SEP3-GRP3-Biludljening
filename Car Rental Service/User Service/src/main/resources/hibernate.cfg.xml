@@ -5,7 +5,7 @@
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property name="hibernate.connection.url">
-            jdbc:sqlite:Database\UserService.db
+            jdbc:sqlite:..\Database\UserService.db
         </property>
 
         <!-- JDBC connection pool settings -->
