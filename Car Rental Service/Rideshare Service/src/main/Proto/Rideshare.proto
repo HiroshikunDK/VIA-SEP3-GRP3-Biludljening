@@ -36,7 +36,7 @@ message RideshareOfferList {
 
 // Rideshare Offer definition
 message RideshareOffer {
-  string rideId = 1; // CRS_ID
+  int32 rideId = 1; // CRS_ID
   int32 availablespaces = 2; // SMALLINT
   string status = 3; // CRS_NAME (status: full, partially booked, or cancelled)
   string startdate = 4; // DATE as string in YYYY-MM-DD format
@@ -46,8 +46,8 @@ message RideshareOffer {
   string endtime = 8; // TIME as string in HH:MM:SS format
   string endlocation = 9; // CRS_ADDRESS
   float price = 10; // CRS_CURRENCY (published price)
-  string customerid = 11; // CRS_ID (Reference to Usertable)
-  string bookingref = 12; // CRS_ID (reference to car booking table)
+  int32 customerid = 11; // CRS_ID (Reference to Usertable)
+  int32 bookingref = 12; // CRS_ID (reference to car booking table)
 }
 
 message RideShareRequestList {
@@ -55,29 +55,26 @@ message RideShareRequestList {
 }
 //Rideshare Request definition
 message RideshareRequest {
-  string rideId = 1; // CRS_ID
+  int32 rideId = 1; // CRS_ID
   string status = 2; // only for internal use?
   string startdate = 3; // DATE as string in YYYY-MM-DD format
   string starttime = 4; // TIME as string in HH:MM:SS format
   string startlocation = 5; // CRS_ADDRESS
-  float latitude = 6; // Geographical latitude
-  float longitude = 7; // Geographical longitude
-  string enddate = 8; // DATE as string in YYYY-MM-DD format
-  string endtime = 9; // TIME as string in HH:MM:SS format
-  string endlocation = 10; // CRS_ADDRESS
-  float price = 11; // CRS_CURRENCY (customer price)
-  string customerid = 12; // CRS_ID (Reference to Usertable)
-  string bookingref = 13; // CRS_ID (reference to RideshareOffer)
+  string enddate = 6; // DATE as string in YYYY-MM-DD format
+  string endtime = 7; // TIME as string in HH:MM:SS format
+  string endlocation = 8; // CRS_ADDRESS
+  float price = 9; // CRS_CURRENCY (customer price)
+  int32 customerid = 10; // CRS_ID (Reference to Usertable)
+  int32 bookingref = 11; // CRS_ID (reference to RideshareOffer)
 }
 
-
 message RideShareIDRequest {
-  string rideId = 1;
+  int32 rideId = 1;
   string message = 2;
 }
 
 message RideShareIDResponse {
-  string rideId = 1;
+  int32 rideId = 1;
   bool successful = 2;
   string message = 3;
 }
@@ -85,7 +82,7 @@ message RideShareIDResponse {
 //Function used to transfer partial data, maybe to booking confirmation/receipt creation
 /*
 message RouteInfo{
-  string bookingid = 1;
+  int32 bookingid = 1;
   string startdate = 3; // DATE as string in YYYY-MM-DD format
   string starttime = 4; // TIME as string in HH:MM:SS format
   string startlocation = 5; // CRS_ADDRESS
@@ -97,6 +94,7 @@ message RouteInfo{
 }
 */
 
+//added test to avoid duplicate implementation of CreateRideShareRequest method and message
 message CreateRideShareRequestTest {
   int32 car_id = 1;
   string driver_username = 2;
