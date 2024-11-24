@@ -1,5 +1,7 @@
 package RideshareService;
 
+import Repository.RideShareOfferHibernateImpl;
+import Repository.RideShareRequestHibernateImpl;
 import Repository.RideshareRepository;
 import Service.RideshareService;
 import RideShareService.grpc.RideShareServiceGrpc;
@@ -13,8 +15,13 @@ public class Main {
         // Configure Hibernate SessionFactory
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
+        //Nebu implementation
+
         RideshareRepository rideshareRepository = new RideshareRepository(sessionFactory);
-        RideshareService rideshareService = new RideshareService(rideshareRepository);
+        RideShareOfferHibernateImpl rideShareOfferHibernate = new RideShareOfferHibernateImpl(sessionFactory);
+        RideShareRequestHibernateImpl rideShareRequestHibernate = new RideShareRequestHibernateImpl(sessionFactory);
+
+        RideshareService rideshareService = new RideshareService(rideshareRepository, rideShareOfferHibernate,rideShareRequestHibernate);
 
         // gRPC server setup
         Server server = ServerBuilder.forPort(5008)

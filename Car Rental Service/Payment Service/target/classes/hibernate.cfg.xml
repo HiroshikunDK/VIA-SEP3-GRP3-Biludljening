@@ -3,7 +3,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite: PaymentService.db</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:Database/PaymentService.db</property>
 
         <!-- JDBC connection pool settings -->
         <property name="hibernate.c3p0.min_size">5</property>
@@ -20,7 +20,6 @@
         <property name="hibernate.format_sql">true</property>
 
         <!-- Add entity mappings -->
-        <mapping class="Model.CreditCard"/>
         <mapping class="Model.Payment"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,14 +1,103 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
 option java_package = "RideShareService.grpc";
 
 service RideShareService {
-  rpc CreateRideShare (CreateRideShareRequest) returns (RideShareResponse);
+  rpc CreateRideShare (CreateRideShareRequestTest) returns (RideShareResponse);
   rpc JoinRideShare (JoinRideShareRequest) returns (RideShareResponse);
   rpc ListRideShares (ListRideSharesRequest) returns (RideShareListResponse);
+
+  //RideShareOffer CRUD functions
+  rpc CreateRideShareOffer (RideshareOffer) returns (RideShareResponse);
+  rpc ReadRideShareOffer (RideShareIDRequest) returns (RideshareOffer);
+  rpc ReadAllRideShareOffer (google.protobuf.Empty) returns (RideshareOfferList);
+  rpc UpdateRideShareOffer (RideshareOffer) returns (RideShareResponse);
+  rpc DeleteRideShareOffer (RideShareIDRequest) returns (RideShareResponse);
+
+  //RideShareRequest CRUD functions
+  rpc CreateRideShareRequest (RideshareRequest) returns (RideShareResponse);
+  rpc ReadRideShareRequest (RideShareIDRequest) returns (RideshareRequest);
+  rpc ReadAllRideShareRequest (google.protobuf.Empty) returns (RideShareRequestList);
+  rpc UpdateRideShareRequest (RideshareRequest) returns (RideShareResponse);
+  rpc DeleteRideShareRequest (RideShareIDRequest) returns (RideShareResponse);
+
+  //Functions for better search in
+  rpc GetClosestRideShareRequest (RideshareRequest) returns (RideshareOfferList);
+  rpc GetAllRideShareOffersByUserID (RideShareIDRequest) returns (RideshareOfferList);
+  rpc GetAllRideShareRequestsByUserID (RideShareIDRequest) returns (RideShareRequestList);
+  rpc GetAllRideShareOffersByBookingID (RideShareIDRequest) returns (RideshareOfferList);
+  rpc GetAllRideShareRequestsByRideOfferID (RideShareIDRequest) returns (RideShareRequestList);
 }
 
-message CreateRideShareRequest {
+message RideshareOfferList {
+  repeated RideshareOffer result_list = 1;
+}
+
+// Rideshare Offer definition
+message RideshareOffer {
+  string rideId = 1; // CRS_ID
+  int32 availablespaces = 2; // SMALLINT
+  string status = 3; // CRS_NAME (status: full, partially booked, or cancelled)
+  string startdate = 4; // DATE as string in YYYY-MM-DD format
+  string starttime = 5; // TIME as string in HH:MM:SS format
+  string startlocation = 6; // CRS_ADDRESS
+  string enddate = 7; // TIME as string in HH:MM:SS format
+  string endtime = 8; // TIME as string in HH:MM:SS format
+  string endlocation = 9; // CRS_ADDRESS
+  float price = 10; // CRS_CURRENCY (published price)
+  string customerid = 11; // CRS_ID (Reference to Usertable)
+  string bookingref = 12; // CRS_ID (reference to car booking table)
+}
+
+message RideShareRequestList {
+  repeated RideshareRequest result_list = 1;
+}
+//Rideshare Request definition
+message RideshareRequest {
+  string rideId = 1; // CRS_ID
+  string status = 2; // only for internal use?
+  string startdate = 3; // DATE as string in YYYY-MM-DD format
+  string starttime = 4; // TIME as string in HH:MM:SS format
+  string startlocation = 5; // CRS_ADDRESS
+  float latitude = 6; // Geographical latitude
+  float longitude = 7; // Geographical longitude
+  string enddate = 8; // DATE as string in YYYY-MM-DD format
+  string endtime = 9; // TIME as string in HH:MM:SS format
+  string endlocation = 10; // CRS_ADDRESS
+  float price = 11; // CRS_CURRENCY (customer price)
+  string customerid = 12; // CRS_ID (Reference to Usertable)
+  string bookingref = 13; // CRS_ID (reference to RideshareOffer)
+}
+
+
+message RideShareIDRequest {
+  string rideId = 1;
+  string message = 2;
+}
+
+message RideShareIDResponse {
+  string rideId = 1;
+  bool successful = 2;
+  string message = 3;
+}
+
+//Function used to transfer partial data, maybe to booking confirmation/receipt creation
+/*
+message RouteInfo{
+  string bookingid = 1;
+  string startdate = 3; // DATE as string in YYYY-MM-DD format
+  string starttime = 4; // TIME as string in HH:MM:SS format
+  string startlocation = 5; // CRS_ADDRESS
+  string enddate = 6; // DATE as string in YYYY-MM-DD format
+  string endtime = 7; // TIME as string in HH:MM:SS format
+  string endlocation = 8; // CRS_ADDRESS
+  float price = 10; // CRS_CURRENCY (published price)
+  string bookingref = 11; // CRS_ID (reference to car booking table)
+}
+*/
+
+message CreateRideShareRequestTest {
   int32 car_id = 1;
   string driver_username = 2;
   int32 available_seats = 3;

@@ -5,7 +5,7 @@
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property name="hibernate.connection.url">
-            jdbc:sqlite:C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\Database\userservice.db
+            jdbc:sqlite:Database\UserService.db
         </property>
 
         <!-- JDBC connection pool settings -->

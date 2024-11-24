@@ -14,8 +14,8035 @@ public final class Rideshare {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface CreateRideShareRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CreateRideShareRequest)
+  public interface RideshareOfferListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideshareOfferList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    java.util.List<RideShareService.grpc.Rideshare.RideshareOffer> 
+        getResultListList();
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    RideShareService.grpc.Rideshare.RideshareOffer getResultList(int index);
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    int getResultListCount();
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    java.util.List<? extends RideShareService.grpc.Rideshare.RideshareOfferOrBuilder> 
+        getResultListOrBuilderList();
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    RideShareService.grpc.Rideshare.RideshareOfferOrBuilder getResultListOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code RideshareOfferList}
+   */
+  public static final class RideshareOfferList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideshareOfferList)
+      RideshareOfferListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideshareOfferList.newBuilder() to construct.
+    private RideshareOfferList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideshareOfferList() {
+      resultList_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideshareOfferList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareOfferList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareOfferList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideshareOfferList.class, RideShareService.grpc.Rideshare.RideshareOfferList.Builder.class);
+    }
+
+    public static final int RESULT_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<RideShareService.grpc.Rideshare.RideshareOffer> resultList_;
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<RideShareService.grpc.Rideshare.RideshareOffer> getResultListList() {
+      return resultList_;
+    }
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends RideShareService.grpc.Rideshare.RideshareOfferOrBuilder> 
+        getResultListOrBuilderList() {
+      return resultList_;
+    }
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    @java.lang.Override
+    public int getResultListCount() {
+      return resultList_.size();
+    }
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareOffer getResultList(int index) {
+      return resultList_.get(index);
+    }
+    /**
+     * <code>repeated .RideshareOffer result_list = 1;</code>
+     */
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareOfferOrBuilder getResultListOrBuilder(
+        int index) {
+      return resultList_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < resultList_.size(); i++) {
+        output.writeMessage(1, resultList_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < resultList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, resultList_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideshareOfferList)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideshareOfferList other = (RideShareService.grpc.Rideshare.RideshareOfferList) obj;
+
+      if (!getResultListList()
+          .equals(other.getResultListList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getResultListCount() > 0) {
+        hash = (37 * hash) + RESULT_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getResultListList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOfferList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideshareOfferList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RideshareOfferList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideshareOfferList)
+        RideShareService.grpc.Rideshare.RideshareOfferListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOfferList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOfferList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideshareOfferList.class, RideShareService.grpc.Rideshare.RideshareOfferList.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideshareOfferList.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (resultListBuilder_ == null) {
+          resultList_ = java.util.Collections.emptyList();
+        } else {
+          resultList_ = null;
+          resultListBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOfferList_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOfferList getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideshareOfferList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOfferList build() {
+        RideShareService.grpc.Rideshare.RideshareOfferList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOfferList buildPartial() {
+        RideShareService.grpc.Rideshare.RideshareOfferList result = new RideShareService.grpc.Rideshare.RideshareOfferList(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(RideShareService.grpc.Rideshare.RideshareOfferList result) {
+        if (resultListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            resultList_ = java.util.Collections.unmodifiableList(resultList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.resultList_ = resultList_;
+        } else {
+          result.resultList_ = resultListBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideshareOfferList result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideshareOfferList) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideshareOfferList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideshareOfferList other) {
+        if (other == RideShareService.grpc.Rideshare.RideshareOfferList.getDefaultInstance()) return this;
+        if (resultListBuilder_ == null) {
+          if (!other.resultList_.isEmpty()) {
+            if (resultList_.isEmpty()) {
+              resultList_ = other.resultList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResultListIsMutable();
+              resultList_.addAll(other.resultList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.resultList_.isEmpty()) {
+            if (resultListBuilder_.isEmpty()) {
+              resultListBuilder_.dispose();
+              resultListBuilder_ = null;
+              resultList_ = other.resultList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resultListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResultListFieldBuilder() : null;
+            } else {
+              resultListBuilder_.addAllMessages(other.resultList_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                RideShareService.grpc.Rideshare.RideshareOffer m =
+                    input.readMessage(
+                        RideShareService.grpc.Rideshare.RideshareOffer.parser(),
+                        extensionRegistry);
+                if (resultListBuilder_ == null) {
+                  ensureResultListIsMutable();
+                  resultList_.add(m);
+                } else {
+                  resultListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<RideShareService.grpc.Rideshare.RideshareOffer> resultList_ =
+        java.util.Collections.emptyList();
+      private void ensureResultListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          resultList_ = new java.util.ArrayList<RideShareService.grpc.Rideshare.RideshareOffer>(resultList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          RideShareService.grpc.Rideshare.RideshareOffer, RideShareService.grpc.Rideshare.RideshareOffer.Builder, RideShareService.grpc.Rideshare.RideshareOfferOrBuilder> resultListBuilder_;
+
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public java.util.List<RideShareService.grpc.Rideshare.RideshareOffer> getResultListList() {
+        if (resultListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(resultList_);
+        } else {
+          return resultListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public int getResultListCount() {
+        if (resultListBuilder_ == null) {
+          return resultList_.size();
+        } else {
+          return resultListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareOffer getResultList(int index) {
+        if (resultListBuilder_ == null) {
+          return resultList_.get(index);
+        } else {
+          return resultListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder setResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareOffer value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.set(index, value);
+          onChanged();
+        } else {
+          resultListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder setResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareOffer.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder addResultList(RideShareService.grpc.Rideshare.RideshareOffer value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.add(value);
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder addResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareOffer value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.add(index, value);
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder addResultList(
+          RideShareService.grpc.Rideshare.RideshareOffer.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder addResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareOffer.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder addAllResultList(
+          java.lang.Iterable<? extends RideShareService.grpc.Rideshare.RideshareOffer> values) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, resultList_);
+          onChanged();
+        } else {
+          resultListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder clearResultList() {
+        if (resultListBuilder_ == null) {
+          resultList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resultListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public Builder removeResultList(int index) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.remove(index);
+          onChanged();
+        } else {
+          resultListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareOffer.Builder getResultListBuilder(
+          int index) {
+        return getResultListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareOfferOrBuilder getResultListOrBuilder(
+          int index) {
+        if (resultListBuilder_ == null) {
+          return resultList_.get(index);  } else {
+          return resultListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public java.util.List<? extends RideShareService.grpc.Rideshare.RideshareOfferOrBuilder> 
+           getResultListOrBuilderList() {
+        if (resultListBuilder_ != null) {
+          return resultListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(resultList_);
+        }
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareOffer.Builder addResultListBuilder() {
+        return getResultListFieldBuilder().addBuilder(
+            RideShareService.grpc.Rideshare.RideshareOffer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareOffer.Builder addResultListBuilder(
+          int index) {
+        return getResultListFieldBuilder().addBuilder(
+            index, RideShareService.grpc.Rideshare.RideshareOffer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RideshareOffer result_list = 1;</code>
+       */
+      public java.util.List<RideShareService.grpc.Rideshare.RideshareOffer.Builder> 
+           getResultListBuilderList() {
+        return getResultListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          RideShareService.grpc.Rideshare.RideshareOffer, RideShareService.grpc.Rideshare.RideshareOffer.Builder, RideShareService.grpc.Rideshare.RideshareOfferOrBuilder> 
+          getResultListFieldBuilder() {
+        if (resultListBuilder_ == null) {
+          resultListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              RideShareService.grpc.Rideshare.RideshareOffer, RideShareService.grpc.Rideshare.RideshareOffer.Builder, RideShareService.grpc.Rideshare.RideshareOfferOrBuilder>(
+                  resultList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          resultList_ = null;
+        }
+        return resultListBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideshareOfferList)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideshareOfferList)
+    private static final RideShareService.grpc.Rideshare.RideshareOfferList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideshareOfferList();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareOfferList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideshareOfferList>
+        PARSER = new com.google.protobuf.AbstractParser<RideshareOfferList>() {
+      @java.lang.Override
+      public RideshareOfferList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideshareOfferList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideshareOfferList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareOfferList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RideshareOfferOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideshareOffer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    java.lang.String getRideId();
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
+
+    /**
+     * <pre>
+     * SMALLINT
+     * </pre>
+     *
+     * <code>int32 availablespaces = 2;</code>
+     * @return The availablespaces.
+     */
+    int getAvailablespaces();
+
+    /**
+     * <pre>
+     * CRS_NAME (status: full, partially booked, or cancelled)
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * CRS_NAME (status: full, partially booked, or cancelled)
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 4;</code>
+     * @return The startdate.
+     */
+    java.lang.String getStartdate();
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 4;</code>
+     * @return The bytes for startdate.
+     */
+    com.google.protobuf.ByteString
+        getStartdateBytes();
+
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 5;</code>
+     * @return The starttime.
+     */
+    java.lang.String getStarttime();
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 5;</code>
+     * @return The bytes for starttime.
+     */
+    com.google.protobuf.ByteString
+        getStarttimeBytes();
+
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 6;</code>
+     * @return The startlocation.
+     */
+    java.lang.String getStartlocation();
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 6;</code>
+     * @return The bytes for startlocation.
+     */
+    com.google.protobuf.ByteString
+        getStartlocationBytes();
+
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string enddate = 7;</code>
+     * @return The enddate.
+     */
+    java.lang.String getEnddate();
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string enddate = 7;</code>
+     * @return The bytes for enddate.
+     */
+    com.google.protobuf.ByteString
+        getEnddateBytes();
+
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 8;</code>
+     * @return The endtime.
+     */
+    java.lang.String getEndtime();
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 8;</code>
+     * @return The bytes for endtime.
+     */
+    com.google.protobuf.ByteString
+        getEndtimeBytes();
+
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 9;</code>
+     * @return The endlocation.
+     */
+    java.lang.String getEndlocation();
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 9;</code>
+     * @return The bytes for endlocation.
+     */
+    com.google.protobuf.ByteString
+        getEndlocationBytes();
+
+    /**
+     * <pre>
+     * CRS_CURRENCY (published price)
+     * </pre>
+     *
+     * <code>float price = 10;</code>
+     * @return The price.
+     */
+    float getPrice();
+
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The customerid.
+     */
+    java.lang.String getCustomerid();
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The bytes for customerid.
+     */
+    com.google.protobuf.ByteString
+        getCustomeridBytes();
+
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bookingref.
+     */
+    java.lang.String getBookingref();
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bytes for bookingref.
+     */
+    com.google.protobuf.ByteString
+        getBookingrefBytes();
+  }
+  /**
+   * <pre>
+   * Rideshare Offer definition
+   * </pre>
+   *
+   * Protobuf type {@code RideshareOffer}
+   */
+  public static final class RideshareOffer extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideshareOffer)
+      RideshareOfferOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideshareOffer.newBuilder() to construct.
+    private RideshareOffer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideshareOffer() {
+      rideId_ = "";
+      status_ = "";
+      startdate_ = "";
+      starttime_ = "";
+      startlocation_ = "";
+      enddate_ = "";
+      endtime_ = "";
+      endlocation_ = "";
+      customerid_ = "";
+      bookingref_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideshareOffer();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareOffer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareOffer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideshareOffer.class, RideShareService.grpc.Rideshare.RideshareOffer.Builder.class);
+    }
+
+    public static final int RIDEID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    @java.lang.Override
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AVAILABLESPACES_FIELD_NUMBER = 2;
+    private int availablespaces_ = 0;
+    /**
+     * <pre>
+     * SMALLINT
+     * </pre>
+     *
+     * <code>int32 availablespaces = 2;</code>
+     * @return The availablespaces.
+     */
+    @java.lang.Override
+    public int getAvailablespaces() {
+      return availablespaces_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <pre>
+     * CRS_NAME (status: full, partially booked, or cancelled)
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_NAME (status: full, partially booked, or cancelled)
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTDATE_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object startdate_ = "";
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 4;</code>
+     * @return The startdate.
+     */
+    @java.lang.Override
+    public java.lang.String getStartdate() {
+      java.lang.Object ref = startdate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startdate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 4;</code>
+     * @return The bytes for startdate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartdateBytes() {
+      java.lang.Object ref = startdate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startdate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTTIME_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object starttime_ = "";
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 5;</code>
+     * @return The starttime.
+     */
+    @java.lang.Override
+    public java.lang.String getStarttime() {
+      java.lang.Object ref = starttime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        starttime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 5;</code>
+     * @return The bytes for starttime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStarttimeBytes() {
+      java.lang.Object ref = starttime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        starttime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTLOCATION_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object startlocation_ = "";
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 6;</code>
+     * @return The startlocation.
+     */
+    @java.lang.Override
+    public java.lang.String getStartlocation() {
+      java.lang.Object ref = startlocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startlocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 6;</code>
+     * @return The bytes for startlocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartlocationBytes() {
+      java.lang.Object ref = startlocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startlocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDDATE_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object enddate_ = "";
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string enddate = 7;</code>
+     * @return The enddate.
+     */
+    @java.lang.Override
+    public java.lang.String getEnddate() {
+      java.lang.Object ref = enddate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enddate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string enddate = 7;</code>
+     * @return The bytes for enddate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEnddateBytes() {
+      java.lang.Object ref = enddate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enddate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDTIME_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endtime_ = "";
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 8;</code>
+     * @return The endtime.
+     */
+    @java.lang.Override
+    public java.lang.String getEndtime() {
+      java.lang.Object ref = endtime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endtime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 8;</code>
+     * @return The bytes for endtime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndtimeBytes() {
+      java.lang.Object ref = endtime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endtime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDLOCATION_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endlocation_ = "";
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 9;</code>
+     * @return The endlocation.
+     */
+    @java.lang.Override
+    public java.lang.String getEndlocation() {
+      java.lang.Object ref = endlocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endlocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 9;</code>
+     * @return The bytes for endlocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndlocationBytes() {
+      java.lang.Object ref = endlocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endlocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 10;
+    private float price_ = 0F;
+    /**
+     * <pre>
+     * CRS_CURRENCY (published price)
+     * </pre>
+     *
+     * <code>float price = 10;</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public float getPrice() {
+      return price_;
+    }
+
+    public static final int CUSTOMERID_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customerid_ = "";
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The customerid.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerid() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The bytes for customerid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomeridBytes() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOOKINGREF_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bookingref_ = "";
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bookingref.
+     */
+    @java.lang.Override
+    public java.lang.String getBookingref() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookingref_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bytes for bookingref.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBookingrefBytes() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookingref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
+      }
+      if (availablespaces_ != 0) {
+        output.writeInt32(2, availablespaces_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startdate_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, startdate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(starttime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, starttime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startlocation_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, enddate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endtime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, endlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        output.writeFloat(10, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, customerid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, bookingref_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
+      }
+      if (availablespaces_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, availablespaces_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startdate_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, startdate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(starttime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, starttime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startlocation_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, enddate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endtime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, endlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(10, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, customerid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, bookingref_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideshareOffer)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideshareOffer other = (RideShareService.grpc.Rideshare.RideshareOffer) obj;
+
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
+      if (getAvailablespaces()
+          != other.getAvailablespaces()) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getStartdate()
+          .equals(other.getStartdate())) return false;
+      if (!getStarttime()
+          .equals(other.getStarttime())) return false;
+      if (!getStartlocation()
+          .equals(other.getStartlocation())) return false;
+      if (!getEnddate()
+          .equals(other.getEnddate())) return false;
+      if (!getEndtime()
+          .equals(other.getEndtime())) return false;
+      if (!getEndlocation()
+          .equals(other.getEndlocation())) return false;
+      if (java.lang.Float.floatToIntBits(getPrice())
+          != java.lang.Float.floatToIntBits(
+              other.getPrice())) return false;
+      if (!getCustomerid()
+          .equals(other.getCustomerid())) return false;
+      if (!getBookingref()
+          .equals(other.getBookingref())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RIDEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRideId().hashCode();
+      hash = (37 * hash) + AVAILABLESPACES_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailablespaces();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + STARTDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getStartdate().hashCode();
+      hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStarttime().hashCode();
+      hash = (37 * hash) + STARTLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getStartlocation().hashCode();
+      hash = (37 * hash) + ENDDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnddate().hashCode();
+      hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndtime().hashCode();
+      hash = (37 * hash) + ENDLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEndlocation().hashCode();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getPrice());
+      hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerid().hashCode();
+      hash = (37 * hash) + BOOKINGREF_FIELD_NUMBER;
+      hash = (53 * hash) + getBookingref().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareOffer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideshareOffer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Rideshare Offer definition
+     * </pre>
+     *
+     * Protobuf type {@code RideshareOffer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideshareOffer)
+        RideShareService.grpc.Rideshare.RideshareOfferOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOffer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOffer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideshareOffer.class, RideShareService.grpc.Rideshare.RideshareOffer.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideshareOffer.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        rideId_ = "";
+        availablespaces_ = 0;
+        status_ = "";
+        startdate_ = "";
+        starttime_ = "";
+        startlocation_ = "";
+        enddate_ = "";
+        endtime_ = "";
+        endlocation_ = "";
+        price_ = 0F;
+        customerid_ = "";
+        bookingref_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareOffer_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOffer getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideshareOffer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOffer build() {
+        RideShareService.grpc.Rideshare.RideshareOffer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareOffer buildPartial() {
+        RideShareService.grpc.Rideshare.RideshareOffer result = new RideShareService.grpc.Rideshare.RideshareOffer(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideshareOffer result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rideId_ = rideId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.availablespaces_ = availablespaces_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.startdate_ = startdate_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.starttime_ = starttime_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.startlocation_ = startlocation_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enddate_ = enddate_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.endtime_ = endtime_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.endlocation_ = endlocation_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.customerid_ = customerid_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.bookingref_ = bookingref_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideshareOffer) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideshareOffer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideshareOffer other) {
+        if (other == RideShareService.grpc.Rideshare.RideshareOffer.getDefaultInstance()) return this;
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getAvailablespaces() != 0) {
+          setAvailablespaces(other.getAvailablespaces());
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getStartdate().isEmpty()) {
+          startdate_ = other.startdate_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getStarttime().isEmpty()) {
+          starttime_ = other.starttime_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getStartlocation().isEmpty()) {
+          startlocation_ = other.startlocation_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getEnddate().isEmpty()) {
+          enddate_ = other.enddate_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getEndtime().isEmpty()) {
+          endtime_ = other.endtime_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (!other.getEndlocation().isEmpty()) {
+          endlocation_ = other.endlocation_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (other.getPrice() != 0F) {
+          setPrice(other.getPrice());
+        }
+        if (!other.getCustomerid().isEmpty()) {
+          customerid_ = other.customerid_;
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        if (!other.getBookingref().isEmpty()) {
+          bookingref_ = other.bookingref_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                availablespaces_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                startdate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                starttime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                startlocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                enddate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                endtime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                endlocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 85: {
+                price_ = input.readFloat();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 85
+              case 90: {
+                customerid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                bookingref_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object rideId_ = "";
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return The rideId.
+       */
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int availablespaces_ ;
+      /**
+       * <pre>
+       * SMALLINT
+       * </pre>
+       *
+       * <code>int32 availablespaces = 2;</code>
+       * @return The availablespaces.
+       */
+      @java.lang.Override
+      public int getAvailablespaces() {
+        return availablespaces_;
+      }
+      /**
+       * <pre>
+       * SMALLINT
+       * </pre>
+       *
+       * <code>int32 availablespaces = 2;</code>
+       * @param value The availablespaces to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvailablespaces(int value) {
+        
+        availablespaces_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * SMALLINT
+       * </pre>
+       *
+       * <code>int32 availablespaces = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvailablespaces() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        availablespaces_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * CRS_NAME (status: full, partially booked, or cancelled)
+       * </pre>
+       *
+       * <code>string status = 3;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_NAME (status: full, partially booked, or cancelled)
+       * </pre>
+       *
+       * <code>string status = 3;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_NAME (status: full, partially booked, or cancelled)
+       * </pre>
+       *
+       * <code>string status = 3;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_NAME (status: full, partially booked, or cancelled)
+       * </pre>
+       *
+       * <code>string status = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_NAME (status: full, partially booked, or cancelled)
+       * </pre>
+       *
+       * <code>string status = 3;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startdate_ = "";
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 4;</code>
+       * @return The startdate.
+       */
+      public java.lang.String getStartdate() {
+        java.lang.Object ref = startdate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startdate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 4;</code>
+       * @return The bytes for startdate.
+       */
+      public com.google.protobuf.ByteString
+          getStartdateBytes() {
+        java.lang.Object ref = startdate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startdate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 4;</code>
+       * @param value The startdate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartdate(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        startdate_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartdate() {
+        startdate_ = getDefaultInstance().getStartdate();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 4;</code>
+       * @param value The bytes for startdate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartdateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        startdate_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object starttime_ = "";
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 5;</code>
+       * @return The starttime.
+       */
+      public java.lang.String getStarttime() {
+        java.lang.Object ref = starttime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          starttime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 5;</code>
+       * @return The bytes for starttime.
+       */
+      public com.google.protobuf.ByteString
+          getStarttimeBytes() {
+        java.lang.Object ref = starttime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          starttime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 5;</code>
+       * @param value The starttime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarttime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        starttime_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStarttime() {
+        starttime_ = getDefaultInstance().getStarttime();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 5;</code>
+       * @param value The bytes for starttime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarttimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        starttime_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startlocation_ = "";
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 6;</code>
+       * @return The startlocation.
+       */
+      public java.lang.String getStartlocation() {
+        java.lang.Object ref = startlocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startlocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 6;</code>
+       * @return The bytes for startlocation.
+       */
+      public com.google.protobuf.ByteString
+          getStartlocationBytes() {
+        java.lang.Object ref = startlocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startlocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 6;</code>
+       * @param value The startlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartlocation(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        startlocation_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartlocation() {
+        startlocation_ = getDefaultInstance().getStartlocation();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 6;</code>
+       * @param value The bytes for startlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartlocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        startlocation_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enddate_ = "";
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string enddate = 7;</code>
+       * @return The enddate.
+       */
+      public java.lang.String getEnddate() {
+        java.lang.Object ref = enddate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enddate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string enddate = 7;</code>
+       * @return The bytes for enddate.
+       */
+      public com.google.protobuf.ByteString
+          getEnddateBytes() {
+        java.lang.Object ref = enddate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          enddate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string enddate = 7;</code>
+       * @param value The enddate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnddate(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        enddate_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string enddate = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnddate() {
+        enddate_ = getDefaultInstance().getEnddate();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string enddate = 7;</code>
+       * @param value The bytes for enddate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnddateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        enddate_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endtime_ = "";
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 8;</code>
+       * @return The endtime.
+       */
+      public java.lang.String getEndtime() {
+        java.lang.Object ref = endtime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endtime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 8;</code>
+       * @return The bytes for endtime.
+       */
+      public com.google.protobuf.ByteString
+          getEndtimeBytes() {
+        java.lang.Object ref = endtime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endtime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 8;</code>
+       * @param value The endtime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndtime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        endtime_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndtime() {
+        endtime_ = getDefaultInstance().getEndtime();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 8;</code>
+       * @param value The bytes for endtime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndtimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        endtime_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endlocation_ = "";
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 9;</code>
+       * @return The endlocation.
+       */
+      public java.lang.String getEndlocation() {
+        java.lang.Object ref = endlocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endlocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 9;</code>
+       * @return The bytes for endlocation.
+       */
+      public com.google.protobuf.ByteString
+          getEndlocationBytes() {
+        java.lang.Object ref = endlocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endlocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 9;</code>
+       * @param value The endlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndlocation(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        endlocation_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndlocation() {
+        endlocation_ = getDefaultInstance().getEndlocation();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 9;</code>
+       * @param value The bytes for endlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndlocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        endlocation_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private float price_ ;
+      /**
+       * <pre>
+       * CRS_CURRENCY (published price)
+       * </pre>
+       *
+       * <code>float price = 10;</code>
+       * @return The price.
+       */
+      @java.lang.Override
+      public float getPrice() {
+        return price_;
+      }
+      /**
+       * <pre>
+       * CRS_CURRENCY (published price)
+       * </pre>
+       *
+       * <code>float price = 10;</code>
+       * @param value The price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrice(float value) {
+        
+        price_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_CURRENCY (published price)
+       * </pre>
+       *
+       * <code>float price = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrice() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        price_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerid_ = "";
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @return The customerid.
+       */
+      public java.lang.String getCustomerid() {
+        java.lang.Object ref = customerid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @return The bytes for customerid.
+       */
+      public com.google.protobuf.ByteString
+          getCustomeridBytes() {
+        java.lang.Object ref = customerid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @param value The customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerid(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        customerid_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerid() {
+        customerid_ = getDefaultInstance().getCustomerid();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @param value The bytes for customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomeridBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        customerid_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bookingref_ = "";
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @return The bookingref.
+       */
+      public java.lang.String getBookingref() {
+        java.lang.Object ref = bookingref_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bookingref_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @return The bytes for bookingref.
+       */
+      public com.google.protobuf.ByteString
+          getBookingrefBytes() {
+        java.lang.Object ref = bookingref_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bookingref_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @param value The bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingref(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        bookingref_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBookingref() {
+        bookingref_ = getDefaultInstance().getBookingref();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @param value The bytes for bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingrefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        bookingref_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideshareOffer)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideshareOffer)
+    private static final RideShareService.grpc.Rideshare.RideshareOffer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideshareOffer();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareOffer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideshareOffer>
+        PARSER = new com.google.protobuf.AbstractParser<RideshareOffer>() {
+      @java.lang.Override
+      public RideshareOffer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideshareOffer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideshareOffer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareOffer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RideShareRequestListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideShareRequestList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    java.util.List<RideShareService.grpc.Rideshare.RideshareRequest> 
+        getResultListList();
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    RideShareService.grpc.Rideshare.RideshareRequest getResultList(int index);
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    int getResultListCount();
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    java.util.List<? extends RideShareService.grpc.Rideshare.RideshareRequestOrBuilder> 
+        getResultListOrBuilderList();
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    RideShareService.grpc.Rideshare.RideshareRequestOrBuilder getResultListOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code RideShareRequestList}
+   */
+  public static final class RideShareRequestList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideShareRequestList)
+      RideShareRequestListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideShareRequestList.newBuilder() to construct.
+    private RideShareRequestList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideShareRequestList() {
+      resultList_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideShareRequestList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareRequestList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareRequestList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideShareRequestList.class, RideShareService.grpc.Rideshare.RideShareRequestList.Builder.class);
+    }
+
+    public static final int RESULT_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<RideShareService.grpc.Rideshare.RideshareRequest> resultList_;
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<RideShareService.grpc.Rideshare.RideshareRequest> getResultListList() {
+      return resultList_;
+    }
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends RideShareService.grpc.Rideshare.RideshareRequestOrBuilder> 
+        getResultListOrBuilderList() {
+      return resultList_;
+    }
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    @java.lang.Override
+    public int getResultListCount() {
+      return resultList_.size();
+    }
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareRequest getResultList(int index) {
+      return resultList_.get(index);
+    }
+    /**
+     * <code>repeated .RideshareRequest result_list = 1;</code>
+     */
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareRequestOrBuilder getResultListOrBuilder(
+        int index) {
+      return resultList_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < resultList_.size(); i++) {
+        output.writeMessage(1, resultList_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < resultList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, resultList_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideShareRequestList)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideShareRequestList other = (RideShareService.grpc.Rideshare.RideShareRequestList) obj;
+
+      if (!getResultListList()
+          .equals(other.getResultListList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getResultListCount() > 0) {
+        hash = (37 * hash) + RESULT_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getResultListList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareRequestList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideShareRequestList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RideShareRequestList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideShareRequestList)
+        RideShareService.grpc.Rideshare.RideShareRequestListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareRequestList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareRequestList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideShareRequestList.class, RideShareService.grpc.Rideshare.RideShareRequestList.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideShareRequestList.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (resultListBuilder_ == null) {
+          resultList_ = java.util.Collections.emptyList();
+        } else {
+          resultList_ = null;
+          resultListBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareRequestList_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareRequestList getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideShareRequestList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareRequestList build() {
+        RideShareService.grpc.Rideshare.RideShareRequestList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareRequestList buildPartial() {
+        RideShareService.grpc.Rideshare.RideShareRequestList result = new RideShareService.grpc.Rideshare.RideShareRequestList(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(RideShareService.grpc.Rideshare.RideShareRequestList result) {
+        if (resultListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            resultList_ = java.util.Collections.unmodifiableList(resultList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.resultList_ = resultList_;
+        } else {
+          result.resultList_ = resultListBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideShareRequestList result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideShareRequestList) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideShareRequestList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideShareRequestList other) {
+        if (other == RideShareService.grpc.Rideshare.RideShareRequestList.getDefaultInstance()) return this;
+        if (resultListBuilder_ == null) {
+          if (!other.resultList_.isEmpty()) {
+            if (resultList_.isEmpty()) {
+              resultList_ = other.resultList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResultListIsMutable();
+              resultList_.addAll(other.resultList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.resultList_.isEmpty()) {
+            if (resultListBuilder_.isEmpty()) {
+              resultListBuilder_.dispose();
+              resultListBuilder_ = null;
+              resultList_ = other.resultList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resultListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResultListFieldBuilder() : null;
+            } else {
+              resultListBuilder_.addAllMessages(other.resultList_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                RideShareService.grpc.Rideshare.RideshareRequest m =
+                    input.readMessage(
+                        RideShareService.grpc.Rideshare.RideshareRequest.parser(),
+                        extensionRegistry);
+                if (resultListBuilder_ == null) {
+                  ensureResultListIsMutable();
+                  resultList_.add(m);
+                } else {
+                  resultListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<RideShareService.grpc.Rideshare.RideshareRequest> resultList_ =
+        java.util.Collections.emptyList();
+      private void ensureResultListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          resultList_ = new java.util.ArrayList<RideShareService.grpc.Rideshare.RideshareRequest>(resultList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          RideShareService.grpc.Rideshare.RideshareRequest, RideShareService.grpc.Rideshare.RideshareRequest.Builder, RideShareService.grpc.Rideshare.RideshareRequestOrBuilder> resultListBuilder_;
+
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public java.util.List<RideShareService.grpc.Rideshare.RideshareRequest> getResultListList() {
+        if (resultListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(resultList_);
+        } else {
+          return resultListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public int getResultListCount() {
+        if (resultListBuilder_ == null) {
+          return resultList_.size();
+        } else {
+          return resultListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareRequest getResultList(int index) {
+        if (resultListBuilder_ == null) {
+          return resultList_.get(index);
+        } else {
+          return resultListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder setResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareRequest value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.set(index, value);
+          onChanged();
+        } else {
+          resultListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder setResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareRequest.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder addResultList(RideShareService.grpc.Rideshare.RideshareRequest value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.add(value);
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder addResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareRequest value) {
+        if (resultListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultListIsMutable();
+          resultList_.add(index, value);
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder addResultList(
+          RideShareService.grpc.Rideshare.RideshareRequest.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder addResultList(
+          int index, RideShareService.grpc.Rideshare.RideshareRequest.Builder builderForValue) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder addAllResultList(
+          java.lang.Iterable<? extends RideShareService.grpc.Rideshare.RideshareRequest> values) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, resultList_);
+          onChanged();
+        } else {
+          resultListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder clearResultList() {
+        if (resultListBuilder_ == null) {
+          resultList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resultListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public Builder removeResultList(int index) {
+        if (resultListBuilder_ == null) {
+          ensureResultListIsMutable();
+          resultList_.remove(index);
+          onChanged();
+        } else {
+          resultListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareRequest.Builder getResultListBuilder(
+          int index) {
+        return getResultListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareRequestOrBuilder getResultListOrBuilder(
+          int index) {
+        if (resultListBuilder_ == null) {
+          return resultList_.get(index);  } else {
+          return resultListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public java.util.List<? extends RideShareService.grpc.Rideshare.RideshareRequestOrBuilder> 
+           getResultListOrBuilderList() {
+        if (resultListBuilder_ != null) {
+          return resultListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(resultList_);
+        }
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareRequest.Builder addResultListBuilder() {
+        return getResultListFieldBuilder().addBuilder(
+            RideShareService.grpc.Rideshare.RideshareRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public RideShareService.grpc.Rideshare.RideshareRequest.Builder addResultListBuilder(
+          int index) {
+        return getResultListFieldBuilder().addBuilder(
+            index, RideShareService.grpc.Rideshare.RideshareRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RideshareRequest result_list = 1;</code>
+       */
+      public java.util.List<RideShareService.grpc.Rideshare.RideshareRequest.Builder> 
+           getResultListBuilderList() {
+        return getResultListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          RideShareService.grpc.Rideshare.RideshareRequest, RideShareService.grpc.Rideshare.RideshareRequest.Builder, RideShareService.grpc.Rideshare.RideshareRequestOrBuilder> 
+          getResultListFieldBuilder() {
+        if (resultListBuilder_ == null) {
+          resultListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              RideShareService.grpc.Rideshare.RideshareRequest, RideShareService.grpc.Rideshare.RideshareRequest.Builder, RideShareService.grpc.Rideshare.RideshareRequestOrBuilder>(
+                  resultList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          resultList_ = null;
+        }
+        return resultListBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideShareRequestList)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideShareRequestList)
+    private static final RideShareService.grpc.Rideshare.RideShareRequestList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideShareRequestList();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareRequestList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideShareRequestList>
+        PARSER = new com.google.protobuf.AbstractParser<RideShareRequestList>() {
+      @java.lang.Override
+      public RideShareRequestList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideShareRequestList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideShareRequestList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideShareRequestList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RideshareRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideshareRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    java.lang.String getRideId();
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
+
+    /**
+     * <pre>
+     * only for internal use?
+     * </pre>
+     *
+     * <code>string status = 2;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * only for internal use?
+     * </pre>
+     *
+     * <code>string status = 2;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 3;</code>
+     * @return The startdate.
+     */
+    java.lang.String getStartdate();
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 3;</code>
+     * @return The bytes for startdate.
+     */
+    com.google.protobuf.ByteString
+        getStartdateBytes();
+
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 4;</code>
+     * @return The starttime.
+     */
+    java.lang.String getStarttime();
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 4;</code>
+     * @return The bytes for starttime.
+     */
+    com.google.protobuf.ByteString
+        getStarttimeBytes();
+
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 5;</code>
+     * @return The startlocation.
+     */
+    java.lang.String getStartlocation();
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 5;</code>
+     * @return The bytes for startlocation.
+     */
+    com.google.protobuf.ByteString
+        getStartlocationBytes();
+
+    /**
+     * <pre>
+     * Geographical latitude
+     * </pre>
+     *
+     * <code>float latitude = 6;</code>
+     * @return The latitude.
+     */
+    float getLatitude();
+
+    /**
+     * <pre>
+     * Geographical longitude
+     * </pre>
+     *
+     * <code>float longitude = 7;</code>
+     * @return The longitude.
+     */
+    float getLongitude();
+
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string enddate = 8;</code>
+     * @return The enddate.
+     */
+    java.lang.String getEnddate();
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string enddate = 8;</code>
+     * @return The bytes for enddate.
+     */
+    com.google.protobuf.ByteString
+        getEnddateBytes();
+
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 9;</code>
+     * @return The endtime.
+     */
+    java.lang.String getEndtime();
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 9;</code>
+     * @return The bytes for endtime.
+     */
+    com.google.protobuf.ByteString
+        getEndtimeBytes();
+
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 10;</code>
+     * @return The endlocation.
+     */
+    java.lang.String getEndlocation();
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 10;</code>
+     * @return The bytes for endlocation.
+     */
+    com.google.protobuf.ByteString
+        getEndlocationBytes();
+
+    /**
+     * <pre>
+     * CRS_CURRENCY (customer price)
+     * </pre>
+     *
+     * <code>float price = 11;</code>
+     * @return The price.
+     */
+    float getPrice();
+
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The customerid.
+     */
+    java.lang.String getCustomerid();
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The bytes for customerid.
+     */
+    com.google.protobuf.ByteString
+        getCustomeridBytes();
+
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bookingref.
+     */
+    java.lang.String getBookingref();
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bytes for bookingref.
+     */
+    com.google.protobuf.ByteString
+        getBookingrefBytes();
+  }
+  /**
+   * <pre>
+   *Rideshare Request definition
+   * </pre>
+   *
+   * Protobuf type {@code RideshareRequest}
+   */
+  public static final class RideshareRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideshareRequest)
+      RideshareRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideshareRequest.newBuilder() to construct.
+    private RideshareRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideshareRequest() {
+      rideId_ = "";
+      status_ = "";
+      startdate_ = "";
+      starttime_ = "";
+      startlocation_ = "";
+      enddate_ = "";
+      endtime_ = "";
+      endlocation_ = "";
+      customerid_ = "";
+      bookingref_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideshareRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideshareRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideshareRequest.class, RideShareService.grpc.Rideshare.RideshareRequest.Builder.class);
+    }
+
+    public static final int RIDEID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    @java.lang.Override
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <pre>
+     * only for internal use?
+     * </pre>
+     *
+     * <code>string status = 2;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * only for internal use?
+     * </pre>
+     *
+     * <code>string status = 2;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTDATE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object startdate_ = "";
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 3;</code>
+     * @return The startdate.
+     */
+    @java.lang.Override
+    public java.lang.String getStartdate() {
+      java.lang.Object ref = startdate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startdate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string startdate = 3;</code>
+     * @return The bytes for startdate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartdateBytes() {
+      java.lang.Object ref = startdate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startdate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTTIME_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object starttime_ = "";
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 4;</code>
+     * @return The starttime.
+     */
+    @java.lang.Override
+    public java.lang.String getStarttime() {
+      java.lang.Object ref = starttime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        starttime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string starttime = 4;</code>
+     * @return The bytes for starttime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStarttimeBytes() {
+      java.lang.Object ref = starttime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        starttime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTLOCATION_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object startlocation_ = "";
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 5;</code>
+     * @return The startlocation.
+     */
+    @java.lang.Override
+    public java.lang.String getStartlocation() {
+      java.lang.Object ref = startlocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startlocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string startlocation = 5;</code>
+     * @return The bytes for startlocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartlocationBytes() {
+      java.lang.Object ref = startlocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startlocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 6;
+    private float latitude_ = 0F;
+    /**
+     * <pre>
+     * Geographical latitude
+     * </pre>
+     *
+     * <code>float latitude = 6;</code>
+     * @return The latitude.
+     */
+    @java.lang.Override
+    public float getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 7;
+    private float longitude_ = 0F;
+    /**
+     * <pre>
+     * Geographical longitude
+     * </pre>
+     *
+     * <code>float longitude = 7;</code>
+     * @return The longitude.
+     */
+    @java.lang.Override
+    public float getLongitude() {
+      return longitude_;
+    }
+
+    public static final int ENDDATE_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object enddate_ = "";
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string enddate = 8;</code>
+     * @return The enddate.
+     */
+    @java.lang.Override
+    public java.lang.String getEnddate() {
+      java.lang.Object ref = enddate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enddate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * DATE as string in YYYY-MM-DD format
+     * </pre>
+     *
+     * <code>string enddate = 8;</code>
+     * @return The bytes for enddate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEnddateBytes() {
+      java.lang.Object ref = enddate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enddate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDTIME_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endtime_ = "";
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 9;</code>
+     * @return The endtime.
+     */
+    @java.lang.Override
+    public java.lang.String getEndtime() {
+      java.lang.Object ref = endtime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endtime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TIME as string in HH:MM:SS format
+     * </pre>
+     *
+     * <code>string endtime = 9;</code>
+     * @return The bytes for endtime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndtimeBytes() {
+      java.lang.Object ref = endtime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endtime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDLOCATION_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endlocation_ = "";
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 10;</code>
+     * @return The endlocation.
+     */
+    @java.lang.Override
+    public java.lang.String getEndlocation() {
+      java.lang.Object ref = endlocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endlocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ADDRESS
+     * </pre>
+     *
+     * <code>string endlocation = 10;</code>
+     * @return The bytes for endlocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndlocationBytes() {
+      java.lang.Object ref = endlocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endlocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 11;
+    private float price_ = 0F;
+    /**
+     * <pre>
+     * CRS_CURRENCY (customer price)
+     * </pre>
+     *
+     * <code>float price = 11;</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public float getPrice() {
+      return price_;
+    }
+
+    public static final int CUSTOMERID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customerid_ = "";
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The customerid.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerid() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The bytes for customerid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomeridBytes() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOOKINGREF_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bookingref_ = "";
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bookingref.
+     */
+    @java.lang.Override
+    public java.lang.String getBookingref() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookingref_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bytes for bookingref.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBookingrefBytes() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookingref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startdate_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, startdate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(starttime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, starttime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(latitude_) != 0) {
+        output.writeFloat(6, latitude_);
+      }
+      if (java.lang.Float.floatToRawIntBits(longitude_) != 0) {
+        output.writeFloat(7, longitude_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, enddate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, endtime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, endlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        output.writeFloat(11, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, customerid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, bookingref_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startdate_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, startdate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(starttime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, starttime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(latitude_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, latitude_);
+      }
+      if (java.lang.Float.floatToRawIntBits(longitude_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(7, longitude_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, enddate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, endtime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, endlocation_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(11, price_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, customerid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, bookingref_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideshareRequest)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideshareRequest other = (RideShareService.grpc.Rideshare.RideshareRequest) obj;
+
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getStartdate()
+          .equals(other.getStartdate())) return false;
+      if (!getStarttime()
+          .equals(other.getStarttime())) return false;
+      if (!getStartlocation()
+          .equals(other.getStartlocation())) return false;
+      if (java.lang.Float.floatToIntBits(getLatitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLatitude())) return false;
+      if (java.lang.Float.floatToIntBits(getLongitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLongitude())) return false;
+      if (!getEnddate()
+          .equals(other.getEnddate())) return false;
+      if (!getEndtime()
+          .equals(other.getEndtime())) return false;
+      if (!getEndlocation()
+          .equals(other.getEndlocation())) return false;
+      if (java.lang.Float.floatToIntBits(getPrice())
+          != java.lang.Float.floatToIntBits(
+              other.getPrice())) return false;
+      if (!getCustomerid()
+          .equals(other.getCustomerid())) return false;
+      if (!getBookingref()
+          .equals(other.getBookingref())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RIDEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRideId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + STARTDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getStartdate().hashCode();
+      hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStarttime().hashCode();
+      hash = (37 * hash) + STARTLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getStartlocation().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatitude());
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLongitude());
+      hash = (37 * hash) + ENDDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnddate().hashCode();
+      hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndtime().hashCode();
+      hash = (37 * hash) + ENDLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEndlocation().hashCode();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getPrice());
+      hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerid().hashCode();
+      hash = (37 * hash) + BOOKINGREF_FIELD_NUMBER;
+      hash = (53 * hash) + getBookingref().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideshareRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideshareRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *Rideshare Request definition
+     * </pre>
+     *
+     * Protobuf type {@code RideshareRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideshareRequest)
+        RideShareService.grpc.Rideshare.RideshareRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideshareRequest.class, RideShareService.grpc.Rideshare.RideshareRequest.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideshareRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        rideId_ = "";
+        status_ = "";
+        startdate_ = "";
+        starttime_ = "";
+        startlocation_ = "";
+        latitude_ = 0F;
+        longitude_ = 0F;
+        enddate_ = "";
+        endtime_ = "";
+        endlocation_ = "";
+        price_ = 0F;
+        customerid_ = "";
+        bookingref_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideshareRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareRequest getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideshareRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareRequest build() {
+        RideShareService.grpc.Rideshare.RideshareRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideshareRequest buildPartial() {
+        RideShareService.grpc.Rideshare.RideshareRequest result = new RideShareService.grpc.Rideshare.RideshareRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideshareRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rideId_ = rideId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.startdate_ = startdate_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.starttime_ = starttime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.startlocation_ = startlocation_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.latitude_ = latitude_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.longitude_ = longitude_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.enddate_ = enddate_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.endtime_ = endtime_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.endlocation_ = endlocation_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.customerid_ = customerid_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.bookingref_ = bookingref_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideshareRequest) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideshareRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideshareRequest other) {
+        if (other == RideShareService.grpc.Rideshare.RideshareRequest.getDefaultInstance()) return this;
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getStartdate().isEmpty()) {
+          startdate_ = other.startdate_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getStarttime().isEmpty()) {
+          starttime_ = other.starttime_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getStartlocation().isEmpty()) {
+          startlocation_ = other.startlocation_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.getLatitude() != 0F) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongitude() != 0F) {
+          setLongitude(other.getLongitude());
+        }
+        if (!other.getEnddate().isEmpty()) {
+          enddate_ = other.enddate_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (!other.getEndtime().isEmpty()) {
+          endtime_ = other.endtime_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (!other.getEndlocation().isEmpty()) {
+          endlocation_ = other.endlocation_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        if (other.getPrice() != 0F) {
+          setPrice(other.getPrice());
+        }
+        if (!other.getCustomerid().isEmpty()) {
+          customerid_ = other.customerid_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (!other.getBookingref().isEmpty()) {
+          bookingref_ = other.bookingref_;
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                startdate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                starttime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                startlocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 53: {
+                latitude_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 53
+              case 61: {
+                longitude_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 61
+              case 66: {
+                enddate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                endtime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                endlocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 93: {
+                price_ = input.readFloat();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 93
+              case 98: {
+                customerid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                bookingref_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object rideId_ = "";
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return The rideId.
+       */
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * only for internal use?
+       * </pre>
+       *
+       * <code>string status = 2;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * only for internal use?
+       * </pre>
+       *
+       * <code>string status = 2;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * only for internal use?
+       * </pre>
+       *
+       * <code>string status = 2;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * only for internal use?
+       * </pre>
+       *
+       * <code>string status = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * only for internal use?
+       * </pre>
+       *
+       * <code>string status = 2;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startdate_ = "";
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 3;</code>
+       * @return The startdate.
+       */
+      public java.lang.String getStartdate() {
+        java.lang.Object ref = startdate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startdate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 3;</code>
+       * @return The bytes for startdate.
+       */
+      public com.google.protobuf.ByteString
+          getStartdateBytes() {
+        java.lang.Object ref = startdate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startdate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 3;</code>
+       * @param value The startdate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartdate(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        startdate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartdate() {
+        startdate_ = getDefaultInstance().getStartdate();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string startdate = 3;</code>
+       * @param value The bytes for startdate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartdateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        startdate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object starttime_ = "";
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 4;</code>
+       * @return The starttime.
+       */
+      public java.lang.String getStarttime() {
+        java.lang.Object ref = starttime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          starttime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 4;</code>
+       * @return The bytes for starttime.
+       */
+      public com.google.protobuf.ByteString
+          getStarttimeBytes() {
+        java.lang.Object ref = starttime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          starttime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 4;</code>
+       * @param value The starttime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarttime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        starttime_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStarttime() {
+        starttime_ = getDefaultInstance().getStarttime();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string starttime = 4;</code>
+       * @param value The bytes for starttime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarttimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        starttime_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startlocation_ = "";
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 5;</code>
+       * @return The startlocation.
+       */
+      public java.lang.String getStartlocation() {
+        java.lang.Object ref = startlocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startlocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 5;</code>
+       * @return The bytes for startlocation.
+       */
+      public com.google.protobuf.ByteString
+          getStartlocationBytes() {
+        java.lang.Object ref = startlocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startlocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 5;</code>
+       * @param value The startlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartlocation(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        startlocation_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartlocation() {
+        startlocation_ = getDefaultInstance().getStartlocation();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string startlocation = 5;</code>
+       * @param value The bytes for startlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartlocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        startlocation_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private float latitude_ ;
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @return The latitude.
+       */
+      @java.lang.Override
+      public float getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @param value The latitude to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLatitude(float value) {
+        
+        latitude_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLatitude() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        latitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float longitude_ ;
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @return The longitude.
+       */
+      @java.lang.Override
+      public float getLongitude() {
+        return longitude_;
+      }
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @param value The longitude to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLongitude(float value) {
+        
+        longitude_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLongitude() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        longitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enddate_ = "";
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string enddate = 8;</code>
+       * @return The enddate.
+       */
+      public java.lang.String getEnddate() {
+        java.lang.Object ref = enddate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enddate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string enddate = 8;</code>
+       * @return The bytes for enddate.
+       */
+      public com.google.protobuf.ByteString
+          getEnddateBytes() {
+        java.lang.Object ref = enddate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          enddate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string enddate = 8;</code>
+       * @param value The enddate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnddate(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        enddate_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string enddate = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnddate() {
+        enddate_ = getDefaultInstance().getEnddate();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DATE as string in YYYY-MM-DD format
+       * </pre>
+       *
+       * <code>string enddate = 8;</code>
+       * @param value The bytes for enddate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnddateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        enddate_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endtime_ = "";
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 9;</code>
+       * @return The endtime.
+       */
+      public java.lang.String getEndtime() {
+        java.lang.Object ref = endtime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endtime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 9;</code>
+       * @return The bytes for endtime.
+       */
+      public com.google.protobuf.ByteString
+          getEndtimeBytes() {
+        java.lang.Object ref = endtime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endtime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 9;</code>
+       * @param value The endtime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndtime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        endtime_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndtime() {
+        endtime_ = getDefaultInstance().getEndtime();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TIME as string in HH:MM:SS format
+       * </pre>
+       *
+       * <code>string endtime = 9;</code>
+       * @param value The bytes for endtime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndtimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        endtime_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endlocation_ = "";
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 10;</code>
+       * @return The endlocation.
+       */
+      public java.lang.String getEndlocation() {
+        java.lang.Object ref = endlocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endlocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 10;</code>
+       * @return The bytes for endlocation.
+       */
+      public com.google.protobuf.ByteString
+          getEndlocationBytes() {
+        java.lang.Object ref = endlocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endlocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 10;</code>
+       * @param value The endlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndlocation(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        endlocation_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndlocation() {
+        endlocation_ = getDefaultInstance().getEndlocation();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ADDRESS
+       * </pre>
+       *
+       * <code>string endlocation = 10;</code>
+       * @param value The bytes for endlocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndlocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        endlocation_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      private float price_ ;
+      /**
+       * <pre>
+       * CRS_CURRENCY (customer price)
+       * </pre>
+       *
+       * <code>float price = 11;</code>
+       * @return The price.
+       */
+      @java.lang.Override
+      public float getPrice() {
+        return price_;
+      }
+      /**
+       * <pre>
+       * CRS_CURRENCY (customer price)
+       * </pre>
+       *
+       * <code>float price = 11;</code>
+       * @param value The price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrice(float value) {
+        
+        price_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_CURRENCY (customer price)
+       * </pre>
+       *
+       * <code>float price = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrice() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        price_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerid_ = "";
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @return The customerid.
+       */
+      public java.lang.String getCustomerid() {
+        java.lang.Object ref = customerid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @return The bytes for customerid.
+       */
+      public com.google.protobuf.ByteString
+          getCustomeridBytes() {
+        java.lang.Object ref = customerid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @param value The customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerid(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        customerid_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerid() {
+        customerid_ = getDefaultInstance().getCustomerid();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @param value The bytes for customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomeridBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        customerid_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bookingref_ = "";
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @return The bookingref.
+       */
+      public java.lang.String getBookingref() {
+        java.lang.Object ref = bookingref_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bookingref_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @return The bytes for bookingref.
+       */
+      public com.google.protobuf.ByteString
+          getBookingrefBytes() {
+        java.lang.Object ref = bookingref_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bookingref_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @param value The bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingref(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        bookingref_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBookingref() {
+        bookingref_ = getDefaultInstance().getBookingref();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @param value The bytes for bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingrefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        bookingref_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideshareRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideshareRequest)
+    private static final RideShareService.grpc.Rideshare.RideshareRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideshareRequest();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideshareRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideshareRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RideshareRequest>() {
+      @java.lang.Override
+      public RideshareRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideshareRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideshareRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideshareRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RideShareIDRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideShareIDRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    java.lang.String getRideId();
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
+
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code RideShareIDRequest}
+   */
+  public static final class RideShareIDRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideShareIDRequest)
+      RideShareIDRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideShareIDRequest.newBuilder() to construct.
+    private RideShareIDRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideShareIDRequest() {
+      rideId_ = "";
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideShareIDRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareIDRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareIDRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideShareIDRequest.class, RideShareService.grpc.Rideshare.RideShareIDRequest.Builder.class);
+    }
+
+    public static final int RIDEID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    @java.lang.Override
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideShareIDRequest)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideShareIDRequest other = (RideShareService.grpc.Rideshare.RideShareIDRequest) obj;
+
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RIDEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRideId().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideShareIDRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RideShareIDRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideShareIDRequest)
+        RideShareService.grpc.Rideshare.RideShareIDRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideShareIDRequest.class, RideShareService.grpc.Rideshare.RideShareIDRequest.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideShareIDRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        rideId_ = "";
+        message_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDRequest getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideShareIDRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDRequest build() {
+        RideShareService.grpc.Rideshare.RideShareIDRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDRequest buildPartial() {
+        RideShareService.grpc.Rideshare.RideShareIDRequest result = new RideShareService.grpc.Rideshare.RideShareIDRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideShareIDRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rideId_ = rideId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.message_ = message_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideShareIDRequest) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideShareIDRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideShareIDRequest other) {
+        if (other == RideShareService.grpc.Rideshare.RideShareIDRequest.getDefaultInstance()) return this;
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object rideId_ = "";
+      /**
+       * <code>string rideId = 1;</code>
+       * @return The rideId.
+       */
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideShareIDRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideShareIDRequest)
+    private static final RideShareService.grpc.Rideshare.RideShareIDRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideShareIDRequest();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareIDRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideShareIDRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RideShareIDRequest>() {
+      @java.lang.Override
+      public RideShareIDRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideShareIDRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideShareIDRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideShareIDRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RideShareIDResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RideShareIDResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    java.lang.String getRideId();
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
+
+    /**
+     * <code>bool successful = 2;</code>
+     * @return The successful.
+     */
+    boolean getSuccessful();
+
+    /**
+     * <code>string message = 3;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 3;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code RideShareIDResponse}
+   */
+  public static final class RideShareIDResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RideShareIDResponse)
+      RideShareIDResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RideShareIDResponse.newBuilder() to construct.
+    private RideShareIDResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RideShareIDResponse() {
+      rideId_ = "";
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RideShareIDResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareIDResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return RideShareService.grpc.Rideshare.internal_static_RideShareIDResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RideShareService.grpc.Rideshare.RideShareIDResponse.class, RideShareService.grpc.Rideshare.RideShareIDResponse.Builder.class);
+    }
+
+    public static final int RIDEID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The rideId.
+     */
+    @java.lang.Override
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUCCESSFUL_FIELD_NUMBER = 2;
+    private boolean successful_ = false;
+    /**
+     * <code>bool successful = 2;</code>
+     * @return The successful.
+     */
+    @java.lang.Override
+    public boolean getSuccessful() {
+      return successful_;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 3;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 3;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
+      }
+      if (successful_ != false) {
+        output.writeBool(2, successful_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
+      }
+      if (successful_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, successful_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RideShareService.grpc.Rideshare.RideShareIDResponse)) {
+        return super.equals(obj);
+      }
+      RideShareService.grpc.Rideshare.RideShareIDResponse other = (RideShareService.grpc.Rideshare.RideShareIDResponse) obj;
+
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
+      if (getSuccessful()
+          != other.getSuccessful()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RIDEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRideId().hashCode();
+      hash = (37 * hash) + SUCCESSFUL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccessful());
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.RideShareIDResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RideShareIDResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RideShareIDResponse)
+        RideShareService.grpc.Rideshare.RideShareIDResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RideShareService.grpc.Rideshare.RideShareIDResponse.class, RideShareService.grpc.Rideshare.RideShareIDResponse.Builder.class);
+      }
+
+      // Construct using RideShareService.grpc.Rideshare.RideShareIDResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        rideId_ = "";
+        successful_ = false;
+        message_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return RideShareService.grpc.Rideshare.internal_static_RideShareIDResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDResponse getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.RideShareIDResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDResponse build() {
+        RideShareService.grpc.Rideshare.RideShareIDResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public RideShareService.grpc.Rideshare.RideShareIDResponse buildPartial() {
+        RideShareService.grpc.Rideshare.RideShareIDResponse result = new RideShareService.grpc.Rideshare.RideShareIDResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(RideShareService.grpc.Rideshare.RideShareIDResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rideId_ = rideId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.successful_ = successful_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.message_ = message_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RideShareService.grpc.Rideshare.RideShareIDResponse) {
+          return mergeFrom((RideShareService.grpc.Rideshare.RideShareIDResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.RideShareIDResponse other) {
+        if (other == RideShareService.grpc.Rideshare.RideShareIDResponse.getDefaultInstance()) return this;
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getSuccessful() != false) {
+          setSuccessful(other.getSuccessful());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                successful_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object rideId_ = "";
+      /**
+       * <code>string rideId = 1;</code>
+       * @return The rideId.
+       */
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean successful_ ;
+      /**
+       * <code>bool successful = 2;</code>
+       * @return The successful.
+       */
+      @java.lang.Override
+      public boolean getSuccessful() {
+        return successful_;
+      }
+      /**
+       * <code>bool successful = 2;</code>
+       * @param value The successful to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccessful(boolean value) {
+        
+        successful_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool successful = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccessful() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        successful_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 3;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 3;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 3;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 3;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:RideShareIDResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:RideShareIDResponse)
+    private static final RideShareService.grpc.Rideshare.RideShareIDResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.RideShareIDResponse();
+    }
+
+    public static RideShareService.grpc.Rideshare.RideShareIDResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RideShareIDResponse>
+        PARSER = new com.google.protobuf.AbstractParser<RideShareIDResponse>() {
+      @java.lang.Override
+      public RideShareIDResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RideShareIDResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RideShareIDResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public RideShareService.grpc.Rideshare.RideShareIDResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateRideShareRequestTestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CreateRideShareRequestTest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -43,18 +8070,18 @@ public final class Rideshare {
     int getAvailableSeats();
   }
   /**
-   * Protobuf type {@code CreateRideShareRequest}
+   * Protobuf type {@code CreateRideShareRequestTest}
    */
-  public static final class CreateRideShareRequest extends
+  public static final class CreateRideShareRequestTest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CreateRideShareRequest)
-      CreateRideShareRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:CreateRideShareRequestTest)
+      CreateRideShareRequestTestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateRideShareRequest.newBuilder() to construct.
-    private CreateRideShareRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateRideShareRequestTest.newBuilder() to construct.
+    private CreateRideShareRequestTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateRideShareRequest() {
+    private CreateRideShareRequestTest() {
       driverUsername_ = "";
     }
 
@@ -62,7 +8089,7 @@ public final class Rideshare {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateRideShareRequest();
+      return new CreateRideShareRequestTest();
     }
 
     @java.lang.Override
@@ -72,15 +8099,15 @@ public final class Rideshare {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequest_descriptor;
+      return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequestTest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequest_fieldAccessorTable
+      return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequestTest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              RideShareService.grpc.Rideshare.CreateRideShareRequest.class, RideShareService.grpc.Rideshare.CreateRideShareRequest.Builder.class);
+              RideShareService.grpc.Rideshare.CreateRideShareRequestTest.class, RideShareService.grpc.Rideshare.CreateRideShareRequestTest.Builder.class);
     }
 
     public static final int CAR_ID_FIELD_NUMBER = 1;
@@ -197,10 +8224,10 @@ public final class Rideshare {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof RideShareService.grpc.Rideshare.CreateRideShareRequest)) {
+      if (!(obj instanceof RideShareService.grpc.Rideshare.CreateRideShareRequestTest)) {
         return super.equals(obj);
       }
-      RideShareService.grpc.Rideshare.CreateRideShareRequest other = (RideShareService.grpc.Rideshare.CreateRideShareRequest) obj;
+      RideShareService.grpc.Rideshare.CreateRideShareRequestTest other = (RideShareService.grpc.Rideshare.CreateRideShareRequestTest) obj;
 
       if (getCarId()
           != other.getCarId()) return false;
@@ -230,69 +8257,69 @@ public final class Rideshare {
       return hash;
     }
 
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(byte[] data)
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(java.io.InputStream input)
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseDelimitedFrom(java.io.InputStream input)
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseDelimitedFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest parseFrom(
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -305,7 +8332,7 @@ public final class Rideshare {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(RideShareService.grpc.Rideshare.CreateRideShareRequest prototype) {
+    public static Builder newBuilder(RideShareService.grpc.Rideshare.CreateRideShareRequestTest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -321,26 +8348,26 @@ public final class Rideshare {
       return builder;
     }
     /**
-     * Protobuf type {@code CreateRideShareRequest}
+     * Protobuf type {@code CreateRideShareRequestTest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CreateRideShareRequest)
-        RideShareService.grpc.Rideshare.CreateRideShareRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:CreateRideShareRequestTest)
+        RideShareService.grpc.Rideshare.CreateRideShareRequestTestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequest_descriptor;
+        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequestTest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequest_fieldAccessorTable
+        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequestTest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                RideShareService.grpc.Rideshare.CreateRideShareRequest.class, RideShareService.grpc.Rideshare.CreateRideShareRequest.Builder.class);
+                RideShareService.grpc.Rideshare.CreateRideShareRequestTest.class, RideShareService.grpc.Rideshare.CreateRideShareRequestTest.Builder.class);
       }
 
-      // Construct using RideShareService.grpc.Rideshare.CreateRideShareRequest.newBuilder()
+      // Construct using RideShareService.grpc.Rideshare.CreateRideShareRequestTest.newBuilder()
       private Builder() {
 
       }
@@ -363,17 +8390,17 @@ public final class Rideshare {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequest_descriptor;
+        return RideShareService.grpc.Rideshare.internal_static_CreateRideShareRequestTest_descriptor;
       }
 
       @java.lang.Override
-      public RideShareService.grpc.Rideshare.CreateRideShareRequest getDefaultInstanceForType() {
-        return RideShareService.grpc.Rideshare.CreateRideShareRequest.getDefaultInstance();
+      public RideShareService.grpc.Rideshare.CreateRideShareRequestTest getDefaultInstanceForType() {
+        return RideShareService.grpc.Rideshare.CreateRideShareRequestTest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public RideShareService.grpc.Rideshare.CreateRideShareRequest build() {
-        RideShareService.grpc.Rideshare.CreateRideShareRequest result = buildPartial();
+      public RideShareService.grpc.Rideshare.CreateRideShareRequestTest build() {
+        RideShareService.grpc.Rideshare.CreateRideShareRequestTest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -381,14 +8408,14 @@ public final class Rideshare {
       }
 
       @java.lang.Override
-      public RideShareService.grpc.Rideshare.CreateRideShareRequest buildPartial() {
-        RideShareService.grpc.Rideshare.CreateRideShareRequest result = new RideShareService.grpc.Rideshare.CreateRideShareRequest(this);
+      public RideShareService.grpc.Rideshare.CreateRideShareRequestTest buildPartial() {
+        RideShareService.grpc.Rideshare.CreateRideShareRequestTest result = new RideShareService.grpc.Rideshare.CreateRideShareRequestTest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(RideShareService.grpc.Rideshare.CreateRideShareRequest result) {
+      private void buildPartial0(RideShareService.grpc.Rideshare.CreateRideShareRequestTest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.carId_ = carId_;
@@ -435,16 +8462,16 @@ public final class Rideshare {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RideShareService.grpc.Rideshare.CreateRideShareRequest) {
-          return mergeFrom((RideShareService.grpc.Rideshare.CreateRideShareRequest)other);
+        if (other instanceof RideShareService.grpc.Rideshare.CreateRideShareRequestTest) {
+          return mergeFrom((RideShareService.grpc.Rideshare.CreateRideShareRequestTest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(RideShareService.grpc.Rideshare.CreateRideShareRequest other) {
-        if (other == RideShareService.grpc.Rideshare.CreateRideShareRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(RideShareService.grpc.Rideshare.CreateRideShareRequestTest other) {
+        if (other == RideShareService.grpc.Rideshare.CreateRideShareRequestTest.getDefaultInstance()) return this;
         if (other.getCarId() != 0) {
           setCarId(other.getCarId());
         }
@@ -662,23 +8689,23 @@ public final class Rideshare {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:CreateRideShareRequest)
+      // @@protoc_insertion_point(builder_scope:CreateRideShareRequestTest)
     }
 
-    // @@protoc_insertion_point(class_scope:CreateRideShareRequest)
-    private static final RideShareService.grpc.Rideshare.CreateRideShareRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:CreateRideShareRequestTest)
+    private static final RideShareService.grpc.Rideshare.CreateRideShareRequestTest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.CreateRideShareRequest();
+      DEFAULT_INSTANCE = new RideShareService.grpc.Rideshare.CreateRideShareRequestTest();
     }
 
-    public static RideShareService.grpc.Rideshare.CreateRideShareRequest getDefaultInstance() {
+    public static RideShareService.grpc.Rideshare.CreateRideShareRequestTest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateRideShareRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateRideShareRequest>() {
+    private static final com.google.protobuf.Parser<CreateRideShareRequestTest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateRideShareRequestTest>() {
       @java.lang.Override
-      public CreateRideShareRequest parsePartialFrom(
+      public CreateRideShareRequestTest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -697,17 +8724,17 @@ public final class Rideshare {
       }
     };
 
-    public static com.google.protobuf.Parser<CreateRideShareRequest> parser() {
+    public static com.google.protobuf.Parser<CreateRideShareRequestTest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateRideShareRequest> getParserForType() {
+    public com.google.protobuf.Parser<CreateRideShareRequestTest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public RideShareService.grpc.Rideshare.CreateRideShareRequest getDefaultInstanceForType() {
+    public RideShareService.grpc.Rideshare.CreateRideShareRequestTest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4410,10 +12437,40 @@ public final class Rideshare {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CreateRideShareRequest_descriptor;
+    internal_static_RideshareOfferList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CreateRideShareRequest_fieldAccessorTable;
+      internal_static_RideshareOfferList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RideshareOffer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RideshareOffer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RideShareRequestList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RideShareRequestList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RideshareRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RideshareRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RideShareIDRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RideShareIDRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RideShareIDResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RideShareIDResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CreateRideShareRequestTest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CreateRideShareRequestTest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_JoinRideShareRequest_descriptor;
   private static final 
@@ -4448,66 +12505,150 @@ public final class Rideshare {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017Rideshare.proto\"Z\n\026CreateRideShareRequ" +
-      "est\022\016\n\006car_id\030\001 \001(\005\022\027\n\017driver_username\030\002" +
-      " \001(\t\022\027\n\017available_seats\030\003 \001(\005\"C\n\024JoinRid" +
-      "eShareRequest\022\017\n\007ride_id\030\001 \001(\005\022\032\n\022passen" +
-      "ger_username\030\002 \001(\t\"\'\n\025ListRideSharesRequ" +
-      "est\022\016\n\006car_id\030\001 \001(\005\"U\n\021RideShareResponse" +
-      "\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\036\n\nri" +
-      "de_share\030\003 \001(\0132\n.RideShare\"r\n\tRideShare\022" +
-      "\017\n\007ride_id\030\001 \001(\005\022\016\n\006car_id\030\002 \001(\005\022\027\n\017driv" +
-      "er_username\030\003 \001(\t\022\027\n\017available_seats\030\004 \001" +
-      "(\005\022\022\n\npassengers\030\005 \003(\t\"8\n\025RideShareListR" +
-      "esponse\022\037\n\013ride_shares\030\001 \003(\0132\n.RideShare" +
-      "2\320\001\n\020RideShareService\022>\n\017CreateRideShare" +
-      "\022\027.CreateRideShareRequest\032\022.RideShareRes" +
+      "\n\017Rideshare.proto\032\033google/protobuf/empty" +
+      ".proto\":\n\022RideshareOfferList\022$\n\013result_l" +
+      "ist\030\001 \003(\0132\017.RideshareOffer\"\364\001\n\016Rideshare" +
+      "Offer\022\016\n\006rideId\030\001 \001(\t\022\027\n\017availablespaces" +
+      "\030\002 \001(\005\022\016\n\006status\030\003 \001(\t\022\021\n\tstartdate\030\004 \001(" +
+      "\t\022\021\n\tstarttime\030\005 \001(\t\022\025\n\rstartlocation\030\006 " +
+      "\001(\t\022\017\n\007enddate\030\007 \001(\t\022\017\n\007endtime\030\010 \001(\t\022\023\n" +
+      "\013endlocation\030\t \001(\t\022\r\n\005price\030\n \001(\002\022\022\n\ncus" +
+      "tomerid\030\013 \001(\t\022\022\n\nbookingref\030\014 \001(\t\">\n\024Rid" +
+      "eShareRequestList\022&\n\013result_list\030\001 \003(\0132\021" +
+      ".RideshareRequest\"\202\002\n\020RideshareRequest\022\016" +
+      "\n\006rideId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\021\n\tstartd" +
+      "ate\030\003 \001(\t\022\021\n\tstarttime\030\004 \001(\t\022\025\n\rstartloc" +
+      "ation\030\005 \001(\t\022\020\n\010latitude\030\006 \001(\002\022\021\n\tlongitu" +
+      "de\030\007 \001(\002\022\017\n\007enddate\030\010 \001(\t\022\017\n\007endtime\030\t \001" +
+      "(\t\022\023\n\013endlocation\030\n \001(\t\022\r\n\005price\030\013 \001(\002\022\022" +
+      "\n\ncustomerid\030\014 \001(\t\022\022\n\nbookingref\030\r \001(\t\"5" +
+      "\n\022RideShareIDRequest\022\016\n\006rideId\030\001 \001(\t\022\017\n\007" +
+      "message\030\002 \001(\t\"J\n\023RideShareIDResponse\022\016\n\006" +
+      "rideId\030\001 \001(\t\022\022\n\nsuccessful\030\002 \001(\010\022\017\n\007mess" +
+      "age\030\003 \001(\t\"^\n\032CreateRideShareRequestTest\022" +
+      "\016\n\006car_id\030\001 \001(\005\022\027\n\017driver_username\030\002 \001(\t" +
+      "\022\027\n\017available_seats\030\003 \001(\005\"C\n\024JoinRideSha" +
+      "reRequest\022\017\n\007ride_id\030\001 \001(\005\022\032\n\022passenger_" +
+      "username\030\002 \001(\t\"\'\n\025ListRideSharesRequest\022" +
+      "\016\n\006car_id\030\001 \001(\005\"U\n\021RideShareResponse\022\017\n\007" +
+      "success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\036\n\nride_s" +
+      "hare\030\003 \001(\0132\n.RideShare\"r\n\tRideShare\022\017\n\007r" +
+      "ide_id\030\001 \001(\005\022\016\n\006car_id\030\002 \001(\005\022\027\n\017driver_u" +
+      "sername\030\003 \001(\t\022\027\n\017available_seats\030\004 \001(\005\022\022" +
+      "\n\npassengers\030\005 \003(\t\"8\n\025RideShareListRespo" +
+      "nse\022\037\n\013ride_shares\030\001 \003(\0132\n.RideShare2\342\t\n" +
+      "\020RideShareService\022B\n\017CreateRideShare\022\033.C" +
+      "reateRideShareRequestTest\032\022.RideShareRes" +
       "ponse\022:\n\rJoinRideShare\022\025.JoinRideShareRe" +
       "quest\032\022.RideShareResponse\022@\n\016ListRideSha" +
       "res\022\026.ListRideSharesRequest\032\026.RideShareL" +
-      "istResponseB\027\n\025RideShareService.grpcb\006pr" +
-      "oto3"
+      "istResponse\022;\n\024CreateRideShareOffer\022\017.Ri" +
+      "deshareOffer\032\022.RideShareResponse\022:\n\022Read" +
+      "RideShareOffer\022\023.RideShareIDRequest\032\017.Ri" +
+      "deshareOffer\022D\n\025ReadAllRideShareOffer\022\026." +
+      "google.protobuf.Empty\032\023.RideshareOfferLi" +
+      "st\022;\n\024UpdateRideShareOffer\022\017.RideshareOf" +
+      "fer\032\022.RideShareResponse\022?\n\024DeleteRideSha" +
+      "reOffer\022\023.RideShareIDRequest\032\022.RideShare" +
+      "Response\022?\n\026CreateRideShareRequest\022\021.Rid" +
+      "eshareRequest\032\022.RideShareResponse\022>\n\024Rea" +
+      "dRideShareRequest\022\023.RideShareIDRequest\032\021" +
+      ".RideshareRequest\022H\n\027ReadAllRideShareReq" +
+      "uest\022\026.google.protobuf.Empty\032\025.RideShare" +
+      "RequestList\022?\n\026UpdateRideShareRequest\022\021." +
+      "RideshareRequest\032\022.RideShareResponse\022A\n\026" +
+      "DeleteRideShareRequest\022\023.RideShareIDRequ" +
+      "est\032\022.RideShareResponse\022D\n\032GetClosestRid" +
+      "eShareRequest\022\021.RideshareRequest\032\023.Rides" +
+      "hareOfferList\022I\n\035GetAllRideShareOffersBy" +
+      "UserID\022\023.RideShareIDRequest\032\023.RideshareO" +
+      "fferList\022M\n\037GetAllRideShareRequestsByUse" +
+      "rID\022\023.RideShareIDRequest\032\025.RideShareRequ" +
+      "estList\022L\n GetAllRideShareOffersByBookin" +
+      "gID\022\023.RideShareIDRequest\032\023.RideshareOffe" +
+      "rList\022R\n$GetAllRideShareRequestsByRideOf" +
+      "ferID\022\023.RideShareIDRequest\032\025.RideShareRe" +
+      "questListB\027\n\025RideShareService.grpcb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.EmptyProto.getDescriptor(),
         });
-    internal_static_CreateRideShareRequest_descriptor =
+    internal_static_RideshareOfferList_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_CreateRideShareRequest_fieldAccessorTable = new
+    internal_static_RideshareOfferList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CreateRideShareRequest_descriptor,
+        internal_static_RideshareOfferList_descriptor,
+        new java.lang.String[] { "ResultList", });
+    internal_static_RideshareOffer_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_RideshareOffer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RideshareOffer_descriptor,
+        new java.lang.String[] { "RideId", "Availablespaces", "Status", "Startdate", "Starttime", "Startlocation", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref", });
+    internal_static_RideShareRequestList_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_RideShareRequestList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RideShareRequestList_descriptor,
+        new java.lang.String[] { "ResultList", });
+    internal_static_RideshareRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_RideshareRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RideshareRequest_descriptor,
+        new java.lang.String[] { "RideId", "Status", "Startdate", "Starttime", "Startlocation", "Latitude", "Longitude", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref", });
+    internal_static_RideShareIDRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_RideShareIDRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RideShareIDRequest_descriptor,
+        new java.lang.String[] { "RideId", "Message", });
+    internal_static_RideShareIDResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_RideShareIDResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RideShareIDResponse_descriptor,
+        new java.lang.String[] { "RideId", "Successful", "Message", });
+    internal_static_CreateRideShareRequestTest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_CreateRideShareRequestTest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CreateRideShareRequestTest_descriptor,
         new java.lang.String[] { "CarId", "DriverUsername", "AvailableSeats", });
     internal_static_JoinRideShareRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_JoinRideShareRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JoinRideShareRequest_descriptor,
         new java.lang.String[] { "RideId", "PassengerUsername", });
     internal_static_ListRideSharesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_ListRideSharesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ListRideSharesRequest_descriptor,
         new java.lang.String[] { "CarId", });
     internal_static_RideShareResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_RideShareResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RideShareResponse_descriptor,
         new java.lang.String[] { "Success", "Message", "RideShare", });
     internal_static_RideShare_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_RideShare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RideShare_descriptor,
         new java.lang.String[] { "RideId", "CarId", "DriverUsername", "AvailableSeats", "Passengers", });
     internal_static_RideShareListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_RideShareListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RideShareListResponse_descriptor,
         new java.lang.String[] { "RideShares", });
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

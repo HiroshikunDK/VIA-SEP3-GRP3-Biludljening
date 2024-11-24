@@ -1,6 +1,5 @@
 package Service;
 
-import Model.CreditCard;
 import PaymentService.grpc.Payment;
 import PaymentService.grpc.PaymentServiceGrpc;
 import Repository.PaymentRepository;
@@ -30,15 +29,6 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
 
-            // Valider kreditkortreferencen
-            System.out.println("Validating credit card reference: " + paymentRequest.getCreditcardref());
-            CreditCard creditCard = session.get(CreditCard.class, paymentRequest.getCreditcardref());
-            if (creditCard == null) {
-                System.out.println("Credit card not found: " + paymentRequest.getCreditcardref());
-                throw new IllegalArgumentException("Invalid credit card reference.");
-            }
-            System.out.println("Credit card validated: " + creditCard.getCreditcard_id());
-
             // Opret betaling
             Model.Payment payment = new Model.Payment(
                     null,
@@ -46,29 +36,21 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
                     paymentRequest.getBookingType(),
                     paymentRequest.getBooking(),
                     paymentRequest.getStatus(),
-                    paymentRequest.getCreditcardref()
+                    paymentRequest.getCreditcardref() // Behold, hvis feltet stadig bruges i Payment
             );
 
-            session.persist(payment); // Brug direkte session.persist
+            session.persist(payment); // Gem betaling direkte
             transaction.commit();
 
-            // Send succesrespons
             Payment.PaymentResponse response = Payment.PaymentResponse.newBuilder()
                     .setSuccess(true)
                     .setMessage("Payment created successfully.")
                     .build();
             responseObserver.onNext(response);
         } catch (Exception e) {
-            // Håndter rollback kun, hvis transaktionen stadig er aktiv
             if (transaction != null && transaction.isActive()) {
-                try {
-                    transaction.rollback();
-                } catch (Exception rollbackException) {
-                    System.err.println("Rollback failed: " + rollbackException.getMessage());
-                }
+                transaction.rollback();
             }
-
-            // Log fejlen og send fejlrespons
             e.printStackTrace();
             Payment.PaymentResponse response = Payment.PaymentResponse.newBuilder()
                     .setSuccess(false)
@@ -76,14 +58,12 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
                     .build();
             responseObserver.onNext(response);
         } finally {
-            // Sørg for at fuldføre responsen
             responseObserver.onCompleted();
         }
     }
 
 
-
-    @Override
+    /* @Override
     public void deletePayment(Payment.PaymentRequestById request, StreamObserver<Payment.PaymentResponse> responseObserver) {
         boolean success = false;
         String message;
@@ -143,7 +123,7 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
           responseObserver.onCompleted();
       }
     }
-
+*/
     @Override
     public void listPaymentsByCustomer(Payment.PaymentListByCustomerRequest request, StreamObserver<Payment.PaymentListResponse> responseObserver) {
         try {
@@ -175,7 +155,7 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
             responseObserver.onCompleted();
         }
     }
-
+/*
     @Override
     public void updatePaymentStatus(Payment.PaymentStatusUpdateRequest request, StreamObserver<Payment.PaymentResponse> responseStreamObserver)
     {
@@ -271,4 +251,5 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
             responseStreamObserver.onCompleted();
         }
     }
+ */
 }

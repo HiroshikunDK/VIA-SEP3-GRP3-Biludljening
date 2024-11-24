@@ -1,3 +1,4 @@
+/*
 package Model;
 
 import jakarta.persistence.*;
@@ -74,3 +75,4 @@ public class CreditCard {
         this.customerid = customerid;
     }
 }
+ */
