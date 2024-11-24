@@ -6,3 +6,8 @@ Car Rental Service/CarApp+Gateway/.idea/.idea.gRPCGateway/.idea/workspace.xml
 Car Rental Service/Microservices/.idea/compiler.xml
 Car Rental Service/Microservices/.idea/modules.xml
 Car Rental Service/Microservices/.idea/workspace.xml
+
+Car Rental Service/User Service/target/
+Car Rental Service/Rideshare Service/target/
+Car Rental Service/Car Management Service/target/
+Car Rental Service/Payment Service/target/
