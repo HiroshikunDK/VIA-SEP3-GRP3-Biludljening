@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 using Microsoft.AspNetCore.Authorization;
+using Userservice;
 
 namespace gRPC_Gateway.Controllers;
 
@@ -19,19 +20,24 @@ public class UserController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto request)
     {
-        // Set the role to "Customer" directly
-        var grpcUser = new User()
+        // Brug den korrekte protokollbesked
+        var grpcRequest = new RegisterUserRequest()
         {
-            Username = request.Username,
+            UserFirstname = request.UserFirstname,
+            UserLastname = request.UserLastname,
+            Title = request.Title,
             Email = request.Email,
+            Phonenr = request.Phonenr,
+            Username = request.Username,
             Password = request.Password,
-            Role = "Customer" 
+            Role = "Customer"
         };
-    
-        var response = await _userClient.RegisterUserAsync(grpcUser);
-    
+
+        var response = await _userClient.RegisterUserAsync(grpcRequest);
+
         return Ok(new { response.Message, response.Success });
     }
+
 
 
     [HttpPost("login")]
@@ -43,7 +49,6 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "Admin,Customer")]
     public async Task<IActionResult> GetUserById(int id)
     {
         var request = new UserRequest { Id = id };
@@ -51,6 +56,7 @@ public class UserController : ControllerBase
         return Ok(response);
     }
 
+    /*
     [HttpPut("update")]
     [Authorize(Roles = "Admin")] 
     public async Task<IActionResult> UpdateUser([FromBody] User request)
@@ -67,4 +73,5 @@ public class UserController : ControllerBase
         var response = await _userClient.DeleteUserAsync(request);
         return Ok(response);
     }
+    */
 }

@@ -1,7 +1,55 @@
 ﻿@page "/"
+@using System.IdentityModel.Tokens.Jwt
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Welcome to our app!</h1>
 
-Welcome to your new app.
+@if (isAuthorized)
+{
+    <p>Hello, @username!</p>
+    <p>Your role: @role</p>
+    <p>You are authorized to access restricted features.</p>
+}
+else
+{
+    <p>You are not logged in or lack the required permissions.</p>
+    <button @onclick="NavigateToLogin">Login</button>
+}
+
+@code {
+    private bool isAuthorized = false;
+    private string username = string.Empty;
+    private string role = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+// Retrieve the JWT token from local storage
+            var token = await JS.InvokeAsync<string>("localStorage.getItem", "authToken");
+
+            if (!string.IsNullOrEmpty(token))
+            {
+// Decode the JWT to extract claims
+                var jwt = new JwtSecurityTokenHandler().ReadJwtToken(token);
+                username = jwt.Claims.FirstOrDefault(c => c.Type == "sub")?.Value ?? "Unknown";
+                role = jwt.Claims.FirstOrDefault(c => c.Type == "role")?.Value ?? "Unknown";
+
+// Check for specific roles or claims
+                isAuthorized = role == "Admin" || role == "Customer";
+            }
+        }
+        catch (Exception)
+        {
+            isAuthorized = false;
+        }
+    }
+
+    private void NavigateToLogin()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+}

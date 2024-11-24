@@ -23,26 +23,73 @@ public static partial class RideshareReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChVQcm90by9SaWRlc2hhcmUucHJvdG8aG2dvb2dsZS9wcm90b2J1Zi9lbXB0",
-          "eS5wcm90byJaChZDcmVhdGVSaWRlU2hhcmVSZXF1ZXN0Eg4KBmNhcl9pZBgB",
-          "IAEoBRIXCg9kcml2ZXJfdXNlcm5hbWUYAiABKAkSFwoPYXZhaWxhYmxlX3Nl",
-          "YXRzGAMgASgFIkMKFEpvaW5SaWRlU2hhcmVSZXF1ZXN0Eg8KB3JpZGVfaWQY",
-          "ASABKAUSGgoScGFzc2VuZ2VyX3VzZXJuYW1lGAIgASgJIicKFUxpc3RSaWRl",
-          "U2hhcmVzUmVxdWVzdBIOCgZjYXJfaWQYASABKAUiVQoRUmlkZVNoYXJlUmVz",
-          "cG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEh4KCnJp",
-          "ZGVfc2hhcmUYAyABKAsyCi5SaWRlU2hhcmUicgoJUmlkZVNoYXJlEg8KB3Jp",
-          "ZGVfaWQYASABKAUSDgoGY2FyX2lkGAIgASgFEhcKD2RyaXZlcl91c2VybmFt",
-          "ZRgDIAEoCRIXCg9hdmFpbGFibGVfc2VhdHMYBCABKAUSEgoKcGFzc2VuZ2Vy",
-          "cxgFIAMoCSI4ChVSaWRlU2hhcmVMaXN0UmVzcG9uc2USHwoLcmlkZV9zaGFy",
-          "ZXMYASADKAsyCi5SaWRlU2hhcmUy0AEKEFJpZGVTaGFyZVNlcnZpY2USPgoP",
-          "Q3JlYXRlUmlkZVNoYXJlEhcuQ3JlYXRlUmlkZVNoYXJlUmVxdWVzdBoSLlJp",
-          "ZGVTaGFyZVJlc3BvbnNlEjoKDUpvaW5SaWRlU2hhcmUSFS5Kb2luUmlkZVNo",
-          "YXJlUmVxdWVzdBoSLlJpZGVTaGFyZVJlc3BvbnNlEkAKDkxpc3RSaWRlU2hh",
-          "cmVzEhYuTGlzdFJpZGVTaGFyZXNSZXF1ZXN0GhYuUmlkZVNoYXJlTGlzdFJl",
-          "c3BvbnNlQhcKFVJpZGVTaGFyZVNlcnZpY2UuZ3JwY2IGcHJvdG8z"));
+          "eS5wcm90byI6ChJSaWRlc2hhcmVPZmZlckxpc3QSJAoLcmVzdWx0X2xpc3QY",
+          "ASADKAsyDy5SaWRlc2hhcmVPZmZlciL0AQoOUmlkZXNoYXJlT2ZmZXISDgoG",
+          "cmlkZUlkGAEgASgJEhcKD2F2YWlsYWJsZXNwYWNlcxgCIAEoBRIOCgZzdGF0",
+          "dXMYAyABKAkSEQoJc3RhcnRkYXRlGAQgASgJEhEKCXN0YXJ0dGltZRgFIAEo",
+          "CRIVCg1zdGFydGxvY2F0aW9uGAYgASgJEg8KB2VuZGRhdGUYByABKAkSDwoH",
+          "ZW5kdGltZRgIIAEoCRITCgtlbmRsb2NhdGlvbhgJIAEoCRINCgVwcmljZRgK",
+          "IAEoAhISCgpjdXN0b21lcmlkGAsgASgJEhIKCmJvb2tpbmdyZWYYDCABKAki",
+          "PgoUUmlkZVNoYXJlUmVxdWVzdExpc3QSJgoLcmVzdWx0X2xpc3QYASADKAsy",
+          "ES5SaWRlc2hhcmVSZXF1ZXN0IoICChBSaWRlc2hhcmVSZXF1ZXN0Eg4KBnJp",
+          "ZGVJZBgBIAEoCRIOCgZzdGF0dXMYAiABKAkSEQoJc3RhcnRkYXRlGAMgASgJ",
+          "EhEKCXN0YXJ0dGltZRgEIAEoCRIVCg1zdGFydGxvY2F0aW9uGAUgASgJEhAK",
+          "CGxhdGl0dWRlGAYgASgCEhEKCWxvbmdpdHVkZRgHIAEoAhIPCgdlbmRkYXRl",
+          "GAggASgJEg8KB2VuZHRpbWUYCSABKAkSEwoLZW5kbG9jYXRpb24YCiABKAkS",
+          "DQoFcHJpY2UYCyABKAISEgoKY3VzdG9tZXJpZBgMIAEoCRISCgpib29raW5n",
+          "cmVmGA0gASgJIjUKElJpZGVTaGFyZUlEUmVxdWVzdBIOCgZyaWRlSWQYASAB",
+          "KAkSDwoHbWVzc2FnZRgCIAEoCSJKChNSaWRlU2hhcmVJRFJlc3BvbnNlEg4K",
+          "BnJpZGVJZBgBIAEoCRISCgpzdWNjZXNzZnVsGAIgASgIEg8KB21lc3NhZ2UY",
+          "AyABKAkiXgoaQ3JlYXRlUmlkZVNoYXJlUmVxdWVzdFRlc3QSDgoGY2FyX2lk",
+          "GAEgASgFEhcKD2RyaXZlcl91c2VybmFtZRgCIAEoCRIXCg9hdmFpbGFibGVf",
+          "c2VhdHMYAyABKAUiQwoUSm9pblJpZGVTaGFyZVJlcXVlc3QSDwoHcmlkZV9p",
+          "ZBgBIAEoBRIaChJwYXNzZW5nZXJfdXNlcm5hbWUYAiABKAkiJwoVTGlzdFJp",
+          "ZGVTaGFyZXNSZXF1ZXN0Eg4KBmNhcl9pZBgBIAEoBSJVChFSaWRlU2hhcmVS",
+          "ZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSHgoK",
+          "cmlkZV9zaGFyZRgDIAEoCzIKLlJpZGVTaGFyZSJyCglSaWRlU2hhcmUSDwoH",
+          "cmlkZV9pZBgBIAEoBRIOCgZjYXJfaWQYAiABKAUSFwoPZHJpdmVyX3VzZXJu",
+          "YW1lGAMgASgJEhcKD2F2YWlsYWJsZV9zZWF0cxgEIAEoBRISCgpwYXNzZW5n",
+          "ZXJzGAUgAygJIjgKFVJpZGVTaGFyZUxpc3RSZXNwb25zZRIfCgtyaWRlX3No",
+          "YXJlcxgBIAMoCzIKLlJpZGVTaGFyZTLiCQoQUmlkZVNoYXJlU2VydmljZRJC",
+          "Cg9DcmVhdGVSaWRlU2hhcmUSGy5DcmVhdGVSaWRlU2hhcmVSZXF1ZXN0VGVz",
+          "dBoSLlJpZGVTaGFyZVJlc3BvbnNlEjoKDUpvaW5SaWRlU2hhcmUSFS5Kb2lu",
+          "UmlkZVNoYXJlUmVxdWVzdBoSLlJpZGVTaGFyZVJlc3BvbnNlEkAKDkxpc3RS",
+          "aWRlU2hhcmVzEhYuTGlzdFJpZGVTaGFyZXNSZXF1ZXN0GhYuUmlkZVNoYXJl",
+          "TGlzdFJlc3BvbnNlEjsKFENyZWF0ZVJpZGVTaGFyZU9mZmVyEg8uUmlkZXNo",
+          "YXJlT2ZmZXIaEi5SaWRlU2hhcmVSZXNwb25zZRI6ChJSZWFkUmlkZVNoYXJl",
+          "T2ZmZXISEy5SaWRlU2hhcmVJRFJlcXVlc3QaDy5SaWRlc2hhcmVPZmZlchJE",
+          "ChVSZWFkQWxsUmlkZVNoYXJlT2ZmZXISFi5nb29nbGUucHJvdG9idWYuRW1w",
+          "dHkaEy5SaWRlc2hhcmVPZmZlckxpc3QSOwoUVXBkYXRlUmlkZVNoYXJlT2Zm",
+          "ZXISDy5SaWRlc2hhcmVPZmZlchoSLlJpZGVTaGFyZVJlc3BvbnNlEj8KFERl",
+          "bGV0ZVJpZGVTaGFyZU9mZmVyEhMuUmlkZVNoYXJlSURSZXF1ZXN0GhIuUmlk",
+          "ZVNoYXJlUmVzcG9uc2USPwoWQ3JlYXRlUmlkZVNoYXJlUmVxdWVzdBIRLlJp",
+          "ZGVzaGFyZVJlcXVlc3QaEi5SaWRlU2hhcmVSZXNwb25zZRI+ChRSZWFkUmlk",
+          "ZVNoYXJlUmVxdWVzdBITLlJpZGVTaGFyZUlEUmVxdWVzdBoRLlJpZGVzaGFy",
+          "ZVJlcXVlc3QSSAoXUmVhZEFsbFJpZGVTaGFyZVJlcXVlc3QSFi5nb29nbGUu",
+          "cHJvdG9idWYuRW1wdHkaFS5SaWRlU2hhcmVSZXF1ZXN0TGlzdBI/ChZVcGRh",
+          "dGVSaWRlU2hhcmVSZXF1ZXN0EhEuUmlkZXNoYXJlUmVxdWVzdBoSLlJpZGVT",
+          "aGFyZVJlc3BvbnNlEkEKFkRlbGV0ZVJpZGVTaGFyZVJlcXVlc3QSEy5SaWRl",
+          "U2hhcmVJRFJlcXVlc3QaEi5SaWRlU2hhcmVSZXNwb25zZRJEChpHZXRDbG9z",
+          "ZXN0UmlkZVNoYXJlUmVxdWVzdBIRLlJpZGVzaGFyZVJlcXVlc3QaEy5SaWRl",
+          "c2hhcmVPZmZlckxpc3QSSQodR2V0QWxsUmlkZVNoYXJlT2ZmZXJzQnlVc2Vy",
+          "SUQSEy5SaWRlU2hhcmVJRFJlcXVlc3QaEy5SaWRlc2hhcmVPZmZlckxpc3QS",
+          "TQofR2V0QWxsUmlkZVNoYXJlUmVxdWVzdHNCeVVzZXJJRBITLlJpZGVTaGFy",
+          "ZUlEUmVxdWVzdBoVLlJpZGVTaGFyZVJlcXVlc3RMaXN0EkwKIEdldEFsbFJp",
+          "ZGVTaGFyZU9mZmVyc0J5Qm9va2luZ0lEEhMuUmlkZVNoYXJlSURSZXF1ZXN0",
+          "GhMuUmlkZXNoYXJlT2ZmZXJMaXN0ElIKJEdldEFsbFJpZGVTaGFyZVJlcXVl",
+          "c3RzQnlSaWRlT2ZmZXJJRBITLlJpZGVTaGFyZUlEUmVxdWVzdBoVLlJpZGVT",
+          "aGFyZVJlcXVlc3RMaXN0QhcKFVJpZGVTaGFyZVNlcnZpY2UuZ3JwY2IGcHJv",
+          "dG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CreateRideShareRequest), global::CreateRideShareRequest.Parser, new[]{ "CarId", "DriverUsername", "AvailableSeats" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideshareOfferList), global::RideshareOfferList.Parser, new[]{ "ResultList" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideshareOffer), global::RideshareOffer.Parser, new[]{ "RideId", "Availablespaces", "Status", "Startdate", "Starttime", "Startlocation", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideShareRequestList), global::RideShareRequestList.Parser, new[]{ "ResultList" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideshareRequest), global::RideshareRequest.Parser, new[]{ "RideId", "Status", "Startdate", "Starttime", "Startlocation", "Latitude", "Longitude", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideShareIDRequest), global::RideShareIDRequest.Parser, new[]{ "RideId", "Message" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RideShareIDResponse), global::RideShareIDResponse.Parser, new[]{ "RideId", "Successful", "Message" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CreateRideShareRequestTest), global::CreateRideShareRequestTest.Parser, new[]{ "CarId", "DriverUsername", "AvailableSeats" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::JoinRideShareRequest), global::JoinRideShareRequest.Parser, new[]{ "RideId", "PassengerUsername" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ListRideSharesRequest), global::ListRideSharesRequest.Parser, new[]{ "CarId" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RideShareResponse), global::RideShareResponse.Parser, new[]{ "Success", "Message", "RideShare" }, null, null, null, null),
@@ -54,16 +101,16 @@ public static partial class RideshareReflection {
 
 }
 #region Messages
-public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShareRequest>
+public sealed partial class RideshareOfferList : pb::IMessage<RideshareOfferList>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
 #endif
 {
-  private static readonly pb::MessageParser<CreateRideShareRequest> _parser = new pb::MessageParser<CreateRideShareRequest>(() => new CreateRideShareRequest());
+  private static readonly pb::MessageParser<RideshareOfferList> _parser = new pb::MessageParser<RideshareOfferList>(() => new RideshareOfferList());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CreateRideShareRequest> Parser { get { return _parser; } }
+  public static pb::MessageParser<RideshareOfferList> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -79,7 +126,7 @@ public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CreateRideShareRequest() {
+  public RideshareOfferList() {
     OnConstruction();
   }
 
@@ -87,7 +134,2162 @@ public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CreateRideShareRequest(CreateRideShareRequest other) : this() {
+  public RideshareOfferList(RideshareOfferList other) : this() {
+    resultList_ = other.resultList_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareOfferList Clone() {
+    return new RideshareOfferList(this);
+  }
+
+  /// <summary>Field number for the "result_list" field.</summary>
+  public const int ResultListFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::RideshareOffer> _repeated_resultList_codec
+      = pb::FieldCodec.ForMessage(10, global::RideshareOffer.Parser);
+  private readonly pbc::RepeatedField<global::RideshareOffer> resultList_ = new pbc::RepeatedField<global::RideshareOffer>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public pbc::RepeatedField<global::RideshareOffer> ResultList {
+    get { return resultList_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideshareOfferList);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideshareOfferList other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!resultList_.Equals(other.resultList_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= resultList_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    resultList_.WriteTo(output, _repeated_resultList_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    resultList_.WriteTo(ref output, _repeated_resultList_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    size += resultList_.CalculateSize(_repeated_resultList_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideshareOfferList other) {
+    if (other == null) {
+      return;
+    }
+    resultList_.Add(other.resultList_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          resultList_.AddEntriesFrom(input, _repeated_resultList_codec);
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          resultList_.AddEntriesFrom(ref input, _repeated_resultList_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+/// <summary>
+/// Rideshare Offer definition
+/// </summary>
+public sealed partial class RideshareOffer : pb::IMessage<RideshareOffer>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<RideshareOffer> _parser = new pb::MessageParser<RideshareOffer>(() => new RideshareOffer());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<RideshareOffer> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareOffer() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareOffer(RideshareOffer other) : this() {
+    rideId_ = other.rideId_;
+    availablespaces_ = other.availablespaces_;
+    status_ = other.status_;
+    startdate_ = other.startdate_;
+    starttime_ = other.starttime_;
+    startlocation_ = other.startlocation_;
+    enddate_ = other.enddate_;
+    endtime_ = other.endtime_;
+    endlocation_ = other.endlocation_;
+    price_ = other.price_;
+    customerid_ = other.customerid_;
+    bookingref_ = other.bookingref_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareOffer Clone() {
+    return new RideshareOffer(this);
+  }
+
+  /// <summary>Field number for the "rideId" field.</summary>
+  public const int RideIdFieldNumber = 1;
+  private string rideId_ = "";
+  /// <summary>
+  /// CRS_ID
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string RideId {
+    get { return rideId_; }
+    set {
+      rideId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "availablespaces" field.</summary>
+  public const int AvailablespacesFieldNumber = 2;
+  private int availablespaces_;
+  /// <summary>
+  /// SMALLINT
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Availablespaces {
+    get { return availablespaces_; }
+    set {
+      availablespaces_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "status" field.</summary>
+  public const int StatusFieldNumber = 3;
+  private string status_ = "";
+  /// <summary>
+  /// CRS_NAME (status: full, partially booked, or cancelled)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Status {
+    get { return status_; }
+    set {
+      status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "startdate" field.</summary>
+  public const int StartdateFieldNumber = 4;
+  private string startdate_ = "";
+  /// <summary>
+  /// DATE as string in YYYY-MM-DD format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Startdate {
+    get { return startdate_; }
+    set {
+      startdate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "starttime" field.</summary>
+  public const int StarttimeFieldNumber = 5;
+  private string starttime_ = "";
+  /// <summary>
+  /// TIME as string in HH:MM:SS format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Starttime {
+    get { return starttime_; }
+    set {
+      starttime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "startlocation" field.</summary>
+  public const int StartlocationFieldNumber = 6;
+  private string startlocation_ = "";
+  /// <summary>
+  /// CRS_ADDRESS
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Startlocation {
+    get { return startlocation_; }
+    set {
+      startlocation_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "enddate" field.</summary>
+  public const int EnddateFieldNumber = 7;
+  private string enddate_ = "";
+  /// <summary>
+  /// TIME as string in HH:MM:SS format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Enddate {
+    get { return enddate_; }
+    set {
+      enddate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "endtime" field.</summary>
+  public const int EndtimeFieldNumber = 8;
+  private string endtime_ = "";
+  /// <summary>
+  /// TIME as string in HH:MM:SS format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Endtime {
+    get { return endtime_; }
+    set {
+      endtime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "endlocation" field.</summary>
+  public const int EndlocationFieldNumber = 9;
+  private string endlocation_ = "";
+  /// <summary>
+  /// CRS_ADDRESS
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Endlocation {
+    get { return endlocation_; }
+    set {
+      endlocation_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "price" field.</summary>
+  public const int PriceFieldNumber = 10;
+  private float price_;
+  /// <summary>
+  /// CRS_CURRENCY (published price)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public float Price {
+    get { return price_; }
+    set {
+      price_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "customerid" field.</summary>
+  public const int CustomeridFieldNumber = 11;
+  private string customerid_ = "";
+  /// <summary>
+  /// CRS_ID (Reference to Usertable)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Customerid {
+    get { return customerid_; }
+    set {
+      customerid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "bookingref" field.</summary>
+  public const int BookingrefFieldNumber = 12;
+  private string bookingref_ = "";
+  /// <summary>
+  /// CRS_ID (reference to car booking table)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Bookingref {
+    get { return bookingref_; }
+    set {
+      bookingref_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideshareOffer);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideshareOffer other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RideId != other.RideId) return false;
+    if (Availablespaces != other.Availablespaces) return false;
+    if (Status != other.Status) return false;
+    if (Startdate != other.Startdate) return false;
+    if (Starttime != other.Starttime) return false;
+    if (Startlocation != other.Startlocation) return false;
+    if (Enddate != other.Enddate) return false;
+    if (Endtime != other.Endtime) return false;
+    if (Endlocation != other.Endlocation) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Price, other.Price)) return false;
+    if (Customerid != other.Customerid) return false;
+    if (Bookingref != other.Bookingref) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RideId.Length != 0) hash ^= RideId.GetHashCode();
+    if (Availablespaces != 0) hash ^= Availablespaces.GetHashCode();
+    if (Status.Length != 0) hash ^= Status.GetHashCode();
+    if (Startdate.Length != 0) hash ^= Startdate.GetHashCode();
+    if (Starttime.Length != 0) hash ^= Starttime.GetHashCode();
+    if (Startlocation.Length != 0) hash ^= Startlocation.GetHashCode();
+    if (Enddate.Length != 0) hash ^= Enddate.GetHashCode();
+    if (Endtime.Length != 0) hash ^= Endtime.GetHashCode();
+    if (Endlocation.Length != 0) hash ^= Endlocation.GetHashCode();
+    if (Price != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Price);
+    if (Customerid.Length != 0) hash ^= Customerid.GetHashCode();
+    if (Bookingref.Length != 0) hash ^= Bookingref.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Availablespaces != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Availablespaces);
+    }
+    if (Status.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Status);
+    }
+    if (Startdate.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      output.WriteRawTag(42);
+      output.WriteString(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      output.WriteRawTag(50);
+      output.WriteString(Startlocation);
+    }
+    if (Enddate.Length != 0) {
+      output.WriteRawTag(58);
+      output.WriteString(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      output.WriteRawTag(66);
+      output.WriteString(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      output.WriteRawTag(74);
+      output.WriteString(Endlocation);
+    }
+    if (Price != 0F) {
+      output.WriteRawTag(85);
+      output.WriteFloat(Price);
+    }
+    if (Customerid.Length != 0) {
+      output.WriteRawTag(90);
+      output.WriteString(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      output.WriteRawTag(98);
+      output.WriteString(Bookingref);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Availablespaces != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Availablespaces);
+    }
+    if (Status.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Status);
+    }
+    if (Startdate.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      output.WriteRawTag(42);
+      output.WriteString(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      output.WriteRawTag(50);
+      output.WriteString(Startlocation);
+    }
+    if (Enddate.Length != 0) {
+      output.WriteRawTag(58);
+      output.WriteString(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      output.WriteRawTag(66);
+      output.WriteString(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      output.WriteRawTag(74);
+      output.WriteString(Endlocation);
+    }
+    if (Price != 0F) {
+      output.WriteRawTag(85);
+      output.WriteFloat(Price);
+    }
+    if (Customerid.Length != 0) {
+      output.WriteRawTag(90);
+      output.WriteString(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      output.WriteRawTag(98);
+      output.WriteString(Bookingref);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (RideId.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RideId);
+    }
+    if (Availablespaces != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Availablespaces);
+    }
+    if (Status.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
+    }
+    if (Startdate.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Startlocation);
+    }
+    if (Enddate.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Endlocation);
+    }
+    if (Price != 0F) {
+      size += 1 + 4;
+    }
+    if (Customerid.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Bookingref);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideshareOffer other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RideId.Length != 0) {
+      RideId = other.RideId;
+    }
+    if (other.Availablespaces != 0) {
+      Availablespaces = other.Availablespaces;
+    }
+    if (other.Status.Length != 0) {
+      Status = other.Status;
+    }
+    if (other.Startdate.Length != 0) {
+      Startdate = other.Startdate;
+    }
+    if (other.Starttime.Length != 0) {
+      Starttime = other.Starttime;
+    }
+    if (other.Startlocation.Length != 0) {
+      Startlocation = other.Startlocation;
+    }
+    if (other.Enddate.Length != 0) {
+      Enddate = other.Enddate;
+    }
+    if (other.Endtime.Length != 0) {
+      Endtime = other.Endtime;
+    }
+    if (other.Endlocation.Length != 0) {
+      Endlocation = other.Endlocation;
+    }
+    if (other.Price != 0F) {
+      Price = other.Price;
+    }
+    if (other.Customerid.Length != 0) {
+      Customerid = other.Customerid;
+    }
+    if (other.Bookingref.Length != 0) {
+      Bookingref = other.Bookingref;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 16: {
+          Availablespaces = input.ReadInt32();
+          break;
+        }
+        case 26: {
+          Status = input.ReadString();
+          break;
+        }
+        case 34: {
+          Startdate = input.ReadString();
+          break;
+        }
+        case 42: {
+          Starttime = input.ReadString();
+          break;
+        }
+        case 50: {
+          Startlocation = input.ReadString();
+          break;
+        }
+        case 58: {
+          Enddate = input.ReadString();
+          break;
+        }
+        case 66: {
+          Endtime = input.ReadString();
+          break;
+        }
+        case 74: {
+          Endlocation = input.ReadString();
+          break;
+        }
+        case 85: {
+          Price = input.ReadFloat();
+          break;
+        }
+        case 90: {
+          Customerid = input.ReadString();
+          break;
+        }
+        case 98: {
+          Bookingref = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 16: {
+          Availablespaces = input.ReadInt32();
+          break;
+        }
+        case 26: {
+          Status = input.ReadString();
+          break;
+        }
+        case 34: {
+          Startdate = input.ReadString();
+          break;
+        }
+        case 42: {
+          Starttime = input.ReadString();
+          break;
+        }
+        case 50: {
+          Startlocation = input.ReadString();
+          break;
+        }
+        case 58: {
+          Enddate = input.ReadString();
+          break;
+        }
+        case 66: {
+          Endtime = input.ReadString();
+          break;
+        }
+        case 74: {
+          Endlocation = input.ReadString();
+          break;
+        }
+        case 85: {
+          Price = input.ReadFloat();
+          break;
+        }
+        case 90: {
+          Customerid = input.ReadString();
+          break;
+        }
+        case 98: {
+          Bookingref = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class RideShareRequestList : pb::IMessage<RideShareRequestList>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<RideShareRequestList> _parser = new pb::MessageParser<RideShareRequestList>(() => new RideShareRequestList());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<RideShareRequestList> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareRequestList() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareRequestList(RideShareRequestList other) : this() {
+    resultList_ = other.resultList_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareRequestList Clone() {
+    return new RideShareRequestList(this);
+  }
+
+  /// <summary>Field number for the "result_list" field.</summary>
+  public const int ResultListFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::RideshareRequest> _repeated_resultList_codec
+      = pb::FieldCodec.ForMessage(10, global::RideshareRequest.Parser);
+  private readonly pbc::RepeatedField<global::RideshareRequest> resultList_ = new pbc::RepeatedField<global::RideshareRequest>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public pbc::RepeatedField<global::RideshareRequest> ResultList {
+    get { return resultList_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideShareRequestList);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideShareRequestList other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!resultList_.Equals(other.resultList_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= resultList_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    resultList_.WriteTo(output, _repeated_resultList_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    resultList_.WriteTo(ref output, _repeated_resultList_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    size += resultList_.CalculateSize(_repeated_resultList_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideShareRequestList other) {
+    if (other == null) {
+      return;
+    }
+    resultList_.Add(other.resultList_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          resultList_.AddEntriesFrom(input, _repeated_resultList_codec);
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          resultList_.AddEntriesFrom(ref input, _repeated_resultList_codec);
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+/// <summary>
+///Rideshare Request definition
+/// </summary>
+public sealed partial class RideshareRequest : pb::IMessage<RideshareRequest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<RideshareRequest> _parser = new pb::MessageParser<RideshareRequest>(() => new RideshareRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<RideshareRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareRequest(RideshareRequest other) : this() {
+    rideId_ = other.rideId_;
+    status_ = other.status_;
+    startdate_ = other.startdate_;
+    starttime_ = other.starttime_;
+    startlocation_ = other.startlocation_;
+    latitude_ = other.latitude_;
+    longitude_ = other.longitude_;
+    enddate_ = other.enddate_;
+    endtime_ = other.endtime_;
+    endlocation_ = other.endlocation_;
+    price_ = other.price_;
+    customerid_ = other.customerid_;
+    bookingref_ = other.bookingref_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideshareRequest Clone() {
+    return new RideshareRequest(this);
+  }
+
+  /// <summary>Field number for the "rideId" field.</summary>
+  public const int RideIdFieldNumber = 1;
+  private string rideId_ = "";
+  /// <summary>
+  /// CRS_ID
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string RideId {
+    get { return rideId_; }
+    set {
+      rideId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "status" field.</summary>
+  public const int StatusFieldNumber = 2;
+  private string status_ = "";
+  /// <summary>
+  /// only for internal use?
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Status {
+    get { return status_; }
+    set {
+      status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "startdate" field.</summary>
+  public const int StartdateFieldNumber = 3;
+  private string startdate_ = "";
+  /// <summary>
+  /// DATE as string in YYYY-MM-DD format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Startdate {
+    get { return startdate_; }
+    set {
+      startdate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "starttime" field.</summary>
+  public const int StarttimeFieldNumber = 4;
+  private string starttime_ = "";
+  /// <summary>
+  /// TIME as string in HH:MM:SS format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Starttime {
+    get { return starttime_; }
+    set {
+      starttime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "startlocation" field.</summary>
+  public const int StartlocationFieldNumber = 5;
+  private string startlocation_ = "";
+  /// <summary>
+  /// CRS_ADDRESS
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Startlocation {
+    get { return startlocation_; }
+    set {
+      startlocation_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "latitude" field.</summary>
+  public const int LatitudeFieldNumber = 6;
+  private float latitude_;
+  /// <summary>
+  /// Geographical latitude
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public float Latitude {
+    get { return latitude_; }
+    set {
+      latitude_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "longitude" field.</summary>
+  public const int LongitudeFieldNumber = 7;
+  private float longitude_;
+  /// <summary>
+  /// Geographical longitude
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public float Longitude {
+    get { return longitude_; }
+    set {
+      longitude_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "enddate" field.</summary>
+  public const int EnddateFieldNumber = 8;
+  private string enddate_ = "";
+  /// <summary>
+  /// DATE as string in YYYY-MM-DD format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Enddate {
+    get { return enddate_; }
+    set {
+      enddate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "endtime" field.</summary>
+  public const int EndtimeFieldNumber = 9;
+  private string endtime_ = "";
+  /// <summary>
+  /// TIME as string in HH:MM:SS format
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Endtime {
+    get { return endtime_; }
+    set {
+      endtime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "endlocation" field.</summary>
+  public const int EndlocationFieldNumber = 10;
+  private string endlocation_ = "";
+  /// <summary>
+  /// CRS_ADDRESS
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Endlocation {
+    get { return endlocation_; }
+    set {
+      endlocation_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "price" field.</summary>
+  public const int PriceFieldNumber = 11;
+  private float price_;
+  /// <summary>
+  /// CRS_CURRENCY (customer price)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public float Price {
+    get { return price_; }
+    set {
+      price_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "customerid" field.</summary>
+  public const int CustomeridFieldNumber = 12;
+  private string customerid_ = "";
+  /// <summary>
+  /// CRS_ID (Reference to Usertable)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Customerid {
+    get { return customerid_; }
+    set {
+      customerid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "bookingref" field.</summary>
+  public const int BookingrefFieldNumber = 13;
+  private string bookingref_ = "";
+  /// <summary>
+  /// CRS_ID (reference to RideshareOffer)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Bookingref {
+    get { return bookingref_; }
+    set {
+      bookingref_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideshareRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideshareRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RideId != other.RideId) return false;
+    if (Status != other.Status) return false;
+    if (Startdate != other.Startdate) return false;
+    if (Starttime != other.Starttime) return false;
+    if (Startlocation != other.Startlocation) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Latitude, other.Latitude)) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Longitude, other.Longitude)) return false;
+    if (Enddate != other.Enddate) return false;
+    if (Endtime != other.Endtime) return false;
+    if (Endlocation != other.Endlocation) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Price, other.Price)) return false;
+    if (Customerid != other.Customerid) return false;
+    if (Bookingref != other.Bookingref) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RideId.Length != 0) hash ^= RideId.GetHashCode();
+    if (Status.Length != 0) hash ^= Status.GetHashCode();
+    if (Startdate.Length != 0) hash ^= Startdate.GetHashCode();
+    if (Starttime.Length != 0) hash ^= Starttime.GetHashCode();
+    if (Startlocation.Length != 0) hash ^= Startlocation.GetHashCode();
+    if (Latitude != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Latitude);
+    if (Longitude != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Longitude);
+    if (Enddate.Length != 0) hash ^= Enddate.GetHashCode();
+    if (Endtime.Length != 0) hash ^= Endtime.GetHashCode();
+    if (Endlocation.Length != 0) hash ^= Endlocation.GetHashCode();
+    if (Price != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Price);
+    if (Customerid.Length != 0) hash ^= Customerid.GetHashCode();
+    if (Bookingref.Length != 0) hash ^= Bookingref.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Status.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Status);
+    }
+    if (Startdate.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      output.WriteRawTag(42);
+      output.WriteString(Startlocation);
+    }
+    if (Latitude != 0F) {
+      output.WriteRawTag(53);
+      output.WriteFloat(Latitude);
+    }
+    if (Longitude != 0F) {
+      output.WriteRawTag(61);
+      output.WriteFloat(Longitude);
+    }
+    if (Enddate.Length != 0) {
+      output.WriteRawTag(66);
+      output.WriteString(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      output.WriteRawTag(74);
+      output.WriteString(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      output.WriteRawTag(82);
+      output.WriteString(Endlocation);
+    }
+    if (Price != 0F) {
+      output.WriteRawTag(93);
+      output.WriteFloat(Price);
+    }
+    if (Customerid.Length != 0) {
+      output.WriteRawTag(98);
+      output.WriteString(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      output.WriteRawTag(106);
+      output.WriteString(Bookingref);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Status.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Status);
+    }
+    if (Startdate.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      output.WriteRawTag(42);
+      output.WriteString(Startlocation);
+    }
+    if (Latitude != 0F) {
+      output.WriteRawTag(53);
+      output.WriteFloat(Latitude);
+    }
+    if (Longitude != 0F) {
+      output.WriteRawTag(61);
+      output.WriteFloat(Longitude);
+    }
+    if (Enddate.Length != 0) {
+      output.WriteRawTag(66);
+      output.WriteString(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      output.WriteRawTag(74);
+      output.WriteString(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      output.WriteRawTag(82);
+      output.WriteString(Endlocation);
+    }
+    if (Price != 0F) {
+      output.WriteRawTag(93);
+      output.WriteFloat(Price);
+    }
+    if (Customerid.Length != 0) {
+      output.WriteRawTag(98);
+      output.WriteString(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      output.WriteRawTag(106);
+      output.WriteString(Bookingref);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (RideId.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RideId);
+    }
+    if (Status.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
+    }
+    if (Startdate.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Startdate);
+    }
+    if (Starttime.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Starttime);
+    }
+    if (Startlocation.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Startlocation);
+    }
+    if (Latitude != 0F) {
+      size += 1 + 4;
+    }
+    if (Longitude != 0F) {
+      size += 1 + 4;
+    }
+    if (Enddate.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Enddate);
+    }
+    if (Endtime.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Endtime);
+    }
+    if (Endlocation.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Endlocation);
+    }
+    if (Price != 0F) {
+      size += 1 + 4;
+    }
+    if (Customerid.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Customerid);
+    }
+    if (Bookingref.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Bookingref);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideshareRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RideId.Length != 0) {
+      RideId = other.RideId;
+    }
+    if (other.Status.Length != 0) {
+      Status = other.Status;
+    }
+    if (other.Startdate.Length != 0) {
+      Startdate = other.Startdate;
+    }
+    if (other.Starttime.Length != 0) {
+      Starttime = other.Starttime;
+    }
+    if (other.Startlocation.Length != 0) {
+      Startlocation = other.Startlocation;
+    }
+    if (other.Latitude != 0F) {
+      Latitude = other.Latitude;
+    }
+    if (other.Longitude != 0F) {
+      Longitude = other.Longitude;
+    }
+    if (other.Enddate.Length != 0) {
+      Enddate = other.Enddate;
+    }
+    if (other.Endtime.Length != 0) {
+      Endtime = other.Endtime;
+    }
+    if (other.Endlocation.Length != 0) {
+      Endlocation = other.Endlocation;
+    }
+    if (other.Price != 0F) {
+      Price = other.Price;
+    }
+    if (other.Customerid.Length != 0) {
+      Customerid = other.Customerid;
+    }
+    if (other.Bookingref.Length != 0) {
+      Bookingref = other.Bookingref;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 18: {
+          Status = input.ReadString();
+          break;
+        }
+        case 26: {
+          Startdate = input.ReadString();
+          break;
+        }
+        case 34: {
+          Starttime = input.ReadString();
+          break;
+        }
+        case 42: {
+          Startlocation = input.ReadString();
+          break;
+        }
+        case 53: {
+          Latitude = input.ReadFloat();
+          break;
+        }
+        case 61: {
+          Longitude = input.ReadFloat();
+          break;
+        }
+        case 66: {
+          Enddate = input.ReadString();
+          break;
+        }
+        case 74: {
+          Endtime = input.ReadString();
+          break;
+        }
+        case 82: {
+          Endlocation = input.ReadString();
+          break;
+        }
+        case 93: {
+          Price = input.ReadFloat();
+          break;
+        }
+        case 98: {
+          Customerid = input.ReadString();
+          break;
+        }
+        case 106: {
+          Bookingref = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 18: {
+          Status = input.ReadString();
+          break;
+        }
+        case 26: {
+          Startdate = input.ReadString();
+          break;
+        }
+        case 34: {
+          Starttime = input.ReadString();
+          break;
+        }
+        case 42: {
+          Startlocation = input.ReadString();
+          break;
+        }
+        case 53: {
+          Latitude = input.ReadFloat();
+          break;
+        }
+        case 61: {
+          Longitude = input.ReadFloat();
+          break;
+        }
+        case 66: {
+          Enddate = input.ReadString();
+          break;
+        }
+        case 74: {
+          Endtime = input.ReadString();
+          break;
+        }
+        case 82: {
+          Endlocation = input.ReadString();
+          break;
+        }
+        case 93: {
+          Price = input.ReadFloat();
+          break;
+        }
+        case 98: {
+          Customerid = input.ReadString();
+          break;
+        }
+        case 106: {
+          Bookingref = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class RideShareIDRequest : pb::IMessage<RideShareIDRequest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<RideShareIDRequest> _parser = new pb::MessageParser<RideShareIDRequest>(() => new RideShareIDRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<RideShareIDRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDRequest(RideShareIDRequest other) : this() {
+    rideId_ = other.rideId_;
+    message_ = other.message_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDRequest Clone() {
+    return new RideShareIDRequest(this);
+  }
+
+  /// <summary>Field number for the "rideId" field.</summary>
+  public const int RideIdFieldNumber = 1;
+  private string rideId_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string RideId {
+    get { return rideId_; }
+    set {
+      rideId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "message" field.</summary>
+  public const int MessageFieldNumber = 2;
+  private string message_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Message {
+    get { return message_; }
+    set {
+      message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideShareIDRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideShareIDRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RideId != other.RideId) return false;
+    if (Message != other.Message) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RideId.Length != 0) hash ^= RideId.GetHashCode();
+    if (Message.Length != 0) hash ^= Message.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Message.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Message);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Message.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Message);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (RideId.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RideId);
+    }
+    if (Message.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideShareIDRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RideId.Length != 0) {
+      RideId = other.RideId;
+    }
+    if (other.Message.Length != 0) {
+      Message = other.Message;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 18: {
+          Message = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 18: {
+          Message = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class RideShareIDResponse : pb::IMessage<RideShareIDResponse>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<RideShareIDResponse> _parser = new pb::MessageParser<RideShareIDResponse>(() => new RideShareIDResponse());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<RideShareIDResponse> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[5]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDResponse() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDResponse(RideShareIDResponse other) : this() {
+    rideId_ = other.rideId_;
+    successful_ = other.successful_;
+    message_ = other.message_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public RideShareIDResponse Clone() {
+    return new RideShareIDResponse(this);
+  }
+
+  /// <summary>Field number for the "rideId" field.</summary>
+  public const int RideIdFieldNumber = 1;
+  private string rideId_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string RideId {
+    get { return rideId_; }
+    set {
+      rideId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "successful" field.</summary>
+  public const int SuccessfulFieldNumber = 2;
+  private bool successful_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Successful {
+    get { return successful_; }
+    set {
+      successful_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "message" field.</summary>
+  public const int MessageFieldNumber = 3;
+  private string message_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Message {
+    get { return message_; }
+    set {
+      message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as RideShareIDResponse);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(RideShareIDResponse other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RideId != other.RideId) return false;
+    if (Successful != other.Successful) return false;
+    if (Message != other.Message) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RideId.Length != 0) hash ^= RideId.GetHashCode();
+    if (Successful != false) hash ^= Successful.GetHashCode();
+    if (Message.Length != 0) hash ^= Message.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Successful != false) {
+      output.WriteRawTag(16);
+      output.WriteBool(Successful);
+    }
+    if (Message.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Message);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (RideId.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RideId);
+    }
+    if (Successful != false) {
+      output.WriteRawTag(16);
+      output.WriteBool(Successful);
+    }
+    if (Message.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Message);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (RideId.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RideId);
+    }
+    if (Successful != false) {
+      size += 1 + 1;
+    }
+    if (Message.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(RideShareIDResponse other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RideId.Length != 0) {
+      RideId = other.RideId;
+    }
+    if (other.Successful != false) {
+      Successful = other.Successful;
+    }
+    if (other.Message.Length != 0) {
+      Message = other.Message;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 16: {
+          Successful = input.ReadBool();
+          break;
+        }
+        case 26: {
+          Message = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          RideId = input.ReadString();
+          break;
+        }
+        case 16: {
+          Successful = input.ReadBool();
+          break;
+        }
+        case 26: {
+          Message = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class CreateRideShareRequestTest : pb::IMessage<CreateRideShareRequestTest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<CreateRideShareRequestTest> _parser = new pb::MessageParser<CreateRideShareRequestTest>(() => new CreateRideShareRequestTest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<CreateRideShareRequestTest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::RideshareReflection.Descriptor.MessageTypes[6]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public CreateRideShareRequestTest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public CreateRideShareRequestTest(CreateRideShareRequestTest other) : this() {
     carId_ = other.carId_;
     driverUsername_ = other.driverUsername_;
     availableSeats_ = other.availableSeats_;
@@ -96,8 +2298,8 @@ public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CreateRideShareRequest Clone() {
-    return new CreateRideShareRequest(this);
+  public CreateRideShareRequestTest Clone() {
+    return new CreateRideShareRequestTest(this);
   }
 
   /// <summary>Field number for the "car_id" field.</summary>
@@ -139,12 +2341,12 @@ public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShar
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
-    return Equals(other as CreateRideShareRequest);
+    return Equals(other as CreateRideShareRequestTest);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CreateRideShareRequest other) {
+  public bool Equals(CreateRideShareRequestTest other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
@@ -243,7 +2445,7 @@ public sealed partial class CreateRideShareRequest : pb::IMessage<CreateRideShar
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CreateRideShareRequest other) {
+  public void MergeFrom(CreateRideShareRequestTest other) {
     if (other == null) {
       return;
     }
@@ -331,7 +2533,7 @@ public sealed partial class JoinRideShareRequest : pb::IMessage<JoinRideShareReq
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::RideshareReflection.Descriptor.MessageTypes[1]; }
+    get { return global::RideshareReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -557,7 +2759,7 @@ public sealed partial class ListRideSharesRequest : pb::IMessage<ListRideSharesR
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::RideshareReflection.Descriptor.MessageTypes[2]; }
+    get { return global::RideshareReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -746,7 +2948,7 @@ public sealed partial class RideShareResponse : pb::IMessage<RideShareResponse>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::RideshareReflection.Descriptor.MessageTypes[3]; }
+    get { return global::RideshareReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1018,7 +3220,7 @@ public sealed partial class RideShare : pb::IMessage<RideShare>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::RideshareReflection.Descriptor.MessageTypes[4]; }
+    get { return global::RideshareReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1344,7 +3546,7 @@ public sealed partial class RideShareListResponse : pb::IMessage<RideShareListRe
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::RideshareReflection.Descriptor.MessageTypes[5]; }
+    get { return global::RideshareReflection.Descriptor.MessageTypes[11]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

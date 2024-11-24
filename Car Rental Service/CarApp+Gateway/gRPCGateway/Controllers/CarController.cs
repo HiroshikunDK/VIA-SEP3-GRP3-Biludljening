@@ -47,11 +47,12 @@ public class CarController : ControllerBase
     [HttpGet("list")]
     public async Task<IActionResult> ListAllCars()
     {
-        var request = new Empty();
+        var request = new Google.Protobuf.WellKnownTypes.Empty();
         var response = await _carServiceClient.getAllCarsAsync(request);
-        
-        return Ok(response.Cars); 
+
+        return Ok(response.Cars);
     }
+
 
     [HttpPut("update")]
     public async Task<IActionResult> UpdateCar([FromBody] Car request)

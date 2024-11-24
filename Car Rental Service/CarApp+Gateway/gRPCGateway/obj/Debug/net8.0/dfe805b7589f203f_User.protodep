@@ -1,3 +1,2 @@
 obj\Debug\net8.0\Proto/User.cs \
-obj\Debug\net8.0\Proto/UserGrpc.cs: C:/Users/Nebul/.nuget/packages/grpc.tools/2.54.0/build/native/include/google/protobuf/empty.proto\
- Proto/User.proto
+obj\Debug\net8.0\Proto/UserGrpc.cs: Proto/User.proto

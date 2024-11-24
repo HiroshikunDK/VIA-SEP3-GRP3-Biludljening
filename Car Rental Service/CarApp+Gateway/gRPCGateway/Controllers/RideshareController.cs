@@ -14,11 +14,13 @@ public class RideshareController : ControllerBase
     }
 
     [HttpPost("create")]
-    public async Task<IActionResult> CreateRideShare([FromBody] CreateRideShareRequest request)
+    public async Task<IActionResult> CreateRideShare([FromBody] CreateRideShareRequestTest request)
     {
         var response = await _rideshareClient.CreateRideShareAsync(request);
         return Ok(response);
     }
+
+
 
     [HttpPost("join")]
     public async Task<IActionResult> JoinRideShare([FromBody] JoinRideShareRequest request)

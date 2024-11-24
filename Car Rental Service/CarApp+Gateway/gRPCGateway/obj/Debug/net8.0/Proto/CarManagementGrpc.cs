@@ -240,4 +240,470 @@ public static partial class CarService
   }
 
 }
+/// <summary>
+/// BookingCarService
+/// </summary>
+public static partial class BookingCarService
+{
+  static readonly string __ServiceName = "BookingCarService";
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+  {
+    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+    if (message is global::Google.Protobuf.IBufferMessage)
+    {
+      context.SetPayloadLength(message.CalculateSize());
+      global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+      context.Complete();
+      return;
+    }
+    #endif
+    context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static class __Helper_MessageCache<T>
+  {
+    public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+  {
+    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+    if (__Helper_MessageCache<T>.IsBufferMessage)
+    {
+      return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+    }
+    #endif
+    return parser.ParseFrom(context.PayloadAsNewBuffer());
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::BookingCarList> __Marshaller_BookingCarList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BookingCarList.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::BookingCarRequest> __Marshaller_BookingCarRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BookingCarRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::BookingCarResponse> __Marshaller_BookingCarResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BookingCarResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::BookingCar> __Marshaller_BookingCar = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BookingCar.Parser));
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::BookingCarList> __Method_GetAllBookingCars = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::BookingCarList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllBookingCars",
+      __Marshaller_google_protobuf_Empty,
+      __Marshaller_BookingCarList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::BookingCarRequest, global::BookingCarResponse> __Method_GetBookingCarByID = new grpc::Method<global::BookingCarRequest, global::BookingCarResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetBookingCarByID",
+      __Marshaller_BookingCarRequest,
+      __Marshaller_BookingCarResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::BookingCar, global::BookingCarResponse> __Method_AddBookingCar = new grpc::Method<global::BookingCar, global::BookingCarResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "AddBookingCar",
+      __Marshaller_BookingCar,
+      __Marshaller_BookingCarResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::BookingCar, global::BookingCarResponse> __Method_UpdateBookingCar = new grpc::Method<global::BookingCar, global::BookingCarResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "UpdateBookingCar",
+      __Marshaller_BookingCar,
+      __Marshaller_BookingCarResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::BookingCarRequest, global::BookingCarResponse> __Method_DeleteBookingCar = new grpc::Method<global::BookingCarRequest, global::BookingCarResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "DeleteBookingCar",
+      __Marshaller_BookingCarRequest,
+      __Marshaller_BookingCarResponse);
+
+  /// <summary>Service descriptor</summary>
+  public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+  {
+    get { return global::CarManagementReflection.Descriptor.Services[1]; }
+  }
+
+  /// <summary>Client for BookingCarService</summary>
+  public partial class BookingCarServiceClient : grpc::ClientBase<BookingCarServiceClient>
+  {
+    /// <summary>Creates a new client for BookingCarService</summary>
+    /// <param name="channel">The channel to use to make remote calls.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public BookingCarServiceClient(grpc::ChannelBase channel) : base(channel)
+    {
+    }
+    /// <summary>Creates a new client for BookingCarService that uses a custom <c>CallInvoker</c>.</summary>
+    /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public BookingCarServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+    {
+    }
+    /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected BookingCarServiceClient() : base()
+    {
+    }
+    /// <summary>Protected constructor to allow creation of configured clients.</summary>
+    /// <param name="configuration">The client configuration.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected BookingCarServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarList GetAllBookingCars(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllBookingCars(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarList GetAllBookingCars(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllBookingCars, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarList> GetAllBookingCarsAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllBookingCarsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarList> GetAllBookingCarsAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllBookingCars, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse GetBookingCarByID(global::BookingCarRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetBookingCarByID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse GetBookingCarByID(global::BookingCarRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetBookingCarByID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> GetBookingCarByIDAsync(global::BookingCarRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetBookingCarByIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> GetBookingCarByIDAsync(global::BookingCarRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetBookingCarByID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse AddBookingCar(global::BookingCar request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return AddBookingCar(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse AddBookingCar(global::BookingCar request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_AddBookingCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> AddBookingCarAsync(global::BookingCar request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return AddBookingCarAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> AddBookingCarAsync(global::BookingCar request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_AddBookingCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse UpdateBookingCar(global::BookingCar request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateBookingCar(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse UpdateBookingCar(global::BookingCar request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_UpdateBookingCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> UpdateBookingCarAsync(global::BookingCar request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateBookingCarAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> UpdateBookingCarAsync(global::BookingCar request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_UpdateBookingCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse DeleteBookingCar(global::BookingCarRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteBookingCar(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::BookingCarResponse DeleteBookingCar(global::BookingCarRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_DeleteBookingCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> DeleteBookingCarAsync(global::BookingCarRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteBookingCarAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::BookingCarResponse> DeleteBookingCarAsync(global::BookingCarRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_DeleteBookingCar, null, options, request);
+    }
+    /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected override BookingCarServiceClient NewInstance(ClientBaseConfiguration configuration)
+    {
+      return new BookingCarServiceClient(configuration);
+    }
+  }
+
+}
+/// <summary>
+/// LocationHubService
+/// </summary>
+public static partial class LocationHubService
+{
+  static readonly string __ServiceName = "LocationHubService";
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+  {
+    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+    if (message is global::Google.Protobuf.IBufferMessage)
+    {
+      context.SetPayloadLength(message.CalculateSize());
+      global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+      context.Complete();
+      return;
+    }
+    #endif
+    context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static class __Helper_MessageCache<T>
+  {
+    public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+  {
+    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+    if (__Helper_MessageCache<T>.IsBufferMessage)
+    {
+      return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+    }
+    #endif
+    return parser.ParseFrom(context.PayloadAsNewBuffer());
+  }
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::LocationHubList> __Marshaller_LocationHubList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LocationHubList.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::LocationHubRequest> __Marshaller_LocationHubRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LocationHubRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::LocationHubResponse> __Marshaller_LocationHubResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LocationHubResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::LocationHub> __Marshaller_LocationHub = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LocationHub.Parser));
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::LocationHubList> __Method_GetAllLocationHubs = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::LocationHubList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllLocationHubs",
+      __Marshaller_google_protobuf_Empty,
+      __Marshaller_LocationHubList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::LocationHubRequest, global::LocationHubResponse> __Method_GetLocationHubByID = new grpc::Method<global::LocationHubRequest, global::LocationHubResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetLocationHubByID",
+      __Marshaller_LocationHubRequest,
+      __Marshaller_LocationHubResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::LocationHub, global::LocationHubResponse> __Method_AddLocationHub = new grpc::Method<global::LocationHub, global::LocationHubResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "AddLocationHub",
+      __Marshaller_LocationHub,
+      __Marshaller_LocationHubResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::LocationHub, global::LocationHubResponse> __Method_UpdateLocationHub = new grpc::Method<global::LocationHub, global::LocationHubResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "UpdateLocationHub",
+      __Marshaller_LocationHub,
+      __Marshaller_LocationHubResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::LocationHubRequest, global::LocationHubResponse> __Method_DeleteLocationHub = new grpc::Method<global::LocationHubRequest, global::LocationHubResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "DeleteLocationHub",
+      __Marshaller_LocationHubRequest,
+      __Marshaller_LocationHubResponse);
+
+  /// <summary>Service descriptor</summary>
+  public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+  {
+    get { return global::CarManagementReflection.Descriptor.Services[2]; }
+  }
+
+  /// <summary>Client for LocationHubService</summary>
+  public partial class LocationHubServiceClient : grpc::ClientBase<LocationHubServiceClient>
+  {
+    /// <summary>Creates a new client for LocationHubService</summary>
+    /// <param name="channel">The channel to use to make remote calls.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public LocationHubServiceClient(grpc::ChannelBase channel) : base(channel)
+    {
+    }
+    /// <summary>Creates a new client for LocationHubService that uses a custom <c>CallInvoker</c>.</summary>
+    /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public LocationHubServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+    {
+    }
+    /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected LocationHubServiceClient() : base()
+    {
+    }
+    /// <summary>Protected constructor to allow creation of configured clients.</summary>
+    /// <param name="configuration">The client configuration.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected LocationHubServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubList GetAllLocationHubs(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllLocationHubs(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubList GetAllLocationHubs(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllLocationHubs, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubList> GetAllLocationHubsAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllLocationHubsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubList> GetAllLocationHubsAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllLocationHubs, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse GetLocationHubByID(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetLocationHubByID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse GetLocationHubByID(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetLocationHubByID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> GetLocationHubByIDAsync(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetLocationHubByIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> GetLocationHubByIDAsync(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetLocationHubByID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse AddLocationHub(global::LocationHub request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return AddLocationHub(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse AddLocationHub(global::LocationHub request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_AddLocationHub, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> AddLocationHubAsync(global::LocationHub request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return AddLocationHubAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> AddLocationHubAsync(global::LocationHub request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_AddLocationHub, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse UpdateLocationHub(global::LocationHub request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateLocationHub(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse UpdateLocationHub(global::LocationHub request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_UpdateLocationHub, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> UpdateLocationHubAsync(global::LocationHub request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateLocationHubAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> UpdateLocationHubAsync(global::LocationHub request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_UpdateLocationHub, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse DeleteLocationHub(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteLocationHub(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::LocationHubResponse DeleteLocationHub(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_DeleteLocationHub, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> DeleteLocationHubAsync(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteLocationHubAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::LocationHubResponse> DeleteLocationHubAsync(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_DeleteLocationHub, null, options, request);
+    }
+    /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    protected override LocationHubServiceClient NewInstance(ClientBaseConfiguration configuration)
+    {
+      return new LocationHubServiceClient(configuration);
+    }
+  }
+
+}
 #endregion

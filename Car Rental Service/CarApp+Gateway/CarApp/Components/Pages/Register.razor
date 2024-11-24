@@ -11,6 +11,26 @@
     <ValidationSummary />
 
     <div>
+        <label>First Name:</label>
+        <InputText @bind-Value="registerUser.UserFirstname" />
+    </div>
+
+    <div>
+        <label>Last Name:</label>
+        <InputText @bind-Value="registerUser.UserLastname" />
+    </div>
+
+    <div>
+        <label>Title:</label>
+        <InputText @bind-Value="registerUser.Title" />
+    </div>
+
+    <div>
+        <label>Phone Number:</label>
+        <InputNumber @bind-Value="registerUser.Phonenr" />
+    </div>
+
+    <div>
         <label>Username:</label>
         <InputText @bind-Value="registerUser.Username" />
     </div>
@@ -43,16 +63,16 @@
         {
             // Retrieve the anti-forgery token
             var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
-            Console.WriteLine("Retrieved token:", token); // Check if token is retrieved correctly
+            Console.WriteLine("Retrieved token:", token);
 
             // Create a new HttpRequestMessage to ensure the header is only added for this request
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
             {
                 Content = JsonContent.Create(registerUser)
             };
-            requestMessage.Headers.Add("X-CSRF-TOKEN", token); // Set token header
+            requestMessage.Headers.Add("X-CSRF-TOKEN", token);
 
-            // Send the request and log response status
+            // Send the request and handle response
             var response = await HttpClient.SendAsync(requestMessage);
             Console.WriteLine("Registration response status:", response.StatusCode);
 

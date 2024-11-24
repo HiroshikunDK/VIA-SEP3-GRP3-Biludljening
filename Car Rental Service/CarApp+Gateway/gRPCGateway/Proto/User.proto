@@ -1,45 +1,60 @@
 syntax = "proto3";
-import "google/protobuf/empty.proto";
+
 option java_package = "UserService.grpc";
 
+package userservice;
+
 service UserService {
-  rpc RegisterUser (User) returns (UserResponse);
+  // Registrér en ny bruger
+  rpc RegisterUser (RegisterUserRequest) returns (UserResponse);
+
+  // Login for eksisterende brugere
   rpc LoginUser (LoginRequest) returns (LoginResponse);
+
+  // Hent brugerdata baseret på ID
   rpc GetUserById (UserRequest) returns (UserResponse);
-  rpc UpdateUser (User) returns (UserResponse);
-  rpc DeleteUser (UserRequest) returns (UserResponse);
-  rpc ListUsers (UserEmpty) returns (UserList);
 }
 
-message UserEmpty {}
+// Bruges kun til at registrere en bruger uden ID
+message RegisterUserRequest {
+  string userFirstname = 1; // Fornavn
+  string userLastname = 2;  // Efternavn
+  string title = 3;        // Titel (fx Mr., Ms.)
+  string email = 4;        // Brugerens email
+  int32 phonenr = 5;       // Telefonnummer
+  string username = 6;     // Brugerens brugernavn
+  string password = 7;     // Brugerens adgangskode
+  string role = 8;         // Brugerens rolle (fx Customer, Admin)
+}
 
 message UserRequest {
-  int32 id = 1;
+  int32 id = 1;         // User's unique ID
 }
 
 message LoginRequest {
-  string username = 1;
-  string password = 2;
+  string username = 1; // Brugerens brugernavn
+  string password = 2; // Brugerens adgangskode
 }
 
 message LoginResponse {
-  string token = 1;
+  string token = 1; // Autorisationstoken
+  string role = 2;  // Brugerens rolle (fx Customer eller Admin)
 }
 
 message User {
-  int32 id = 1;
-  string username = 2;
-  string email = 3;
-  string role = 4;
-  string password = 5;
+  int32 id = 1;            // Brugerens ID
+  string userFirstname = 2; // Fornavn
+  string userLastname = 3;  // Efternavn
+  string title = 4;        // Titel (fx Mr., Ms.)
+  string email = 5;        // Brugerens email
+  int32 phonenr = 6;       // Telefonnummer
+  string username = 7;     // Brugerens brugernavn
+  string password = 8;     // Brugerens adgangskode
+  string role = 9;         // Brugerens rolle (fx Customer, Admin)
 }
 
 message UserResponse {
-  bool success = 1;
-  string message = 2;
-  User user = 3;
-}
-
-message UserList {
-  repeated User users = 1;
+  bool success = 1;      // Indikerer om anmodningen lykkedes
+  string message = 2;    // Statusbesked
+  User user = 3;         // Brugerdata (returneres ved succes)
 }

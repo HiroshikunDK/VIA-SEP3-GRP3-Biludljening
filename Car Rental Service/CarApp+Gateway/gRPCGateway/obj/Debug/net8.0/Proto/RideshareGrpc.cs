@@ -45,7 +45,7 @@ public static partial class RideShareService
   }
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::CreateRideShareRequest> __Marshaller_CreateRideShareRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CreateRideShareRequest.Parser));
+  static readonly grpc::Marshaller<global::CreateRideShareRequestTest> __Marshaller_CreateRideShareRequestTest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CreateRideShareRequestTest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::RideShareResponse> __Marshaller_RideShareResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideShareResponse.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -54,13 +54,25 @@ public static partial class RideShareService
   static readonly grpc::Marshaller<global::ListRideSharesRequest> __Marshaller_ListRideSharesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ListRideSharesRequest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::RideShareListResponse> __Marshaller_RideShareListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideShareListResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::RideshareOffer> __Marshaller_RideshareOffer = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideshareOffer.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::RideShareIDRequest> __Marshaller_RideShareIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideShareIDRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::RideshareOfferList> __Marshaller_RideshareOfferList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideshareOfferList.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::RideshareRequest> __Marshaller_RideshareRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideshareRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::RideShareRequestList> __Marshaller_RideShareRequestList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RideShareRequestList.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::CreateRideShareRequest, global::RideShareResponse> __Method_CreateRideShare = new grpc::Method<global::CreateRideShareRequest, global::RideShareResponse>(
+  static readonly grpc::Method<global::CreateRideShareRequestTest, global::RideShareResponse> __Method_CreateRideShare = new grpc::Method<global::CreateRideShareRequestTest, global::RideShareResponse>(
       grpc::MethodType.Unary,
       __ServiceName,
       "CreateRideShare",
-      __Marshaller_CreateRideShareRequest,
+      __Marshaller_CreateRideShareRequestTest,
       __Marshaller_RideShareResponse);
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -78,6 +90,126 @@ public static partial class RideShareService
       "ListRideShares",
       __Marshaller_ListRideSharesRequest,
       __Marshaller_RideShareListResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideshareOffer, global::RideShareResponse> __Method_CreateRideShareOffer = new grpc::Method<global::RideshareOffer, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "CreateRideShareOffer",
+      __Marshaller_RideshareOffer,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideshareOffer> __Method_ReadRideShareOffer = new grpc::Method<global::RideShareIDRequest, global::RideshareOffer>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ReadRideShareOffer",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideshareOffer);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::RideshareOfferList> __Method_ReadAllRideShareOffer = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::RideshareOfferList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ReadAllRideShareOffer",
+      __Marshaller_google_protobuf_Empty,
+      __Marshaller_RideshareOfferList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideshareOffer, global::RideShareResponse> __Method_UpdateRideShareOffer = new grpc::Method<global::RideshareOffer, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "UpdateRideShareOffer",
+      __Marshaller_RideshareOffer,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideShareResponse> __Method_DeleteRideShareOffer = new grpc::Method<global::RideShareIDRequest, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "DeleteRideShareOffer",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideshareRequest, global::RideShareResponse> __Method_CreateRideShareRequest = new grpc::Method<global::RideshareRequest, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "CreateRideShareRequest",
+      __Marshaller_RideshareRequest,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideshareRequest> __Method_ReadRideShareRequest = new grpc::Method<global::RideShareIDRequest, global::RideshareRequest>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ReadRideShareRequest",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideshareRequest);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::RideShareRequestList> __Method_ReadAllRideShareRequest = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::RideShareRequestList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ReadAllRideShareRequest",
+      __Marshaller_google_protobuf_Empty,
+      __Marshaller_RideShareRequestList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideshareRequest, global::RideShareResponse> __Method_UpdateRideShareRequest = new grpc::Method<global::RideshareRequest, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "UpdateRideShareRequest",
+      __Marshaller_RideshareRequest,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideShareResponse> __Method_DeleteRideShareRequest = new grpc::Method<global::RideShareIDRequest, global::RideShareResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "DeleteRideShareRequest",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideShareResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideshareRequest, global::RideshareOfferList> __Method_GetClosestRideShareRequest = new grpc::Method<global::RideshareRequest, global::RideshareOfferList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetClosestRideShareRequest",
+      __Marshaller_RideshareRequest,
+      __Marshaller_RideshareOfferList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideshareOfferList> __Method_GetAllRideShareOffersByUserID = new grpc::Method<global::RideShareIDRequest, global::RideshareOfferList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllRideShareOffersByUserID",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideshareOfferList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideShareRequestList> __Method_GetAllRideShareRequestsByUserID = new grpc::Method<global::RideShareIDRequest, global::RideShareRequestList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllRideShareRequestsByUserID",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideShareRequestList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideshareOfferList> __Method_GetAllRideShareOffersByBookingID = new grpc::Method<global::RideShareIDRequest, global::RideshareOfferList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllRideShareOffersByBookingID",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideshareOfferList);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::RideShareIDRequest, global::RideShareRequestList> __Method_GetAllRideShareRequestsByRideOfferID = new grpc::Method<global::RideShareIDRequest, global::RideShareRequestList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetAllRideShareRequestsByRideOfferID",
+      __Marshaller_RideShareIDRequest,
+      __Marshaller_RideShareRequestList);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -113,22 +245,22 @@ public static partial class RideShareService
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::RideShareResponse CreateRideShare(global::CreateRideShareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::RideShareResponse CreateRideShare(global::CreateRideShareRequestTest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return CreateRideShare(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::RideShareResponse CreateRideShare(global::CreateRideShareRequest request, grpc::CallOptions options)
+    public virtual global::RideShareResponse CreateRideShare(global::CreateRideShareRequestTest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_CreateRideShare, null, options, request);
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareAsync(global::CreateRideShareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareAsync(global::CreateRideShareRequestTest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return CreateRideShareAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareAsync(global::CreateRideShareRequest request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareAsync(global::CreateRideShareRequestTest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_CreateRideShare, null, options, request);
     }
@@ -171,6 +303,390 @@ public static partial class RideShareService
     public virtual grpc::AsyncUnaryCall<global::RideShareListResponse> ListRideSharesAsync(global::ListRideSharesRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_ListRideShares, null, options, request);
+    }
+    /// <summary>
+    ///RideShareOffer CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse CreateRideShareOffer(global::RideshareOffer request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return CreateRideShareOffer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///RideShareOffer CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse CreateRideShareOffer(global::RideshareOffer request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_CreateRideShareOffer, null, options, request);
+    }
+    /// <summary>
+    ///RideShareOffer CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareOfferAsync(global::RideshareOffer request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return CreateRideShareOfferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///RideShareOffer CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareOfferAsync(global::RideshareOffer request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_CreateRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOffer ReadRideShareOffer(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadRideShareOffer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOffer ReadRideShareOffer(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ReadRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOffer> ReadRideShareOfferAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadRideShareOfferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOffer> ReadRideShareOfferAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ReadRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList ReadAllRideShareOffer(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadAllRideShareOffer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList ReadAllRideShareOffer(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ReadAllRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> ReadAllRideShareOfferAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadAllRideShareOfferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> ReadAllRideShareOfferAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ReadAllRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse UpdateRideShareOffer(global::RideshareOffer request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateRideShareOffer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse UpdateRideShareOffer(global::RideshareOffer request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_UpdateRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> UpdateRideShareOfferAsync(global::RideshareOffer request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateRideShareOfferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> UpdateRideShareOfferAsync(global::RideshareOffer request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_UpdateRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse DeleteRideShareOffer(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteRideShareOffer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse DeleteRideShareOffer(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_DeleteRideShareOffer, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> DeleteRideShareOfferAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteRideShareOfferAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> DeleteRideShareOfferAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_DeleteRideShareOffer, null, options, request);
+    }
+    /// <summary>
+    ///RideShareRequest CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse CreateRideShareRequest(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return CreateRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///RideShareRequest CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse CreateRideShareRequest(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_CreateRideShareRequest, null, options, request);
+    }
+    /// <summary>
+    ///RideShareRequest CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareRequestAsync(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return CreateRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///RideShareRequest CRUD functions
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> CreateRideShareRequestAsync(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_CreateRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareRequest ReadRideShareRequest(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareRequest ReadRideShareRequest(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ReadRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareRequest> ReadRideShareRequestAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareRequest> ReadRideShareRequestAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ReadRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList ReadAllRideShareRequest(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadAllRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList ReadAllRideShareRequest(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ReadAllRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> ReadAllRideShareRequestAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadAllRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> ReadAllRideShareRequestAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ReadAllRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse UpdateRideShareRequest(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse UpdateRideShareRequest(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_UpdateRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> UpdateRideShareRequestAsync(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> UpdateRideShareRequestAsync(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_UpdateRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse DeleteRideShareRequest(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareResponse DeleteRideShareRequest(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_DeleteRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> DeleteRideShareRequestAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DeleteRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareResponse> DeleteRideShareRequestAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_DeleteRideShareRequest, null, options, request);
+    }
+    /// <summary>
+    ///Functions for better search in
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetClosestRideShareRequest(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetClosestRideShareRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///Functions for better search in
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetClosestRideShareRequest(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetClosestRideShareRequest, null, options, request);
+    }
+    /// <summary>
+    ///Functions for better search in
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetClosestRideShareRequestAsync(global::RideshareRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetClosestRideShareRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    ///Functions for better search in
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetClosestRideShareRequestAsync(global::RideshareRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetClosestRideShareRequest, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetAllRideShareOffersByUserID(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareOffersByUserID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetAllRideShareOffersByUserID(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllRideShareOffersByUserID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetAllRideShareOffersByUserIDAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareOffersByUserIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetAllRideShareOffersByUserIDAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllRideShareOffersByUserID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList GetAllRideShareRequestsByUserID(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareRequestsByUserID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList GetAllRideShareRequestsByUserID(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllRideShareRequestsByUserID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> GetAllRideShareRequestsByUserIDAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareRequestsByUserIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> GetAllRideShareRequestsByUserIDAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllRideShareRequestsByUserID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetAllRideShareOffersByBookingID(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareOffersByBookingID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideshareOfferList GetAllRideShareOffersByBookingID(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllRideShareOffersByBookingID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetAllRideShareOffersByBookingIDAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareOffersByBookingIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideshareOfferList> GetAllRideShareOffersByBookingIDAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllRideShareOffersByBookingID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList GetAllRideShareRequestsByRideOfferID(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareRequestsByRideOfferID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::RideShareRequestList GetAllRideShareRequestsByRideOfferID(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetAllRideShareRequestsByRideOfferID, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> GetAllRideShareRequestsByRideOfferIDAsync(global::RideShareIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetAllRideShareRequestsByRideOfferIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::RideShareRequestList> GetAllRideShareRequestsByRideOfferIDAsync(global::RideShareIDRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetAllRideShareRequestsByRideOfferID, null, options, request);
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
