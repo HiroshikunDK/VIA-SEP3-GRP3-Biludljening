@@ -3,7 +3,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:./Database/RideshareService.db</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:../Database/RideshareService.db</property>
 
         <!-- JDBC connection pool settings -->
         <property name="hibernate.c3p0.min_size">5</property>
@@ -21,5 +21,7 @@
 
         <!-- Add entity mappings -->
         <mapping class="Model.Rideshare"/>
+        <mapping class="Model.RideShareOffer"/>
+        <mapping class="Model.RideShareRequest"/>
     </session-factory>
 </hibernate-configuration>
