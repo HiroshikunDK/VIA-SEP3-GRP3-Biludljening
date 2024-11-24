@@ -1,6 +1,8 @@
 package PaymentService;
 
+import Repository.CreditCardRepository;
 import Repository.PaymentRepository;
+import Service.CreditCardService;
 import Service.PaymentService;
 import Persistance.HibernateUtility;
 import io.grpc.Server;
@@ -11,16 +13,20 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        // Initialiser Hibernate session factory
         SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+        // EntityManager entityManager = sessionFactory.createEntityManager();
 
-        // Initialiser PaymentRepository og PaymentService
         PaymentRepository paymentRepository = new PaymentRepository(sessionFactory);
         PaymentService paymentService = new PaymentService(paymentRepository, sessionFactory);
 
-        // Start gRPC-serveren og tilføj kun PaymentService
+        CreditCardRepository creditCardRepository = new CreditCardRepository(sessionFactory);
+        CreditCardService creditCardService = new CreditCardService(sessionFactory, creditCardRepository);
+
+
+
         Server server = ServerBuilder.forPort(5005)
                 .addService(paymentService)
+                .addService(creditCardService)
                 .build()
                 .start();
 
