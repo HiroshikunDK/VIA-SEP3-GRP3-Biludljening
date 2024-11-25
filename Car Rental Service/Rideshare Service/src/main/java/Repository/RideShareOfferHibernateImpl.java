@@ -1,7 +1,6 @@
 package Repository;
 
 import Model.RideShareOffer;
-import Model.Rideshare;
 import Persistence.RideShareOfferDAOInterface;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,9 +31,9 @@ public class RideShareOfferHibernateImpl implements RideShareOfferDAOInterface {
     }
 
     @Override
-    public RideShareOffer create(int rideId, int availableSpaces, String status, String startDate,
+    public RideShareOffer create(String rideId, int availableSpaces, String status, String startDate,
                                  String startTime, String startLocation, String endDate, String endTime,
-                                 String endLocation, float price, int customerId, int bookingRef) throws SQLException {
+                                 String endLocation, float price, String customerId, String bookingRef) throws SQLException {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -49,7 +48,7 @@ public class RideShareOfferHibernateImpl implements RideShareOfferDAOInterface {
     }
 
     @Override
-    public RideShareOffer read(int id) throws SQLException {
+    public RideShareOffer read(String id) throws SQLException {
         try (Session session = sessionFactory.openSession()) {
             return session.get(RideShareOffer.class, id);  // Retrieve by id
         } catch (Exception e) {
@@ -80,7 +79,7 @@ public class RideShareOfferHibernateImpl implements RideShareOfferDAOInterface {
     }
 
     @Override
-    public void delete(int id) throws SQLException {
+    public void delete(String id) throws SQLException {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -96,10 +95,10 @@ public class RideShareOfferHibernateImpl implements RideShareOfferDAOInterface {
     }
 
     @Override
-    public List<RideShareOffer> ReadAllByCustomerId(int customerId) throws SQLException {
+    public List<RideShareOffer> ReadAllByCustomerId(String registrationNumber) throws SQLException {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM RideShareOffer WHERE customerId = :inputNumber", RideShareOffer.class)
-                    .setParameter("inputNumber", customerId)
+            return session.createQuery("FROM RideShareOffer WHERE customerId = :registrationNumber", RideShareOffer.class)
+                    .setParameter("registrationNumber", registrationNumber)
                     .list();  // Retrieve RideShareOffers by customerId
         } catch (Exception e) {
             throw new SQLException("Error reading RideShareOffers by CustomerId", e);
@@ -107,10 +106,10 @@ public class RideShareOfferHibernateImpl implements RideShareOfferDAOInterface {
     }
 
     @Override
-    public List<RideShareOffer> ReadAllByCarBookingRef(int bookingRef) throws SQLException {
+    public List<RideShareOffer> ReadAllByCarBookingRef(String registrationNumber) throws SQLException {
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM RideShareOffer WHERE carBookingRef = :inputNumber", RideShareOffer.class)
-                    .setParameter("inputNumber", bookingRef)
+            return session.createQuery("FROM RideShareOffer WHERE carBookingRef = :registrationNumber", RideShareOffer.class)
+                    .setParameter("registrationNumber", registrationNumber)
                     .list();  // Retrieve RideShareOffers by carBookingRef
         } catch (Exception e) {
             throw new SQLException("Error reading RideShareOffers by CarBookingRef", e);

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class RideShareRequest{
     @Id
     @Column(name = "ride_id")
-    private int rideId;// CRS_ID
+    private String rideId; // CRS_ID, default value as per your example
     @Column(name = "status")
     private String status; // Status (only for internal use)
     @Column(name = "start_date")
@@ -25,15 +25,15 @@ public class RideShareRequest{
     @Column(name = "price")
     private float price; // CRS_CURRENCY (customer price)
     @Column(name = "customer_id")
-    private int customerId; // CRS_ID (Reference to Usertable)
+    private String customerId; // CRS_ID (Reference to Usertable)
     @Column(name = "booking_ref")
-    private int bookingRef; // CRS_ID (reference to RideshareOffer)
+    private String bookingRef; // CRS_ID (reference to RideshareOffer)
     // Default constructor
     public RideShareRequest() {}
 
     // Constructor with parameters
-    public RideShareRequest(int rideId, String status, String startDate, String startTime, String startLocation,
-                            String endDate, String endTime, String endLocation, float price, int customerId, int bookingRef) {
+    public RideShareRequest(String rideId, String status, String startDate, String startTime, String startLocation,
+                            String endDate, String endTime, String endLocation, float price, String customerId, String bookingRef) {
         this.rideId = rideId;
         this.status = status;
         this.startDate = startDate;
@@ -47,13 +47,12 @@ public class RideShareRequest{
         this.bookingRef = bookingRef;
     }
 
-
     // Getters and Setters
-    public int getRideId() {
+    public String getRideId() {
         return rideId;
     }
 
-    public void setRideId(int rideId) {
+    public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
@@ -121,19 +120,19 @@ public class RideShareRequest{
         this.price = price;
     }
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public int getBookingRef() {
+    public String getBookingRef() {
         return bookingRef;
     }
 
-    public void setBookingRef(int bookingRef) {
+    public void setBookingRef(String bookingRef) {
         this.bookingRef = bookingRef;
     }
 

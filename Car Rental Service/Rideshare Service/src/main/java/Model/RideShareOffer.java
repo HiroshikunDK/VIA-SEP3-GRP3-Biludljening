@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "RideShareOffers")
+@Table(name = "rideshares")
 public class RideShareOffer{
 
     @Id
     @Column(name = "ride_id")
-    private int rideId;
+    private String rideId;
     @Column(name = "available_spaces")
     private int availableSpaces;
     @Column(name = "status")
@@ -29,17 +29,22 @@ public class RideShareOffer{
     @Column(name = "price")
     private float price;
     @Column(name = "customer_id")
-    private int customerId; // Reference to User Table
+    private String customerId; // Reference to User Table
     @Column(name = "booking_ref")
-    private int bookingRef; //Reference to car booking table
+    private String bookingRef; //Reference to car booking table
+    @Column(name = "latitude")
+    private double latitude;
+    @Column(name = "longitude")
+    private double longitude;
+
 
     // Default constructor
     public RideShareOffer() {}
 
     // Constructor with parameters
-    public RideShareOffer(int rideId, int availableSpaces, String status, String startDate,
+    public RideShareOffer(String rideId, int availableSpaces, String status, String startDate,
                           String startTime, String startLocation, String endDate, String endTime,
-                          String endLocation, float price, int  customerId, int bookingRef) {
+                          String endLocation, float price, String customerId, String bookingRef) {
         this.rideId = rideId;
         this.availableSpaces = availableSpaces;
         this.status = status;
@@ -55,11 +60,11 @@ public class RideShareOffer{
     }
 
     // Getters and Setters
-    public int getRideId() {
+    public String getRideId() {
         return rideId;
     }
 
-    public void setRideId(int rideId) {
+    public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
@@ -135,20 +140,36 @@ public class RideShareOffer{
         this.price = price;
     }
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public int getBookingRef() {
+    public String getBookingRef() {
         return bookingRef;
     }
 
-    public void setBookingRef(int bookingRef) {
+    public void setBookingRef(String bookingRef) {
         this.bookingRef = bookingRef;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     @Override

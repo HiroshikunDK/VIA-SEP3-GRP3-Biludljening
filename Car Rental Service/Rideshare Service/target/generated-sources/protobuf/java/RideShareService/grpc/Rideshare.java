@@ -808,10 +808,20 @@ public final class Rideshare {
      * CRS_ID
      * </pre>
      *
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
-    int getRideId();
+    java.lang.String getRideId();
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
 
     /**
      * <pre>
@@ -978,20 +988,40 @@ public final class Rideshare {
      * CRS_ID (Reference to Usertable)
      * </pre>
      *
-     * <code>int32 customerid = 11;</code>
+     * <code>string customerid = 11;</code>
      * @return The customerid.
      */
-    int getCustomerid();
+    java.lang.String getCustomerid();
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The bytes for customerid.
+     */
+    com.google.protobuf.ByteString
+        getCustomeridBytes();
 
     /**
      * <pre>
      * CRS_ID (reference to car booking table)
      * </pre>
      *
-     * <code>int32 bookingref = 12;</code>
+     * <code>string bookingref = 12;</code>
      * @return The bookingref.
      */
-    int getBookingref();
+    java.lang.String getBookingref();
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bytes for bookingref.
+     */
+    com.google.protobuf.ByteString
+        getBookingrefBytes();
   }
   /**
    * <pre>
@@ -1010,6 +1040,7 @@ public final class Rideshare {
       super(builder);
     }
     private RideshareOffer() {
+      rideId_ = "";
       status_ = "";
       startdate_ = "";
       starttime_ = "";
@@ -1017,6 +1048,8 @@ public final class Rideshare {
       enddate_ = "";
       endtime_ = "";
       endlocation_ = "";
+      customerid_ = "";
+      bookingref_ = "";
     }
 
     @java.lang.Override
@@ -1045,18 +1078,50 @@ public final class Rideshare {
     }
 
     public static final int RIDEID_FIELD_NUMBER = 1;
-    private int rideId_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
     /**
      * <pre>
      * CRS_ID
      * </pre>
      *
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
     @java.lang.Override
-    public int getRideId() {
-      return rideId_;
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int AVAILABLESPACES_FIELD_NUMBER = 2;
@@ -1419,33 +1484,97 @@ public final class Rideshare {
     }
 
     public static final int CUSTOMERID_FIELD_NUMBER = 11;
-    private int customerid_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customerid_ = "";
     /**
      * <pre>
      * CRS_ID (Reference to Usertable)
      * </pre>
      *
-     * <code>int32 customerid = 11;</code>
+     * <code>string customerid = 11;</code>
      * @return The customerid.
      */
     @java.lang.Override
-    public int getCustomerid() {
-      return customerid_;
+    public java.lang.String getCustomerid() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 11;</code>
+     * @return The bytes for customerid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomeridBytes() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BOOKINGREF_FIELD_NUMBER = 12;
-    private int bookingref_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bookingref_ = "";
     /**
      * <pre>
      * CRS_ID (reference to car booking table)
      * </pre>
      *
-     * <code>int32 bookingref = 12;</code>
+     * <code>string bookingref = 12;</code>
      * @return The bookingref.
      */
     @java.lang.Override
-    public int getBookingref() {
-      return bookingref_;
+    public java.lang.String getBookingref() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookingref_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (reference to car booking table)
+     * </pre>
+     *
+     * <code>string bookingref = 12;</code>
+     * @return The bytes for bookingref.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBookingrefBytes() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookingref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1462,8 +1591,8 @@ public final class Rideshare {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rideId_ != 0) {
-        output.writeInt32(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
       }
       if (availablespaces_ != 0) {
         output.writeInt32(2, availablespaces_);
@@ -1492,11 +1621,11 @@ public final class Rideshare {
       if (java.lang.Float.floatToRawIntBits(price_) != 0) {
         output.writeFloat(10, price_);
       }
-      if (customerid_ != 0) {
-        output.writeInt32(11, customerid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, customerid_);
       }
-      if (bookingref_ != 0) {
-        output.writeInt32(12, bookingref_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, bookingref_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1507,9 +1636,8 @@ public final class Rideshare {
       if (size != -1) return size;
 
       size = 0;
-      if (rideId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
       }
       if (availablespaces_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1540,13 +1668,11 @@ public final class Rideshare {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, price_);
       }
-      if (customerid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, customerid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, customerid_);
       }
-      if (bookingref_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, bookingref_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, bookingref_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1563,8 +1689,8 @@ public final class Rideshare {
       }
       RideShareService.grpc.Rideshare.RideshareOffer other = (RideShareService.grpc.Rideshare.RideshareOffer) obj;
 
-      if (getRideId()
-          != other.getRideId()) return false;
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
       if (getAvailablespaces()
           != other.getAvailablespaces()) return false;
       if (!getStatus()
@@ -1584,10 +1710,10 @@ public final class Rideshare {
       if (java.lang.Float.floatToIntBits(getPrice())
           != java.lang.Float.floatToIntBits(
               other.getPrice())) return false;
-      if (getCustomerid()
-          != other.getCustomerid()) return false;
-      if (getBookingref()
-          != other.getBookingref()) return false;
+      if (!getCustomerid()
+          .equals(other.getCustomerid())) return false;
+      if (!getBookingref()
+          .equals(other.getBookingref())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1600,7 +1726,7 @@ public final class Rideshare {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RIDEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRideId();
+      hash = (53 * hash) + getRideId().hashCode();
       hash = (37 * hash) + AVAILABLESPACES_FIELD_NUMBER;
       hash = (53 * hash) + getAvailablespaces();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -1621,9 +1747,9 @@ public final class Rideshare {
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPrice());
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + getCustomerid();
+      hash = (53 * hash) + getCustomerid().hashCode();
       hash = (37 * hash) + BOOKINGREF_FIELD_NUMBER;
-      hash = (53 * hash) + getBookingref();
+      hash = (53 * hash) + getBookingref().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1757,7 +1883,7 @@ public final class Rideshare {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        rideId_ = 0;
+        rideId_ = "";
         availablespaces_ = 0;
         status_ = "";
         startdate_ = "";
@@ -1767,8 +1893,8 @@ public final class Rideshare {
         endtime_ = "";
         endlocation_ = "";
         price_ = 0F;
-        customerid_ = 0;
-        bookingref_ = 0;
+        customerid_ = "";
+        bookingref_ = "";
         return this;
       }
 
@@ -1884,8 +2010,10 @@ public final class Rideshare {
 
       public Builder mergeFrom(RideShareService.grpc.Rideshare.RideshareOffer other) {
         if (other == RideShareService.grpc.Rideshare.RideshareOffer.getDefaultInstance()) return this;
-        if (other.getRideId() != 0) {
-          setRideId(other.getRideId());
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
         if (other.getAvailablespaces() != 0) {
           setAvailablespaces(other.getAvailablespaces());
@@ -1928,11 +2056,15 @@ public final class Rideshare {
         if (other.getPrice() != 0F) {
           setPrice(other.getPrice());
         }
-        if (other.getCustomerid() != 0) {
-          setCustomerid(other.getCustomerid());
+        if (!other.getCustomerid().isEmpty()) {
+          customerid_ = other.customerid_;
+          bitField0_ |= 0x00000400;
+          onChanged();
         }
-        if (other.getBookingref() != 0) {
-          setBookingref(other.getBookingref());
+        if (!other.getBookingref().isEmpty()) {
+          bookingref_ = other.bookingref_;
+          bitField0_ |= 0x00000800;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1960,11 +2092,11 @@ public final class Rideshare {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                rideId_ = input.readInt32();
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 16: {
                 availablespaces_ = input.readInt32();
                 bitField0_ |= 0x00000002;
@@ -2010,16 +2142,16 @@ public final class Rideshare {
                 bitField0_ |= 0x00000200;
                 break;
               } // case 85
-              case 88: {
-                customerid_ = input.readInt32();
+              case 90: {
+                customerid_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000400;
                 break;
-              } // case 88
-              case 96: {
-                bookingref_ = input.readInt32();
+              } // case 90
+              case 98: {
+                bookingref_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000800;
                 break;
-              } // case 96
+              } // case 98
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2037,30 +2169,60 @@ public final class Rideshare {
       }
       private int bitField0_;
 
-      private int rideId_ ;
+      private java.lang.Object rideId_ = "";
       /**
        * <pre>
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return The rideId.
        */
-      @java.lang.Override
-      public int getRideId() {
-        return rideId_;
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
        * @param value The rideId to set.
        * @return This builder for chaining.
        */
-      public Builder setRideId(int value) {
-        
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         rideId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
@@ -2071,12 +2233,30 @@ public final class Rideshare {
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        rideId_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2813,30 +2993,60 @@ public final class Rideshare {
         return this;
       }
 
-      private int customerid_ ;
+      private java.lang.Object customerid_ = "";
       /**
        * <pre>
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 11;</code>
+       * <code>string customerid = 11;</code>
        * @return The customerid.
        */
-      @java.lang.Override
-      public int getCustomerid() {
-        return customerid_;
+      public java.lang.String getCustomerid() {
+        java.lang.Object ref = customerid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 11;</code>
+       * <code>string customerid = 11;</code>
+       * @return The bytes for customerid.
+       */
+      public com.google.protobuf.ByteString
+          getCustomeridBytes() {
+        java.lang.Object ref = customerid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
        * @param value The customerid to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerid(int value) {
-        
+      public Builder setCustomerid(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         customerid_ = value;
         bitField0_ |= 0x00000400;
         onChanged();
@@ -2847,40 +3057,88 @@ public final class Rideshare {
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 11;</code>
+       * <code>string customerid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomerid() {
+        customerid_ = getDefaultInstance().getCustomerid();
         bitField0_ = (bitField0_ & ~0x00000400);
-        customerid_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 11;</code>
+       * @param value The bytes for customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomeridBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        customerid_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
 
-      private int bookingref_ ;
+      private java.lang.Object bookingref_ = "";
       /**
        * <pre>
        * CRS_ID (reference to car booking table)
        * </pre>
        *
-       * <code>int32 bookingref = 12;</code>
+       * <code>string bookingref = 12;</code>
        * @return The bookingref.
        */
-      @java.lang.Override
-      public int getBookingref() {
-        return bookingref_;
+      public java.lang.String getBookingref() {
+        java.lang.Object ref = bookingref_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bookingref_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID (reference to car booking table)
        * </pre>
        *
-       * <code>int32 bookingref = 12;</code>
+       * <code>string bookingref = 12;</code>
+       * @return The bytes for bookingref.
+       */
+      public com.google.protobuf.ByteString
+          getBookingrefBytes() {
+        java.lang.Object ref = bookingref_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bookingref_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
        * @param value The bookingref to set.
        * @return This builder for chaining.
        */
-      public Builder setBookingref(int value) {
-        
+      public Builder setBookingref(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         bookingref_ = value;
         bitField0_ |= 0x00000800;
         onChanged();
@@ -2891,12 +3149,30 @@ public final class Rideshare {
        * CRS_ID (reference to car booking table)
        * </pre>
        *
-       * <code>int32 bookingref = 12;</code>
+       * <code>string bookingref = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBookingref() {
+        bookingref_ = getDefaultInstance().getBookingref();
         bitField0_ = (bitField0_ & ~0x00000800);
-        bookingref_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to car booking table)
+       * </pre>
+       *
+       * <code>string bookingref = 12;</code>
+       * @param value The bytes for bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingrefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        bookingref_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3758,10 +4034,20 @@ public final class Rideshare {
      * CRS_ID
      * </pre>
      *
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
-    int getRideId();
+    java.lang.String getRideId();
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
 
     /**
      * <pre>
@@ -3845,10 +4131,30 @@ public final class Rideshare {
 
     /**
      * <pre>
+     * Geographical latitude
+     * </pre>
+     *
+     * <code>float latitude = 6;</code>
+     * @return The latitude.
+     */
+    float getLatitude();
+
+    /**
+     * <pre>
+     * Geographical longitude
+     * </pre>
+     *
+     * <code>float longitude = 7;</code>
+     * @return The longitude.
+     */
+    float getLongitude();
+
+    /**
+     * <pre>
      * DATE as string in YYYY-MM-DD format
      * </pre>
      *
-     * <code>string enddate = 6;</code>
+     * <code>string enddate = 8;</code>
      * @return The enddate.
      */
     java.lang.String getEnddate();
@@ -3857,7 +4163,7 @@ public final class Rideshare {
      * DATE as string in YYYY-MM-DD format
      * </pre>
      *
-     * <code>string enddate = 6;</code>
+     * <code>string enddate = 8;</code>
      * @return The bytes for enddate.
      */
     com.google.protobuf.ByteString
@@ -3868,7 +4174,7 @@ public final class Rideshare {
      * TIME as string in HH:MM:SS format
      * </pre>
      *
-     * <code>string endtime = 7;</code>
+     * <code>string endtime = 9;</code>
      * @return The endtime.
      */
     java.lang.String getEndtime();
@@ -3877,7 +4183,7 @@ public final class Rideshare {
      * TIME as string in HH:MM:SS format
      * </pre>
      *
-     * <code>string endtime = 7;</code>
+     * <code>string endtime = 9;</code>
      * @return The bytes for endtime.
      */
     com.google.protobuf.ByteString
@@ -3888,7 +4194,7 @@ public final class Rideshare {
      * CRS_ADDRESS
      * </pre>
      *
-     * <code>string endlocation = 8;</code>
+     * <code>string endlocation = 10;</code>
      * @return The endlocation.
      */
     java.lang.String getEndlocation();
@@ -3897,7 +4203,7 @@ public final class Rideshare {
      * CRS_ADDRESS
      * </pre>
      *
-     * <code>string endlocation = 8;</code>
+     * <code>string endlocation = 10;</code>
      * @return The bytes for endlocation.
      */
     com.google.protobuf.ByteString
@@ -3908,7 +4214,7 @@ public final class Rideshare {
      * CRS_CURRENCY (customer price)
      * </pre>
      *
-     * <code>float price = 9;</code>
+     * <code>float price = 11;</code>
      * @return The price.
      */
     float getPrice();
@@ -3918,20 +4224,40 @@ public final class Rideshare {
      * CRS_ID (Reference to Usertable)
      * </pre>
      *
-     * <code>int32 customerid = 10;</code>
+     * <code>string customerid = 12;</code>
      * @return The customerid.
      */
-    int getCustomerid();
+    java.lang.String getCustomerid();
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The bytes for customerid.
+     */
+    com.google.protobuf.ByteString
+        getCustomeridBytes();
 
     /**
      * <pre>
      * CRS_ID (reference to RideshareOffer)
      * </pre>
      *
-     * <code>int32 bookingref = 11;</code>
+     * <code>string bookingref = 13;</code>
      * @return The bookingref.
      */
-    int getBookingref();
+    java.lang.String getBookingref();
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bytes for bookingref.
+     */
+    com.google.protobuf.ByteString
+        getBookingrefBytes();
   }
   /**
    * <pre>
@@ -3950,6 +4276,7 @@ public final class Rideshare {
       super(builder);
     }
     private RideshareRequest() {
+      rideId_ = "";
       status_ = "";
       startdate_ = "";
       starttime_ = "";
@@ -3957,6 +4284,8 @@ public final class Rideshare {
       enddate_ = "";
       endtime_ = "";
       endlocation_ = "";
+      customerid_ = "";
+      bookingref_ = "";
     }
 
     @java.lang.Override
@@ -3985,18 +4314,50 @@ public final class Rideshare {
     }
 
     public static final int RIDEID_FIELD_NUMBER = 1;
-    private int rideId_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
     /**
      * <pre>
      * CRS_ID
      * </pre>
      *
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
     @java.lang.Override
-    public int getRideId() {
-      return rideId_;
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID
+     * </pre>
+     *
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -4187,7 +4548,37 @@ public final class Rideshare {
       }
     }
 
-    public static final int ENDDATE_FIELD_NUMBER = 6;
+    public static final int LATITUDE_FIELD_NUMBER = 6;
+    private float latitude_ = 0F;
+    /**
+     * <pre>
+     * Geographical latitude
+     * </pre>
+     *
+     * <code>float latitude = 6;</code>
+     * @return The latitude.
+     */
+    @java.lang.Override
+    public float getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 7;
+    private float longitude_ = 0F;
+    /**
+     * <pre>
+     * Geographical longitude
+     * </pre>
+     *
+     * <code>float longitude = 7;</code>
+     * @return The longitude.
+     */
+    @java.lang.Override
+    public float getLongitude() {
+      return longitude_;
+    }
+
+    public static final int ENDDATE_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
     private volatile java.lang.Object enddate_ = "";
     /**
@@ -4195,7 +4586,7 @@ public final class Rideshare {
      * DATE as string in YYYY-MM-DD format
      * </pre>
      *
-     * <code>string enddate = 6;</code>
+     * <code>string enddate = 8;</code>
      * @return The enddate.
      */
     @java.lang.Override
@@ -4216,7 +4607,7 @@ public final class Rideshare {
      * DATE as string in YYYY-MM-DD format
      * </pre>
      *
-     * <code>string enddate = 6;</code>
+     * <code>string enddate = 8;</code>
      * @return The bytes for enddate.
      */
     @java.lang.Override
@@ -4234,7 +4625,7 @@ public final class Rideshare {
       }
     }
 
-    public static final int ENDTIME_FIELD_NUMBER = 7;
+    public static final int ENDTIME_FIELD_NUMBER = 9;
     @SuppressWarnings("serial")
     private volatile java.lang.Object endtime_ = "";
     /**
@@ -4242,7 +4633,7 @@ public final class Rideshare {
      * TIME as string in HH:MM:SS format
      * </pre>
      *
-     * <code>string endtime = 7;</code>
+     * <code>string endtime = 9;</code>
      * @return The endtime.
      */
     @java.lang.Override
@@ -4263,7 +4654,7 @@ public final class Rideshare {
      * TIME as string in HH:MM:SS format
      * </pre>
      *
-     * <code>string endtime = 7;</code>
+     * <code>string endtime = 9;</code>
      * @return The bytes for endtime.
      */
     @java.lang.Override
@@ -4281,7 +4672,7 @@ public final class Rideshare {
       }
     }
 
-    public static final int ENDLOCATION_FIELD_NUMBER = 8;
+    public static final int ENDLOCATION_FIELD_NUMBER = 10;
     @SuppressWarnings("serial")
     private volatile java.lang.Object endlocation_ = "";
     /**
@@ -4289,7 +4680,7 @@ public final class Rideshare {
      * CRS_ADDRESS
      * </pre>
      *
-     * <code>string endlocation = 8;</code>
+     * <code>string endlocation = 10;</code>
      * @return The endlocation.
      */
     @java.lang.Override
@@ -4310,7 +4701,7 @@ public final class Rideshare {
      * CRS_ADDRESS
      * </pre>
      *
-     * <code>string endlocation = 8;</code>
+     * <code>string endlocation = 10;</code>
      * @return The bytes for endlocation.
      */
     @java.lang.Override
@@ -4328,14 +4719,14 @@ public final class Rideshare {
       }
     }
 
-    public static final int PRICE_FIELD_NUMBER = 9;
+    public static final int PRICE_FIELD_NUMBER = 11;
     private float price_ = 0F;
     /**
      * <pre>
      * CRS_CURRENCY (customer price)
      * </pre>
      *
-     * <code>float price = 9;</code>
+     * <code>float price = 11;</code>
      * @return The price.
      */
     @java.lang.Override
@@ -4343,34 +4734,98 @@ public final class Rideshare {
       return price_;
     }
 
-    public static final int CUSTOMERID_FIELD_NUMBER = 10;
-    private int customerid_ = 0;
+    public static final int CUSTOMERID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customerid_ = "";
     /**
      * <pre>
      * CRS_ID (Reference to Usertable)
      * </pre>
      *
-     * <code>int32 customerid = 10;</code>
+     * <code>string customerid = 12;</code>
      * @return The customerid.
      */
     @java.lang.Override
-    public int getCustomerid() {
-      return customerid_;
+    public java.lang.String getCustomerid() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (Reference to Usertable)
+     * </pre>
+     *
+     * <code>string customerid = 12;</code>
+     * @return The bytes for customerid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomeridBytes() {
+      java.lang.Object ref = customerid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int BOOKINGREF_FIELD_NUMBER = 11;
-    private int bookingref_ = 0;
+    public static final int BOOKINGREF_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bookingref_ = "";
     /**
      * <pre>
      * CRS_ID (reference to RideshareOffer)
      * </pre>
      *
-     * <code>int32 bookingref = 11;</code>
+     * <code>string bookingref = 13;</code>
      * @return The bookingref.
      */
     @java.lang.Override
-    public int getBookingref() {
-      return bookingref_;
+    public java.lang.String getBookingref() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookingref_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * CRS_ID (reference to RideshareOffer)
+     * </pre>
+     *
+     * <code>string bookingref = 13;</code>
+     * @return The bytes for bookingref.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBookingrefBytes() {
+      java.lang.Object ref = bookingref_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookingref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4387,8 +4842,8 @@ public final class Rideshare {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rideId_ != 0) {
-        output.writeInt32(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
@@ -4402,23 +4857,29 @@ public final class Rideshare {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startlocation_);
       }
+      if (java.lang.Float.floatToRawIntBits(latitude_) != 0) {
+        output.writeFloat(6, latitude_);
+      }
+      if (java.lang.Float.floatToRawIntBits(longitude_) != 0) {
+        output.writeFloat(7, longitude_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, enddate_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, enddate_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, endtime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, endtime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endlocation_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, endlocation_);
       }
       if (java.lang.Float.floatToRawIntBits(price_) != 0) {
-        output.writeFloat(9, price_);
+        output.writeFloat(11, price_);
       }
-      if (customerid_ != 0) {
-        output.writeInt32(10, customerid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, customerid_);
       }
-      if (bookingref_ != 0) {
-        output.writeInt32(11, bookingref_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, bookingref_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4429,9 +4890,8 @@ public final class Rideshare {
       if (size != -1) return size;
 
       size = 0;
-      if (rideId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
@@ -4445,26 +4905,32 @@ public final class Rideshare {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startlocation_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startlocation_);
       }
+      if (java.lang.Float.floatToRawIntBits(latitude_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, latitude_);
+      }
+      if (java.lang.Float.floatToRawIntBits(longitude_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(7, longitude_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enddate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, enddate_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, enddate_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, endtime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, endtime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endlocation_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endlocation_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, endlocation_);
       }
       if (java.lang.Float.floatToRawIntBits(price_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, price_);
+          .computeFloatSize(11, price_);
       }
-      if (customerid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, customerid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, customerid_);
       }
-      if (bookingref_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, bookingref_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bookingref_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, bookingref_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4481,8 +4947,8 @@ public final class Rideshare {
       }
       RideShareService.grpc.Rideshare.RideshareRequest other = (RideShareService.grpc.Rideshare.RideshareRequest) obj;
 
-      if (getRideId()
-          != other.getRideId()) return false;
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
       if (!getStartdate()
@@ -4491,6 +4957,12 @@ public final class Rideshare {
           .equals(other.getStarttime())) return false;
       if (!getStartlocation()
           .equals(other.getStartlocation())) return false;
+      if (java.lang.Float.floatToIntBits(getLatitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLatitude())) return false;
+      if (java.lang.Float.floatToIntBits(getLongitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLongitude())) return false;
       if (!getEnddate()
           .equals(other.getEnddate())) return false;
       if (!getEndtime()
@@ -4500,10 +4972,10 @@ public final class Rideshare {
       if (java.lang.Float.floatToIntBits(getPrice())
           != java.lang.Float.floatToIntBits(
               other.getPrice())) return false;
-      if (getCustomerid()
-          != other.getCustomerid()) return false;
-      if (getBookingref()
-          != other.getBookingref()) return false;
+      if (!getCustomerid()
+          .equals(other.getCustomerid())) return false;
+      if (!getBookingref()
+          .equals(other.getBookingref())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4516,7 +4988,7 @@ public final class Rideshare {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RIDEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRideId();
+      hash = (53 * hash) + getRideId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + STARTDATE_FIELD_NUMBER;
@@ -4525,6 +4997,12 @@ public final class Rideshare {
       hash = (53 * hash) + getStarttime().hashCode();
       hash = (37 * hash) + STARTLOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getStartlocation().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatitude());
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLongitude());
       hash = (37 * hash) + ENDDATE_FIELD_NUMBER;
       hash = (53 * hash) + getEnddate().hashCode();
       hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
@@ -4535,9 +5013,9 @@ public final class Rideshare {
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPrice());
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + getCustomerid();
+      hash = (53 * hash) + getCustomerid().hashCode();
       hash = (37 * hash) + BOOKINGREF_FIELD_NUMBER;
-      hash = (53 * hash) + getBookingref();
+      hash = (53 * hash) + getBookingref().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4671,17 +5149,19 @@ public final class Rideshare {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        rideId_ = 0;
+        rideId_ = "";
         status_ = "";
         startdate_ = "";
         starttime_ = "";
         startlocation_ = "";
+        latitude_ = 0F;
+        longitude_ = 0F;
         enddate_ = "";
         endtime_ = "";
         endlocation_ = "";
         price_ = 0F;
-        customerid_ = 0;
-        bookingref_ = 0;
+        customerid_ = "";
+        bookingref_ = "";
         return this;
       }
 
@@ -4731,21 +5211,27 @@ public final class Rideshare {
           result.startlocation_ = startlocation_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.enddate_ = enddate_;
+          result.latitude_ = latitude_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.endtime_ = endtime_;
+          result.longitude_ = longitude_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.endlocation_ = endlocation_;
+          result.enddate_ = enddate_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.price_ = price_;
+          result.endtime_ = endtime_;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.customerid_ = customerid_;
+          result.endlocation_ = endlocation_;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.price_ = price_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.customerid_ = customerid_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.bookingref_ = bookingref_;
         }
       }
@@ -4794,8 +5280,10 @@ public final class Rideshare {
 
       public Builder mergeFrom(RideShareService.grpc.Rideshare.RideshareRequest other) {
         if (other == RideShareService.grpc.Rideshare.RideshareRequest.getDefaultInstance()) return this;
-        if (other.getRideId() != 0) {
-          setRideId(other.getRideId());
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
@@ -4817,29 +5305,39 @@ public final class Rideshare {
           bitField0_ |= 0x00000010;
           onChanged();
         }
+        if (other.getLatitude() != 0F) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongitude() != 0F) {
+          setLongitude(other.getLongitude());
+        }
         if (!other.getEnddate().isEmpty()) {
           enddate_ = other.enddate_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getEndtime().isEmpty()) {
           endtime_ = other.endtime_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (!other.getEndlocation().isEmpty()) {
           endlocation_ = other.endlocation_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (other.getPrice() != 0F) {
           setPrice(other.getPrice());
         }
-        if (other.getCustomerid() != 0) {
-          setCustomerid(other.getCustomerid());
+        if (!other.getCustomerid().isEmpty()) {
+          customerid_ = other.customerid_;
+          bitField0_ |= 0x00000800;
+          onChanged();
         }
-        if (other.getBookingref() != 0) {
-          setBookingref(other.getBookingref());
+        if (!other.getBookingref().isEmpty()) {
+          bookingref_ = other.bookingref_;
+          bitField0_ |= 0x00001000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4867,11 +5365,11 @@ public final class Rideshare {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                rideId_ = input.readInt32();
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 18: {
                 status_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
@@ -4892,36 +5390,46 @@ public final class Rideshare {
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
-              case 50: {
-                enddate_ = input.readStringRequireUtf8();
+              case 53: {
+                latitude_ = input.readFloat();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 50
-              case 58: {
-                endtime_ = input.readStringRequireUtf8();
+              } // case 53
+              case 61: {
+                longitude_ = input.readFloat();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 58
+              } // case 61
               case 66: {
-                endlocation_ = input.readStringRequireUtf8();
+                enddate_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
-              case 77: {
-                price_ = input.readFloat();
+              case 74: {
+                endtime_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
-              } // case 77
-              case 80: {
-                customerid_ = input.readInt32();
+              } // case 74
+              case 82: {
+                endlocation_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000200;
                 break;
-              } // case 80
-              case 88: {
-                bookingref_ = input.readInt32();
+              } // case 82
+              case 93: {
+                price_ = input.readFloat();
                 bitField0_ |= 0x00000400;
                 break;
-              } // case 88
+              } // case 93
+              case 98: {
+                customerid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                bookingref_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4939,30 +5447,60 @@ public final class Rideshare {
       }
       private int bitField0_;
 
-      private int rideId_ ;
+      private java.lang.Object rideId_ = "";
       /**
        * <pre>
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return The rideId.
        */
-      @java.lang.Override
-      public int getRideId() {
-        return rideId_;
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
        * @param value The rideId to set.
        * @return This builder for chaining.
        */
-      public Builder setRideId(int value) {
-        
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         rideId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
@@ -4973,12 +5511,30 @@ public final class Rideshare {
        * CRS_ID
        * </pre>
        *
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        rideId_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID
+       * </pre>
+       *
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5351,13 +5907,101 @@ public final class Rideshare {
         return this;
       }
 
+      private float latitude_ ;
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @return The latitude.
+       */
+      @java.lang.Override
+      public float getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @param value The latitude to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLatitude(float value) {
+        
+        latitude_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Geographical latitude
+       * </pre>
+       *
+       * <code>float latitude = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLatitude() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        latitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float longitude_ ;
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @return The longitude.
+       */
+      @java.lang.Override
+      public float getLongitude() {
+        return longitude_;
+      }
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @param value The longitude to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLongitude(float value) {
+        
+        longitude_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Geographical longitude
+       * </pre>
+       *
+       * <code>float longitude = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLongitude() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        longitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object enddate_ = "";
       /**
        * <pre>
        * DATE as string in YYYY-MM-DD format
        * </pre>
        *
-       * <code>string enddate = 6;</code>
+       * <code>string enddate = 8;</code>
        * @return The enddate.
        */
       public java.lang.String getEnddate() {
@@ -5377,7 +6021,7 @@ public final class Rideshare {
        * DATE as string in YYYY-MM-DD format
        * </pre>
        *
-       * <code>string enddate = 6;</code>
+       * <code>string enddate = 8;</code>
        * @return The bytes for enddate.
        */
       public com.google.protobuf.ByteString
@@ -5398,7 +6042,7 @@ public final class Rideshare {
        * DATE as string in YYYY-MM-DD format
        * </pre>
        *
-       * <code>string enddate = 6;</code>
+       * <code>string enddate = 8;</code>
        * @param value The enddate to set.
        * @return This builder for chaining.
        */
@@ -5406,7 +6050,7 @@ public final class Rideshare {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         enddate_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5415,12 +6059,12 @@ public final class Rideshare {
        * DATE as string in YYYY-MM-DD format
        * </pre>
        *
-       * <code>string enddate = 6;</code>
+       * <code>string enddate = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnddate() {
         enddate_ = getDefaultInstance().getEnddate();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -5429,7 +6073,7 @@ public final class Rideshare {
        * DATE as string in YYYY-MM-DD format
        * </pre>
        *
-       * <code>string enddate = 6;</code>
+       * <code>string enddate = 8;</code>
        * @param value The bytes for enddate to set.
        * @return This builder for chaining.
        */
@@ -5438,7 +6082,7 @@ public final class Rideshare {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         enddate_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5449,7 +6093,7 @@ public final class Rideshare {
        * TIME as string in HH:MM:SS format
        * </pre>
        *
-       * <code>string endtime = 7;</code>
+       * <code>string endtime = 9;</code>
        * @return The endtime.
        */
       public java.lang.String getEndtime() {
@@ -5469,7 +6113,7 @@ public final class Rideshare {
        * TIME as string in HH:MM:SS format
        * </pre>
        *
-       * <code>string endtime = 7;</code>
+       * <code>string endtime = 9;</code>
        * @return The bytes for endtime.
        */
       public com.google.protobuf.ByteString
@@ -5490,7 +6134,7 @@ public final class Rideshare {
        * TIME as string in HH:MM:SS format
        * </pre>
        *
-       * <code>string endtime = 7;</code>
+       * <code>string endtime = 9;</code>
        * @param value The endtime to set.
        * @return This builder for chaining.
        */
@@ -5498,7 +6142,7 @@ public final class Rideshare {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         endtime_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5507,12 +6151,12 @@ public final class Rideshare {
        * TIME as string in HH:MM:SS format
        * </pre>
        *
-       * <code>string endtime = 7;</code>
+       * <code>string endtime = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndtime() {
         endtime_ = getDefaultInstance().getEndtime();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -5521,7 +6165,7 @@ public final class Rideshare {
        * TIME as string in HH:MM:SS format
        * </pre>
        *
-       * <code>string endtime = 7;</code>
+       * <code>string endtime = 9;</code>
        * @param value The bytes for endtime to set.
        * @return This builder for chaining.
        */
@@ -5530,7 +6174,7 @@ public final class Rideshare {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         endtime_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5541,7 +6185,7 @@ public final class Rideshare {
        * CRS_ADDRESS
        * </pre>
        *
-       * <code>string endlocation = 8;</code>
+       * <code>string endlocation = 10;</code>
        * @return The endlocation.
        */
       public java.lang.String getEndlocation() {
@@ -5561,7 +6205,7 @@ public final class Rideshare {
        * CRS_ADDRESS
        * </pre>
        *
-       * <code>string endlocation = 8;</code>
+       * <code>string endlocation = 10;</code>
        * @return The bytes for endlocation.
        */
       public com.google.protobuf.ByteString
@@ -5582,7 +6226,7 @@ public final class Rideshare {
        * CRS_ADDRESS
        * </pre>
        *
-       * <code>string endlocation = 8;</code>
+       * <code>string endlocation = 10;</code>
        * @param value The endlocation to set.
        * @return This builder for chaining.
        */
@@ -5590,7 +6234,7 @@ public final class Rideshare {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         endlocation_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -5599,12 +6243,12 @@ public final class Rideshare {
        * CRS_ADDRESS
        * </pre>
        *
-       * <code>string endlocation = 8;</code>
+       * <code>string endlocation = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndlocation() {
         endlocation_ = getDefaultInstance().getEndlocation();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -5613,7 +6257,7 @@ public final class Rideshare {
        * CRS_ADDRESS
        * </pre>
        *
-       * <code>string endlocation = 8;</code>
+       * <code>string endlocation = 10;</code>
        * @param value The bytes for endlocation to set.
        * @return This builder for chaining.
        */
@@ -5622,7 +6266,7 @@ public final class Rideshare {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         endlocation_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -5633,7 +6277,7 @@ public final class Rideshare {
        * CRS_CURRENCY (customer price)
        * </pre>
        *
-       * <code>float price = 9;</code>
+       * <code>float price = 11;</code>
        * @return The price.
        */
       @java.lang.Override
@@ -5645,14 +6289,14 @@ public final class Rideshare {
        * CRS_CURRENCY (customer price)
        * </pre>
        *
-       * <code>float price = 9;</code>
+       * <code>float price = 11;</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
       public Builder setPrice(float value) {
         
         price_ = value;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -5661,42 +6305,72 @@ public final class Rideshare {
        * CRS_CURRENCY (customer price)
        * </pre>
        *
-       * <code>float price = 9;</code>
+       * <code>float price = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         price_ = 0F;
         onChanged();
         return this;
       }
 
-      private int customerid_ ;
+      private java.lang.Object customerid_ = "";
       /**
        * <pre>
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 10;</code>
+       * <code>string customerid = 12;</code>
        * @return The customerid.
        */
-      @java.lang.Override
-      public int getCustomerid() {
-        return customerid_;
+      public java.lang.String getCustomerid() {
+        java.lang.Object ref = customerid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 10;</code>
+       * <code>string customerid = 12;</code>
+       * @return The bytes for customerid.
+       */
+      public com.google.protobuf.ByteString
+          getCustomeridBytes() {
+        java.lang.Object ref = customerid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
        * @param value The customerid to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerid(int value) {
-        
+      public Builder setCustomerid(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         customerid_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -5705,42 +6379,90 @@ public final class Rideshare {
        * CRS_ID (Reference to Usertable)
        * </pre>
        *
-       * <code>int32 customerid = 10;</code>
+       * <code>string customerid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomerid() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        customerid_ = 0;
+        customerid_ = getDefaultInstance().getCustomerid();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (Reference to Usertable)
+       * </pre>
+       *
+       * <code>string customerid = 12;</code>
+       * @param value The bytes for customerid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomeridBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        customerid_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
 
-      private int bookingref_ ;
+      private java.lang.Object bookingref_ = "";
       /**
        * <pre>
        * CRS_ID (reference to RideshareOffer)
        * </pre>
        *
-       * <code>int32 bookingref = 11;</code>
+       * <code>string bookingref = 13;</code>
        * @return The bookingref.
        */
-      @java.lang.Override
-      public int getBookingref() {
-        return bookingref_;
+      public java.lang.String getBookingref() {
+        java.lang.Object ref = bookingref_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bookingref_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * CRS_ID (reference to RideshareOffer)
        * </pre>
        *
-       * <code>int32 bookingref = 11;</code>
+       * <code>string bookingref = 13;</code>
+       * @return The bytes for bookingref.
+       */
+      public com.google.protobuf.ByteString
+          getBookingrefBytes() {
+        java.lang.Object ref = bookingref_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bookingref_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
        * @param value The bookingref to set.
        * @return This builder for chaining.
        */
-      public Builder setBookingref(int value) {
-        
+      public Builder setBookingref(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         bookingref_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -5749,12 +6471,30 @@ public final class Rideshare {
        * CRS_ID (reference to RideshareOffer)
        * </pre>
        *
-       * <code>int32 bookingref = 11;</code>
+       * <code>string bookingref = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearBookingref() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        bookingref_ = 0;
+        bookingref_ = getDefaultInstance().getBookingref();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CRS_ID (reference to RideshareOffer)
+       * </pre>
+       *
+       * <code>string bookingref = 13;</code>
+       * @param value The bytes for bookingref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingrefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        bookingref_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -5827,10 +6567,16 @@ public final class Rideshare {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
-    int getRideId();
+    java.lang.String getRideId();
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
 
     /**
      * <code>string message = 2;</code>
@@ -5857,6 +6603,7 @@ public final class Rideshare {
       super(builder);
     }
     private RideShareIDRequest() {
+      rideId_ = "";
       message_ = "";
     }
 
@@ -5886,14 +6633,42 @@ public final class Rideshare {
     }
 
     public static final int RIDEID_FIELD_NUMBER = 1;
-    private int rideId_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
     /**
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
     @java.lang.Override
-    public int getRideId() {
-      return rideId_;
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -5949,8 +6724,8 @@ public final class Rideshare {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rideId_ != 0) {
-        output.writeInt32(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -5964,9 +6739,8 @@ public final class Rideshare {
       if (size != -1) return size;
 
       size = 0;
-      if (rideId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -5986,8 +6760,8 @@ public final class Rideshare {
       }
       RideShareService.grpc.Rideshare.RideShareIDRequest other = (RideShareService.grpc.Rideshare.RideShareIDRequest) obj;
 
-      if (getRideId()
-          != other.getRideId()) return false;
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -6002,7 +6776,7 @@ public final class Rideshare {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RIDEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRideId();
+      hash = (53 * hash) + getRideId().hashCode();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -6134,7 +6908,7 @@ public final class Rideshare {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        rideId_ = 0;
+        rideId_ = "";
         message_ = "";
         return this;
       }
@@ -6221,8 +6995,10 @@ public final class Rideshare {
 
       public Builder mergeFrom(RideShareService.grpc.Rideshare.RideShareIDRequest other) {
         if (other == RideShareService.grpc.Rideshare.RideShareIDRequest.getDefaultInstance()) return this;
-        if (other.getRideId() != 0) {
-          setRideId(other.getRideId());
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -6255,11 +7031,11 @@ public final class Rideshare {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                rideId_ = input.readInt32();
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 18: {
                 message_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
@@ -6282,34 +7058,74 @@ public final class Rideshare {
       }
       private int bitField0_;
 
-      private int rideId_ ;
+      private java.lang.Object rideId_ = "";
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return The rideId.
        */
-      @java.lang.Override
-      public int getRideId() {
-        return rideId_;
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
        * @param value The rideId to set.
        * @return This builder for chaining.
        */
-      public Builder setRideId(int value) {
-        
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         rideId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        rideId_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6454,10 +7270,16 @@ public final class Rideshare {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
-    int getRideId();
+    java.lang.String getRideId();
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    com.google.protobuf.ByteString
+        getRideIdBytes();
 
     /**
      * <code>bool successful = 2;</code>
@@ -6490,6 +7312,7 @@ public final class Rideshare {
       super(builder);
     }
     private RideShareIDResponse() {
+      rideId_ = "";
       message_ = "";
     }
 
@@ -6519,14 +7342,42 @@ public final class Rideshare {
     }
 
     public static final int RIDEID_FIELD_NUMBER = 1;
-    private int rideId_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rideId_ = "";
     /**
-     * <code>int32 rideId = 1;</code>
+     * <code>string rideId = 1;</code>
      * @return The rideId.
      */
     @java.lang.Override
-    public int getRideId() {
-      return rideId_;
+    public java.lang.String getRideId() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rideId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rideId = 1;</code>
+     * @return The bytes for rideId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRideIdBytes() {
+      java.lang.Object ref = rideId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rideId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SUCCESSFUL_FIELD_NUMBER = 2;
@@ -6593,8 +7444,8 @@ public final class Rideshare {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rideId_ != 0) {
-        output.writeInt32(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rideId_);
       }
       if (successful_ != false) {
         output.writeBool(2, successful_);
@@ -6611,9 +7462,8 @@ public final class Rideshare {
       if (size != -1) return size;
 
       size = 0;
-      if (rideId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, rideId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rideId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rideId_);
       }
       if (successful_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -6637,8 +7487,8 @@ public final class Rideshare {
       }
       RideShareService.grpc.Rideshare.RideShareIDResponse other = (RideShareService.grpc.Rideshare.RideShareIDResponse) obj;
 
-      if (getRideId()
-          != other.getRideId()) return false;
+      if (!getRideId()
+          .equals(other.getRideId())) return false;
       if (getSuccessful()
           != other.getSuccessful()) return false;
       if (!getMessage()
@@ -6655,7 +7505,7 @@ public final class Rideshare {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RIDEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRideId();
+      hash = (53 * hash) + getRideId().hashCode();
       hash = (37 * hash) + SUCCESSFUL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSuccessful());
@@ -6790,7 +7640,7 @@ public final class Rideshare {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        rideId_ = 0;
+        rideId_ = "";
         successful_ = false;
         message_ = "";
         return this;
@@ -6881,8 +7731,10 @@ public final class Rideshare {
 
       public Builder mergeFrom(RideShareService.grpc.Rideshare.RideShareIDResponse other) {
         if (other == RideShareService.grpc.Rideshare.RideShareIDResponse.getDefaultInstance()) return this;
-        if (other.getRideId() != 0) {
-          setRideId(other.getRideId());
+        if (!other.getRideId().isEmpty()) {
+          rideId_ = other.rideId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
         if (other.getSuccessful() != false) {
           setSuccessful(other.getSuccessful());
@@ -6918,11 +7770,11 @@ public final class Rideshare {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                rideId_ = input.readInt32();
+              case 10: {
+                rideId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 16: {
                 successful_ = input.readBool();
                 bitField0_ |= 0x00000002;
@@ -6950,34 +7802,74 @@ public final class Rideshare {
       }
       private int bitField0_;
 
-      private int rideId_ ;
+      private java.lang.Object rideId_ = "";
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return The rideId.
        */
-      @java.lang.Override
-      public int getRideId() {
-        return rideId_;
+      public java.lang.String getRideId() {
+        java.lang.Object ref = rideId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rideId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
+       * @return The bytes for rideId.
+       */
+      public com.google.protobuf.ByteString
+          getRideIdBytes() {
+        java.lang.Object ref = rideId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rideId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rideId = 1;</code>
        * @param value The rideId to set.
        * @return This builder for chaining.
        */
-      public Builder setRideId(int value) {
-        
+      public Builder setRideId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         rideId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 rideId = 1;</code>
+       * <code>string rideId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRideId() {
+        rideId_ = getDefaultInstance().getRideId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        rideId_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rideId = 1;</code>
+       * @param value The bytes for rideId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRideIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rideId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7178,10 +8070,6 @@ public final class Rideshare {
     int getAvailableSeats();
   }
   /**
-   * <pre>
-   *added test to avoid duplicate implementation of CreateRideShareRequest method and message
-   * </pre>
-   *
    * Protobuf type {@code CreateRideShareRequestTest}
    */
   public static final class CreateRideShareRequestTest extends
@@ -7460,10 +8348,6 @@ public final class Rideshare {
       return builder;
     }
     /**
-     * <pre>
-     *added test to avoid duplicate implementation of CreateRideShareRequest method and message
-     * </pre>
-     *
      * Protobuf type {@code CreateRideShareRequestTest}
      */
     public static final class Builder extends
@@ -11624,67 +12508,68 @@ public final class Rideshare {
       "\n\017Rideshare.proto\032\033google/protobuf/empty" +
       ".proto\":\n\022RideshareOfferList\022$\n\013result_l" +
       "ist\030\001 \003(\0132\017.RideshareOffer\"\364\001\n\016Rideshare" +
-      "Offer\022\016\n\006rideId\030\001 \001(\005\022\027\n\017availablespaces" +
+      "Offer\022\016\n\006rideId\030\001 \001(\t\022\027\n\017availablespaces" +
       "\030\002 \001(\005\022\016\n\006status\030\003 \001(\t\022\021\n\tstartdate\030\004 \001(" +
       "\t\022\021\n\tstarttime\030\005 \001(\t\022\025\n\rstartlocation\030\006 " +
       "\001(\t\022\017\n\007enddate\030\007 \001(\t\022\017\n\007endtime\030\010 \001(\t\022\023\n" +
       "\013endlocation\030\t \001(\t\022\r\n\005price\030\n \001(\002\022\022\n\ncus" +
-      "tomerid\030\013 \001(\005\022\022\n\nbookingref\030\014 \001(\005\">\n\024Rid" +
+      "tomerid\030\013 \001(\t\022\022\n\nbookingref\030\014 \001(\t\">\n\024Rid" +
       "eShareRequestList\022&\n\013result_list\030\001 \003(\0132\021" +
-      ".RideshareRequest\"\335\001\n\020RideshareRequest\022\016" +
-      "\n\006rideId\030\001 \001(\005\022\016\n\006status\030\002 \001(\t\022\021\n\tstartd" +
+      ".RideshareRequest\"\202\002\n\020RideshareRequest\022\016" +
+      "\n\006rideId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\021\n\tstartd" +
       "ate\030\003 \001(\t\022\021\n\tstarttime\030\004 \001(\t\022\025\n\rstartloc" +
-      "ation\030\005 \001(\t\022\017\n\007enddate\030\006 \001(\t\022\017\n\007endtime\030" +
-      "\007 \001(\t\022\023\n\013endlocation\030\010 \001(\t\022\r\n\005price\030\t \001(" +
-      "\002\022\022\n\ncustomerid\030\n \001(\005\022\022\n\nbookingref\030\013 \001(" +
-      "\005\"5\n\022RideShareIDRequest\022\016\n\006rideId\030\001 \001(\005\022" +
-      "\017\n\007message\030\002 \001(\t\"J\n\023RideShareIDResponse\022" +
-      "\016\n\006rideId\030\001 \001(\005\022\022\n\nsuccessful\030\002 \001(\010\022\017\n\007m" +
-      "essage\030\003 \001(\t\"^\n\032CreateRideShareRequestTe" +
-      "st\022\016\n\006car_id\030\001 \001(\005\022\027\n\017driver_username\030\002 " +
-      "\001(\t\022\027\n\017available_seats\030\003 \001(\005\"C\n\024JoinRide" +
-      "ShareRequest\022\017\n\007ride_id\030\001 \001(\005\022\032\n\022passeng" +
-      "er_username\030\002 \001(\t\"\'\n\025ListRideSharesReque" +
-      "st\022\016\n\006car_id\030\001 \001(\005\"U\n\021RideShareResponse\022" +
-      "\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\036\n\nrid" +
-      "e_share\030\003 \001(\0132\n.RideShare\"r\n\tRideShare\022\017" +
-      "\n\007ride_id\030\001 \001(\005\022\016\n\006car_id\030\002 \001(\005\022\027\n\017drive" +
-      "r_username\030\003 \001(\t\022\027\n\017available_seats\030\004 \001(" +
-      "\005\022\022\n\npassengers\030\005 \003(\t\"8\n\025RideShareListRe" +
-      "sponse\022\037\n\013ride_shares\030\001 \003(\0132\n.RideShare2" +
-      "\342\t\n\020RideShareService\022B\n\017CreateRideShare\022" +
-      "\033.CreateRideShareRequestTest\032\022.RideShare" +
-      "Response\022:\n\rJoinRideShare\022\025.JoinRideShar" +
-      "eRequest\032\022.RideShareResponse\022@\n\016ListRide" +
-      "Shares\022\026.ListRideSharesRequest\032\026.RideSha" +
-      "reListResponse\022;\n\024CreateRideShareOffer\022\017" +
-      ".RideshareOffer\032\022.RideShareResponse\022:\n\022R" +
-      "eadRideShareOffer\022\023.RideShareIDRequest\032\017" +
-      ".RideshareOffer\022D\n\025ReadAllRideShareOffer" +
-      "\022\026.google.protobuf.Empty\032\023.RideshareOffe" +
-      "rList\022;\n\024UpdateRideShareOffer\022\017.Rideshar" +
-      "eOffer\032\022.RideShareResponse\022?\n\024DeleteRide" +
-      "ShareOffer\022\023.RideShareIDRequest\032\022.RideSh" +
-      "areResponse\022?\n\026CreateRideShareRequest\022\021." +
-      "RideshareRequest\032\022.RideShareResponse\022>\n\024" +
-      "ReadRideShareRequest\022\023.RideShareIDReques" +
-      "t\032\021.RideshareRequest\022H\n\027ReadAllRideShare" +
-      "Request\022\026.google.protobuf.Empty\032\025.RideSh" +
-      "areRequestList\022?\n\026UpdateRideShareRequest" +
-      "\022\021.RideshareRequest\032\022.RideShareResponse\022" +
-      "A\n\026DeleteRideShareRequest\022\023.RideShareIDR" +
-      "equest\032\022.RideShareResponse\022D\n\032GetClosest" +
-      "RideShareRequest\022\021.RideshareRequest\032\023.Ri" +
-      "deshareOfferList\022I\n\035GetAllRideShareOffer" +
-      "sByUserID\022\023.RideShareIDRequest\032\023.Ridesha" +
-      "reOfferList\022M\n\037GetAllRideShareRequestsBy" +
-      "UserID\022\023.RideShareIDRequest\032\025.RideShareR" +
-      "equestList\022L\n GetAllRideShareOffersByBoo" +
-      "kingID\022\023.RideShareIDRequest\032\023.RideshareO" +
-      "fferList\022R\n$GetAllRideShareRequestsByRid" +
-      "eOfferID\022\023.RideShareIDRequest\032\025.RideShar" +
-      "eRequestListB\027\n\025RideShareService.grpcb\006p" +
-      "roto3"
+      "ation\030\005 \001(\t\022\020\n\010latitude\030\006 \001(\002\022\021\n\tlongitu" +
+      "de\030\007 \001(\002\022\017\n\007enddate\030\010 \001(\t\022\017\n\007endtime\030\t \001" +
+      "(\t\022\023\n\013endlocation\030\n \001(\t\022\r\n\005price\030\013 \001(\002\022\022" +
+      "\n\ncustomerid\030\014 \001(\t\022\022\n\nbookingref\030\r \001(\t\"5" +
+      "\n\022RideShareIDRequest\022\016\n\006rideId\030\001 \001(\t\022\017\n\007" +
+      "message\030\002 \001(\t\"J\n\023RideShareIDResponse\022\016\n\006" +
+      "rideId\030\001 \001(\t\022\022\n\nsuccessful\030\002 \001(\010\022\017\n\007mess" +
+      "age\030\003 \001(\t\"^\n\032CreateRideShareRequestTest\022" +
+      "\016\n\006car_id\030\001 \001(\005\022\027\n\017driver_username\030\002 \001(\t" +
+      "\022\027\n\017available_seats\030\003 \001(\005\"C\n\024JoinRideSha" +
+      "reRequest\022\017\n\007ride_id\030\001 \001(\005\022\032\n\022passenger_" +
+      "username\030\002 \001(\t\"\'\n\025ListRideSharesRequest\022" +
+      "\016\n\006car_id\030\001 \001(\005\"U\n\021RideShareResponse\022\017\n\007" +
+      "success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\036\n\nride_s" +
+      "hare\030\003 \001(\0132\n.RideShare\"r\n\tRideShare\022\017\n\007r" +
+      "ide_id\030\001 \001(\005\022\016\n\006car_id\030\002 \001(\005\022\027\n\017driver_u" +
+      "sername\030\003 \001(\t\022\027\n\017available_seats\030\004 \001(\005\022\022" +
+      "\n\npassengers\030\005 \003(\t\"8\n\025RideShareListRespo" +
+      "nse\022\037\n\013ride_shares\030\001 \003(\0132\n.RideShare2\342\t\n" +
+      "\020RideShareService\022B\n\017CreateRideShare\022\033.C" +
+      "reateRideShareRequestTest\032\022.RideShareRes" +
+      "ponse\022:\n\rJoinRideShare\022\025.JoinRideShareRe" +
+      "quest\032\022.RideShareResponse\022@\n\016ListRideSha" +
+      "res\022\026.ListRideSharesRequest\032\026.RideShareL" +
+      "istResponse\022;\n\024CreateRideShareOffer\022\017.Ri" +
+      "deshareOffer\032\022.RideShareResponse\022:\n\022Read" +
+      "RideShareOffer\022\023.RideShareIDRequest\032\017.Ri" +
+      "deshareOffer\022D\n\025ReadAllRideShareOffer\022\026." +
+      "google.protobuf.Empty\032\023.RideshareOfferLi" +
+      "st\022;\n\024UpdateRideShareOffer\022\017.RideshareOf" +
+      "fer\032\022.RideShareResponse\022?\n\024DeleteRideSha" +
+      "reOffer\022\023.RideShareIDRequest\032\022.RideShare" +
+      "Response\022?\n\026CreateRideShareRequest\022\021.Rid" +
+      "eshareRequest\032\022.RideShareResponse\022>\n\024Rea" +
+      "dRideShareRequest\022\023.RideShareIDRequest\032\021" +
+      ".RideshareRequest\022H\n\027ReadAllRideShareReq" +
+      "uest\022\026.google.protobuf.Empty\032\025.RideShare" +
+      "RequestList\022?\n\026UpdateRideShareRequest\022\021." +
+      "RideshareRequest\032\022.RideShareResponse\022A\n\026" +
+      "DeleteRideShareRequest\022\023.RideShareIDRequ" +
+      "est\032\022.RideShareResponse\022D\n\032GetClosestRid" +
+      "eShareRequest\022\021.RideshareRequest\032\023.Rides" +
+      "hareOfferList\022I\n\035GetAllRideShareOffersBy" +
+      "UserID\022\023.RideShareIDRequest\032\023.RideshareO" +
+      "fferList\022M\n\037GetAllRideShareRequestsByUse" +
+      "rID\022\023.RideShareIDRequest\032\025.RideShareRequ" +
+      "estList\022L\n GetAllRideShareOffersByBookin" +
+      "gID\022\023.RideShareIDRequest\032\023.RideshareOffe" +
+      "rList\022R\n$GetAllRideShareRequestsByRideOf" +
+      "ferID\022\023.RideShareIDRequest\032\025.RideShareRe" +
+      "questListB\027\n\025RideShareService.grpcb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11714,7 +12599,7 @@ public final class Rideshare {
     internal_static_RideshareRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RideshareRequest_descriptor,
-        new java.lang.String[] { "RideId", "Status", "Startdate", "Starttime", "Startlocation", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref", });
+        new java.lang.String[] { "RideId", "Status", "Startdate", "Starttime", "Startlocation", "Latitude", "Longitude", "Enddate", "Endtime", "Endlocation", "Price", "Customerid", "Bookingref", });
     internal_static_RideShareIDRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_RideShareIDRequest_fieldAccessorTable = new

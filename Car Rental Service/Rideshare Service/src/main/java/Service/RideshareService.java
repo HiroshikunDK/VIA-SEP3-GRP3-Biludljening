@@ -438,26 +438,53 @@ public class RideshareService extends RideShareServiceGrpc.RideShareServiceImplB
     @Override
     public void getClosestRideShareRequest(Rideshare.RideshareRequest request, StreamObserver<Rideshare.RideshareOfferList> responseObserver) {
         try {
-            //TODO: Implement business logic for determining which offer are closest
-            List<RideShareOffer> closestOffers = rideShareOfferHibernate.readAll();
+            // Hent brugerens lokation fra request
+            double userLat = request.getLatitude();
+            double userLon = request.getLongitude();
 
-            // Convert the list of RideShareRequests to protobuf format
+            // Hent alle ride-share tilbud fra databasen
+            List<RideShareOffer> allOffers = rideShareOfferHibernate.readAll();
+
+            // Filtrer og sorter baseret på afstand
+            List<RideShareOffer> closestOffers = allOffers.stream()
+                    .filter(offer -> offer.getAvailableSpaces() > 0) // Kun tilbud med ledige pladser
+                    .sorted((o1, o2) -> {
+                        double distance1 = calculateDistance(userLat, userLon, o1.getLatitude(), o1.getLongitude());
+                        double distance2 = calculateDistance(userLat, userLon, o2.getLatitude(), o2.getLongitude());
+                        return Double.compare(distance1, distance2);
+                    })
+                    .limit(10) // Begræns til de 10 nærmeste
+                    .toList();
+
+            // Byg response i protobuf format
             Rideshare.RideshareOfferList.Builder responseBuilder = Rideshare.RideshareOfferList.newBuilder();
-            for (RideShareOffer rideShareOffer : closestOffers) {
-                responseBuilder.addResultList(convertToProtoRideShareOffer(rideShareOffer)); // Assuming you have a function for this conversion
+            for (RideShareOffer offer : closestOffers) {
+                responseBuilder.addResultList(convertToProtoRideShareOffer(offer));
             }
 
-            // Send the response
+            // Send response
             responseObserver.onNext(responseBuilder.build());
             responseObserver.onCompleted();
         } catch (Exception e) {
-            // Handle any errors and send a failure response
-            Rideshare.RideshareOfferList response = Rideshare.RideshareOfferList.newBuilder()
-                    .build();
+            // Fejlhåndtering
+            Rideshare.RideshareOfferList response = Rideshare.RideshareOfferList.newBuilder().build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
     }
+
+    // Helper: Beregn afstand mellem to punkter
+    private double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+        final int R = 6371; // Jordens radius i kilometer
+        double latDistance = Math.toRadians(lat2 - lat1);
+        double lonDistance = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c; // Afstand i kilometer
+    }
+
 
     @Override
     public void getAllRideShareOffersByUserID(Rideshare.RideShareIDRequest request, StreamObserver<Rideshare.RideshareOfferList> responseObserver) {
@@ -531,33 +558,32 @@ public class RideshareService extends RideShareServiceGrpc.RideShareServiceImplB
         }
     }
 
-
     @Override
     public void getAllRideShareRequestsByRideOfferID(Rideshare.RideShareIDRequest request, StreamObserver<Rideshare.RideShareRequestList> responseObserver) {
-
         try{
-            // Query the database for all RideShareRequests where getRideId() returns bookingref in booking table
-            List<RideShareRequest> rideShareRequests = rideShareRequestHibernate.ReadAllByRideShareRequest(request.getRideId());
+        // Query the database for all RideShareRequests where getRideId() returns bookingref in booking table
+        List<RideShareRequest> rideShareRequests = rideShareRequestHibernate.ReadAllByRideShareRequest(request.getRideId());
 
-            // Convert the collection of RideShareRequest domain objects to their protobuf counterparts
-            Rideshare.RideShareRequestList.Builder responseBuilder = Rideshare.RideShareRequestList.newBuilder();
+        // Convert the collection of RideShareRequest domain objects to their protobuf counterparts
+        Rideshare.RideShareRequestList.Builder responseBuilder = Rideshare.RideShareRequestList.newBuilder();
 
-            for (RideShareRequest rideShareRequest : rideShareRequests) {
-                // Convert each RideShareRequest to its protobuf representation
-                responseBuilder.addResultList(convertToProtoRideShareRequest(rideShareRequest));
-            }
+        for (RideShareRequest rideShareRequest : rideShareRequests) {
+            // Convert each RideShareRequest to its protobuf representation
+            responseBuilder.addResultList(convertToProtoRideShareRequest(rideShareRequest));
+        }
 
-            // Build the final response object
-            Rideshare.RideShareRequestList response = responseBuilder.build();
+        // Build the final response object
+        Rideshare.RideShareRequestList response = responseBuilder.build();
 
-            // Send the response to the client
-            responseObserver.onNext(response);
-            responseObserver.onCompleted();
+        // Send the response to the client
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
         } catch (Exception e){
             //TODO: should be refactored into a log file
             System.out.println(e.getMessage());
         }
     }
+
     //Utility function for building model to proto message
     private Rideshare.RideshareOffer convertToProtoRideShareOffer(RideShareOffer offer) {
         return Rideshare.RideshareOffer.newBuilder()

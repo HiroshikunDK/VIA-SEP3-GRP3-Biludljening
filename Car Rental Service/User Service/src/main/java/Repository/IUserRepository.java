@@ -10,5 +10,4 @@ public interface IUserRepository {
   Optional<User> getUserById(int id); // Updated method signature
 
   Optional<User> getUserByUsername(String username);
-
 }
