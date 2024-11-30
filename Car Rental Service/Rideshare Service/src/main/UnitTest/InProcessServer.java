@@ -4,6 +4,7 @@ import io.grpc.Server;
 import io.grpc.inprocess.InProcessServerBuilder;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Logger;
 
 
@@ -22,7 +23,7 @@ public class InProcessServer<T extends io.grpc.BindableService> {
         this.clazz = clazz;
     }
 
-    public void start() throws IOException, InstantiationException, IllegalAccessException {
+    public void start() throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         server = InProcessServerBuilder
                 .forName("test")
                 .directExecutor()

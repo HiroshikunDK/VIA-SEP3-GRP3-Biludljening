@@ -3,6 +3,8 @@
 
 import Model.RideShareOffer;
 import Repository.RideShareOfferHibernateImpl;
+import Repository.RideShareRequestHibernateImpl;
+import Repository.RideshareRepository;
 import RideShareService.grpc.RideShareServiceGrpc;
 import RideShareService.grpc.Rideshare;
 import RideShareService.grpc.Rideshare.RideshareOffer;
@@ -12,14 +14,19 @@ import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 
+import io.grpc.inprocess.InProcessServerBuilder;
+import io.grpc.stub.StreamObserver;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +34,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
+//For this function to work
 public class InProcessServerTest {
     private static final Logger logger = Logger.getLogger(InProcessServerTest.class.getName());
-    private RideShareOfferHibernateImpl rso = new RideShareOfferHibernateImpl(new Configuration().configure("hibernate.cfg.xml").buildSessionFactory());
+    //private final RideShareOfferHibernateImpl rso;
+
     private InProcessServer<RideshareService> inprocessServer;
     private ManagedChannel channel;
-
     private RideShareServiceGrpc.RideShareServiceBlockingStub blockingStub;
     private RideShareServiceGrpc.RideShareServiceStub asyncStub;
 
@@ -44,152 +51,104 @@ public class InProcessServerTest {
     }
 
     @Before
-    public void init() {
-        //Get test objects and add them if they dont exits
-        List<RideshareOffer> testObjects = makeTestObjectsRideShareOffers();
-        for(RideshareOffer r : testObjects){
-            try{
-            RideShareOffer rt = rso.read(r.getRideId());
-                //if the entry doesn't exist
-                if(rt.getRideId()==null){
-                    //create it
-                    rso.create(convertToRideShareOffer(r));
-                }
-            } catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-        }
-    }
+    public void before() throws Exception {
+        // Initialize the in-process server with the RideshareService implementation
+        System.out.println("Initializing the InProcessServer...");
 
-    @Test
-    public void CreateRideShareOfferTestInProcessServer() throws InterruptedException{
-        try {
-            RideshareOffer offerTest = RideshareOffer.newBuilder()
-                    .setRideId("RIDETEST")
-                    .setAvailablespaces(3)
-                    .setStatus("partially booked")
-                    .setStartdate("2024-12-01")
-                    .setStarttime("08:30:00")
-                    .setStartlocation("123 Main St, Cityville")
-                    .setEnddate("2024-12-01")
-                    .setEndtime("09:00:00")
-                    .setEndlocation("456 Elm St, Townville")
-                    .setPrice(15.50f)
-                    .setCustomerid("USER1001")
-                    .setBookingref("BOOK1234")
-                    .build();
+        inprocessServer = new InProcessServer<>(RideshareService.class); // Pass the implementation class here
+        inprocessServer.start(); // Start the server
 
-            //Rideshare blockingStub.createRideShareOffer(offerTest);
-            List<RideShareOffer> offers = rso.readAll();
-            ArrayList<String> resultString = new ArrayList<>();
-            for (Animal item : animals.getAnimalsList()) {
-                resultString.add(item.getName());
-            }
-            Assert.assertArrayEquals(testString.toArray(),resultString.toArray());
-        }catch (Exception e){
-            System.out.println();
-        }
-        finally {
-            shutdown();
-        }
-    }
+        // Delay to make sure the server has time to start
+        Thread.sleep(500); // Sleep for 500ms to allow server to initialize
+        System.out.println("In-process server started successfully");
 
-    @Test
-    public void getProductsFromAnimalTestInProcessServer() throws InterruptedException{
-        try {
-            List<Integer> testString = new ArrayList<>();
-            testString.add(100001);
-            testString.add(100002);
-
-            AniProRegistrationList products = getProductsFromAnimalTest();
-            List<Integer> resultString = new ArrayList<>();
-            for (AniProRegistration item : products.getResultListList()) {
-                resultString.add(item.getRegNr());
-            }
-
-            Assert.assertArrayEquals(testString.toArray(),resultString.toArray());
-
-        } finally {
-            shutdown();
-        }
-    }
-
-
-    /** Tracking Service GRPC getAnimalFromProductRegistation*/
-    public AnimalList getAnimalFromProductRegistationTest() {
-        AnimalList response;
-        //GRPC version of new object
-        AniProRegistration searchObj = AniProRegistration.newBuilder()
-                .setId(1)
-                .setRegNr(100001)
-                .setProductionDate("")
-                .setWeight(1)
-                .setAnimalRegNr(1)
-                .setProductRegNr(1)
+        // Create a channel for testing
+        channel = InProcessChannelBuilder.forName("test") // Use the same server name
+                .directExecutor() // Use directExecutor for synchronous calls
                 .build();
 
-        try {
-            response = blockingStub.getAnimalFromProductRegistation(searchObj);
-        } catch (StatusRuntimeException e) {
-            logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-            fail();
-            return null;
+        // Ensure that channel was created
+        if (channel == null) {
+            System.out.println("Error: channel is null after initialization.");
+        } else {
+            System.out.println("Channel created successfully.");
         }
-        return response;
-    }
 
-    /** Tracking Service GRPC getAnimalFromProductRegistation*/
-    public AniProRegistrationList getProductsFromAnimalTest() {
-        AniProRegistrationList response;
-        //GRPC version of new object
-        Animal searchObj = Animal.newBuilder()
-                .setId(1)
-                .setRegNr(101)
-                .setName("Gurli")
-                .setSpecies("Gris")
-                .setSubSpecies("Protest Svin")
-                .setBirthday("")
-                .setWeight(0)
-                .setFarmRegNr(1)
-                .build();
-
-        try {
-            response = blockingStub.getProductsFromAnimal(searchObj);
-        } catch (StatusRuntimeException e) {
-            logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-            fail();
-            return null;
-        }
-        return response;
-    }
-
-
-    @Before
-    public void beforeEachTest() throws InstantiationException, IllegalAccessException, IOException {
-        inprocessServer = new InProcessServer<RideshareService>(RideshareService.class);
-        inprocessServer.start();
-        channel = InProcessChannelBuilder
-                .forName("test")
-                .directExecutor()
-                // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
-                // needing certificates.
-                .usePlaintext()
-                .build();
+        // Create blocking and async stubs for testing the service
         blockingStub = RideShareServiceGrpc.newBlockingStub(channel);
         asyncStub = RideShareServiceGrpc.newStub(channel);
+
+        // Ensure that stubs are created
+        if (blockingStub == null || asyncStub == null) {
+            System.out.println("Error: Stubs are not initialized properly.");
+        } else {
+            System.out.println("Stubs initialized successfully.");
+        }
     }
 
-    @After
-    public void afterEachTest(){
-        channel.shutdownNow();
-        inprocessServer.stop();
+    @AfterEach
+    public void tearDown() throws Exception {
+        try {
+            System.out.println("Tearing down the test...");
+
+            // Check if channel is null before calling shutdown
+            if (channel != null) {
+                channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+                System.out.println("Channel shut down successfully.");
+            } else {
+                System.out.println("Warning: Channel is null, skipping shutdown.");
+            }
+
+            // Check if inprocessServer is null before stopping it
+            if (inprocessServer != null) {
+                inprocessServer.stop();
+                System.out.println("In-process server stopped successfully.");
+            } else {
+                System.out.println("Warning: In-process server is null, skipping shutdown.");
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error during teardown: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
-    public void shutdown() throws InterruptedException {
-        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+    @Test
+    public void testRideShareOffer() throws InterruptedException {
+
+        Rideshare.RideShareIDRequest rideShareIDRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId("RIDE12345").build();
+        Rideshare.RideShareResponse deleteResponse = blockingStub.deleteRideShareOffer(rideShareIDRequest);
+        System.out.println(deleteResponse.getMessage());
+
+
+        // Example test: Create a RideShareOffer request
+        Rideshare.RideshareOffer request = Rideshare.RideshareOffer.newBuilder()
+                .setRideId("RIDETEST4")
+                .setAvailablespaces(3)
+                .setStatus("partially booked")
+                .setStartdate("2024-12-01")
+                .setStarttime("08:30:00")
+                .setStartlocation("123 Main St, Cityville")
+                .setEnddate("2024-12-01")
+                .setEndtime("09:00:00")
+                .setEndlocation("456 Elm St, Townville")
+                .setPrice(15.50f)
+                .setCustomerid("USER1001")
+                .setBookingref("BOOK1234")
+                .build();
+
+        // Call the service method using the blockingStub
+        Rideshare.RideShareResponse response = blockingStub.createRideShareOffer(request);
+
+        System.out.println(response.getSuccess() + response.getMessage());
+        // Assert the response
+        assertNotNull(response);
+        assertTrue(response.getSuccess());
     }
+
 
     private RideShareOffer convertToRideShareOffer(RideshareOffer offerProto) {
+        System.out.println("convertToRideShareOffer");
         return new RideShareOffer(
                 offerProto.getRideId(),
                 offerProto.getAvailablespaces(),
@@ -207,6 +166,7 @@ public class InProcessServerTest {
     }
 
     public List<RideshareOffer> makeTestObjectsRideShareOffers() {
+        System.out.println("makeTestObjectsRideShareOffers");
         List<RideshareOffer> rideshareOffers = new ArrayList<>();
 
         // Adding 10 RideshareOffer examples using gRPC generated setters
