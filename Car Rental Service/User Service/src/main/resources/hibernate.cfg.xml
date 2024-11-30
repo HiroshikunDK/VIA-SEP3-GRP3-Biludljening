@@ -2,11 +2,14 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property name="hibernate.connection.url">
-            jdbc:sqlite:Database\UserService.db
+            jdbc:sqlite:C:\Users\adres\RiderProjects\VIA-SEP3-GRP3-Biludljening\Car Rental Service\Database\UserService.db
         </property>
+
+
 
         <!-- JDBC connection pool settings -->
         <property name="hibernate.c3p0.min_size">5</property>

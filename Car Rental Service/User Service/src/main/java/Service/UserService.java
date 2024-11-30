@@ -115,4 +115,76 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
             .setPhonenr(user.getPhonenr())
             .build();
   }
+  @Override
+  public void deleteUser(UserRequest request, StreamObserver<UserResponse> responseObserver) {
+    try {
+      boolean success = userRepository.deleteUserById(request.getId());
+      UserResponse response = UserResponse.newBuilder()
+          .setSuccess(success)
+          .setMessage(success ? "User deleted successfully." : "User not found.")
+          .build();
+
+      responseObserver.onNext(response);
+    } catch (Exception e) {
+      UserResponse response = UserResponse.newBuilder()
+          .setSuccess(false)
+          .setMessage("An error occurred: " + e.getMessage())
+          .build();
+      responseObserver.onNext(response);
+    } finally {
+      responseObserver.onCompleted();
+    }
+  }
+
+  @Override public void updateUser(UserOuterClass.User request,
+      StreamObserver<UserResponse> responseObserver)
+  {
+    try {
+      // Find den eksisterende bruger baseret på ID
+      Optional<User> existingUserOptional = userRepository.getUserByUsername(request.getUsername());
+
+      if (existingUserOptional.isPresent()) {
+        User existingUser = existingUserOptional.get();
+
+        // Opdater de nødvendige felter
+        existingUser.setUsername(request.getUsername());
+        existingUser.setEmail(request.getEmail());
+        existingUser.setUserFirstname(request.getUserFirstname());
+        existingUser.setUserLastname(request.getUserLastname());
+        existingUser.setTitle(request.getTitle());
+        existingUser.setPhonenr(request.getPhonenr());
+
+        // Gem ændringerne
+        Optional<User> updatedUser = userRepository.updateUser(existingUser);
+
+        UserResponse response = UserResponse.newBuilder()
+            .setSuccess(true)
+            .setMessage("User updated successfully.")
+            .setUser(convertToProtoUser(updatedUser.get())) // Konverter til ProtoUser
+            .build();
+        responseObserver.onNext(response);
+      } else {
+        // Hvis brugeren ikke findes
+        UserResponse response = UserResponse.newBuilder()
+            .setSuccess(false)
+            .setMessage("User not found.")
+            .build();
+        responseObserver.onNext(response);
+      }
+    } catch (Exception e) {
+      // Håndter fejl
+      UserResponse response = UserResponse.newBuilder()
+          .setSuccess(false)
+          .setMessage("An error occurred: " + e.getMessage())
+          .build();
+      responseObserver.onNext(response);
+    } finally {
+      responseObserver.onCompleted();
+    }
+  }
+
+
+
+
+
 }

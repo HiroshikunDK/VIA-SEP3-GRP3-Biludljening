@@ -13,6 +13,9 @@ service UserService {
 
   // Hent brugerdata baseret på ID
   rpc GetUserById (UserRequest) returns (UserResponse);
+
+  rpc DeleteUser (UserRequest) returns (UserResponse);
+  rpc UpdateUser (User) returns (UserResponse);
 }
 
 // Bruges kun til at registrere en bruger uden ID

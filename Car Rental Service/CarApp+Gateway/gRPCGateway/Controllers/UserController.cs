@@ -20,24 +20,36 @@ public class UserController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto request)
     {
-        // Brug den korrekte protokollbesked
-        var grpcRequest = new RegisterUserRequest()
+        try
         {
-            UserFirstname = request.UserFirstname,
-            UserLastname = request.UserLastname,
-            Title = request.Title,
-            Email = request.Email,
-            Phonenr = request.Phonenr,
-            Username = request.Username,
-            Password = request.Password,
-            Role = "Customer"
-        };
+            var grpcRequest = new RegisterUserRequest
+            {
+                UserFirstname = request.UserFirstname,
+                UserLastname = request.UserLastname,
+                Title = request.Title,
+                Email = request.Email,
+                Phonenr = request.Phonenr,
+                Username = request.Username,
+                Password = request.Password,
+                Role = "Customer"
+            };
 
-        var response = await _userClient.RegisterUserAsync(grpcRequest);
+            var response = await _userClient.RegisterUserAsync(grpcRequest);
 
-        return Ok(new { response.Message, response.Success });
+            if (response.Success)
+            {
+                return Ok(new { response.Message });
+            }
+            else
+            {
+                return BadRequest(new { response.Message });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
-
 
 
     [HttpPost("login")]
@@ -56,22 +68,56 @@ public class UserController : ControllerBase
         return Ok(response);
     }
 
-    /*
-    [HttpPut("update")]
-    [Authorize(Roles = "Admin")] 
+    
+    [HttpPut("updateUser")]
     public async Task<IActionResult> UpdateUser([FromBody] User request)
     {
-        var response = await _userClient.UpdateUserAsync(request);
-        return Ok(response);
+        try
+        {
+            var grpcResponse = await _userClient.UpdateUserAsync(new User()
+            {
+                UserFirstname = request.UserFirstname,
+                UserLastname = request.UserLastname,
+                Title = request.Title,
+                Email = request.Email,
+                Phonenr = request.Phonenr,
+                Username = request.Username,
+                Password = request.Password,
+            });
+
+            if (grpcResponse.Success)
+            {
+                return Ok(new { Message = grpcResponse.Message });
+            }
+            else
+            {
+                return BadRequest(new { Message = grpcResponse.Message });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
 
+    
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Admin")] 
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteUser(int id)
     {
         var request = new UserRequest { Id = id };
+    
         var response = await _userClient.DeleteUserAsync(request);
+
+        if (response == null)
+        {
+            return BadRequest("Failed to delete user.");
+        }
+
         return Ok(response);
     }
-    */
+
+
+    
+    
 }

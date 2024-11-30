@@ -1,6 +1,7 @@
 package Repository;
 
 import Model.User;
+import UserService.grpc.UserOuterClass;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 
@@ -53,4 +54,51 @@ public class UserRepository implements IUserRepository {
       throw new RuntimeException("Error retrieving user by username", e);
     }
   }
+
+  @Override public boolean deleteUserById(int id) {
+    try {
+      entityManager.getTransaction().begin();
+      User user = entityManager.find(User.class, id);
+      if (user != null) {
+        entityManager.remove(user);
+        entityManager.getTransaction().commit();
+        return true;
+      } else {
+        entityManager.getTransaction().rollback();
+        return false;
+      }
+    } catch (Exception e) {
+      if (entityManager.getTransaction().isActive()) {
+        entityManager.getTransaction().rollback();
+      }
+      throw new RuntimeException("Error deleting user", e);
+    }
+  }
+
+  @Override public Optional<User> updateUser(User user) {
+    try {
+      entityManager.getTransaction().begin();
+      User existingUser = entityManager.find(User.class, user.getId());
+      if (existingUser != null) {
+        existingUser.setUsername(user.getUsername());
+        existingUser.setEmail(user.getEmail());
+        existingUser.setRole(user.getRole());
+        existingUser.setUserFirstname(user.getUserFirstname());
+        existingUser.setUserLastname(user.getUserLastname());
+        existingUser.setTitle(user.getTitle());
+        existingUser.setPhonenr(user.getPhonenr());
+        entityManager.getTransaction().commit();
+        return Optional.of(existingUser);
+      } else {
+        entityManager.getTransaction().rollback();
+        return Optional.empty();
+      }
+    } catch (Exception e) {
+      if (entityManager.getTransaction().isActive()) {
+        entityManager.getTransaction().rollback();
+      }
+      throw new RuntimeException("Error updating user", e);
+    }
+  }
+
 }

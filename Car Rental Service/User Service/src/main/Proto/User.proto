@@ -5,14 +5,15 @@ option java_package = "UserService.grpc";
 package userservice;
 
 service UserService {
-  // Registrér en ny bruger
   rpc RegisterUser (RegisterUserRequest) returns (UserResponse);
 
-  // Login for eksisterende brugere
   rpc LoginUser (LoginRequest) returns (LoginResponse);
 
-  // Hent brugerdata baseret på ID
   rpc GetUserById (UserRequest) returns (UserResponse);
+
+  rpc DeleteUser (UserRequest) returns (UserResponse);
+  rpc UpdateUser (User) returns (UserResponse);
+
 }
 
 // Bruges kun til at registrere en bruger uden ID
@@ -25,6 +26,7 @@ message RegisterUserRequest {
   string username = 6;     // Brugerens brugernavn
   string password = 7;     // Brugerens adgangskode
   string role = 8;         // Brugerens rolle (fx Customer, Admin)
+
 }
 
 message UserRequest {
@@ -58,3 +60,5 @@ message UserResponse {
   string message = 2;    // Statusbesked
   User user = 3;         // Brugerdata (returneres ved succes)
 }
+
+

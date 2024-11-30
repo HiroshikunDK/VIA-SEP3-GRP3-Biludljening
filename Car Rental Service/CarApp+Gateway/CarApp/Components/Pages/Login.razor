@@ -21,6 +21,9 @@
     </div>
 
     <button type="submit">Login</button>
+
+    <!-- Navigation Button -->
+    
 </EditForm>
 
 @if (loginMessage != null)
@@ -69,5 +72,6 @@
         {
             loginMessage = $"Error: {ex.Message}";
         }
-    }
+        
+        }
 }

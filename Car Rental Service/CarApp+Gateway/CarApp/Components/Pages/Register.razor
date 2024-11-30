@@ -84,7 +84,7 @@
             else
             {
                 var errorResponse = await response.Content.ReadAsStringAsync();
-                registrationMessage = $"Registration failed: {errorResponse}";
+                registrationMessage = $"Registration failed: {errorResponse} ";
             }
         }
         catch (Exception ex)

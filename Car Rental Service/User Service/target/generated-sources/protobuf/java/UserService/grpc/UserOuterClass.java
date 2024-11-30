@@ -6730,13 +6730,16 @@ public final class UserOuterClass {
       "e\030\007 \001(\t\022\020\n\010password\030\010 \001(\t\022\014\n\004role\030\t \001(\t\"" +
       "Q\n\014UserResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mess" +
       "age\030\002 \001(\t\022\037\n\004user\030\003 \001(\0132\021.userservice.Us" +
-      "er2\342\001\n\013UserService\022K\n\014RegisterUser\022 .use" +
+      "er2\341\002\n\013UserService\022K\n\014RegisterUser\022 .use" +
       "rservice.RegisterUserRequest\032\031.userservi" +
       "ce.UserResponse\022B\n\tLoginUser\022\031.userservi" +
       "ce.LoginRequest\032\032.userservice.LoginRespo" +
       "nse\022B\n\013GetUserById\022\030.userservice.UserReq" +
-      "uest\032\031.userservice.UserResponseB\022\n\020UserS" +
-      "ervice.grpcb\006proto3"
+      "uest\032\031.userservice.UserResponse\022A\n\nDelet" +
+      "eUser\022\030.userservice.UserRequest\032\031.userse" +
+      "rvice.UserResponse\022:\n\nUpdateUser\022\021.users" +
+      "ervice.User\032\031.userservice.UserResponseB\022" +
+      "\n\020UserService.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

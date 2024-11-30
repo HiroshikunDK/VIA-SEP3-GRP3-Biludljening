@@ -1,0 +1,48 @@
+﻿@page "/manageusers"
+@using Microsoft.AspNetCore.Authorization
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<h3>Manage Users</h3>
+
+<AuthorizeView Roles="admin">
+    <Authorized>
+        <h4>Welcome, admin!</h4>
+
+        <p>You can manage users here.</p>
+
+        <input @bind="userIdToDelete" type="number" placeholder="Enter User ID" />
+
+        <button @onclick="DeleteUser">Delete User</button>
+
+        <button @onclick="NavigateToUpdateUser">Update User</button>
+  
+
+@code {
+    private int userIdToDelete; 
+
+    private async Task DeleteUser()
+    {
+        var response = await Http.DeleteAsync($"api/users/{userIdToDelete}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine("User deleted successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Failed to delete user.");
+        }
+    }
+
+    private void NavigateToUpdateUser()
+    {
+        Navigation.NavigateTo($"/updateuser");
+    }
+    
+}
+    </Authorized>
+    <NotAuthorized>
+        <h1>You do not have permission to view this content.</h1>
+    </NotAuthorized>
+</AuthorizeView>
