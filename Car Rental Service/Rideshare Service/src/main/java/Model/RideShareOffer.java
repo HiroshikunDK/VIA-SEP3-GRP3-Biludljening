@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "rideshares")
+@Table(name = "ridesharesOffer")
 public class RideShareOffer{
 
     @Id
@@ -32,6 +32,7 @@ public class RideShareOffer{
     private String customerId; // Reference to User Table
     @Column(name = "booking_ref")
     private String bookingRef; //Reference to car booking table
+
     @Column(name = "latitude")
     private double latitude;
     @Column(name = "longitude")

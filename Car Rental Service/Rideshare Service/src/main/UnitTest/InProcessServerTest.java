@@ -116,14 +116,16 @@ public class InProcessServerTest {
     @Test
     public void testRideShareOffer() throws InterruptedException {
 
-        Rideshare.RideShareIDRequest rideShareIDRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId("RIDE12345").build();
+        //Delete if the object exist in
+        String testId = "RIDE12345";
+        Rideshare.RideShareIDRequest rideShareIDRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId(testId).build();
         Rideshare.RideShareResponse deleteResponse = blockingStub.deleteRideShareOffer(rideShareIDRequest);
-        System.out.println(deleteResponse.getMessage());
+        System.out.println("Delete response is: " + deleteResponse.getMessage());
 
 
         // Example test: Create a RideShareOffer request
         Rideshare.RideshareOffer request = Rideshare.RideshareOffer.newBuilder()
-                .setRideId("RIDETEST4")
+                .setRideId(testId)
                 .setAvailablespaces(3)
                 .setStatus("partially booked")
                 .setStartdate("2024-12-01")
