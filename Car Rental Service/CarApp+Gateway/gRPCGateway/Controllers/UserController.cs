@@ -116,6 +116,80 @@ public class UserController : ControllerBase
 
         return Ok(response);
     }
+    
+    [HttpGet("profile")] 
+public async Task<IActionResult> GetCurrentUserProfile()
+{
+    try
+    {
+        var username = User.Identity?.Name;
+
+        var grpcRequest = new UserRequest { Username = username };
+        var grpcResponse = await _userClient.GetUserByUsernameAsync(grpcRequest);
+
+        if (!grpcResponse.Success)
+        {
+            return NotFound(new { Message = "User not found." });
+        }
+
+        var userDto = new UpdateUserDTO
+        {
+            UserFirstname = grpcResponse.User.UserFirstname,
+            UserLastname = grpcResponse.User.UserLastname,
+            Title = grpcResponse.User.Title,
+            Email = grpcResponse.User.Email,
+            Phonenr = grpcResponse.User.Phonenr,
+            Username = grpcResponse.User.Username
+        };
+
+        return Ok(userDto);
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+    }
+}
+
+[HttpPut("profile")]
+public async Task<IActionResult> UpdateCurrentUserProfile([FromBody] UpdateUserDTO request)
+{
+    try
+    {
+        var username = User.Identity?.Name;
+
+        // Ensure that the user can only update their own profile
+        if (username != request.Username)
+        {
+            return Forbid("You are not authorized to update this profile.");
+        }
+
+        var grpcRequest = new User
+        {
+            UserFirstname = request.UserFirstname,
+            UserLastname = request.UserLastname,
+            Title = request.Title,
+            Email = request.Email,
+            Phonenr = request.Phonenr,
+            Username = username,
+            Password = string.IsNullOrWhiteSpace(request.Password)
+                ? null
+                : request.Password // Optional password update
+        };
+
+        var grpcResponse = await _userClient.UpdateUserAsync(grpcRequest);
+
+        if (grpcResponse.Success)
+        {
+            return Ok(new { Message = grpcResponse.Message });
+        }
+
+        return BadRequest(new { Message = grpcResponse.Message });
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+    }
+}
 
 
     

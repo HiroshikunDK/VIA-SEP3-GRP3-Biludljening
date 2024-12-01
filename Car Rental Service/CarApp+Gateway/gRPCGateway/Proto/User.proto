@@ -15,7 +15,11 @@ service UserService {
   rpc GetUserById (UserRequest) returns (UserResponse);
 
   rpc DeleteUser (UserRequest) returns (UserResponse);
+  
   rpc UpdateUser (User) returns (UserResponse);
+  
+  // Customer Fetch Profile Information
+  rpc GetUserByUsername (UserRequest) returns (UserResponse);
 }
 
 // Bruges kun til at registrere en bruger uden ID
@@ -32,6 +36,7 @@ message RegisterUserRequest {
 
 message UserRequest {
   int32 id = 1;         // User's unique ID
+  string username =2;
 }
 
 message LoginRequest {

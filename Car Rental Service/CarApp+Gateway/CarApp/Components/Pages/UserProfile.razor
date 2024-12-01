@@ -1,0 +1,89 @@
+﻿@page "/userprofile"
+@using Shared.Dto
+@using System.Net.Http.Json
+@inject HttpClient HttpClient
+
+<h3>User Profile</h3>
+
+<EditForm Model="userProfile" OnValidSubmit="HandleUpdate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>First Name:</label>
+        <InputText @bind-Value="userProfile.UserFirstname" />
+    </div>
+
+    <div>
+        <label>Last Name:</label>
+        <InputText @bind-Value="userProfile.UserLastname" />
+    </div>
+
+    <div>
+        <label>Title:</label>
+        <InputText @bind-Value="userProfile.Title" />
+    </div>
+
+    <div>
+        <label>Phone Number:</label>
+        <InputNumber @bind-Value="userProfile.Phonenr" />
+    </div>
+
+    <div>
+        <label>Username:</label>
+        <InputText @bind-Value="userProfile.Username" readonly />
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <InputText @bind-Value="userProfile.Email" />
+    </div>
+
+    <button type="submit">Save Changes</button>
+</EditForm>
+
+@if (updateMessage != null)
+{
+    <p>@updateMessage</p>
+}
+
+@code {
+    private UpdateUserDTO userProfile = new UpdateUserDTO();
+    private string updateMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var response = await HttpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
+            if (response != null)
+            {
+                userProfile = response;
+            }
+        }
+        catch (Exception ex)
+        {
+            updateMessage = $"Failed to load profile: {ex.Message}";
+        }
+    }
+
+    private async Task HandleUpdate()
+    {
+        try
+        {
+            var response = await HttpClient.PutAsJsonAsync("api/user/profile", userProfile);
+            if (response.IsSuccessStatusCode)
+            {
+                updateMessage = "Profile updated successfully.";
+            }
+            else
+            {
+                updateMessage = "Failed to update profile.";
+            }
+        }
+        catch (Exception ex)
+        {
+            updateMessage = $"An error occurred: {ex.Message}";
+        }
+    }
+}
