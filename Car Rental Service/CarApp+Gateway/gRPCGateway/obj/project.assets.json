@@ -1206,19 +1206,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nebul\\.nuget\\packages\\": {}
+    "/Users/apogultekin/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\gRPCGateway\\gRPCGateway.csproj",
+      "projectUniqueName": "/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Project/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/gRPCGateway/gRPCGateway.csproj",
       "projectName": "gRPCGateway",
-      "projectPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\gRPCGateway\\gRPCGateway.csproj",
-      "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\gRPCGateway\\obj\\",
+      "projectPath": "/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Project/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/gRPCGateway/gRPCGateway.csproj",
+      "packagesPath": "/Users/apogultekin/.nuget/packages/",
+      "outputPath": "/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Project/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/gRPCGateway/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/apogultekin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1230,8 +1231,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\Nebul\\Desktop\\SEP3 Proof of Concept\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj"
+            "/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Project/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/Shared/Shared.csproj": {
+              "projectPath": "/Users/apogultekin/Library/CloudStorage/OneDrive-ViaUC/Skole_/3 semester/SEP3/Project/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/Shared/Shared.csproj"
             }
           }
         }
@@ -1293,7 +1294,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
