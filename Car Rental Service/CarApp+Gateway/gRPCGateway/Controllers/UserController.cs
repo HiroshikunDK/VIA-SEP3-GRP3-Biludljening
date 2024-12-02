@@ -1,4 +1,4 @@
-﻿﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Userservice;

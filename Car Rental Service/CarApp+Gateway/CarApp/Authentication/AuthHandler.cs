@@ -14,26 +14,41 @@ public class AuthHandler : DelegatingHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
+        // Only try JavaScript interop if we are in an interactive environment
+        string token = null;
+
         if (_jsRuntime is IJSInProcessRuntime jsInProcessRuntime)
         {
-            // When JS Runtime is available for immediate access
-            var token = jsInProcessRuntime.Invoke<string>("localStorage.getItem", "authToken");
-
-            if (!string.IsNullOrEmpty(token))
-            {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            }
+            // Safe interop for interactive environments
+            token = jsInProcessRuntime.Invoke<string>("localStorage.getItem", "authToken");
         }
-        else
+        else if (!_jsRuntime.IsJSInteropRestricted())
         {
-            // Async fetch for scenarios like prerendering
-            var token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
-            if (!string.IsNullOrEmpty(token))
-            {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            }
+            // Asynchronous interop for server-side interactive environments
+            token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
+        }
+
+        if (!string.IsNullOrEmpty(token))
+        {
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
         return await base.SendAsync(request, cancellationToken);
+    }
+}
+
+public static class JSInteropExtensions
+{
+    public static bool IsJSInteropRestricted(this IJSRuntime jsRuntime)
+    {
+        // Checks if the JS runtime is restricted (e.g., during static rendering)
+        try
+        {
+            return jsRuntime is not IJSInProcessRuntime;
+        }
+        catch
+        {
+            return true; // Assume restricted if the check fails
+        }
     }
 }

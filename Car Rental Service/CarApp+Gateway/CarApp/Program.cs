@@ -2,6 +2,8 @@ using CarApp.Components;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using CarApp.Authentication;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace CarApp;
 
@@ -14,7 +16,15 @@ public class Program
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
-        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002") });
+        builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+        builder.Services.AddScoped<AuthHandler>();
+        builder.Services.AddHttpClient("AuthorizedClient", client =>
+        {
+            client.BaseAddress = new Uri("http://localhost:5002");
+        }).AddHttpMessageHandler<AuthHandler>();
+
+        builder.Services.AddAuthorizationCore();
+
 
         // Configure JWT Authentication
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -48,10 +58,11 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
-        app.UseAuthentication();
-        app.UseAuthorization();
+        app.UseRouting();         
+        
+        app.UseAuthentication();  
+        app.UseAuthorization();   
 
-        app.UseRouting();
         app.UseAntiforgery();
         
         app.MapRazorComponents<App>()

@@ -12,11 +12,12 @@
     <p>Hello, @username!</p>
     <p>Your role: @role</p>
     <p>You are authorized to access restricted features.</p>
+    <button class="auth-button" @onclick="HandleLogout">Logout</button>
 }
 else
 {
     <p>You are not logged in or lack the required permissions.</p>
-    <button @onclick="NavigateToLogin">Login</button>
+    <button class="auth-button" @onclick="NavigateToLogin">Login</button>
 }
 
 @code {
@@ -28,17 +29,17 @@ else
     {
         try
         {
-// Retrieve the JWT token from local storage
+            // Retrieve the JWT token from local storage
             var token = await JS.InvokeAsync<string>("localStorage.getItem", "authToken");
 
             if (!string.IsNullOrEmpty(token))
             {
-// Decode the JWT to extract claims
+                // Decode the JWT to extract claims
                 var jwt = new JwtSecurityTokenHandler().ReadJwtToken(token);
                 username = jwt.Claims.FirstOrDefault(c => c.Type == "sub")?.Value ?? "Unknown";
                 role = jwt.Claims.FirstOrDefault(c => c.Type == "role")?.Value ?? "Unknown";
 
-// Check for specific roles or claims
+                // Check for specific roles or claims
                 isAuthorized = role == "Admin" || role == "Customer";
             }
         }
@@ -50,6 +51,20 @@ else
 
     private void NavigateToLogin()
     {
+        NavigationManager.NavigateTo("/login");
+    }
+
+    private async Task HandleLogout()
+    {
+        // Clear the token from local storage
+        await JS.InvokeVoidAsync("localStorage.removeItem", "authToken");
+
+        // Clear the authentication state
+        isAuthorized = false;
+        username = string.Empty;
+        role = string.Empty;
+
+        // Redirect to the login page
         NavigationManager.NavigateTo("/login");
     }
 }
