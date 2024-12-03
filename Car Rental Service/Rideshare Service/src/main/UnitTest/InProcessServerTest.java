@@ -86,13 +86,18 @@ public class InProcessServerTest {
         }
     }
 
-    @AfterEach
+    @After
     public void tearDown() throws Exception {
         try {
             System.out.println("Tearing down the test...");
 
             // Check if channel is null before calling shutdown
             if (channel != null) {
+
+                //Clean up test objects
+                Rideshare.RideShareIDRequest idRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId("RIDE12345").build();
+                Rideshare.RideShareResponse deleteResponse = blockingStub.deleteRideShareOffer(idRequest);
+
                 channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
                 System.out.println("Channel shut down successfully.");
             } else {
@@ -114,7 +119,7 @@ public class InProcessServerTest {
     }
 
     @Test
-    public void testRideShareOffer() throws InterruptedException {
+    public void testCreateRideShareOffer() throws InterruptedException {
 
         //Delete if the object exist in
         String testId = "RIDE12345";
@@ -148,6 +153,155 @@ public class InProcessServerTest {
         assertTrue(response.getSuccess());
     }
 
+    @Test
+    public void testReadRideShareOffer() throws InterruptedException {
+        // First, create a RideShareOffer to test retrieval
+        String testId = "RIDE12345";
+        Rideshare.RideshareOffer request = Rideshare.RideshareOffer.newBuilder()
+                .setRideId(testId)
+                .setAvailablespaces(3)
+                .setStatus("partially booked")
+                .setStartdate("2024-12-01")
+                .setStarttime("08:30:00")
+                .setStartlocation("123 Main St, Cityville")
+                .setEnddate("2024-12-01")
+                .setEndtime("09:00:00")
+                .setEndlocation("456 Elm St, Townville")
+                .setPrice(15.50f)
+                .setCustomerid("USER1001")
+                .setBookingref("BOOK1234")
+                .build();
+
+        // Create the offer using gRPC
+        blockingStub.createRideShareOffer(request);
+
+        // Request to fetch the created RideShareOffer by ID
+        Rideshare.RideShareIDRequest idRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId(testId).build();
+        Rideshare.RideshareOffer response = blockingStub.readRideShareOffer(idRequest);
+
+        // Assertions to validate response
+        assertNotNull(response);
+        assertEquals(testId, response.getRideId());
+        assertEquals(3, response.getAvailablespaces());
+        assertEquals("partially booked", response.getStatus());
+    }
+
+    @Test
+    public void testUpdateRideShareOffer() throws InterruptedException {
+        // First, create a RideShareOffer to test update
+        String testId = "RIDE12345";
+        Rideshare.RideshareOffer request = Rideshare.RideshareOffer.newBuilder()
+                .setRideId(testId)
+                .setAvailablespaces(3)
+                .setStatus("partially booked")
+                .setStartdate("2024-12-01")
+                .setStarttime("08:30:00")
+                .setStartlocation("123 Main St, Cityville")
+                .setEnddate("2024-12-01")
+                .setEndtime("09:00:00")
+                .setEndlocation("456 Elm St, Townville")
+                .setPrice(15.50f)
+                .setCustomerid("USER1001")
+                .setBookingref("BOOK1234")
+                .build();
+
+        // Create the offer using gRPC
+        blockingStub.createRideShareOffer(request);
+
+        // Update the created RideShareOffer
+        Rideshare.RideshareOffer updatedRequest = Rideshare.RideshareOffer.newBuilder()
+                .setRideId(testId)
+                .setAvailablespaces(2) // Updating the available spaces
+                .setStatus("full") // Updating the status
+                .setStartdate("2024-12-01")
+                .setStarttime("08:30:00")
+                .setStartlocation("123 Main St, Cityville")
+                .setEnddate("2024-12-01")
+                .setEndtime("09:00:00")
+                .setEndlocation("456 Elm St, Townville")
+                .setPrice(15.50f)
+                .setCustomerid("USER1001")
+                .setBookingref("BOOK1234")
+                .build();
+
+        // Call the update method
+        Rideshare.RideShareResponse updateResponse = blockingStub.updateRideShareOffer(updatedRequest);
+
+        // Assertions to validate that the update was successful
+        assertNotNull(updateResponse);
+        assertTrue(updateResponse.getSuccess());
+        assertEquals("RideShareOffer updated successfully", updateResponse.getMessage());
+    }
+
+    @Test
+    public void testDeleteRideShareOffer() throws InterruptedException {
+        // First, create a RideShareOffer to test deletion
+        String testId = "RIDE12345";
+        Rideshare.RideshareOffer request = Rideshare.RideshareOffer.newBuilder()
+                .setRideId(testId)
+                .setAvailablespaces(3)
+                .setStatus("partially booked")
+                .setStartdate("2024-12-01")
+                .setStarttime("08:30:00")
+                .setStartlocation("123 Main St, Cityville")
+                .setEnddate("2024-12-01")
+                .setEndtime("09:00:00")
+                .setEndlocation("456 Elm St, Townville")
+                .setPrice(15.50f)
+                .setCustomerid("USER1001")
+                .setBookingref("BOOK1234")
+                .build();
+
+        // Create the offer using gRPC
+        blockingStub.createRideShareOffer(request);
+
+        // Now, delete the created RideShareOffer
+        Rideshare.RideShareIDRequest idRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId(testId).build();
+        Rideshare.RideShareResponse deleteResponse = blockingStub.deleteRideShareOffer(idRequest);
+
+        // Assertions to ensure deletion
+        assertNotNull(deleteResponse);
+        assertTrue(deleteResponse.getSuccess());
+        assertEquals("RideShareOffer deleted successfully", deleteResponse.getMessage());
+    }
+
+    @Test
+    public void testDeleteNonExistingRideShareOffer() throws InterruptedException {
+        String testId = "RIDE99999"; // ID that doesn't exist
+        Rideshare.RideShareIDRequest idRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId(testId).build();
+
+        try {
+            // Trying to delete a non-existing offer
+            Rideshare.RideShareResponse deleteResponse = blockingStub.deleteRideShareOffer(idRequest);
+            fail("Expected StatusRuntimeException due to non-existing ride offer.");
+        } catch (StatusRuntimeException e) {
+            // Expected error due to non-existing offer
+            assertEquals("NOT_FOUND", e.getStatus().getCode().name());
+        }
+    }
+
+    @Test
+    public void testListRideShareOffers() throws InterruptedException {
+        // First, create a few RideShareOffers to be able to list them
+        List<Rideshare.RideshareOffer> offers = makeTestObjectsRideShareOffers();
+        for (Rideshare.RideshareOffer offer : offers) {
+            blockingStub.createRideShareOffer(offer);
+        }
+
+        // Now, request the list of all RideShareOffers
+        Empty request = Empty.newBuilder().build();
+        Rideshare.RideshareOfferList response = blockingStub.readAllRideShareOffer(request);
+
+        // Assertions to validate that the list is returned correctly
+        assertNotNull(response);
+        assertTrue(response.getResultListList().size() > 8); // Assert that we have more than 8 offers
+        List<RideshareOffer> testList = response.getResultListList();
+        List<String> resultList = new ArrayList<>(List.of("RIDE12345", "RIDE12346", "RIDE12347", "RIDE12348", "RIDE12349", "RIDE12350", "RIDE12351", "RIDE12352", "RIDE12353"));
+
+        for(RideshareOffer item: testList ){
+            assertTrue(resultList.contains(item.getRideId())); // Assert that the rideids exist in
+        }
+    }
 
     private RideShareOffer convertToRideShareOffer(RideshareOffer offerProto) {
         System.out.println("convertToRideShareOffer");
