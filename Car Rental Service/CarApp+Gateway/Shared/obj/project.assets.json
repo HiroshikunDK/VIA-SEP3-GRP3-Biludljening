@@ -8,26 +8,25 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Nebul\\.nuget\\packages\\": {}
+    "/Users/apogultekin/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
+      "projectUniqueName": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/Shared/Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\Shared.csproj",
-      "packagesPath": "C:\\Users\\Nebul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\Shared\\obj\\",
+      "projectPath": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/Shared/Shared.csproj",
+      "packagesPath": "/Users/apogultekin/.nuget/packages/",
+      "outputPath": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/Shared/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\Nebul\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/apogultekin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

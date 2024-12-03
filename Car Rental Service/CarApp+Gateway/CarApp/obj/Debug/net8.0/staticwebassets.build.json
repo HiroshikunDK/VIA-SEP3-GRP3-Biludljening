@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4q8zZGX2W7hFAmFBRGLlJ36fUYG0u7EKFZCnj2EXuoI=",
+  "Hash": "xPKgfmZpc/yw/5+ckeHQuN8H0nw5f13C+HJp/8qSxq4=",
   "Source": "CarApp",
   "BasePath": "_content/CarApp",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "CarApp\\wwwroot",
+      "Name": "CarApp/wwwroot",
       "Source": "CarApp",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/",
       "BasePath": "_content/CarApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CarApp.styles.css",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/bundle/CarApp.styles.css",
       "SourceId": "CarApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/CarApp",
       "RelativePath": "CarApp.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CarApp.styles.css"
+      "OriginalItemSpec": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/bundle/CarApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CarApp.bundle.scp.css",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/projectbundle/CarApp.bundle.scp.css",
       "SourceId": "CarApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/CarApp",
       "RelativePath": "CarApp.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CarApp.bundle.scp.css"
+      "OriginalItemSpec": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/projectbundle/CarApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\app.css",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/app.css",
       "SourceId": "CarApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/",
       "BasePath": "_content/CarApp",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\app.css"
+      "OriginalItemSpec": "wwwroot/app.css"
     },
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/bootstrap/bootstrap.min.css",
       "SourceId": "CarApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/",
       "BasePath": "_content/CarApp",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
+      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/bootstrap/bootstrap.min.css.map",
       "SourceId": "CarApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/",
       "BasePath": "_content/CarApp",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
+      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\favicon.png",
+      "Identity": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/favicon.png",
       "SourceId": "CarApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nebul\\Documents\\GitHub\\VIA-SEP3-GRP3-Biludljening\\Car Rental Service\\CarApp+Gateway\\CarApp\\wwwroot\\",
+      "ContentRoot": "/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/wwwroot/",
       "BasePath": "_content/CarApp",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -128,7 +128,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
+      "OriginalItemSpec": "wwwroot/favicon.png"
     }
   ]
 }

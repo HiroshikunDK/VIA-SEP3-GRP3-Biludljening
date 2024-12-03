@@ -1,110 +1,42 @@
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\appsettings.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.staticwebassets.runtime.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.exe
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.deps.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.runtimeconfig.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\Shared.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\bin\Debug\net8.0\Shared.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.csproj.AssemblyReference.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfoInputs.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfo.cs
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.csproj.CoreCompileInputs.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.sourcelink.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.CarApp.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.build.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\scopedcss\bundle\CarApp.styles.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\scopedcss\projectbundle\CarApp.bundle.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.csproj.Up2Date
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\refint\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\CarApp.genruntimeconfig.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\CarApp\obj\Debug\net8.0\ref\CarApp.dll
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\refint\CarApp.dll
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfoInputs.cache
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfo.cs
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.CoreCompileInputs.cache
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.sourcelink.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\appsettings.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.staticwebassets.runtime.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.exe
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.deps.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.runtimeconfig.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Shared.dll
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Shared.pdb
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.AssemblyReference.cache
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.CarApp.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.build.CarApp.props
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarApp.props
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarApp.props
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\bundle\CarApp.styles.css
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\projectbundle\CarApp.bundle.scp.css
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.Up2Date
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.genruntimeconfig.cache
-C:\Users\Nebul\Desktop\SEP3 Proof of Concept\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\ref\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\appsettings.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.staticwebassets.runtime.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.exe
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.deps.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.runtimeconfig.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Shared.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\bin\Debug\net8.0\Shared.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.AssemblyReference.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfoInputs.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.AssemblyInfo.cs
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.CoreCompileInputs.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.sourcelink.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.CarApp.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.build.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarApp.props
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\bundle\CarApp.styles.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\scopedcss\projectbundle\CarApp.bundle.scp.css
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.csproj.Up2Date
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\refint\CarApp.dll
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.pdb
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\CarApp.genruntimeconfig.cache
-C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\obj\Debug\net8.0\ref\CarApp.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/appsettings.Development.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/appsettings.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.staticwebassets.runtime.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.deps.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.runtimeconfig.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.pdb
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.AssemblyReference.cache
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.CoreCompileInputs.cache
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets.build.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets.development.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets/msbuild.CarApp.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets/msbuild.build.CarApp.props
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CarApp.props
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CarApp.props
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/bundle/CarApp.styles.css
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/scopedcss/projectbundle/CarApp.bundle.scp.css
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.Up2Date
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.genruntimeconfig.cache
+/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll
