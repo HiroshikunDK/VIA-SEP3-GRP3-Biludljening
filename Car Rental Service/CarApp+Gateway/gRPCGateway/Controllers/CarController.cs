@@ -13,15 +13,20 @@ public class CarController : ControllerBase
         _carServiceClient = carServiceClient;
     }
 
-    [HttpPost("add")]
+    [HttpPost]
     public async Task<IActionResult> AddCar([FromBody] AddCarRequestDto carDto)
     {
         var addCarRequest = new Car
         {
-            CarId = carDto.CarId,
-            Model = carDto.Model,
+            Vin = carDto.Vin,
+            Yearproduced = carDto.YearProduced,
+            Manufactor = carDto.Manufacturer,
+            Model = carDto.Model,   
             Color = carDto.Color,
-            Seats = carDto.Seats
+            Altname = carDto.AltName,
+            Seats = carDto.Seats,
+            Carrange = carDto.CarRange,
+            Locationhubref = carDto.LocationHubRef
         };
 
         var response = await _carServiceClient.addCarAsync(addCarRequest);
@@ -44,17 +49,27 @@ public class CarController : ControllerBase
         return Ok(response);
     }
 
-    [HttpGet("list")]
+    [HttpGet]
     public async Task<IActionResult> ListAllCars()
     {
         var request = new Google.Protobuf.WellKnownTypes.Empty();
         var response = await _carServiceClient.getAllCarsAsync(request);
+        
+        var cars = response.Cars.ToList(); // turning into a list for filtering
 
-        return Ok(response.Cars);
+        if (cars.Any())
+        {
+            return Ok(response.Cars);
+        }
+        else
+        {
+            return NoContent();
+        }
+        
     }
 
 
-    [HttpPut("update")]
+    [HttpPut]
     public async Task<IActionResult> UpdateCar([FromBody] Car request)
     {
         var response = await _carServiceClient.updateCarAsync(request);
