@@ -1,7 +1,9 @@
-﻿﻿@page "/userprofile"
+﻿@page "/userprofile"
+@using System.Net.Http.Headers
 @using Shared.Dto
 @using System.Net.Http.Json
 @inject HttpClient HttpClient
+@inject IJSRuntime JS
 
 <h3>User Profile</h3>
 
@@ -40,6 +42,8 @@
     </div>
 
     <button type="submit">Save Changes</button>
+    
+    <NavLink class="btn btn-secondary" href="/deleteuser">Manage Users</NavLink>
 </EditForm>
 
 @if (updateMessage != null)
@@ -55,10 +59,20 @@
     {
         try
         {
+            // Send the request with authentication token (if applicable)
+            var token = await JS.InvokeAsync<string>("localStorage.getItem", "authToken");
+            HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // Attempt to load the profile
             var response = await HttpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
+
             if (response != null)
             {
                 userProfile = response;
+            }
+            else
+            {
+                updateMessage = "User profile is empty or could not be found.";
             }
         }
         catch (Exception ex)

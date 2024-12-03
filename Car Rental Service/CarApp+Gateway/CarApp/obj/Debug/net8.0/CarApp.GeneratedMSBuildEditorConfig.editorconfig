@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVSaWRlc2hhcmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/adres/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/DeleteUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/adres/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/adres/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/adres/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/ManageUsers.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VVc2Vycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/adres/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Register.razor]

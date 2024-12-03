@@ -1,10 +1,9 @@
-﻿﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Userservice;
 
 namespace gRPC_Gateway.Controllers;
-
 [ApiController]
 [Route("api/user")]
 public class UserController : ControllerBase
@@ -50,7 +49,6 @@ public class UserController : ControllerBase
             return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
         }
     }
-
 
     [HttpPost("login")]
     [AllowAnonymous] 
@@ -102,7 +100,6 @@ public class UserController : ControllerBase
 
     
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteUser(int id)
     {
         var request = new UserRequest { Id = id };
@@ -118,14 +115,23 @@ public class UserController : ControllerBase
     }
     
     [HttpGet("profile")] 
+    [Authorize]
 public async Task<IActionResult> GetCurrentUserProfile()
 {
     try
     {
         var username = User.Identity?.Name;
+        if (string.IsNullOrEmpty(username))
+        {
+            return Unauthorized(new { Message = "User is not authenticated." });
+        }
 
         var grpcRequest = new UserRequest { Username = username };
         var grpcResponse = await _userClient.GetUserByUsernameAsync(grpcRequest);
+        if (grpcResponse == null)
+        {
+            return NotFound(new { Message = "User not found." });
+        }
 
         if (!grpcResponse.Success)
         {
