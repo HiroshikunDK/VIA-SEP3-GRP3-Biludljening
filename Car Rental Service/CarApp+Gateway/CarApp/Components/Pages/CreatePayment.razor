@@ -9,7 +9,7 @@
     {
         try
         {
-            var response = await Http.PostAsJsonAsync("api/payment/create", payment);
+            var response = await Http.PostAsJsonAsync("api/payment", payment);
             if (response.IsSuccessStatusCode)
             {
                 message = "Payment created successfully!";

@@ -15,6 +15,13 @@ public class Program
             .AddInteractiveServerComponents();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002") });
+       
+       // Konfigurer gRPC-klient
+       // builder.Services.AddSingleton(sp =>
+       // {
+       //     var channel = GrpcChannel.ForAddress("http://localhost:5005");
+       //     return new PaymentService.PaymentServiceClient(channel);
+       // });
 
         // Configure JWT Authentication
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
