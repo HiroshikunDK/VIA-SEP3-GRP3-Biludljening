@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CarApp.Authentication;
+using CarApp.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace CarApp;
@@ -24,6 +25,9 @@ public class Program
         }).AddHttpMessageHandler<AuthHandler>();
 
         builder.Services.AddAuthorizationCore();
+        builder.Services.AddScoped<LoginService>();
+        builder.Services.AddScoped<RegisterService>();
+        builder.Services.AddScoped<UserProfileService>();
 
 
         // Configure JWT Authentication

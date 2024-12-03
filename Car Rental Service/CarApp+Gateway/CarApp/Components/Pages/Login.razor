@@ -1,25 +1,21 @@
 ﻿@page "/login"
-@inject IHttpClientFactory HttpClientFactory
-@inject IJSRuntime JS
-@inject NavigationManager NavigationManager
+@using CarApp.Services
 @using Shared.Dto
-
-<h3>Login</h3>
+@inject LoginService LoginService
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory HttpClientFactory
 
 <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
     <div>
         <label>Username:</label>
         <InputText @bind-Value="loginModel.Username" />
     </div>
-
     <div>
         <label>Password:</label>
         <InputText @bind-Value="loginModel.Password" type="password" />
     </div>
-
     <button type="submit">Login</button>
 </EditForm>
 
@@ -36,50 +32,12 @@
     {
         try
         {
-            Console.WriteLine("Attempting to retrieve anti-forgery token...");
-
-            // Retrieve the anti-forgery token at the time of login
-            var antiForgeryToken = await JS.InvokeAsync<string>("getAntiForgeryToken");
-
-            Console.WriteLine($"Anti-forgery token retrieved: {antiForgeryToken}");
-
-            if (string.IsNullOrEmpty(antiForgeryToken))
-            {
-                loginMessage = "Failed to retrieve anti-forgery token.";
-                return;
-            }
-
-            // Create and configure the HTTP client
-            var httpClient = HttpClientFactory.CreateClient("AuthorizedClient");
-            httpClient.DefaultRequestHeaders.Add("X-CSRF-TOKEN", antiForgeryToken);
-
-            // Send the POST request
-            var response = await httpClient.PostAsJsonAsync("api/user/login", loginModel);
-
-            if (response.IsSuccessStatusCode)
-            {
-                var result = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
-
-                if (result != null && !string.IsNullOrEmpty(result.Token))
-                {
-                    // Save the token in local storage
-                    await JS.InvokeVoidAsync("localStorage.setItem", "authToken", result.Token);
-                    NavigationManager.NavigateTo("/");
-                }
-                else
-                {
-                    loginMessage = "Login failed. Please check your credentials.";
-                }
-            }
-            else
-            {
-                loginMessage = "Login failed. Please try again.";
-            }
+            var token = await LoginService.LoginAsync(loginModel);
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception ex)
         {
-            loginMessage = $"Error: {ex.Message}";
-            Console.WriteLine($"Error during HandleLogin: {ex}");
+            loginMessage = ex.Message;
         }
     }
 }

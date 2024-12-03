@@ -1,9 +1,9 @@
 ﻿@page "/userprofile"
 @attribute [Authorize(Roles = "Admin")]
-@using Shared.Dto
-@using System.Net.Http.Json
+@using CarApp.Services
 @using Microsoft.AspNetCore.Authorization
-@inject HttpClient HttpClient
+@using Shared.Dto
+@inject UserProfileService UserProfileService
 
 <h3>User Profile</h3>
 
@@ -57,11 +57,7 @@
     {
         try
         {
-            var response = await HttpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
-            if (response != null)
-            {
-                userProfile = response;
-            }
+            userProfile = await UserProfileService.GetUserProfileAsync();
         }
         catch (Exception ex)
         {
@@ -73,15 +69,8 @@
     {
         try
         {
-            var response = await HttpClient.PutAsJsonAsync("api/user/profile", userProfile);
-            if (response.IsSuccessStatusCode)
-            {
-                updateMessage = "Profile updated successfully.";
-            }
-            else
-            {
-                updateMessage = "Failed to update profile.";
-            }
+            await UserProfileService.UpdateUserProfileAsync(userProfile);
+            updateMessage = "Profile updated successfully.";
         }
         catch (Exception ex)
         {

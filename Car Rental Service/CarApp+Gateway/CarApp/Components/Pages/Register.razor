@@ -1,50 +1,33 @@
 ﻿@page "/register"
-@inject HttpClient HttpClient
-@inject IJSRuntime JS
-@inject NavigationManager NavigationManager
+@using CarApp.Services
 @using Shared.Dto
-
-<h3>Register</h3>
+@inject RegisterService RegisterService
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory HttpClientFactory
 
 <EditForm Model="registerUser" OnValidSubmit="HandleRegister">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
     <div>
         <label>First Name:</label>
         <InputText @bind-Value="registerUser.UserFirstname" />
     </div>
-
     <div>
         <label>Last Name:</label>
         <InputText @bind-Value="registerUser.UserLastname" />
     </div>
-
-    <div>
-        <label>Title:</label>
-        <InputText @bind-Value="registerUser.Title" />
-    </div>
-
-    <div>
-        <label>Phone Number:</label>
-        <InputNumber @bind-Value="registerUser.Phonenr" />
-    </div>
-
     <div>
         <label>Username:</label>
         <InputText @bind-Value="registerUser.Username" />
     </div>
-
     <div>
         <label>Email:</label>
         <InputText @bind-Value="registerUser.Email" />
     </div>
-
     <div>
         <label>Password:</label>
         <InputText @bind-Value="registerUser.Password" type="password" />
     </div>
-
     <button type="submit">Register</button>
 </EditForm>
 
@@ -61,35 +44,13 @@
     {
         try
         {
-            // Retrieve the anti-forgery token
-            var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
-            Console.WriteLine("Retrieved token:", token);
-
-            // Create a new HttpRequestMessage to ensure the header is only added for this request
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
-            {
-                Content = JsonContent.Create(registerUser)
-            };
-            requestMessage.Headers.Add("X-CSRF-TOKEN", token);
-
-            // Send the request and handle response
-            var response = await HttpClient.SendAsync(requestMessage);
-            Console.WriteLine("Registration response status:", response.StatusCode);
-
-            if (response.IsSuccessStatusCode)
-            {
-                registrationMessage = "Registration successful!";
-                NavigationManager.NavigateTo("/login");
-            }
-            else
-            {
-                var errorResponse = await response.Content.ReadAsStringAsync();
-                registrationMessage = $"Registration failed: {errorResponse} ";
-            }
+            await RegisterService.RegisterAsync(registerUser);
+            registrationMessage = "Registration successful!";
+            NavigationManager.NavigateTo("/login");
         }
         catch (Exception ex)
         {
-            registrationMessage = $"Error: {ex.Message}";
+            registrationMessage = ex.Message;
         }
     }
 }

@@ -5,7 +5,7 @@
 
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:C:\Users\adres\RiderProjects\VIA-SEP3-GRP3-Biludljening\Car Rental Service\Database\UserService.db
+        <property name="hibernate.connection.url">jdbc:sqlite:Database\UserService.db
         </property>
 
 
