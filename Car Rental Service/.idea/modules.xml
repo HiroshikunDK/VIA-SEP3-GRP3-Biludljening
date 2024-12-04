@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Car Management Service/Car_Management_Service.iml" filepath="$PROJECT_DIR$/Car Management Service/Car_Management_Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Microservices.iml" filepath="$PROJECT_DIR$/Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Payment Service/Payment_Service.iml" filepath="$PROJECT_DIR$/Payment Service/Payment_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rideshare Service/Rideshare_Service.iml" filepath="$PROJECT_DIR$/Rideshare Service/Rideshare_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User Service/User_Service.iml" filepath="$PROJECT_DIR$/User Service/User_Service.iml" />
     </modules>
   </component>
 </project>
