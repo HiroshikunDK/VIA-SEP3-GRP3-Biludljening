@@ -1,9 +1,7 @@
 ﻿@page "/userprofile"
-@attribute [Authorize(Roles = "Admin")]
-@using CarApp.Services
-@using Microsoft.AspNetCore.Authorization
 @using Shared.Dto
-@inject UserProfileService UserProfileService
+@using System.Net.Http.Json
+@inject HttpClient HttpClient
 
 <h3>User Profile</h3>
 
@@ -42,6 +40,12 @@
     </div>
 
     <button type="submit">Save Changes</button>
+
+  
+          
+            <NavLink class="btn btn-secondary" href="/deleteuser">Manage Users</NavLink>
+      
+    
 </EditForm>
 
 @if (updateMessage != null)
@@ -57,7 +61,11 @@
     {
         try
         {
-            userProfile = await UserProfileService.GetUserProfileAsync();
+            var response = await HttpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
+            if (response != null)
+            {
+                userProfile = response;
+            }
         }
         catch (Exception ex)
         {
@@ -69,8 +77,15 @@
     {
         try
         {
-            await UserProfileService.UpdateUserProfileAsync(userProfile);
-            updateMessage = "Profile updated successfully.";
+            var response = await HttpClient.PutAsJsonAsync("api/user/profile", userProfile);
+            if (response.IsSuccessStatusCode)
+            {
+                updateMessage = "Profile updated successfully.";
+            }
+            else
+            {
+                updateMessage = "Failed to update profile.";
+            }
         }
         catch (Exception ex)
         {
