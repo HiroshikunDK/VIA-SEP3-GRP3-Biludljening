@@ -74,4 +74,13 @@ public class CarRepository implements ICarRepository {
             throw new RuntimeException("Error deleting car", e);
         }
     }
+
+    @Override
+    public List<Car> getAvailableCarsByLocation(int locationId) {
+        String jpql = "SELECT c FROM Car c WHERE c.locationHubRef = :locationId";
+        TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
+        query.setParameter("locationId", locationId);
+        return query.getResultList();
+    }
+
 }

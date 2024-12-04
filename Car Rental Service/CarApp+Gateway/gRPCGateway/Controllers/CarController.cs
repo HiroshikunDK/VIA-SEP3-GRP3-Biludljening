@@ -88,4 +88,13 @@ public class CarController : ControllerBase
         var response = await _carServiceClient.deleteCarAsync(request);
         return Ok(response);
     }
+    
+    [HttpGet("available/{locationId}")]
+    public async Task<IActionResult> GetAvailableCars(int locationId)
+    {
+        var request = new LocationHubRequest { Id = locationId };
+        var response = await _carServiceClient.getAvailableCarsByLocationAsync(request);
+        return Ok(response.Cars);
+    }
+
 }

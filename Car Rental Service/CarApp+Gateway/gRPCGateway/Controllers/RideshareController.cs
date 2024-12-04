@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shared.Dto;
 
 namespace gRPC_Gateway.Controllers;
 
@@ -23,11 +24,26 @@ public class RideshareController : ControllerBase
 
 
     [HttpPost("join")]
-    public async Task<IActionResult> JoinRideShare([FromBody] JoinRideShareRequest request)
+    public async Task<IActionResult> JoinRideShare([FromBody] JoinRideShareRequestDto request)
     {
-        var response = await _rideshareClient.JoinRideShareAsync(request);
-        return Ok(response);
+        var grpcRequest = new JoinRideShareRequest
+        {
+            RideId = request.RideId,
+            PassengerUsername = request.PassengerUsername
+        };
+
+        var response = await _rideshareClient.JoinRideShareAsync(grpcRequest);
+
+        if (response.Success)
+        {
+            return Ok(new { Message = response.Message });
+        }
+        else
+        {
+            return BadRequest(new { Message = response.Message });
+        }
     }
+
 
     [HttpGet("list/{carId}")]
     public async Task<IActionResult> ListRideShares(int carId)

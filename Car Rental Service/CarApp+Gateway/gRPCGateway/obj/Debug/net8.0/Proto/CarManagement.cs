@@ -36,36 +36,38 @@ public static partial class CarManagementReflection {
           "CRIPCgdlbmRkYXRlGAUgASgJEg8KB2VuZHRpbWUYBiABKAkSDQoFcHJpY2UY",
           "ByABKAkSEgoKZ3JlZW5zaGFyZRgIIAEoBRINCgVjYXJpZBgJIAEoBRISCgpj",
           "dXN0b21lcmlkGAogASgFIjMKDkJvb2tpbmdDYXJMaXN0EiEKDGJvb2tpbmdf",
-          "Y2FycxgBIAMoCzILLkJvb2tpbmdDYXIiVwoSQm9va2luZ0NhclJlc3BvbnNl",
+          "Y2FycxgBIAMoCzILLkJvb2tpbmdDYXIiagoSQm9va2luZ0NhclJlc3BvbnNl",
           "Eg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIfCgpib29raW5n",
-          "Q2FyGAMgASgLMgsuQm9va2luZ0NhciIgChJMb2NhdGlvbkh1YlJlcXVlc3QS",
-          "CgoCaWQYASABKAUilAEKC0xvY2F0aW9uSHViEgoKAmlkGAEgASgFEhQKDGxv",
-          "Y2F0aW9ubmFtZRgCIAEoCRIPCgdhZGRyZXNzGAMgASgJEgwKBGNpdHkYBCAB",
-          "KAkSDwoHY291bnRyeRgFIAEoCRINCgVlbWFpbBgGIAEoCRIPCgdwaG9uZW5y",
-          "GAcgASgJEhMKC2NhcmNhcGFjaXR5GAggASgFIjQKD0xvY2F0aW9uSHViTGlz",
-          "dBIhCgtsb2NhdGlvbmh1YhgBIAMoCzIMLkxvY2F0aW9uSHViIloKE0xvY2F0",
-          "aW9uSHViUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIg",
-          "ASgJEiEKC2xvY2F0aW9uSHViGAMgASgLMgwuTG9jYXRpb25IdWIyzAEKCkNh",
-          "clNlcnZpY2USLgoKZ2V0QWxsQ2FycxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-          "eRoILkNhckxpc3QSJwoKZ2V0Q2FyQnlJRBILLkNhclJlcXVlc3QaDC5DYXJS",
-          "ZXNwb25zZRIcCgZhZGRDYXISBC5DYXIaDC5DYXJSZXNwb25zZRIfCgl1cGRh",
-          "dGVDYXISBC5DYXIaDC5DYXJSZXNwb25zZRImCglkZWxldGVDYXISCy5DYXJS",
-          "ZXF1ZXN0GgwuQ2FyUmVzcG9uc2UytQIKEUJvb2tpbmdDYXJTZXJ2aWNlEjwK",
-          "EUdldEFsbEJvb2tpbmdDYXJzEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg8u",
-          "Qm9va2luZ0Nhckxpc3QSPAoRR2V0Qm9va2luZ0NhckJ5SUQSEi5Cb29raW5n",
-          "Q2FyUmVxdWVzdBoTLkJvb2tpbmdDYXJSZXNwb25zZRIxCg1BZGRCb29raW5n",
-          "Q2FyEgsuQm9va2luZ0NhchoTLkJvb2tpbmdDYXJSZXNwb25zZRI0ChBVcGRh",
-          "dGVCb29raW5nQ2FyEgsuQm9va2luZ0NhchoTLkJvb2tpbmdDYXJSZXNwb25z",
-          "ZRI7ChBEZWxldGVCb29raW5nQ2FyEhIuQm9va2luZ0NhclJlcXVlc3QaEy5C",
-          "b29raW5nQ2FyUmVzcG9uc2UyxAIKEkxvY2F0aW9uSHViU2VydmljZRI+ChJH",
-          "ZXRBbGxMb2NhdGlvbkh1YnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaEC5M",
-          "b2NhdGlvbkh1Ykxpc3QSPwoSR2V0TG9jYXRpb25IdWJCeUlEEhMuTG9jYXRp",
-          "b25IdWJSZXF1ZXN0GhQuTG9jYXRpb25IdWJSZXNwb25zZRI0Cg5BZGRMb2Nh",
-          "dGlvbkh1YhIMLkxvY2F0aW9uSHViGhQuTG9jYXRpb25IdWJSZXNwb25zZRI3",
-          "ChFVcGRhdGVMb2NhdGlvbkh1YhIMLkxvY2F0aW9uSHViGhQuTG9jYXRpb25I",
-          "dWJSZXNwb25zZRI+ChFEZWxldGVMb2NhdGlvbkh1YhITLkxvY2F0aW9uSHVi",
-          "UmVxdWVzdBoULkxvY2F0aW9uSHViUmVzcG9uc2VCGwoZQ2FyTWFuYWdlbWVu",
-          "dFNlcnZpY2UuZ3JwY2IGcHJvdG8z"));
+          "Q2FyGAMgASgLMgsuQm9va2luZ0NhchIRCglib29raW5nbnIYBCABKAUiIAoS",
+          "TG9jYXRpb25IdWJSZXF1ZXN0EgoKAmlkGAEgASgFIpQBCgtMb2NhdGlvbkh1",
+          "YhIKCgJpZBgBIAEoBRIUCgxsb2NhdGlvbm5hbWUYAiABKAkSDwoHYWRkcmVz",
+          "cxgDIAEoCRIMCgRjaXR5GAQgASgJEg8KB2NvdW50cnkYBSABKAkSDQoFZW1h",
+          "aWwYBiABKAkSDwoHcGhvbmVuchgHIAEoCRITCgtjYXJjYXBhY2l0eRgIIAEo",
+          "BSI0Cg9Mb2NhdGlvbkh1Ykxpc3QSIQoLbG9jYXRpb25odWIYASADKAsyDC5M",
+          "b2NhdGlvbkh1YiJaChNMb2NhdGlvbkh1YlJlc3BvbnNlEg8KB3N1Y2Nlc3MY",
+          "ASABKAgSDwoHbWVzc2FnZRgCIAEoCRIhCgtsb2NhdGlvbkh1YhgDIAEoCzIM",
+          "LkxvY2F0aW9uSHViMokCCgpDYXJTZXJ2aWNlEi4KCmdldEFsbENhcnMSFi5n",
+          "b29nbGUucHJvdG9idWYuRW1wdHkaCC5DYXJMaXN0EicKCmdldENhckJ5SUQS",
+          "Cy5DYXJSZXF1ZXN0GgwuQ2FyUmVzcG9uc2USHAoGYWRkQ2FyEgQuQ2FyGgwu",
+          "Q2FyUmVzcG9uc2USHwoJdXBkYXRlQ2FyEgQuQ2FyGgwuQ2FyUmVzcG9uc2US",
+          "JgoJZGVsZXRlQ2FyEgsuQ2FyUmVxdWVzdBoMLkNhclJlc3BvbnNlEjsKGmdl",
+          "dEF2YWlsYWJsZUNhcnNCeUxvY2F0aW9uEhMuTG9jYXRpb25IdWJSZXF1ZXN0",
+          "GgguQ2FyTGlzdDK1AgoRQm9va2luZ0NhclNlcnZpY2USPAoRR2V0QWxsQm9v",
+          "a2luZ0NhcnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDy5Cb29raW5nQ2Fy",
+          "TGlzdBI8ChFHZXRCb29raW5nQ2FyQnlJRBISLkJvb2tpbmdDYXJSZXF1ZXN0",
+          "GhMuQm9va2luZ0NhclJlc3BvbnNlEjEKDUFkZEJvb2tpbmdDYXISCy5Cb29r",
+          "aW5nQ2FyGhMuQm9va2luZ0NhclJlc3BvbnNlEjQKEFVwZGF0ZUJvb2tpbmdD",
+          "YXISCy5Cb29raW5nQ2FyGhMuQm9va2luZ0NhclJlc3BvbnNlEjsKEERlbGV0",
+          "ZUJvb2tpbmdDYXISEi5Cb29raW5nQ2FyUmVxdWVzdBoTLkJvb2tpbmdDYXJS",
+          "ZXNwb25zZTLEAgoSTG9jYXRpb25IdWJTZXJ2aWNlEj4KEkdldEFsbExvY2F0",
+          "aW9uSHVicxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoQLkxvY2F0aW9uSHVi",
+          "TGlzdBI/ChJHZXRMb2NhdGlvbkh1YkJ5SUQSEy5Mb2NhdGlvbkh1YlJlcXVl",
+          "c3QaFC5Mb2NhdGlvbkh1YlJlc3BvbnNlEjQKDkFkZExvY2F0aW9uSHViEgwu",
+          "TG9jYXRpb25IdWIaFC5Mb2NhdGlvbkh1YlJlc3BvbnNlEjcKEVVwZGF0ZUxv",
+          "Y2F0aW9uSHViEgwuTG9jYXRpb25IdWIaFC5Mb2NhdGlvbkh1YlJlc3BvbnNl",
+          "Ej4KEURlbGV0ZUxvY2F0aW9uSHViEhMuTG9jYXRpb25IdWJSZXF1ZXN0GhQu",
+          "TG9jYXRpb25IdWJSZXNwb25zZUIbChlDYXJNYW5hZ2VtZW50U2VydmljZS5n",
+          "cnBjYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -76,7 +78,7 @@ public static partial class CarManagementReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarRequest), global::BookingCarRequest.Parser, new[]{ "BookingNr" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCar), global::BookingCar.Parser, new[]{ "Bookingnr", "Status", "Startdato", "Starttime", "Enddate", "Endtime", "Price", "Greenshare", "Carid", "Customerid" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarList), global::BookingCarList.Parser, new[]{ "BookingCars" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarResponse), global::BookingCarResponse.Parser, new[]{ "Success", "Message", "BookingCar" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarResponse), global::BookingCarResponse.Parser, new[]{ "Success", "Message", "BookingCar", "Bookingnr" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LocationHubRequest), global::LocationHubRequest.Parser, new[]{ "Id" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LocationHub), global::LocationHub.Parser, new[]{ "Id", "Locationname", "Address", "City", "Country", "Email", "Phonenr", "Carcapacity" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LocationHubList), global::LocationHubList.Parser, new[]{ "Locationhub" }, null, null, null, null),
@@ -2174,6 +2176,7 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
     success_ = other.success_;
     message_ = other.message_;
     bookingCar_ = other.bookingCar_ != null ? other.bookingCar_.Clone() : null;
+    bookingnr_ = other.bookingnr_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -2219,6 +2222,18 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
     }
   }
 
+  /// <summary>Field number for the "bookingnr" field.</summary>
+  public const int BookingnrFieldNumber = 4;
+  private int bookingnr_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Bookingnr {
+    get { return bookingnr_; }
+    set {
+      bookingnr_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
@@ -2237,6 +2252,7 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
     if (Success != other.Success) return false;
     if (Message != other.Message) return false;
     if (!object.Equals(BookingCar, other.BookingCar)) return false;
+    if (Bookingnr != other.Bookingnr) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -2247,6 +2263,7 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
     if (Success != false) hash ^= Success.GetHashCode();
     if (Message.Length != 0) hash ^= Message.GetHashCode();
     if (bookingCar_ != null) hash ^= BookingCar.GetHashCode();
+    if (Bookingnr != 0) hash ^= Bookingnr.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -2277,6 +2294,10 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
       output.WriteRawTag(26);
       output.WriteMessage(BookingCar);
     }
+    if (Bookingnr != 0) {
+      output.WriteRawTag(32);
+      output.WriteInt32(Bookingnr);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -2299,6 +2320,10 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
       output.WriteRawTag(26);
       output.WriteMessage(BookingCar);
     }
+    if (Bookingnr != 0) {
+      output.WriteRawTag(32);
+      output.WriteInt32(Bookingnr);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -2317,6 +2342,9 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
     }
     if (bookingCar_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(BookingCar);
+    }
+    if (Bookingnr != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Bookingnr);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -2341,6 +2369,9 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
         BookingCar = new global::BookingCar();
       }
       BookingCar.MergeFrom(other.BookingCar);
+    }
+    if (other.Bookingnr != 0) {
+      Bookingnr = other.Bookingnr;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -2372,6 +2403,10 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
           input.ReadMessage(BookingCar);
           break;
         }
+        case 32: {
+          Bookingnr = input.ReadInt32();
+          break;
+        }
       }
     }
   #endif
@@ -2400,6 +2435,10 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
             BookingCar = new global::BookingCar();
           }
           input.ReadMessage(BookingCar);
+          break;
+        }
+        case 32: {
+          Bookingnr = input.ReadInt32();
           break;
         }
       }

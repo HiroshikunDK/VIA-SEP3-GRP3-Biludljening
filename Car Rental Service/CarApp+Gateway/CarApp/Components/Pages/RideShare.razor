@@ -1,0 +1,51 @@
+﻿@page "/rideshare"
+@using Shared.Dto
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+
+<h3>Rideshare</h3>
+
+@if (rideShares == null)
+{
+    <p>Loading rideshares...</p>
+}
+else if (rideShares.Any())
+{
+    <ul>
+        @foreach (var rideShare in rideShares)
+        {
+            <li>
+                <p>Driver: @rideShare.DriverUsername</p>
+                <p>Available Seats: @rideShare.AvailableSeats</p>
+                <button @onclick="() => JoinRideShare(rideShare.RideId)">Join</button>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No rideshares available.</p>
+}
+
+@code {
+    private List<RideShareDto> rideShares;
+
+    protected override async Task OnInitializedAsync()
+    {
+        rideShares = await HttpClient.GetFromJsonAsync<List<RideShareDto>>("api/rideshare/list/1"); // Replace 1 with dynamic carId
+    }
+
+    private async Task JoinRideShare(int rideId)
+    {
+        var request = new JoinRideShareRequestDto { RideId = rideId, PassengerUsername = "YourUsername" };
+        var response = await HttpClient.PostAsJsonAsync("api/rideshare/join", request);
+        if (response.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/success");
+        }
+        else
+        {
+            // Handle error
+        }
+    }
+}

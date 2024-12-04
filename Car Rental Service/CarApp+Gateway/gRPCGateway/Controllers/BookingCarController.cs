@@ -17,6 +17,8 @@ public class BookingCarController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddBooking([FromBody] AddBookingCarRequestDto bookingDto)
     {
+        Console.WriteLine($"Received booking DTO: {System.Text.Json.JsonSerializer.Serialize(bookingDto)}");
+
         var addBookingRequest = new BookingCar
         {
             Status = bookingDto.Status,
@@ -31,16 +33,17 @@ public class BookingCarController : ControllerBase
         };
 
         var response = await _bookingCarServiceClient.AddBookingCarAsync(addBookingRequest);
-        
+    
         if (response.Success)
         {
-            return Ok(response); // Return success response if booking is added successfully
+            return Ok(response);
         }
         else
         {
-            return BadRequest(new { Message = response.Message }); // Return error message if failure
+            return BadRequest(new { Message = response.Message });
         }
     }
+
 
     // Get a booking by ID
     [HttpGet("{id}")]
@@ -117,6 +120,39 @@ public class BookingCarController : ControllerBase
         else
         {
             return BadRequest(new { Message = response.Message }); // Error message if deletion fails
+        }
+    }
+    
+    [HttpPost("create")]
+    public async Task<IActionResult> CreateBooking([FromBody] BookingDto bookingDto)
+    {
+        if (bookingDto == null)
+        {
+            return BadRequest(new { Message = "Invalid booking request." });
+        }
+
+        var grpcRequest = new BookingCar
+        {
+            Status = bookingDto.Status,
+            Startdato = bookingDto.StartDate.HasValue ? bookingDto.StartDate.Value.ToString("yyyy-MM-dd") : string.Empty,
+            Starttime = bookingDto.StartTime.HasValue ? bookingDto.StartTime.Value.ToString("HH:mm") : string.Empty,
+            Enddate = bookingDto.EndDate.HasValue ? bookingDto.EndDate.Value.ToString("yyyy-MM-dd") : string.Empty,
+            Endtime = bookingDto.EndTime.HasValue ? bookingDto.EndTime.Value.ToString("HH:mm") : string.Empty,
+            Price = bookingDto.Price.ToString("F2"),
+            Greenshare = bookingDto.GreenShare ? 1 : 0,
+            Carid = bookingDto.CarId,
+            Customerid = bookingDto.CustomerId
+        };
+
+        var response = await _bookingCarServiceClient.AddBookingCarAsync(grpcRequest);
+
+        if (response.Success)
+        {
+            return Ok(new { BookingId = response.Bookingnr, Message = response.Message });
+        }
+        else
+        {
+            return BadRequest(new { Message = response.Message });
         }
     }
 }

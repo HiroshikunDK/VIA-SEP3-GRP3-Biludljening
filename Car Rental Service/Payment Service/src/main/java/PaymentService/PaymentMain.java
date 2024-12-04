@@ -9,7 +9,7 @@ import org.hibernate.SessionFactory;
 
 import java.io.IOException;
 
-public class Main {
+public class PaymentMain {
     public static void main(String[] args) throws IOException, InterruptedException {
         // Initialiser Hibernate session factory
         SessionFactory sessionFactory = HibernateUtility.getSessionFactory();

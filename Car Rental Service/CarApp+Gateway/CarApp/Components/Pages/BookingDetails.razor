@@ -1,0 +1,80 @@
+﻿@page "/booking-details/{carId:int}"
+@using Shared.Dto
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<h3>Booking Details</h3>
+
+<EditForm Model="booking" OnValidSubmit="SubmitBooking">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div>
+        <label>Start Date:</label>
+        <InputDate @bind-Value="booking.StartDate" />
+    </div>
+    <div>
+        <label>Start Time:</label>
+        <input type="time" @bind="booking.StartTime" />
+    </div>
+    <div>
+        <label>End Date:</label>
+        <InputDate @bind-Value="booking.EndDate" />
+    </div>
+    <div>
+        <label>End Time:</label>
+        <input type="time" @bind="booking.EndTime" />
+    </div>
+    <button type="submit">Proceed to Payment</button>
+</EditForm>
+
+@code {
+    [Parameter] public int CarId { get; set; }
+
+    private BookingDto booking = new BookingDto();
+
+    private async Task SubmitBooking()
+    {
+        booking.CarId = CarId;
+
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        try
+        {
+            var payload = System.Text.Json.JsonSerializer.Serialize(booking, new System.Text.Json.JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            Console.WriteLine("Booking Payload: " + payload);
+
+            var response = await client.PostAsJsonAsync("api/bookingcar/create", booking);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Response Content: {responseContent}");
+
+                // Corrected parsing logic
+                var result = System.Text.Json.JsonDocument.Parse(responseContent);
+                if (result.RootElement.TryGetProperty("bookingId", out var bookingIdElement)) // Match "bookingId" (case-sensitive)
+                {
+                    var bookingId = bookingIdElement.GetInt32();
+                    Console.WriteLine($"Booking ID: {bookingId}");
+                    NavigationManager.NavigateTo($"/payment/{bookingId}");
+                }
+                else
+                {
+                    Console.WriteLine("bookingId not found in response.");
+                }
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Failed to create booking. Response Code: {response.StatusCode}");
+                Console.WriteLine("Error Response: " + errorResponse);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error creating booking: {ex.Message}");
+        }
+    }
+}

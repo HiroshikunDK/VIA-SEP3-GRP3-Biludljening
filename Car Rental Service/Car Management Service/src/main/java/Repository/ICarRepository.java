@@ -11,4 +11,5 @@ public interface ICarRepository {
     Car addCar(Car car);
     Car updateCar(Car car);
     boolean deleteCar(int carId);
+    List<Car> getAvailableCarsByLocation(int locationId);
 }

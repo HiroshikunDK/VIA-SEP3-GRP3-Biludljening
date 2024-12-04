@@ -15,51 +15,88 @@ public class PaymentController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentRequestDto reqeust)
+    public async Task<IActionResult> CreatePayment([FromBody] PaymentRequestDto paymentRequest)
     {
-        var grpcRequest = new PaymentRequest
-        {
-            Customer = reqeust.Customer,
-            BookingType = reqeust.BookingType,
-            Booking = reqeust.Booking,
-            Status = reqeust.Status,
-            Creditcardref = reqeust.CreditCardRef
-        };
-        var response = await _paymentClient.CreatePaymentAsync(grpcRequest);
-        return Ok(response);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetPaymentById(int id)
-    {
-        var request = new PaymentRequestById { Id = id };
-        var response = await _paymentClient.GetPaymentByIdAsync(request);
-        return Ok(response);
-    }
-
-    [HttpPut("{id}/status")]
-    public async Task<IActionResult> UpdatePaymentStatus(int id,[FromBody] PaymentStatusUpdateRequest request)
-    {
-        if (id != request.Id)
-        {
-            return BadRequest("Ids don't match");
-        }
-
         try
         {
-            var response = await _paymentClient.UpdatePaymentStatusAsync(request);
-            if (!response.Success)
+            var grpcRequest = new PaymentRequest
             {
-                return StatusCode(500, "Failed to update payment status");
-            }
-           
-            return Ok(response);
+                Customer = paymentRequest.Customer,
+                BookingType = paymentRequest.BookingType,
+                Booking = paymentRequest.Booking,
+                Status = paymentRequest.Status,
+                Creditcardref = paymentRequest.CreditCardRef
+            };
 
+            var response = await _paymentClient.CreatePaymentAsync(grpcRequest);
+
+            if (response.Success)
+            {
+                return Ok(new { PaymentId = response.Id, Message = response.Message });
+            }
+            else
+            {
+                return BadRequest(new { Message = response.Message });
+            }
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            return StatusCode(500, $"Internal Server Error: {e.Message}");
+            Console.WriteLine($"Payment creation failed: {ex.Message}");
+            return StatusCode(500, new { Message = "Internal server error" });
         }
     }
-    
+
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetPaymentById(long id)
+    {
+        var grpcRequest = new PaymentRequestById { Id = id };
+        var response = await _paymentClient.GetPaymentByIdAsync(grpcRequest);
+
+        if (response.Success)
+        {
+            return Ok(response);
+        }
+        else
+        {
+            return NotFound(new { Message = response.Message });
+        }
+    }
+
+    [HttpPut("update-status")]
+    public async Task<IActionResult> UpdatePaymentStatus([FromBody] PaymentStatusUpdateDto paymentStatusUpdate)
+    {
+        var grpcRequest = new PaymentStatusUpdateRequest
+        {
+            Id = paymentStatusUpdate.PaymentId,
+            Status = paymentStatusUpdate.Status
+        };
+
+        var response = await _paymentClient.UpdatePaymentStatusAsync(grpcRequest);
+
+        if (response.Success)
+        {
+            return Ok(new { Message = response.Message });
+        }
+        else
+        {
+            return BadRequest(new { Message = response.Message });
+        }
+    }
+
+    [HttpGet("list/{customerId}")]
+    public async Task<IActionResult> ListPaymentsByCustomer(long customerId)
+    {
+        var grpcRequest = new PaymentListByCustomerRequest { CustomerId = customerId };
+        var response = await _paymentClient.ListPaymentsByCustomerAsync(grpcRequest);
+
+        if (response.Payments.Any())
+        {
+            return Ok(response.Payments);
+        }
+        else
+        {
+            return NoContent();
+        }
+    }
 }

@@ -6976,6 +6976,12 @@ public final class CarManagement {
      * <code>.BookingCar bookingCar = 3;</code>
      */
     CarManagementService.grpc.CarManagement.BookingCarOrBuilder getBookingCarOrBuilder();
+
+    /**
+     * <code>int32 bookingnr = 4;</code>
+     * @return The bookingnr.
+     */
+    int getBookingnr();
   }
   /**
    * Protobuf type {@code BookingCarResponse}
@@ -7094,6 +7100,17 @@ public final class CarManagement {
       return bookingCar_ == null ? CarManagementService.grpc.CarManagement.BookingCar.getDefaultInstance() : bookingCar_;
     }
 
+    public static final int BOOKINGNR_FIELD_NUMBER = 4;
+    private int bookingnr_ = 0;
+    /**
+     * <code>int32 bookingnr = 4;</code>
+     * @return The bookingnr.
+     */
+    @java.lang.Override
+    public int getBookingnr() {
+      return bookingnr_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7117,6 +7134,9 @@ public final class CarManagement {
       if (bookingCar_ != null) {
         output.writeMessage(3, getBookingCar());
       }
+      if (bookingnr_ != 0) {
+        output.writeInt32(4, bookingnr_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7136,6 +7156,10 @@ public final class CarManagement {
       if (bookingCar_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getBookingCar());
+      }
+      if (bookingnr_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, bookingnr_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7161,6 +7185,8 @@ public final class CarManagement {
         if (!getBookingCar()
             .equals(other.getBookingCar())) return false;
       }
+      if (getBookingnr()
+          != other.getBookingnr()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7181,6 +7207,8 @@ public final class CarManagement {
         hash = (37 * hash) + BOOKINGCAR_FIELD_NUMBER;
         hash = (53 * hash) + getBookingCar().hashCode();
       }
+      hash = (37 * hash) + BOOKINGNR_FIELD_NUMBER;
+      hash = (53 * hash) + getBookingnr();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7317,6 +7345,7 @@ public final class CarManagement {
           bookingCarBuilder_.dispose();
           bookingCarBuilder_ = null;
         }
+        bookingnr_ = 0;
         return this;
       }
 
@@ -7360,6 +7389,9 @@ public final class CarManagement {
           result.bookingCar_ = bookingCarBuilder_ == null
               ? bookingCar_
               : bookingCarBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bookingnr_ = bookingnr_;
         }
       }
 
@@ -7418,6 +7450,9 @@ public final class CarManagement {
         if (other.hasBookingCar()) {
           mergeBookingCar(other.getBookingCar());
         }
+        if (other.getBookingnr() != 0) {
+          setBookingnr(other.getBookingnr());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7461,6 +7496,11 @@ public final class CarManagement {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 32: {
+                bookingnr_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7699,6 +7739,38 @@ public final class CarManagement {
           bookingCar_ = null;
         }
         return bookingCarBuilder_;
+      }
+
+      private int bookingnr_ ;
+      /**
+       * <code>int32 bookingnr = 4;</code>
+       * @return The bookingnr.
+       */
+      @java.lang.Override
+      public int getBookingnr() {
+        return bookingnr_;
+      }
+      /**
+       * <code>int32 bookingnr = 4;</code>
+       * @param value The bookingnr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBookingnr(int value) {
+        
+        bookingnr_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 bookingnr = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBookingnr() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bookingnr_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11380,22 +11452,24 @@ public final class CarManagement {
       "e\030\005 \001(\t\022\017\n\007endtime\030\006 \001(\t\022\r\n\005price\030\007 \001(\t\022" +
       "\022\n\ngreenshare\030\010 \001(\005\022\r\n\005carid\030\t \001(\005\022\022\n\ncu" +
       "stomerid\030\n \001(\005\"3\n\016BookingCarList\022!\n\014book" +
-      "ing_cars\030\001 \003(\0132\013.BookingCar\"W\n\022BookingCa" +
+      "ing_cars\030\001 \003(\0132\013.BookingCar\"j\n\022BookingCa" +
       "rResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 " +
-      "\001(\t\022\037\n\nbookingCar\030\003 \001(\0132\013.BookingCar\" \n\022" +
-      "LocationHubRequest\022\n\n\002id\030\001 \001(\005\"\224\001\n\013Locat" +
-      "ionHub\022\n\n\002id\030\001 \001(\005\022\024\n\014locationname\030\002 \001(\t" +
-      "\022\017\n\007address\030\003 \001(\t\022\014\n\004city\030\004 \001(\t\022\017\n\007count" +
-      "ry\030\005 \001(\t\022\r\n\005email\030\006 \001(\t\022\017\n\007phonenr\030\007 \001(\t" +
-      "\022\023\n\013carcapacity\030\010 \001(\005\"4\n\017LocationHubList" +
-      "\022!\n\013locationhub\030\001 \003(\0132\014.LocationHub\"Z\n\023L" +
-      "ocationHubResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
-      "essage\030\002 \001(\t\022!\n\013locationHub\030\003 \001(\0132\014.Loca" +
-      "tionHub2\274\001\n\nCarService\022\036\n\ngetAllCars\022\006.E" +
-      "mpty\032\010.CarList\022\'\n\ngetCarByID\022\013.CarReques" +
-      "t\032\014.CarResponse\022\034\n\006addCar\022\004.Car\032\014.CarRes" +
-      "ponse\022\037\n\tupdateCar\022\004.Car\032\014.CarResponse\022&" +
-      "\n\tdeleteCar\022\013.CarRequest\032\014.CarResponse2\245" +
+      "\001(\t\022\037\n\nbookingCar\030\003 \001(\0132\013.BookingCar\022\021\n\t" +
+      "bookingnr\030\004 \001(\005\" \n\022LocationHubRequest\022\n\n" +
+      "\002id\030\001 \001(\005\"\224\001\n\013LocationHub\022\n\n\002id\030\001 \001(\005\022\024\n" +
+      "\014locationname\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\014\n\004" +
+      "city\030\004 \001(\t\022\017\n\007country\030\005 \001(\t\022\r\n\005email\030\006 \001" +
+      "(\t\022\017\n\007phonenr\030\007 \001(\t\022\023\n\013carcapacity\030\010 \001(\005" +
+      "\"4\n\017LocationHubList\022!\n\013locationhub\030\001 \003(\013" +
+      "2\014.LocationHub\"Z\n\023LocationHubResponse\022\017\n" +
+      "\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022!\n\013locat" +
+      "ionHub\030\003 \001(\0132\014.LocationHub2\371\001\n\nCarServic" +
+      "e\022\036\n\ngetAllCars\022\006.Empty\032\010.CarList\022\'\n\nget" +
+      "CarByID\022\013.CarRequest\032\014.CarResponse\022\034\n\006ad" +
+      "dCar\022\004.Car\032\014.CarResponse\022\037\n\tupdateCar\022\004." +
+      "Car\032\014.CarResponse\022&\n\tdeleteCar\022\013.CarRequ" +
+      "est\032\014.CarResponse\022;\n\032getAvailableCarsByL" +
+      "ocation\022\023.LocationHubRequest\032\010.CarList2\245" +
       "\002\n\021BookingCarService\022,\n\021GetAllBookingCar" +
       "s\022\006.Empty\032\017.BookingCarList\022<\n\021GetBooking" +
       "CarByID\022\022.BookingCarRequest\032\023.BookingCar" +
@@ -11471,7 +11545,7 @@ public final class CarManagement {
     internal_static_BookingCarResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BookingCarResponse_descriptor,
-        new java.lang.String[] { "Success", "Message", "BookingCar", });
+        new java.lang.String[] { "Success", "Message", "BookingCar", "Bookingnr", });
     internal_static_LocationHubRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_LocationHubRequest_fieldAccessorTable = new

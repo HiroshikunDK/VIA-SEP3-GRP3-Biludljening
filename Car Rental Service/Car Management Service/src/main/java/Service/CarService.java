@@ -6,6 +6,7 @@ import Model.Car;
 import Repository.CarRepository;
 import io.grpc.stub.StreamObserver;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -116,6 +117,18 @@ public class CarService extends CarServiceGrpc.CarServiceImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void getAvailableCarsByLocation(CarManagement.LocationHubRequest request, StreamObserver<CarManagement.CarList> responseObserver) {
+        List<Car> availableCars = carRepository.getAvailableCarsByLocation(request.getId());
+        CarManagement.CarList.Builder builder = CarManagement.CarList.newBuilder();
+        builder.addAllCars(availableCars.stream()
+                .map(this::convertToProtoCar)
+                .collect(Collectors.toList()));
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
+    }
+
 
     private CarManagement.Car convertToProtoCar(Car car) {
         return CarManagement.Car.newBuilder()

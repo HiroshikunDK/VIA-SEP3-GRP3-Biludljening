@@ -9,6 +9,7 @@ service CarService {
   rpc addCar (Car) returns (CarResponse);
   rpc updateCar (Car) returns (CarResponse);
   rpc deleteCar (CarRequest) returns (CarResponse);
+  rpc getAvailableCarsByLocation (LocationHubRequest) returns (CarList);
 }
 
 // Shared Messages
@@ -75,6 +76,7 @@ message BookingCarResponse {
   bool success = 1;
   string message = 2;
   BookingCar bookingCar = 3;
+  int32 bookingnr = 4;
 }
 
 // LocationHubService

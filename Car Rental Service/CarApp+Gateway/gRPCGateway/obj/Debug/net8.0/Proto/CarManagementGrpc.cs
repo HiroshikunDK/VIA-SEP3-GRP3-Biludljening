@@ -57,6 +57,8 @@ public static partial class CarService
   static readonly grpc::Marshaller<global::CarResponse> __Marshaller_CarResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarResponse.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::Car> __Marshaller_Car = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Car.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::LocationHubRequest> __Marshaller_LocationHubRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::LocationHubRequest.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::CarList> __Method_getAllCars = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::CarList>(
@@ -97,6 +99,14 @@ public static partial class CarService
       "deleteCar",
       __Marshaller_CarRequest,
       __Marshaller_CarResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::LocationHubRequest, global::CarList> __Method_getAvailableCarsByLocation = new grpc::Method<global::LocationHubRequest, global::CarList>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "getAvailableCarsByLocation",
+      __Marshaller_LocationHubRequest,
+      __Marshaller_CarList);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -230,6 +240,26 @@ public static partial class CarService
     public virtual grpc::AsyncUnaryCall<global::CarResponse> deleteCarAsync(global::CarRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_deleteCar, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::CarList getAvailableCarsByLocation(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return getAvailableCarsByLocation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::CarList getAvailableCarsByLocation(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_getAvailableCarsByLocation, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::CarList> getAvailableCarsByLocationAsync(global::LocationHubRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return getAvailableCarsByLocationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::CarList> getAvailableCarsByLocationAsync(global::LocationHubRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_getAvailableCarsByLocation, null, options, request);
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

@@ -1,0 +1,50 @@
+﻿@page "/carselection"
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<h3>Select a Car</h3>
+
+@if (cars == null)
+{
+    <p>Loading...</p>
+}
+else if (cars.Any())
+{
+    <ul>
+        @foreach (var car in cars)
+        {
+            <li>
+                <h4>@car.Model</h4>
+                <p>Seats: @car.Seats | Color: @car.Color</p>
+                <button @onclick="() => SelectCar(car.CarId)">Select</button>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No cars available.</p>
+}
+
+@code {
+    private List<CarDto> cars = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        try
+        {
+            cars = await client.GetFromJsonAsync<List<CarDto>>("api/car");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching cars: {ex.Message}");
+        }
+    }
+
+    private void SelectCar(int carId)
+    {
+        NavigationManager.NavigateTo($"/booking-details/{carId}");
+    }
+}

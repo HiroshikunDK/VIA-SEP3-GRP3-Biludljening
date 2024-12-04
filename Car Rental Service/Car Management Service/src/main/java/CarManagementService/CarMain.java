@@ -14,7 +14,7 @@ import jakarta.persistence.EntityManager;
 
 import java.io.IOException;
 
-public class Main {
+public class CarMain {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         // Initialize EntityManager from Hibernate Utility

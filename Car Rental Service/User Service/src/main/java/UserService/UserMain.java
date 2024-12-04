@@ -9,7 +9,7 @@ import io.grpc.ServerBuilder;
 import jakarta.persistence.EntityManager;
 import java.io.IOException;
 
-public class Main {
+public class UserMain {
     public static void main(String[] args) throws IOException, InterruptedException {
         // Get EntityManager from HibernateUtility
         EntityManager entityManager = HibernateUtility.getEntityManager();
