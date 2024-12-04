@@ -9,18 +9,48 @@
     <ValidationSummary />
 
     <div class="mb-3">
-        <label for="Model" class="form-label">Model</label>
+        <label for="Vin" class="form-label">Vin:</label>
+        <InputText id="Vin" class="form-control" @bind-Value="_car.Vin" />
+    </div>
+    
+    <div class="mb-3">
+        <label for="Year Produced" class="form-label">Year Produced:</label>
+        <InputNumber id="Year Produced" class="form-control" @bind-Value="_car.YearProduced" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Manufacturer" class="form-label">Manufacturer:</label>
+        <InputText id="Manufacturer" class="form-control" @bind-Value="_car.Manufacturer" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Model" class="form-label">Model:</label>
         <InputText id="Model" class="form-control" @bind-Value="_car.Model" />
     </div>
     
     <div class="mb-3">
-        <label for="Color" class="form-label">Color</label>
+        <label for="Color" class="form-label">Color:</label>
         <InputText id="Color" class="form-control" @bind-Value="_car.Color" />
     </div>
 
     <div class="mb-3">
-        <label for="Seats" class="form-label">Seats</label>
+        <label for="AlternateName" class="form-label">Alternate Name:</label>
+        <InputText id="AlternateName" class="form-control" @bind-Value="_car.AltName" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Seats" class="form-label">Seats:</label>
         <InputNumber id="Seats" class="form-control" @bind-Value="_car.Seats" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Range" class="form-label">Car Range:</label>
+        <InputNumber id="Range" class="form-control" @bind-Value="_car.CarRange" />
+    </div>
+
+    <div class="mb-3">
+        <label for="LocationHub" class="form-label">Location Hub:</label>
+        <InputNumber id="LocationHub" class="form-control" @bind-Value="_car.LocationHubRef" />
     </div>
 
     <button type="submit" class="btn btn-primary">Add Car</button>
@@ -47,7 +77,7 @@
         
         try
         {
-            var response = await Http.PostAsJsonAsync("api/car/add", _car);
+            var response = await Http.PostAsJsonAsync("api/car", _car);
             if (response.IsSuccessStatusCode)
             {
                 _successMessage = "Car added successfully!";
