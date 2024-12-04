@@ -32,6 +32,7 @@ public class Program
 
         builder.Services.AddAuthorization();
         
+        
         builder.Services.AddAntiforgery(options =>
         {
             options.HeaderName = "X-CSRF-TOKEN"; 

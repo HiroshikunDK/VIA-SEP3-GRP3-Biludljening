@@ -23,7 +23,7 @@ public static partial class CarManagementReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChlQcm90by9DYXJNYW5hZ2VtZW50LnByb3RvGhtnb29nbGUvcHJvdG9idWYv",
-          "ZW1wdHkucHJvdG8iHAoKQ2FyUmVxdWVzdBIOCgZjYXJfaWQYASABKAkitAEK",
+          "ZW1wdHkucHJvdG8iHAoKQ2FyUmVxdWVzdBIOCgZjYXJfaWQYASABKAUitAEK",
           "A0NhchIOCgZjYXJfaWQYASABKAUSCwoDdmluGAIgASgJEhQKDHllYXJwcm9k",
           "dWNlZBgDIAEoBRISCgptYW51ZmFjdG9yGAQgASgJEg0KBW1vZGVsGAUgASgJ",
           "Eg0KBWNvbG9yGAYgASgJEg8KB2FsdG5hbWUYByABKAkSDQoFc2VhdHMYCCAB",
@@ -133,13 +133,13 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
 
   /// <summary>Field number for the "car_id" field.</summary>
   public const int CarIdFieldNumber = 1;
-  private string carId_ = "";
+  private int carId_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string CarId {
+  public int CarId {
     get { return carId_; }
     set {
-      carId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      carId_ = value;
     }
   }
 
@@ -166,7 +166,7 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (CarId.Length != 0) hash ^= CarId.GetHashCode();
+    if (CarId != 0) hash ^= CarId.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -185,9 +185,9 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (CarId.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(CarId);
+    if (CarId != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(CarId);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -199,9 +199,9 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CarId.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(CarId);
+    if (CarId != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(CarId);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -213,8 +213,8 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (CarId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(CarId);
+    if (CarId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CarId);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -228,7 +228,7 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
     if (other == null) {
       return;
     }
-    if (other.CarId.Length != 0) {
+    if (other.CarId != 0) {
       CarId = other.CarId;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -246,8 +246,8 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
-        case 10: {
-          CarId = input.ReadString();
+        case 8: {
+          CarId = input.ReadInt32();
           break;
         }
       }
@@ -265,8 +265,8 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
-        case 10: {
-          CarId = input.ReadString();
+        case 8: {
+          CarId = input.ReadInt32();
           break;
         }
       }

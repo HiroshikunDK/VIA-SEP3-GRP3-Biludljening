@@ -30,19 +30,12 @@ public class CarController : ControllerBase
         };
 
         var response = await _carServiceClient.addCarAsync(addCarRequest);
-
-        if (response.Success)
-        {
-            return Ok(new { Message = response.Message });
-        }
-        else
-        {
-            return BadRequest(new { Message = response.Message });
-        }
+        
+        return Ok(response);
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetCarById(string id)
+    public async Task<IActionResult> GetCarById(int id)
     {
         var request = new CarRequest { CarId = id };
         var response = await _carServiceClient.getCarByIDAsync(request);
@@ -70,14 +63,26 @@ public class CarController : ControllerBase
 
 
     [HttpPut]
-    public async Task<IActionResult> UpdateCar([FromBody] Car request)
+    public async Task<IActionResult> UpdateCar([FromBody] AddCarRequestDto carDto)
     {
-        var response = await _carServiceClient.updateCarAsync(request);
+        var updateCarRequest = new Car
+        {
+            Vin = carDto.Vin,
+            Yearproduced = carDto.YearProduced,
+            Manufactor = carDto.Manufacturer,
+            Model = carDto.Model,   
+            Color = carDto.Color,
+            Altname = carDto.AltName,
+            Seats = carDto.Seats,
+            Carrange = carDto.CarRange,
+            Locationhubref = carDto.LocationHubRef
+        }; 
+        var response = await _carServiceClient.updateCarAsync(updateCarRequest);
         return Ok(response);
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteCar(string id)
+    public async Task<IActionResult> DeleteCar(int id)
     {
         var request = new CarRequest { CarId = id };
         var response = await _carServiceClient.deleteCarAsync(request);

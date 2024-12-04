@@ -36,6 +36,11 @@ builder.Services.AddGrpcClient<CarService.CarServiceClient>(options =>
     options.Address = new Uri("http://localhost:5004");
 });
 
+builder.Services.AddGrpcClient<BookingCarService.BookingCarServiceClient>(options =>
+{
+    options.Address = new Uri("http://localhost:5004");
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

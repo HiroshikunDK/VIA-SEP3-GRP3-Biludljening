@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BZGRDYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/CreateBooking.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVCb29raW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/apogultekin/Desktop/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/CreatePayment.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVQYXltZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
