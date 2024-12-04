@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shared.Dto;
 
 namespace gRPC_Gateway.Controllers;
 
@@ -13,10 +14,18 @@ public class PaymentController : ControllerBase
         _paymentClient = paymentClient;
     }
 
-    [HttpPost("create")]
-    public async Task<IActionResult> CreatePayment([FromBody] PaymentRequest request)
+    [HttpPost]
+    public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentRequestDto reqeust)
     {
-        var response = await _paymentClient.CreatePaymentAsync(request);
+        var grpcRequest = new PaymentRequest
+        {
+            Customer = reqeust.Customer,
+            BookingType = reqeust.BookingType,
+            Booking = reqeust.Booking,
+            Status = reqeust.Status,
+            Creditcardref = reqeust.CreditCardRef
+        };
+        var response = await _paymentClient.CreatePaymentAsync(grpcRequest);
         return Ok(response);
     }
 
@@ -28,10 +37,29 @@ public class PaymentController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("updateStatus")]
-    public async Task<IActionResult> UpdatePaymentStatus([FromBody] PaymentStatusUpdateRequest request)
+    [HttpPut("{id}/status")]
+    public async Task<IActionResult> UpdatePaymentStatus(int id,[FromBody] PaymentStatusUpdateRequest request)
     {
-        var response = await _paymentClient.UpdatePaymentStatusAsync(request);
-        return Ok(response);
+        if (id != request.Id)
+        {
+            return BadRequest("Ids don't match");
+        }
+
+        try
+        {
+            var response = await _paymentClient.UpdatePaymentStatusAsync(request);
+            if (!response.Success)
+            {
+                return StatusCode(500, "Failed to update payment status");
+            }
+           
+            return Ok(response);
+
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, $"Internal Server Error: {e.Message}");
+        }
     }
+    
 }
