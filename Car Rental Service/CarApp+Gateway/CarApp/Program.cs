@@ -2,6 +2,7 @@ using CarApp.Components;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using CarApp.Services;
 
 namespace CarApp;
 
@@ -15,6 +16,16 @@ public class Program
             .AddInteractiveServerComponents();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002") });
+       
+       // Konfigurer gRPC-klient
+       // builder.Services.AddSingleton(sp =>
+       // {
+       //     var channel = GrpcChannel.ForAddress("http://localhost:5005");
+       //     return new PaymentService.PaymentServiceClient(channel);
+       // });
+       
+       //Service
+       builder.Services.AddScoped<IPaymentService, HttpPaymentService>();
 
         // Configure JWT Authentication
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

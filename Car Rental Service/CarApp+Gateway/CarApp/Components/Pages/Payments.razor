@@ -1,0 +1,40 @@
+﻿@page "/Payments"
+@using CarApp.Services
+@using Shared.Dto
+@inject IPaymentService HttpPaymentService
+<h3>Payments by user</h3>
+
+<input type="number" @bind="customerId" placeholder="Enter customer ID: "/>
+<button @onclick="LoadPayments"> submit</button>
+
+@if (payments.Any())
+{
+    <ul>
+       @foreach (var payment in payments)
+       {
+           <li>Payment ID: @payment.Id, Status: @payment.Status</li>
+       }
+    </ul>
+}
+
+else
+{
+    <p>No payments found for this customer</p>
+}
+
+@code {
+    private int customerId;
+    private List<PaymentResponseDto> payments = new();
+
+    private async Task LoadPayments()
+    {
+        try
+        {
+           // payments = await HttpPaymentService.GetPaymentByIdAsync(customerId);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
+    }
+}
