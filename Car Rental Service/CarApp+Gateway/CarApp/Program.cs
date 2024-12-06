@@ -21,6 +21,10 @@ public class Program
         builder.Services.AddHttpClient<RideShareOfferService>(); // Registers HttpClient for the service
         builder.Services.AddScoped<RideShareOfferService>(); // Registers RideShareOfferService
 
+        //RideShareRequestService dependency injection 
+        builder.Services.AddHttpClient<RideShareRequestService>();
+        builder.Services.AddScoped<RideShareRequestService>();
+
         // Configure JWT Authentication
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>

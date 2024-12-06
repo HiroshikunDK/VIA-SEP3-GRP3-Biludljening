@@ -25,7 +25,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while fetching ride share requests.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
@@ -44,7 +44,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException($"An error occurred while fetching ride share request with ID {rideId}.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
@@ -59,7 +59,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while creating the ride share request.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
@@ -74,7 +74,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while updating the ride share request.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
@@ -89,7 +89,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException($"An error occurred while deleting the ride share request with ID {rideId}.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
     }

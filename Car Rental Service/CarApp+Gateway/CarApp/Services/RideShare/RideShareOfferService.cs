@@ -18,9 +18,9 @@ namespace CarApp.Services.RideShareOffer
         }
 
 
-        public void RedirectToCreateRideShareOffer()
+        public void RedirectToCreateRideShareOffer(string bookingId, string userId)
         {
-            _navigationManager.NavigateTo("");
+            _navigationManager.NavigateTo("/CreateRideShareOffer?bookingId={bookingId}&userId={userId}");
         }
 
         // Get all RideShareOffers
@@ -34,7 +34,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while fetching ride share offers.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 

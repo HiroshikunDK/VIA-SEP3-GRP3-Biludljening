@@ -3,6 +3,7 @@
 @using Shared.Dto
 
 @inject RideShareOfferService RideShareService
+@inject NavigationManager NavigationManager
 
 <h3>Create Ride Share Offer</h3>
 
@@ -127,6 +128,10 @@
 }
 
 @code {
+    //Redirect Parameters
+    [Parameter] public string bookingId { get; set; }
+    [Parameter] public string userId { get; set; }
+    
     // Create a new RideShareOfferDto instance
     private RideShareOfferDto rideShareOffer = new RideShareOfferDto();
     private bool showModal = false;
@@ -142,6 +147,16 @@
         "Booking3" 
     };
 
+    protected override void OnInitialized()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+        
+        bookingId = queryParams["bookingId"];
+        userId = queryParams["userId"];
+        
+    }
+    
     // Handle the form submission
     private async Task HandleValidSubmit()
     {
