@@ -1,0 +1,172 @@
+﻿@page "/CreateRideShareOffer"
+@using CarApp.Services.RideShareOffer
+@using Shared.Dto
+
+@inject RideShareOfferService RideShareService
+
+<h3>Create Ride Share Offer</h3>
+
+<EditForm Model="@rideShareOffer" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <!-- Available Spaces Field -->
+    <div class="mb-3">
+        <label for="availableSpaces" class="form-label">Available Spaces</label>
+        <InputNumber id="availableSpaces" class="form-control" @bind-Value="rideShareOffer.AvailableSpaces" />
+    </div>
+
+    <!-- Start Date Field -->
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <InputText id="startDate" class="form-control" @bind-Value="rideShareOffer.StartDate" />
+    </div>
+
+    <!-- Start Time Field (using InputText instead of InputTime) -->
+    <div class="mb-3">
+        <label for="startTime" class="form-label">Start Time</label>
+        <InputText id="startTime" class="form-control" @bind-Value="rideShareOffer.StartTime" />
+        <small class="text-muted">Please enter time in HH:MM:SS format.</small>
+    </div>
+
+    <!-- Start Location Field -->
+    <div class="mb-3">
+        <label for="startLocation" class="form-label">Start Location</label>
+        <InputText id="startLocation" class="form-control" @bind-Value="rideShareOffer.StartLocation" />
+    </div>
+
+    <!-- End Date Field -->
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <InputText id="endDate" class="form-control" @bind-Value="rideShareOffer.EndDate" />
+    </div>
+
+    <!-- End Time Field (using InputText instead of InputTime) -->
+    <div class="mb-3">
+        <label for="endTime" class="form-label">End Time</label>
+        <InputText id="endTime" class="form-control" @bind-Value="rideShareOffer.EndTime" />
+        <small class="text-muted">Please enter time in HH:MM:SS format.</small>
+    </div>
+
+    <!-- End Location Field -->
+    <div class="mb-3">
+        <label for="endLocation" class="form-label">End Location</label>
+        <InputText id="endLocation" class="form-control" @bind-Value="rideShareOffer.EndLocation" />
+    </div>
+
+    <!-- Price Field -->
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <InputNumber id="price" class="form-control" @bind-Value="rideShareOffer.Price" />
+    </div>
+
+    <!-- Booking Reference Dropdown -->
+    <div class="mb-3">
+        <label for="bookingRef" class="form-label">Booking Reference</label>
+        <InputSelect id="bookingRef" class="form-control" @bind-Value="rideShareOffer.BookingRef">
+            <option value="">Select Booking Reference</option>
+            @foreach (var booking in bookingRefList)
+            {
+                <option value="@booking">@booking</option>
+            }
+        </InputSelect>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+<!-- Success/Failure Modal -->
+@if (showModal)
+{
+<div class="modal fade show" style="display:block;" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">@modalTitle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="CloseModal"></button>
+            </div>
+            <div class="modal-body">
+                @if (isSuccess)
+                {
+                <p>Ride share offer was created successfully!</p>
+                <ul>
+                    <li><strong>Available Spaces:</strong> @rideShareOffer.AvailableSpaces</li>
+                    <li><strong>Start Date:</strong> @rideShareOffer.StartDate</li>
+                    <li><strong>Start Time:</strong> @rideShareOffer.StartTime</li>
+                    <li><strong>Start Location:</strong> @rideShareOffer.StartLocation</li>
+                    <li><strong>End Date:</strong> @rideShareOffer.EndDate</li>
+                    <li><strong>End Time:</strong> @rideShareOffer.EndTime</li>
+                    <li><strong>End Location:</strong> @rideShareOffer.EndLocation</li>
+                    <li><strong>Price:</strong> @rideShareOffer.Price</li>
+                    <li><strong>Booking Reference:</strong> @rideShareOffer.BookingRef</li>
+                </ul>
+                }
+                else
+                {
+                    <p>There was an error creating the RideShareOffer:<br/><br/> Error Code: @errorMessage  <br/><br/>Please check the entered data:</p>
+                <ul>
+                    <li><strong>Available Spaces:</strong> @rideShareOffer.AvailableSpaces</li>
+                    <li><strong>Start Date:</strong> @rideShareOffer.StartDate</li>
+                    <li><strong>Start Time:</strong> @rideShareOffer.StartTime</li>
+                    <li><strong>Start Location:</strong> @rideShareOffer.StartLocation</li>
+                    <li><strong>End Date:</strong> @rideShareOffer.EndDate</li>
+                    <li><strong>End Time:</strong> @rideShareOffer.EndTime</li>
+                    <li><strong>End Location:</strong> @rideShareOffer.EndLocation</li>
+                    <li><strong>Price:</strong> @rideShareOffer.Price</li>
+                    <li><strong>Booking Reference:</strong> @rideShareOffer.BookingRef</li>
+                </ul>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="CloseModal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@code {
+    // Create a new RideShareOfferDto instance
+    private RideShareOfferDto rideShareOffer = new RideShareOfferDto();
+    private bool showModal = false;
+    private bool isSuccess = false;
+    private string modalTitle = "";
+    private string errorMessage = "";
+
+    // Define a list of Booking References (this will be populated later)
+    private List<string> bookingRefList = new List<string>
+    {
+        "Booking1",
+        "Booking2",
+        "Booking3" 
+    };
+
+    // Handle the form submission
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            var success = await RideShareService.CreateRideShareOfferAsync(rideShareOffer);
+            if (success)
+            {
+                isSuccess = true;
+                modalTitle = "Success!";
+            }
+            showModal = true;
+            
+        }
+        catch (Exception e)
+        {
+            isSuccess = false;
+            modalTitle = "Error!";
+            errorMessage = e.Message;
+            showModal = true;
+        }
+        
+    }
+    private void CloseModal()
+    {
+        showModal = false;
+    }
+}

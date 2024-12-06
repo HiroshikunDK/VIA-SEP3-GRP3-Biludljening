@@ -9,7 +9,7 @@ namespace CarApp.Services.RideShareOffer
     {
         private readonly HttpClient _httpClient;
 
-        RideShareRequestService(HttpClient httpClient)
+        public RideShareRequestService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }

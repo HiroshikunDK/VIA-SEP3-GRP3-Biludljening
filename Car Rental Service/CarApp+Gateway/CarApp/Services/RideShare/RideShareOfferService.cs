@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
 using Shared.Dto;
 
 namespace CarApp.Services.RideShareOffer
@@ -8,13 +9,21 @@ namespace CarApp.Services.RideShareOffer
     public class RideShareOfferService
     {
         private readonly HttpClient _httpClient;
+        private readonly NavigationManager _navigationManager;
 
-        RideShareOfferService(HttpClient httpClient)
+        public RideShareOfferService(HttpClient httpClient,  NavigationManager navigationManager)
         {
             _httpClient = httpClient;
+            _navigationManager = navigationManager;
         }
 
-        // Get all ride share offers
+
+        public void RedirectToCreateRideShareOffer()
+        {
+            _navigationManager.NavigateTo("");
+        }
+
+        // Get all RideShareOffers
         public async Task<RideShareOfferDto[]> GetAllRideShareOffersAsync()
         {
             try
@@ -29,7 +38,7 @@ namespace CarApp.Services.RideShareOffer
             }
         }
 
-        // Get a ride share offer by ID
+        // Get a Ride ShareOffer by ID
         public async Task<RideShareOfferDto> GetRideShareOfferByIdAsync(string rideId)
         {
             try
@@ -44,11 +53,11 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException($"An error occurred while fetching ride share offer with ID {rideId}.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
-        // Create a new ride share offer
+        // Create a new Ride ShareOffer
         public async Task<bool> CreateRideShareOfferAsync(RideShareOfferDto offer)
         {
             try
@@ -59,11 +68,11 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while creating the ride share offer.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
-        // Update an existing ride share offer
+        // Update an existing RideShareOffer
         public async Task<bool> UpdateRideShareOfferAsync(RideShareOfferDto offer)
         {
             try
@@ -74,11 +83,11 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException("An error occurred while updating the ride share offer.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
 
-        // Delete a ride share offer by ID
+        // Delete a RideShareOffer by ID
         public async Task<bool> DeleteRideShareOfferAsync(string rideId)
         {
             try
@@ -89,7 +98,7 @@ namespace CarApp.Services.RideShareOffer
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
-                throw new ApplicationException($"An error occurred while deleting the ride share offer with ID {rideId}.", ex);
+                throw new ApplicationException(ex.Message, ex);
             }
         }
     }
