@@ -8,6 +8,8 @@ import Repository.RideshareRepository;
 import RideShareService.grpc.RideShareServiceGrpc;
 import RideShareService.grpc.Rideshare;
 import io.grpc.stub.StreamObserver;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +20,15 @@ public class RideshareService extends RideShareServiceGrpc.RideShareServiceImplB
     private final RideShareOfferHibernateImpl rideShareOfferHibernate;
     private final RideShareRequestHibernateImpl rideShareRequestHibernate;
 
+    //Empty constructor used for reflection invocation in TestSuite
+    public RideshareService() {
+        //Manual constructor used by testing suite
+        SessionFactory sessionFactory = new Configuration().configure("hibernateTest.cfg.xml").buildSessionFactory();
+
+        this.rideshareRepository = new RideshareRepository(sessionFactory);
+        this.rideShareOfferHibernate = new RideShareOfferHibernateImpl(sessionFactory);
+        this.rideShareRequestHibernate = new RideShareRequestHibernateImpl(sessionFactory);
+    }
     public RideshareService(RideshareRepository rideshareRepository,
                             RideShareOfferHibernateImpl rideShareOfferHibernate,
                             RideShareRequestHibernateImpl rideShareRequestHibernate) {
