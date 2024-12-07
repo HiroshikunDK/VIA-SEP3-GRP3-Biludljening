@@ -19,10 +19,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
-    long getCreditcardId();
+    int getCreditcardId();
 
     /**
      * <code>string creditcardnr = 2;</code>
@@ -61,10 +61,10 @@ public final class Payment {
         getCcLastnameBytes();
 
     /**
-     * <code>int64 customerid = 5;</code>
+     * <code>int32 customerid = 5;</code>
      * @return The customerid.
      */
-    long getCustomerid();
+    int getCustomerid();
   }
   /**
    * <pre>
@@ -114,13 +114,13 @@ public final class Payment {
     }
 
     public static final int CREDITCARD_ID_FIELD_NUMBER = 1;
-    private long creditcardId_ = 0L;
+    private int creditcardId_ = 0;
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
     @java.lang.Override
-    public long getCreditcardId() {
+    public int getCreditcardId() {
       return creditcardId_;
     }
 
@@ -242,13 +242,13 @@ public final class Payment {
     }
 
     public static final int CUSTOMERID_FIELD_NUMBER = 5;
-    private long customerid_ = 0L;
+    private int customerid_ = 0;
     /**
-     * <code>int64 customerid = 5;</code>
+     * <code>int32 customerid = 5;</code>
      * @return The customerid.
      */
     @java.lang.Override
-    public long getCustomerid() {
+    public int getCustomerid() {
       return customerid_;
     }
 
@@ -266,8 +266,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (creditcardId_ != 0L) {
-        output.writeInt64(1, creditcardId_);
+      if (creditcardId_ != 0) {
+        output.writeInt32(1, creditcardId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creditcardnr_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, creditcardnr_);
@@ -278,8 +278,8 @@ public final class Payment {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ccLastname_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ccLastname_);
       }
-      if (customerid_ != 0L) {
-        output.writeInt64(5, customerid_);
+      if (customerid_ != 0) {
+        output.writeInt32(5, customerid_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -290,9 +290,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (creditcardId_ != 0L) {
+      if (creditcardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, creditcardId_);
+          .computeInt32Size(1, creditcardId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creditcardnr_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, creditcardnr_);
@@ -303,9 +303,9 @@ public final class Payment {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ccLastname_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ccLastname_);
       }
-      if (customerid_ != 0L) {
+      if (customerid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, customerid_);
+          .computeInt32Size(5, customerid_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -344,8 +344,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CREDITCARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreditcardId());
+      hash = (53 * hash) + getCreditcardId();
       hash = (37 * hash) + CREDITCARDNR_FIELD_NUMBER;
       hash = (53 * hash) + getCreditcardnr().hashCode();
       hash = (37 * hash) + CC_NAME_FIELD_NUMBER;
@@ -353,8 +352,7 @@ public final class Payment {
       hash = (37 * hash) + CC_LASTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getCcLastname().hashCode();
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCustomerid());
+      hash = (53 * hash) + getCustomerid();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -488,11 +486,11 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         creditcardnr_ = "";
         ccName_ = "";
         ccLastname_ = "";
-        customerid_ = 0L;
+        customerid_ = 0;
         return this;
       }
 
@@ -587,7 +585,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.CreditcardRequest other) {
         if (other == PaymentService.grpc.Payment.CreditcardRequest.getDefaultInstance()) return this;
-        if (other.getCreditcardId() != 0L) {
+        if (other.getCreditcardId() != 0) {
           setCreditcardId(other.getCreditcardId());
         }
         if (!other.getCreditcardnr().isEmpty()) {
@@ -605,7 +603,7 @@ public final class Payment {
           bitField0_ |= 0x00000008;
           onChanged();
         }
-        if (other.getCustomerid() != 0L) {
+        if (other.getCustomerid() != 0) {
           setCustomerid(other.getCustomerid());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -635,7 +633,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                creditcardId_ = input.readInt64();
+                creditcardId_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -655,7 +653,7 @@ public final class Payment {
                 break;
               } // case 34
               case 40: {
-                customerid_ = input.readInt64();
+                customerid_ = input.readInt32();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
@@ -676,21 +674,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long creditcardId_ ;
+      private int creditcardId_ ;
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return The creditcardId.
        */
       @java.lang.Override
-      public long getCreditcardId() {
+      public int getCreditcardId() {
         return creditcardId_;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @param value The creditcardId to set.
        * @return This builder for chaining.
        */
-      public Builder setCreditcardId(long value) {
+      public Builder setCreditcardId(int value) {
         
         creditcardId_ = value;
         bitField0_ |= 0x00000001;
@@ -698,12 +696,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditcardId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         onChanged();
         return this;
       }
@@ -924,21 +922,21 @@ public final class Payment {
         return this;
       }
 
-      private long customerid_ ;
+      private int customerid_ ;
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @return The customerid.
        */
       @java.lang.Override
-      public long getCustomerid() {
+      public int getCustomerid() {
         return customerid_;
       }
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @param value The customerid to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerid(long value) {
+      public Builder setCustomerid(int value) {
         
         customerid_ = value;
         bitField0_ |= 0x00000010;
@@ -946,12 +944,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomerid() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        customerid_ = 0L;
+        customerid_ = 0;
         onChanged();
         return this;
       }
@@ -1024,10 +1022,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
-    long getCreditcardId();
+    int getCreditcardId();
 
     /**
      * <code>string creditcardnr = 2;</code>
@@ -1066,10 +1064,10 @@ public final class Payment {
         getCcLastnameBytes();
 
     /**
-     * <code>int64 customerid = 5;</code>
+     * <code>int32 customerid = 5;</code>
      * @return The customerid.
      */
-    long getCustomerid();
+    int getCustomerid();
 
     /**
      * <pre>
@@ -1146,13 +1144,13 @@ public final class Payment {
     }
 
     public static final int CREDITCARD_ID_FIELD_NUMBER = 1;
-    private long creditcardId_ = 0L;
+    private int creditcardId_ = 0;
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
     @java.lang.Override
-    public long getCreditcardId() {
+    public int getCreditcardId() {
       return creditcardId_;
     }
 
@@ -1274,13 +1272,13 @@ public final class Payment {
     }
 
     public static final int CUSTOMERID_FIELD_NUMBER = 5;
-    private long customerid_ = 0L;
+    private int customerid_ = 0;
     /**
-     * <code>int64 customerid = 5;</code>
+     * <code>int32 customerid = 5;</code>
      * @return The customerid.
      */
     @java.lang.Override
-    public long getCustomerid() {
+    public int getCustomerid() {
       return customerid_;
     }
 
@@ -1360,8 +1358,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (creditcardId_ != 0L) {
-        output.writeInt64(1, creditcardId_);
+      if (creditcardId_ != 0) {
+        output.writeInt32(1, creditcardId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creditcardnr_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, creditcardnr_);
@@ -1372,8 +1370,8 @@ public final class Payment {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ccLastname_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ccLastname_);
       }
-      if (customerid_ != 0L) {
-        output.writeInt64(5, customerid_);
+      if (customerid_ != 0) {
+        output.writeInt32(5, customerid_);
       }
       if (success_ != false) {
         output.writeBool(6, success_);
@@ -1390,9 +1388,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (creditcardId_ != 0L) {
+      if (creditcardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, creditcardId_);
+          .computeInt32Size(1, creditcardId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creditcardnr_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, creditcardnr_);
@@ -1403,9 +1401,9 @@ public final class Payment {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ccLastname_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ccLastname_);
       }
-      if (customerid_ != 0L) {
+      if (customerid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, customerid_);
+          .computeInt32Size(5, customerid_);
       }
       if (success_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1455,8 +1453,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CREDITCARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreditcardId());
+      hash = (53 * hash) + getCreditcardId();
       hash = (37 * hash) + CREDITCARDNR_FIELD_NUMBER;
       hash = (53 * hash) + getCreditcardnr().hashCode();
       hash = (37 * hash) + CC_NAME_FIELD_NUMBER;
@@ -1464,8 +1461,7 @@ public final class Payment {
       hash = (37 * hash) + CC_LASTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getCcLastname().hashCode();
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCustomerid());
+      hash = (53 * hash) + getCustomerid();
       hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSuccess());
@@ -1600,11 +1596,11 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         creditcardnr_ = "";
         ccName_ = "";
         ccLastname_ = "";
-        customerid_ = 0L;
+        customerid_ = 0;
         success_ = false;
         message_ = "";
         return this;
@@ -1707,7 +1703,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.CreditcardResponse other) {
         if (other == PaymentService.grpc.Payment.CreditcardResponse.getDefaultInstance()) return this;
-        if (other.getCreditcardId() != 0L) {
+        if (other.getCreditcardId() != 0) {
           setCreditcardId(other.getCreditcardId());
         }
         if (!other.getCreditcardnr().isEmpty()) {
@@ -1725,7 +1721,7 @@ public final class Payment {
           bitField0_ |= 0x00000008;
           onChanged();
         }
-        if (other.getCustomerid() != 0L) {
+        if (other.getCustomerid() != 0) {
           setCustomerid(other.getCustomerid());
         }
         if (other.getSuccess() != false) {
@@ -1763,7 +1759,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                creditcardId_ = input.readInt64();
+                creditcardId_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -1783,7 +1779,7 @@ public final class Payment {
                 break;
               } // case 34
               case 40: {
-                customerid_ = input.readInt64();
+                customerid_ = input.readInt32();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
@@ -1814,21 +1810,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long creditcardId_ ;
+      private int creditcardId_ ;
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return The creditcardId.
        */
       @java.lang.Override
-      public long getCreditcardId() {
+      public int getCreditcardId() {
         return creditcardId_;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @param value The creditcardId to set.
        * @return This builder for chaining.
        */
-      public Builder setCreditcardId(long value) {
+      public Builder setCreditcardId(int value) {
         
         creditcardId_ = value;
         bitField0_ |= 0x00000001;
@@ -1836,12 +1832,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditcardId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         onChanged();
         return this;
       }
@@ -2062,21 +2058,21 @@ public final class Payment {
         return this;
       }
 
-      private long customerid_ ;
+      private int customerid_ ;
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @return The customerid.
        */
       @java.lang.Override
-      public long getCustomerid() {
+      public int getCustomerid() {
         return customerid_;
       }
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @param value The customerid to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerid(long value) {
+      public Builder setCustomerid(int value) {
         
         customerid_ = value;
         bitField0_ |= 0x00000010;
@@ -2084,12 +2080,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 customerid = 5;</code>
+       * <code>int32 customerid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomerid() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        customerid_ = 0L;
+        customerid_ = 0;
         onChanged();
         return this;
       }
@@ -2298,10 +2294,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
-    long getCreditcardId();
+    int getCreditcardId();
   }
   /**
    * Protobuf type {@code CreditcardRequestById}
@@ -2344,13 +2340,13 @@ public final class Payment {
     }
 
     public static final int CREDITCARD_ID_FIELD_NUMBER = 1;
-    private long creditcardId_ = 0L;
+    private int creditcardId_ = 0;
     /**
-     * <code>int64 creditcard_id = 1;</code>
+     * <code>int32 creditcard_id = 1;</code>
      * @return The creditcardId.
      */
     @java.lang.Override
-    public long getCreditcardId() {
+    public int getCreditcardId() {
       return creditcardId_;
     }
 
@@ -2368,8 +2364,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (creditcardId_ != 0L) {
-        output.writeInt64(1, creditcardId_);
+      if (creditcardId_ != 0) {
+        output.writeInt32(1, creditcardId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2380,9 +2376,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (creditcardId_ != 0L) {
+      if (creditcardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, creditcardId_);
+          .computeInt32Size(1, creditcardId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2413,8 +2409,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CREDITCARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreditcardId());
+      hash = (53 * hash) + getCreditcardId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2544,7 +2539,7 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         return this;
       }
 
@@ -2627,7 +2622,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.CreditcardRequestById other) {
         if (other == PaymentService.grpc.Payment.CreditcardRequestById.getDefaultInstance()) return this;
-        if (other.getCreditcardId() != 0L) {
+        if (other.getCreditcardId() != 0) {
           setCreditcardId(other.getCreditcardId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2657,7 +2652,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                creditcardId_ = input.readInt64();
+                creditcardId_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -2678,21 +2673,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long creditcardId_ ;
+      private int creditcardId_ ;
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return The creditcardId.
        */
       @java.lang.Override
-      public long getCreditcardId() {
+      public int getCreditcardId() {
         return creditcardId_;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @param value The creditcardId to set.
        * @return This builder for chaining.
        */
-      public Builder setCreditcardId(long value) {
+      public Builder setCreditcardId(int value) {
         
         creditcardId_ = value;
         bitField0_ |= 0x00000001;
@@ -2700,12 +2695,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 creditcard_id = 1;</code>
+       * <code>int32 creditcard_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditcardId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        creditcardId_ = 0L;
+        creditcardId_ = 0;
         onChanged();
         return this;
       }
@@ -2778,16 +2773,16 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
-    long getId();
+    int getId();
 
     /**
-     * <code>int64 customer = 2;</code>
+     * <code>int32 customer = 2;</code>
      * @return The customer.
      */
-    long getCustomer();
+    int getCustomer();
 
     /**
      * <code>int32 bookingType = 3;</code>
@@ -2796,10 +2791,10 @@ public final class Payment {
     int getBookingType();
 
     /**
-     * <code>int64 booking = 4;</code>
+     * <code>int32 booking = 4;</code>
      * @return The booking.
      */
-    long getBooking();
+    int getBooking();
 
     /**
      * <code>string status = 5;</code>
@@ -2814,10 +2809,10 @@ public final class Payment {
         getStatusBytes();
 
     /**
-     * <code>int64 creditcardref = 6;</code>
+     * <code>int32 creditcardref = 6;</code>
      * @return The creditcardref.
      */
-    long getCreditcardref();
+    int getCreditcardref();
   }
   /**
    * <pre>
@@ -2865,24 +2860,24 @@ public final class Payment {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private long id_ = 0L;
+    private int id_ = 0;
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public long getId() {
+    public int getId() {
       return id_;
     }
 
     public static final int CUSTOMER_FIELD_NUMBER = 2;
-    private long customer_ = 0L;
+    private int customer_ = 0;
     /**
-     * <code>int64 customer = 2;</code>
+     * <code>int32 customer = 2;</code>
      * @return The customer.
      */
     @java.lang.Override
-    public long getCustomer() {
+    public int getCustomer() {
       return customer_;
     }
 
@@ -2898,13 +2893,13 @@ public final class Payment {
     }
 
     public static final int BOOKING_FIELD_NUMBER = 4;
-    private long booking_ = 0L;
+    private int booking_ = 0;
     /**
-     * <code>int64 booking = 4;</code>
+     * <code>int32 booking = 4;</code>
      * @return The booking.
      */
     @java.lang.Override
-    public long getBooking() {
+    public int getBooking() {
       return booking_;
     }
 
@@ -2948,13 +2943,13 @@ public final class Payment {
     }
 
     public static final int CREDITCARDREF_FIELD_NUMBER = 6;
-    private long creditcardref_ = 0L;
+    private int creditcardref_ = 0;
     /**
-     * <code>int64 creditcardref = 6;</code>
+     * <code>int32 creditcardref = 6;</code>
      * @return The creditcardref.
      */
     @java.lang.Override
-    public long getCreditcardref() {
+    public int getCreditcardref() {
       return creditcardref_;
     }
 
@@ -2972,23 +2967,23 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0L) {
-        output.writeInt64(1, id_);
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
       }
-      if (customer_ != 0L) {
-        output.writeInt64(2, customer_);
+      if (customer_ != 0) {
+        output.writeInt32(2, customer_);
       }
       if (bookingType_ != 0) {
         output.writeInt32(3, bookingType_);
       }
-      if (booking_ != 0L) {
-        output.writeInt64(4, booking_);
+      if (booking_ != 0) {
+        output.writeInt32(4, booking_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
       }
-      if (creditcardref_ != 0L) {
-        output.writeInt64(6, creditcardref_);
+      if (creditcardref_ != 0) {
+        output.writeInt32(6, creditcardref_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2999,28 +2994,28 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0L) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+          .computeInt32Size(1, id_);
       }
-      if (customer_ != 0L) {
+      if (customer_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, customer_);
+          .computeInt32Size(2, customer_);
       }
       if (bookingType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, bookingType_);
       }
-      if (booking_ != 0L) {
+      if (booking_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, booking_);
+          .computeInt32Size(4, booking_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
       }
-      if (creditcardref_ != 0L) {
+      if (creditcardref_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, creditcardref_);
+          .computeInt32Size(6, creditcardref_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3061,21 +3056,17 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (53 * hash) + getId();
       hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCustomer());
+      hash = (53 * hash) + getCustomer();
       hash = (37 * hash) + BOOKINGTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getBookingType();
       hash = (37 * hash) + BOOKING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBooking());
+      hash = (53 * hash) + getBooking();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + CREDITCARDREF_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreditcardref());
+      hash = (53 * hash) + getCreditcardref();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3209,12 +3200,12 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = 0L;
-        customer_ = 0L;
+        id_ = 0;
+        customer_ = 0;
         bookingType_ = 0;
-        booking_ = 0L;
+        booking_ = 0;
         status_ = "";
-        creditcardref_ = 0L;
+        creditcardref_ = 0;
         return this;
       }
 
@@ -3312,16 +3303,16 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.PaymentRequest other) {
         if (other == PaymentService.grpc.Payment.PaymentRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
+        if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (other.getCustomer() != 0L) {
+        if (other.getCustomer() != 0) {
           setCustomer(other.getCustomer());
         }
         if (other.getBookingType() != 0) {
           setBookingType(other.getBookingType());
         }
-        if (other.getBooking() != 0L) {
+        if (other.getBooking() != 0) {
           setBooking(other.getBooking());
         }
         if (!other.getStatus().isEmpty()) {
@@ -3329,7 +3320,7 @@ public final class Payment {
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (other.getCreditcardref() != 0L) {
+        if (other.getCreditcardref() != 0) {
           setCreditcardref(other.getCreditcardref());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3359,12 +3350,12 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                id_ = input.readInt64();
+                id_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
               case 16: {
-                customer_ = input.readInt64();
+                customer_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
@@ -3374,7 +3365,7 @@ public final class Payment {
                 break;
               } // case 24
               case 32: {
-                booking_ = input.readInt64();
+                booking_ = input.readInt32();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
@@ -3384,7 +3375,7 @@ public final class Payment {
                 break;
               } // case 42
               case 48: {
-                creditcardref_ = input.readInt64();
+                creditcardref_ = input.readInt32();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
@@ -3405,21 +3396,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long id_ ;
+      private int id_ ;
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
-      public long getId() {
+      public int getId() {
         return id_;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(long value) {
+      public Builder setId(int value) {
         
         id_ = value;
         bitField0_ |= 0x00000001;
@@ -3427,31 +3418,31 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
+        id_ = 0;
         onChanged();
         return this;
       }
 
-      private long customer_ ;
+      private int customer_ ;
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @return The customer.
        */
       @java.lang.Override
-      public long getCustomer() {
+      public int getCustomer() {
         return customer_;
       }
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @param value The customer to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomer(long value) {
+      public Builder setCustomer(int value) {
         
         customer_ = value;
         bitField0_ |= 0x00000002;
@@ -3459,12 +3450,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomer() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        customer_ = 0L;
+        customer_ = 0;
         onChanged();
         return this;
       }
@@ -3501,21 +3492,21 @@ public final class Payment {
         return this;
       }
 
-      private long booking_ ;
+      private int booking_ ;
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @return The booking.
        */
       @java.lang.Override
-      public long getBooking() {
+      public int getBooking() {
         return booking_;
       }
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @param value The booking to set.
        * @return This builder for chaining.
        */
-      public Builder setBooking(long value) {
+      public Builder setBooking(int value) {
         
         booking_ = value;
         bitField0_ |= 0x00000008;
@@ -3523,12 +3514,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBooking() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        booking_ = 0L;
+        booking_ = 0;
         onChanged();
         return this;
       }
@@ -3605,21 +3596,21 @@ public final class Payment {
         return this;
       }
 
-      private long creditcardref_ ;
+      private int creditcardref_ ;
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @return The creditcardref.
        */
       @java.lang.Override
-      public long getCreditcardref() {
+      public int getCreditcardref() {
         return creditcardref_;
       }
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @param value The creditcardref to set.
        * @return This builder for chaining.
        */
-      public Builder setCreditcardref(long value) {
+      public Builder setCreditcardref(int value) {
         
         creditcardref_ = value;
         bitField0_ |= 0x00000020;
@@ -3627,12 +3618,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditcardref() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        creditcardref_ = 0L;
+        creditcardref_ = 0;
         onChanged();
         return this;
       }
@@ -3705,10 +3696,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
-    long getId();
+    int getId();
   }
   /**
    * Protobuf type {@code PaymentRequestById}
@@ -3751,13 +3742,13 @@ public final class Payment {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private long id_ = 0L;
+    private int id_ = 0;
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public long getId() {
+    public int getId() {
       return id_;
     }
 
@@ -3775,8 +3766,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0L) {
-        output.writeInt64(1, id_);
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3787,9 +3778,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0L) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+          .computeInt32Size(1, id_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3820,8 +3811,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (53 * hash) + getId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3951,7 +3941,7 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = 0L;
+        id_ = 0;
         return this;
       }
 
@@ -4034,7 +4024,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.PaymentRequestById other) {
         if (other == PaymentService.grpc.Payment.PaymentRequestById.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
+        if (other.getId() != 0) {
           setId(other.getId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4064,7 +4054,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                id_ = input.readInt64();
+                id_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -4085,21 +4075,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long id_ ;
+      private int id_ ;
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
-      public long getId() {
+      public int getId() {
         return id_;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(long value) {
+      public Builder setId(int value) {
         
         id_ = value;
         bitField0_ |= 0x00000001;
@@ -4107,12 +4097,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
+        id_ = 0;
         onChanged();
         return this;
       }
@@ -4185,10 +4175,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
-    long getId();
+    int getId();
 
     /**
      * <code>string status = 2;</code>
@@ -4244,13 +4234,13 @@ public final class Payment {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private long id_ = 0L;
+    private int id_ = 0;
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public long getId() {
+    public int getId() {
       return id_;
     }
 
@@ -4307,8 +4297,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0L) {
-        output.writeInt64(1, id_);
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
@@ -4322,9 +4312,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0L) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+          .computeInt32Size(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
@@ -4360,8 +4350,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (53 * hash) + getId();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -4493,7 +4482,7 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = 0L;
+        id_ = 0;
         status_ = "";
         return this;
       }
@@ -4580,7 +4569,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.PaymentStatusUpdateRequest other) {
         if (other == PaymentService.grpc.Payment.PaymentStatusUpdateRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
+        if (other.getId() != 0) {
           setId(other.getId());
         }
         if (!other.getStatus().isEmpty()) {
@@ -4615,7 +4604,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                id_ = input.readInt64();
+                id_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -4641,21 +4630,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long id_ ;
+      private int id_ ;
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
-      public long getId() {
+      public int getId() {
         return id_;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(long value) {
+      public Builder setId(int value) {
         
         id_ = value;
         bitField0_ |= 0x00000001;
@@ -4663,12 +4652,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
+        id_ = 0;
         onChanged();
         return this;
       }
@@ -4813,16 +4802,16 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
-    long getId();
+    int getId();
 
     /**
-     * <code>int64 customer = 2;</code>
+     * <code>int32 customer = 2;</code>
      * @return The customer.
      */
-    long getCustomer();
+    int getCustomer();
 
     /**
      * <code>int32 bookingType = 3;</code>
@@ -4831,10 +4820,10 @@ public final class Payment {
     int getBookingType();
 
     /**
-     * <code>int64 booking = 4;</code>
+     * <code>int32 booking = 4;</code>
      * @return The booking.
      */
-    long getBooking();
+    int getBooking();
 
     /**
      * <code>string status = 5;</code>
@@ -4849,10 +4838,10 @@ public final class Payment {
         getStatusBytes();
 
     /**
-     * <code>int64 creditcardref = 6;</code>
+     * <code>int32 creditcardref = 6;</code>
      * @return The creditcardref.
      */
-    long getCreditcardref();
+    int getCreditcardref();
 
     /**
      * <code>bool success = 7;</code>
@@ -4915,24 +4904,24 @@ public final class Payment {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private long id_ = 0L;
+    private int id_ = 0;
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public long getId() {
+    public int getId() {
       return id_;
     }
 
     public static final int CUSTOMER_FIELD_NUMBER = 2;
-    private long customer_ = 0L;
+    private int customer_ = 0;
     /**
-     * <code>int64 customer = 2;</code>
+     * <code>int32 customer = 2;</code>
      * @return The customer.
      */
     @java.lang.Override
-    public long getCustomer() {
+    public int getCustomer() {
       return customer_;
     }
 
@@ -4948,13 +4937,13 @@ public final class Payment {
     }
 
     public static final int BOOKING_FIELD_NUMBER = 4;
-    private long booking_ = 0L;
+    private int booking_ = 0;
     /**
-     * <code>int64 booking = 4;</code>
+     * <code>int32 booking = 4;</code>
      * @return The booking.
      */
     @java.lang.Override
-    public long getBooking() {
+    public int getBooking() {
       return booking_;
     }
 
@@ -4998,13 +4987,13 @@ public final class Payment {
     }
 
     public static final int CREDITCARDREF_FIELD_NUMBER = 6;
-    private long creditcardref_ = 0L;
+    private int creditcardref_ = 0;
     /**
-     * <code>int64 creditcardref = 6;</code>
+     * <code>int32 creditcardref = 6;</code>
      * @return The creditcardref.
      */
     @java.lang.Override
-    public long getCreditcardref() {
+    public int getCreditcardref() {
       return creditcardref_;
     }
 
@@ -5072,23 +5061,23 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0L) {
-        output.writeInt64(1, id_);
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
       }
-      if (customer_ != 0L) {
-        output.writeInt64(2, customer_);
+      if (customer_ != 0) {
+        output.writeInt32(2, customer_);
       }
       if (bookingType_ != 0) {
         output.writeInt32(3, bookingType_);
       }
-      if (booking_ != 0L) {
-        output.writeInt64(4, booking_);
+      if (booking_ != 0) {
+        output.writeInt32(4, booking_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
       }
-      if (creditcardref_ != 0L) {
-        output.writeInt64(6, creditcardref_);
+      if (creditcardref_ != 0) {
+        output.writeInt32(6, creditcardref_);
       }
       if (success_ != false) {
         output.writeBool(7, success_);
@@ -5105,28 +5094,28 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0L) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+          .computeInt32Size(1, id_);
       }
-      if (customer_ != 0L) {
+      if (customer_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, customer_);
+          .computeInt32Size(2, customer_);
       }
       if (bookingType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, bookingType_);
       }
-      if (booking_ != 0L) {
+      if (booking_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, booking_);
+          .computeInt32Size(4, booking_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
       }
-      if (creditcardref_ != 0L) {
+      if (creditcardref_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, creditcardref_);
+          .computeInt32Size(6, creditcardref_);
       }
       if (success_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -5178,21 +5167,17 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (53 * hash) + getId();
       hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCustomer());
+      hash = (53 * hash) + getCustomer();
       hash = (37 * hash) + BOOKINGTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getBookingType();
       hash = (37 * hash) + BOOKING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBooking());
+      hash = (53 * hash) + getBooking();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + CREDITCARDREF_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreditcardref());
+      hash = (53 * hash) + getCreditcardref();
       hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSuccess());
@@ -5327,12 +5312,12 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = 0L;
-        customer_ = 0L;
+        id_ = 0;
+        customer_ = 0;
         bookingType_ = 0;
-        booking_ = 0L;
+        booking_ = 0;
         status_ = "";
-        creditcardref_ = 0L;
+        creditcardref_ = 0;
         success_ = false;
         message_ = "";
         return this;
@@ -5438,16 +5423,16 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.PaymentResponse other) {
         if (other == PaymentService.grpc.Payment.PaymentResponse.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
+        if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (other.getCustomer() != 0L) {
+        if (other.getCustomer() != 0) {
           setCustomer(other.getCustomer());
         }
         if (other.getBookingType() != 0) {
           setBookingType(other.getBookingType());
         }
-        if (other.getBooking() != 0L) {
+        if (other.getBooking() != 0) {
           setBooking(other.getBooking());
         }
         if (!other.getStatus().isEmpty()) {
@@ -5455,7 +5440,7 @@ public final class Payment {
           bitField0_ |= 0x00000010;
           onChanged();
         }
-        if (other.getCreditcardref() != 0L) {
+        if (other.getCreditcardref() != 0) {
           setCreditcardref(other.getCreditcardref());
         }
         if (other.getSuccess() != false) {
@@ -5493,12 +5478,12 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                id_ = input.readInt64();
+                id_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
               case 16: {
-                customer_ = input.readInt64();
+                customer_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
@@ -5508,7 +5493,7 @@ public final class Payment {
                 break;
               } // case 24
               case 32: {
-                booking_ = input.readInt64();
+                booking_ = input.readInt32();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
@@ -5518,7 +5503,7 @@ public final class Payment {
                 break;
               } // case 42
               case 48: {
-                creditcardref_ = input.readInt64();
+                creditcardref_ = input.readInt32();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
@@ -5549,21 +5534,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long id_ ;
+      private int id_ ;
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
-      public long getId() {
+      public int getId() {
         return id_;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(long value) {
+      public Builder setId(int value) {
         
         id_ = value;
         bitField0_ |= 0x00000001;
@@ -5571,31 +5556,31 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 id = 1;</code>
+       * <code>int32 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
+        id_ = 0;
         onChanged();
         return this;
       }
 
-      private long customer_ ;
+      private int customer_ ;
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @return The customer.
        */
       @java.lang.Override
-      public long getCustomer() {
+      public int getCustomer() {
         return customer_;
       }
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @param value The customer to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomer(long value) {
+      public Builder setCustomer(int value) {
         
         customer_ = value;
         bitField0_ |= 0x00000002;
@@ -5603,12 +5588,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 customer = 2;</code>
+       * <code>int32 customer = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomer() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        customer_ = 0L;
+        customer_ = 0;
         onChanged();
         return this;
       }
@@ -5645,21 +5630,21 @@ public final class Payment {
         return this;
       }
 
-      private long booking_ ;
+      private int booking_ ;
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @return The booking.
        */
       @java.lang.Override
-      public long getBooking() {
+      public int getBooking() {
         return booking_;
       }
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @param value The booking to set.
        * @return This builder for chaining.
        */
-      public Builder setBooking(long value) {
+      public Builder setBooking(int value) {
         
         booking_ = value;
         bitField0_ |= 0x00000008;
@@ -5667,12 +5652,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 booking = 4;</code>
+       * <code>int32 booking = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBooking() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        booking_ = 0L;
+        booking_ = 0;
         onChanged();
         return this;
       }
@@ -5749,21 +5734,21 @@ public final class Payment {
         return this;
       }
 
-      private long creditcardref_ ;
+      private int creditcardref_ ;
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @return The creditcardref.
        */
       @java.lang.Override
-      public long getCreditcardref() {
+      public int getCreditcardref() {
         return creditcardref_;
       }
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @param value The creditcardref to set.
        * @return This builder for chaining.
        */
-      public Builder setCreditcardref(long value) {
+      public Builder setCreditcardref(int value) {
         
         creditcardref_ = value;
         bitField0_ |= 0x00000020;
@@ -5771,12 +5756,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 creditcardref = 6;</code>
+       * <code>int32 creditcardref = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditcardref() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        creditcardref_ = 0L;
+        creditcardref_ = 0;
         onChanged();
         return this;
       }
@@ -8219,10 +8204,10 @@ public final class Payment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 customerId = 1;</code>
+     * <code>int32 customerId = 1;</code>
      * @return The customerId.
      */
-    long getCustomerId();
+    int getCustomerId();
   }
   /**
    * Protobuf type {@code PaymentListByCustomerRequest}
@@ -8265,13 +8250,13 @@ public final class Payment {
     }
 
     public static final int CUSTOMERID_FIELD_NUMBER = 1;
-    private long customerId_ = 0L;
+    private int customerId_ = 0;
     /**
-     * <code>int64 customerId = 1;</code>
+     * <code>int32 customerId = 1;</code>
      * @return The customerId.
      */
     @java.lang.Override
-    public long getCustomerId() {
+    public int getCustomerId() {
       return customerId_;
     }
 
@@ -8289,8 +8274,8 @@ public final class Payment {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (customerId_ != 0L) {
-        output.writeInt64(1, customerId_);
+      if (customerId_ != 0) {
+        output.writeInt32(1, customerId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8301,9 +8286,9 @@ public final class Payment {
       if (size != -1) return size;
 
       size = 0;
-      if (customerId_ != 0L) {
+      if (customerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, customerId_);
+          .computeInt32Size(1, customerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8334,8 +8319,7 @@ public final class Payment {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCustomerId());
+      hash = (53 * hash) + getCustomerId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8465,7 +8449,7 @@ public final class Payment {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        customerId_ = 0L;
+        customerId_ = 0;
         return this;
       }
 
@@ -8548,7 +8532,7 @@ public final class Payment {
 
       public Builder mergeFrom(PaymentService.grpc.Payment.PaymentListByCustomerRequest other) {
         if (other == PaymentService.grpc.Payment.PaymentListByCustomerRequest.getDefaultInstance()) return this;
-        if (other.getCustomerId() != 0L) {
+        if (other.getCustomerId() != 0) {
           setCustomerId(other.getCustomerId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -8578,7 +8562,7 @@ public final class Payment {
                 done = true;
                 break;
               case 8: {
-                customerId_ = input.readInt64();
+                customerId_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -8599,21 +8583,21 @@ public final class Payment {
       }
       private int bitField0_;
 
-      private long customerId_ ;
+      private int customerId_ ;
       /**
-       * <code>int64 customerId = 1;</code>
+       * <code>int32 customerId = 1;</code>
        * @return The customerId.
        */
       @java.lang.Override
-      public long getCustomerId() {
+      public int getCustomerId() {
         return customerId_;
       }
       /**
-       * <code>int64 customerId = 1;</code>
+       * <code>int32 customerId = 1;</code>
        * @param value The customerId to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerId(long value) {
+      public Builder setCustomerId(int value) {
         
         customerId_ = value;
         bitField0_ |= 0x00000001;
@@ -8621,12 +8605,12 @@ public final class Payment {
         return this;
       }
       /**
-       * <code>int64 customerId = 1;</code>
+       * <code>int32 customerId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        customerId_ = 0L;
+        customerId_ = 0;
         onChanged();
         return this;
       }
@@ -8759,29 +8743,29 @@ public final class Payment {
   static {
     java.lang.String[] descriptorData = {
       "\n\rPayment.proto\"z\n\021CreditcardRequest\022\025\n\r" +
-      "creditcard_id\030\001 \001(\003\022\024\n\014creditcardnr\030\002 \001(" +
+      "creditcard_id\030\001 \001(\005\022\024\n\014creditcardnr\030\002 \001(" +
       "\t\022\017\n\007cc_name\030\003 \001(\t\022\023\n\013cc_lastname\030\004 \001(\t\022" +
-      "\022\n\ncustomerid\030\005 \001(\003\"\235\001\n\022CreditcardRespon" +
-      "se\022\025\n\rcreditcard_id\030\001 \001(\003\022\024\n\014creditcardn" +
+      "\022\n\ncustomerid\030\005 \001(\005\"\235\001\n\022CreditcardRespon" +
+      "se\022\025\n\rcreditcard_id\030\001 \001(\005\022\024\n\014creditcardn" +
       "r\030\002 \001(\t\022\017\n\007cc_name\030\003 \001(\t\022\023\n\013cc_lastname\030" +
-      "\004 \001(\t\022\022\n\ncustomerid\030\005 \001(\003\022\017\n\007success\030\006 \001" +
+      "\004 \001(\t\022\022\n\ncustomerid\030\005 \001(\005\022\017\n\007success\030\006 \001" +
       "(\010\022\017\n\007message\030\007 \001(\t\".\n\025CreditcardRequest" +
-      "ById\022\025\n\rcreditcard_id\030\001 \001(\003\"{\n\016PaymentRe" +
-      "quest\022\n\n\002id\030\001 \001(\003\022\020\n\010customer\030\002 \001(\003\022\023\n\013b" +
-      "ookingType\030\003 \001(\005\022\017\n\007booking\030\004 \001(\003\022\016\n\006sta" +
-      "tus\030\005 \001(\t\022\025\n\rcreditcardref\030\006 \001(\003\" \n\022Paym" +
-      "entRequestById\022\n\n\002id\030\001 \001(\003\"8\n\032PaymentSta" +
-      "tusUpdateRequest\022\n\n\002id\030\001 \001(\003\022\016\n\006status\030\002" +
-      " \001(\t\"\236\001\n\017PaymentResponse\022\n\n\002id\030\001 \001(\003\022\020\n\010" +
-      "customer\030\002 \001(\003\022\023\n\013bookingType\030\003 \001(\005\022\017\n\007b" +
-      "ooking\030\004 \001(\003\022\016\n\006status\030\005 \001(\t\022\025\n\rcreditca" +
-      "rdref\030\006 \001(\003\022\017\n\007success\030\007 \001(\010\022\017\n\007message\030" +
+      "ById\022\025\n\rcreditcard_id\030\001 \001(\005\"{\n\016PaymentRe" +
+      "quest\022\n\n\002id\030\001 \001(\005\022\020\n\010customer\030\002 \001(\005\022\023\n\013b" +
+      "ookingType\030\003 \001(\005\022\017\n\007booking\030\004 \001(\005\022\016\n\006sta" +
+      "tus\030\005 \001(\t\022\025\n\rcreditcardref\030\006 \001(\005\" \n\022Paym" +
+      "entRequestById\022\n\n\002id\030\001 \001(\005\"8\n\032PaymentSta" +
+      "tusUpdateRequest\022\n\n\002id\030\001 \001(\005\022\016\n\006status\030\002" +
+      " \001(\t\"\236\001\n\017PaymentResponse\022\n\n\002id\030\001 \001(\005\022\020\n\010" +
+      "customer\030\002 \001(\005\022\023\n\013bookingType\030\003 \001(\005\022\017\n\007b" +
+      "ooking\030\004 \001(\005\022\016\n\006status\030\005 \001(\t\022\025\n\rcreditca" +
+      "rdref\030\006 \001(\005\022\017\n\007success\030\007 \001(\010\022\017\n\007message\030" +
       "\010 \001(\t\"J\n\023PaymentListResponse\022\"\n\010payments" +
       "\030\001 \003(\0132\020.PaymentResponse\022\017\n\007message\030\002 \001(" +
       "\t\"S\n\026CreditcardListResponse\022(\n\013creditcar" +
       "ds\030\001 \003(\0132\023.CreditcardResponse\022\017\n\007message" +
       "\030\002 \001(\t\"\007\n\005Empty\"2\n\034PaymentListByCustomer" +
-      "Request\022\022\n\ncustomerId\030\001 \001(\0032\370\002\n\016PaymentS" +
+      "Request\022\022\n\ncustomerId\030\001 \001(\0052\370\002\n\016PaymentS" +
       "ervice\0222\n\rCreatePayment\022\017.PaymentRequest" +
       "\032\020.PaymentResponse\0227\n\016GetPaymentById\022\023.P" +
       "aymentRequestById\032\020.PaymentResponse\022D\n\023U" +

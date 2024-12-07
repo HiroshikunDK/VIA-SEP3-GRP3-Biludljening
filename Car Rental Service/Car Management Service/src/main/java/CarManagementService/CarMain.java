@@ -4,13 +4,14 @@ import Repository.BookingCarRepository;
 import Repository.LocationsHubRepository;
 import Service.BookingCarService;
 import Service.LocationHubService;
+import Shared.HibernateUtility;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import Service.CarService;
 import Repository.CarRepository;
-import Persistence.HibernateUtility;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 import java.io.IOException;
 
@@ -18,19 +19,23 @@ public class CarMain {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         // Initialize EntityManager from Hibernate Utility
-        EntityManager entityManager = HibernateUtility.getSessionFactory().createEntityManager();
-        CarRepository carRepository = new CarRepository(entityManager);
-        BookingCarRepository bookingCarRepository = new BookingCarRepository(entityManager);
-        LocationsHubRepository locationsHubRepository = new LocationsHubRepository(entityManager);
+        EntityManagerFactory entityManagerFactory = HibernateUtility.getEntityManagerFactory();
+
+        // Pass the EntityManagerFactory to the repositories
+        CarRepository carRepository = new CarRepository(entityManagerFactory);
+        BookingCarRepository bookingCarRepository = new BookingCarRepository(entityManagerFactory);
+        LocationsHubRepository locationsHubRepository = new LocationsHubRepository(entityManagerFactory);
 
         // Initialize CarService
         CarService carService = new CarService(carRepository);
         BookingCarService bookingCarService = new BookingCarService(bookingCarRepository);
         LocationHubService locationHubService = new LocationHubService(locationsHubRepository);
 
-        // Start gRPC server
+        // Start gRPC server with TokenValidation interceptor
         Server server = ServerBuilder.forPort(5004)
-                .addService(carService).addService(bookingCarService).addService(locationHubService)
+                .addService(carService)
+                .addService(bookingCarService)
+                .addService(locationHubService)
                 .build()
                 .start();
 

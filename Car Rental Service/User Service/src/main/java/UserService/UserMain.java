@@ -2,7 +2,7 @@ package UserService;
 
 import Repository.UserRepository;
 import Service.UserService;
-import Persistence.HibernateUtility;
+import Shared.HibernateUtility;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -11,8 +11,11 @@ import java.io.IOException;
 
 public class UserMain {
     public static void main(String[] args) throws IOException, InterruptedException {
-        // Get EntityManager from HibernateUtility
-        EntityManager entityManager = HibernateUtility.getEntityManager();
+        // Get EntityManagerFactory from HibernateUtility
+        var entityManagerFactory = HibernateUtility.getEntityManagerFactory();
+
+        // Create an EntityManager
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         // Create UserRepository with EntityManager
         UserRepository userRepository = new UserRepository(entityManager);
@@ -39,3 +42,4 @@ public class UserMain {
         server.awaitTermination();
     }
 }
+

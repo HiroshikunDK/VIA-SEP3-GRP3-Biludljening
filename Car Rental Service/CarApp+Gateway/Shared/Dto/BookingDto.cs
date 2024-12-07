@@ -8,7 +8,7 @@ public class BookingDto
     public TimeOnly? StartTime { get; set; }
     public DateTime? EndDate { get; set; }
     public TimeOnly? EndTime { get; set; }
-    public decimal Price { get; set; }
+    public double Price { get; set; }
     public bool GreenShare { get; set; }
     public int CustomerId { get; set; }
     public string Status { get; set; } = "Pending";

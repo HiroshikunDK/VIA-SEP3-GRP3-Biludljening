@@ -1,28 +1,30 @@
 ﻿@page "/booking-details/{carId:int}"
+@using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <h3>Booking Details</h3>
 
-<EditForm Model="booking" OnValidSubmit="SubmitBooking">
+<EditForm Model="_booking" OnValidSubmit="SubmitBooking">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <div>
         <label>Start Date:</label>
-        <InputDate @bind-Value="booking.StartDate" />
+        <InputDate @bind-Value="_booking.StartDate" />
     </div>
     <div>
         <label>Start Time:</label>
-        <input type="time" @bind="booking.StartTime" />
+        <input type="time" @bind="_booking.StartTime" />
     </div>
     <div>
         <label>End Date:</label>
-        <InputDate @bind-Value="booking.EndDate" />
+        <InputDate @bind-Value="_booking.EndDate" />
     </div>
     <div>
         <label>End Time:</label>
-        <input type="time" @bind="booking.EndTime" />
+        <input type="time" @bind="_booking.EndTime" />
     </div>
     <button type="submit">Proceed to Payment</button>
 </EditForm>
@@ -30,45 +32,46 @@
 @code {
     [Parameter] public int CarId { get; set; }
 
-    private BookingDto booking = new BookingDto();
+    private readonly BookingDto _booking = new BookingDto();
 
     private async Task SubmitBooking()
     {
-        booking.CarId = CarId;
-
-        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+        _booking.CarId = CarId;
 
         try
         {
-            var payload = System.Text.Json.JsonSerializer.Serialize(booking, new System.Text.Json.JsonSerializerOptions
+            // Fetch CustomerId dynamically
+            _booking.CustomerId = await GetCurrentCustomerIdAsync();
+
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+            var payload = System.Text.Json.JsonSerializer.Serialize(_booking, new System.Text.Json.JsonSerializerOptions
             {
                 WriteIndented = true
             });
             Console.WriteLine("Booking Payload: " + payload);
 
-            var response = await client.PostAsJsonAsync("api/bookingcar/create", booking);
-            if (response.IsSuccessStatusCode)
+            // Create the booking
+            var bookingResponse = await client.PostAsJsonAsync("api/bookingcar", _booking);
+            if (bookingResponse.IsSuccessStatusCode)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Response Content: {responseContent}");
-
-                // Corrected parsing logic
-                var result = System.Text.Json.JsonDocument.Parse(responseContent);
-                if (result.RootElement.TryGetProperty("bookingId", out var bookingIdElement)) // Match "bookingId" (case-sensitive)
+                var responseObject = await bookingResponse.Content.ReadFromJsonAsync<BookingResponse>();
+                if (responseObject != null && responseObject.BookingId > 0)
                 {
-                    var bookingId = bookingIdElement.GetInt32();
-                    Console.WriteLine($"Booking ID: {bookingId}");
-                    NavigationManager.NavigateTo($"/payment/{bookingId}");
+                    Console.WriteLine($"Booking ID: {responseObject.BookingId}");
+
+                    // Now that we have the bookingId, navigate to the payment page
+                    NavigationManager.NavigateTo($"/payment/{responseObject.BookingId}");
                 }
                 else
                 {
-                    Console.WriteLine("bookingId not found in response.");
+                    Console.WriteLine("BookingId not found in booking response.");
                 }
             }
             else
             {
-                var errorResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Failed to create booking. Response Code: {response.StatusCode}");
+                var errorResponse = await bookingResponse.Content.ReadAsStringAsync();
+                Console.WriteLine($"Failed to create booking. Response Code: {bookingResponse.StatusCode}");
                 Console.WriteLine("Error Response: " + errorResponse);
             }
         }
@@ -76,5 +79,22 @@
         {
             Console.WriteLine($"Error creating booking: {ex.Message}");
         }
+    }
+
+    private async Task<int> GetCurrentCustomerIdAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is { IsAuthenticated: true })
+        {
+            var customerIdClaim = user.FindFirst("id"); // Ensure the claim "id" exists
+            if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out var customerId))
+            {
+                return customerId;
+            }
+        }
+
+        throw new InvalidOperationException("Unable to retrieve CustomerId from claims.");
     }
 }

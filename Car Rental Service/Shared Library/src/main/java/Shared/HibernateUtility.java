@@ -1,13 +1,12 @@
-package Persistence;
+package Shared;
 
-import jakarta.persistence.EntityManager;
-import org.hibernate.Session;
+import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtility {
-
   private static final SessionFactory sessionFactory = buildSessionFactory();
+  private static final EntityManagerFactory entityManagerFactory = sessionFactory.unwrap(EntityManagerFactory.class);
 
   private static SessionFactory buildSessionFactory() {
     try {
@@ -22,13 +21,11 @@ public class HibernateUtility {
     return sessionFactory;
   }
 
-  // Provide EntityManager
-  public static EntityManager getEntityManager() {
-    Session session = sessionFactory.openSession();
-    return session.getEntityManagerFactory().createEntityManager();
+  public static EntityManagerFactory getEntityManagerFactory() {
+    return entityManagerFactory;
   }
 
   public static void shutdown() {
-    getSessionFactory().close();
+    sessionFactory.close();
   }
 }

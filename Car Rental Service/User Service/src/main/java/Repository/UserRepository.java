@@ -1,7 +1,6 @@
 package Repository;
 
 import Model.User;
-import UserService.grpc.UserOuterClass;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 

@@ -31,6 +31,9 @@ public class Program
 
 
         // Configure JWT Authentication
+        var base64EncodedKey = "RGVuRXJIZW1tZWxpZw=="; // Base64 of "DenErHemmelig"
+        var decodedKey = Convert.FromBase64String(base64EncodedKey);
+
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
@@ -40,9 +43,12 @@ public class Program
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DenErHemmelig"))
+                    IssuerSigningKey = new SymmetricSecurityKey(decodedKey) // Use decoded key bytes
                 };
             });
+
+        Console.WriteLine($"Decoded Key: {BitConverter.ToString(decodedKey)}");
+
 
         builder.Services.AddAuthorization();
         

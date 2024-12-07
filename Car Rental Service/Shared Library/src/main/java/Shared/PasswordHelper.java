@@ -1,4 +1,4 @@
-package Persistence;
+package Shared;
 
 import org.mindrot.jbcrypt.BCrypt;
 

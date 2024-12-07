@@ -23,21 +23,21 @@ public static partial class PaymentReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChNQcm90by9QYXltZW50LnByb3RvInoKEUNyZWRpdGNhcmRSZXF1ZXN0EhUK",
-          "DWNyZWRpdGNhcmRfaWQYASABKAMSFAoMY3JlZGl0Y2FyZG5yGAIgASgJEg8K",
+          "DWNyZWRpdGNhcmRfaWQYASABKAUSFAoMY3JlZGl0Y2FyZG5yGAIgASgJEg8K",
           "B2NjX25hbWUYAyABKAkSEwoLY2NfbGFzdG5hbWUYBCABKAkSEgoKY3VzdG9t",
-          "ZXJpZBgFIAEoAyKdAQoSQ3JlZGl0Y2FyZFJlc3BvbnNlEhUKDWNyZWRpdGNh",
-          "cmRfaWQYASABKAMSFAoMY3JlZGl0Y2FyZG5yGAIgASgJEg8KB2NjX25hbWUY",
+          "ZXJpZBgFIAEoBSKdAQoSQ3JlZGl0Y2FyZFJlc3BvbnNlEhUKDWNyZWRpdGNh",
+          "cmRfaWQYASABKAUSFAoMY3JlZGl0Y2FyZG5yGAIgASgJEg8KB2NjX25hbWUY",
           "AyABKAkSEwoLY2NfbGFzdG5hbWUYBCABKAkSEgoKY3VzdG9tZXJpZBgFIAEo",
-          "AxIPCgdzdWNjZXNzGAYgASgIEg8KB21lc3NhZ2UYByABKAkiLgoVQ3JlZGl0",
-          "Y2FyZFJlcXVlc3RCeUlkEhUKDWNyZWRpdGNhcmRfaWQYASABKAMiewoOUGF5",
-          "bWVudFJlcXVlc3QSCgoCaWQYASABKAMSEAoIY3VzdG9tZXIYAiABKAMSEwoL",
-          "Ym9va2luZ1R5cGUYAyABKAUSDwoHYm9va2luZxgEIAEoAxIOCgZzdGF0dXMY",
-          "BSABKAkSFQoNY3JlZGl0Y2FyZHJlZhgGIAEoAyIgChJQYXltZW50UmVxdWVz",
-          "dEJ5SWQSCgoCaWQYASABKAMiOAoaUGF5bWVudFN0YXR1c1VwZGF0ZVJlcXVl",
-          "c3QSCgoCaWQYASABKAMSDgoGc3RhdHVzGAIgASgJIp4BCg9QYXltZW50UmVz",
-          "cG9uc2USCgoCaWQYASABKAMSEAoIY3VzdG9tZXIYAiABKAMSEwoLYm9va2lu",
-          "Z1R5cGUYAyABKAUSDwoHYm9va2luZxgEIAEoAxIOCgZzdGF0dXMYBSABKAkS",
-          "FQoNY3JlZGl0Y2FyZHJlZhgGIAEoAxIPCgdzdWNjZXNzGAcgASgIEg8KB21l",
+          "BRIPCgdzdWNjZXNzGAYgASgIEg8KB21lc3NhZ2UYByABKAkiLgoVQ3JlZGl0",
+          "Y2FyZFJlcXVlc3RCeUlkEhUKDWNyZWRpdGNhcmRfaWQYASABKAUiewoOUGF5",
+          "bWVudFJlcXVlc3QSCgoCaWQYASABKAUSEAoIY3VzdG9tZXIYAiABKAUSEwoL",
+          "Ym9va2luZ1R5cGUYAyABKAUSDwoHYm9va2luZxgEIAEoBRIOCgZzdGF0dXMY",
+          "BSABKAkSFQoNY3JlZGl0Y2FyZHJlZhgGIAEoBSIgChJQYXltZW50UmVxdWVz",
+          "dEJ5SWQSCgoCaWQYASABKAUiOAoaUGF5bWVudFN0YXR1c1VwZGF0ZVJlcXVl",
+          "c3QSCgoCaWQYASABKAUSDgoGc3RhdHVzGAIgASgJIp4BCg9QYXltZW50UmVz",
+          "cG9uc2USCgoCaWQYASABKAUSEAoIY3VzdG9tZXIYAiABKAUSEwoLYm9va2lu",
+          "Z1R5cGUYAyABKAUSDwoHYm9va2luZxgEIAEoBRIOCgZzdGF0dXMYBSABKAkS",
+          "FQoNY3JlZGl0Y2FyZHJlZhgGIAEoBRIPCgdzdWNjZXNzGAcgASgIEg8KB21l",
           "c3NhZ2UYCCABKAkiSgoTUGF5bWVudExpc3RSZXNwb25zZRIiCghwYXltZW50",
           "cxgBIAMoCzIQLlBheW1lbnRSZXNwb25zZRIPCgdtZXNzYWdlGAIgASgJIlMK",
           "FkNyZWRpdGNhcmRMaXN0UmVzcG9uc2USKAoLY3JlZGl0Y2FyZHMYASADKAsy",
@@ -133,10 +133,10 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
 
   /// <summary>Field number for the "creditcard_id" field.</summary>
   public const int CreditcardIdFieldNumber = 1;
-  private long creditcardId_;
+  private int creditcardId_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long CreditcardId {
+  public int CreditcardId {
     get { return creditcardId_; }
     set {
       creditcardId_ = value;
@@ -181,10 +181,10 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
 
   /// <summary>Field number for the "customerid" field.</summary>
   public const int CustomeridFieldNumber = 5;
-  private long customerid_;
+  private int customerid_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Customerid {
+  public int Customerid {
     get { return customerid_; }
     set {
       customerid_ = value;
@@ -218,11 +218,11 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (CreditcardId != 0L) hash ^= CreditcardId.GetHashCode();
+    if (CreditcardId != 0) hash ^= CreditcardId.GetHashCode();
     if (Creditcardnr.Length != 0) hash ^= Creditcardnr.GetHashCode();
     if (CcName.Length != 0) hash ^= CcName.GetHashCode();
     if (CcLastname.Length != 0) hash ^= CcLastname.GetHashCode();
-    if (Customerid != 0L) hash ^= Customerid.GetHashCode();
+    if (Customerid != 0) hash ^= Customerid.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -241,9 +241,9 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       output.WriteRawTag(18);
@@ -257,9 +257,9 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
       output.WriteRawTag(34);
       output.WriteString(CcLastname);
     }
-    if (Customerid != 0L) {
+    if (Customerid != 0) {
       output.WriteRawTag(40);
-      output.WriteInt64(Customerid);
+      output.WriteInt32(Customerid);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -271,9 +271,9 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       output.WriteRawTag(18);
@@ -287,9 +287,9 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
       output.WriteRawTag(34);
       output.WriteString(CcLastname);
     }
-    if (Customerid != 0L) {
+    if (Customerid != 0) {
       output.WriteRawTag(40);
-      output.WriteInt64(Customerid);
+      output.WriteInt32(Customerid);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -301,8 +301,8 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (CreditcardId != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreditcardId);
+    if (CreditcardId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Creditcardnr);
@@ -313,8 +313,8 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
     if (CcLastname.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(CcLastname);
     }
-    if (Customerid != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Customerid);
+    if (Customerid != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Customerid);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -328,7 +328,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
     if (other == null) {
       return;
     }
-    if (other.CreditcardId != 0L) {
+    if (other.CreditcardId != 0) {
       CreditcardId = other.CreditcardId;
     }
     if (other.Creditcardnr.Length != 0) {
@@ -340,7 +340,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
     if (other.CcLastname.Length != 0) {
       CcLastname = other.CcLastname;
     }
-    if (other.Customerid != 0L) {
+    if (other.Customerid != 0) {
       Customerid = other.Customerid;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -359,7 +359,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
         case 18: {
@@ -375,7 +375,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
           break;
         }
         case 40: {
-          Customerid = input.ReadInt64();
+          Customerid = input.ReadInt32();
           break;
         }
       }
@@ -394,7 +394,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
         case 18: {
@@ -410,7 +410,7 @@ public sealed partial class CreditcardRequest : pb::IMessage<CreditcardRequest>
           break;
         }
         case 40: {
-          Customerid = input.ReadInt64();
+          Customerid = input.ReadInt32();
           break;
         }
       }
@@ -472,10 +472,10 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
 
   /// <summary>Field number for the "creditcard_id" field.</summary>
   public const int CreditcardIdFieldNumber = 1;
-  private long creditcardId_;
+  private int creditcardId_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long CreditcardId {
+  public int CreditcardId {
     get { return creditcardId_; }
     set {
       creditcardId_ = value;
@@ -520,10 +520,10 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
 
   /// <summary>Field number for the "customerid" field.</summary>
   public const int CustomeridFieldNumber = 5;
-  private long customerid_;
+  private int customerid_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Customerid {
+  public int Customerid {
     get { return customerid_; }
     set {
       customerid_ = value;
@@ -589,11 +589,11 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (CreditcardId != 0L) hash ^= CreditcardId.GetHashCode();
+    if (CreditcardId != 0) hash ^= CreditcardId.GetHashCode();
     if (Creditcardnr.Length != 0) hash ^= Creditcardnr.GetHashCode();
     if (CcName.Length != 0) hash ^= CcName.GetHashCode();
     if (CcLastname.Length != 0) hash ^= CcLastname.GetHashCode();
-    if (Customerid != 0L) hash ^= Customerid.GetHashCode();
+    if (Customerid != 0) hash ^= Customerid.GetHashCode();
     if (Success != false) hash ^= Success.GetHashCode();
     if (Message.Length != 0) hash ^= Message.GetHashCode();
     if (_unknownFields != null) {
@@ -614,9 +614,9 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       output.WriteRawTag(18);
@@ -630,9 +630,9 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
       output.WriteRawTag(34);
       output.WriteString(CcLastname);
     }
-    if (Customerid != 0L) {
+    if (Customerid != 0) {
       output.WriteRawTag(40);
-      output.WriteInt64(Customerid);
+      output.WriteInt32(Customerid);
     }
     if (Success != false) {
       output.WriteRawTag(48);
@@ -652,9 +652,9 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       output.WriteRawTag(18);
@@ -668,9 +668,9 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
       output.WriteRawTag(34);
       output.WriteString(CcLastname);
     }
-    if (Customerid != 0L) {
+    if (Customerid != 0) {
       output.WriteRawTag(40);
-      output.WriteInt64(Customerid);
+      output.WriteInt32(Customerid);
     }
     if (Success != false) {
       output.WriteRawTag(48);
@@ -690,8 +690,8 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (CreditcardId != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreditcardId);
+    if (CreditcardId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CreditcardId);
     }
     if (Creditcardnr.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Creditcardnr);
@@ -702,8 +702,8 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
     if (CcLastname.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(CcLastname);
     }
-    if (Customerid != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Customerid);
+    if (Customerid != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Customerid);
     }
     if (Success != false) {
       size += 1 + 1;
@@ -723,7 +723,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
     if (other == null) {
       return;
     }
-    if (other.CreditcardId != 0L) {
+    if (other.CreditcardId != 0) {
       CreditcardId = other.CreditcardId;
     }
     if (other.Creditcardnr.Length != 0) {
@@ -735,7 +735,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
     if (other.CcLastname.Length != 0) {
       CcLastname = other.CcLastname;
     }
-    if (other.Customerid != 0L) {
+    if (other.Customerid != 0) {
       Customerid = other.Customerid;
     }
     if (other.Success != false) {
@@ -760,7 +760,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
         case 18: {
@@ -776,7 +776,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
           break;
         }
         case 40: {
-          Customerid = input.ReadInt64();
+          Customerid = input.ReadInt32();
           break;
         }
         case 48: {
@@ -803,7 +803,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
         case 18: {
@@ -819,7 +819,7 @@ public sealed partial class CreditcardResponse : pb::IMessage<CreditcardResponse
           break;
         }
         case 40: {
-          Customerid = input.ReadInt64();
+          Customerid = input.ReadInt32();
           break;
         }
         case 48: {
@@ -883,10 +883,10 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
 
   /// <summary>Field number for the "creditcard_id" field.</summary>
   public const int CreditcardIdFieldNumber = 1;
-  private long creditcardId_;
+  private int creditcardId_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long CreditcardId {
+  public int CreditcardId {
     get { return creditcardId_; }
     set {
       creditcardId_ = value;
@@ -916,7 +916,7 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (CreditcardId != 0L) hash ^= CreditcardId.GetHashCode();
+    if (CreditcardId != 0) hash ^= CreditcardId.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -935,9 +935,9 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -949,9 +949,9 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CreditcardId != 0L) {
+    if (CreditcardId != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(CreditcardId);
+      output.WriteInt32(CreditcardId);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -963,8 +963,8 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (CreditcardId != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreditcardId);
+    if (CreditcardId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CreditcardId);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -978,7 +978,7 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
     if (other == null) {
       return;
     }
-    if (other.CreditcardId != 0L) {
+    if (other.CreditcardId != 0) {
       CreditcardId = other.CreditcardId;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -997,7 +997,7 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
       }
@@ -1016,7 +1016,7 @@ public sealed partial class CreditcardRequestById : pb::IMessage<CreditcardReque
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          CreditcardId = input.ReadInt64();
+          CreditcardId = input.ReadInt32();
           break;
         }
       }
@@ -1080,10 +1080,10 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
 
   /// <summary>Field number for the "id" field.</summary>
   public const int IdFieldNumber = 1;
-  private long id_;
+  private int id_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Id {
+  public int Id {
     get { return id_; }
     set {
       id_ = value;
@@ -1092,10 +1092,10 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
 
   /// <summary>Field number for the "customer" field.</summary>
   public const int CustomerFieldNumber = 2;
-  private long customer_;
+  private int customer_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Customer {
+  public int Customer {
     get { return customer_; }
     set {
       customer_ = value;
@@ -1116,10 +1116,10 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
 
   /// <summary>Field number for the "booking" field.</summary>
   public const int BookingFieldNumber = 4;
-  private long booking_;
+  private int booking_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Booking {
+  public int Booking {
     get { return booking_; }
     set {
       booking_ = value;
@@ -1140,10 +1140,10 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
 
   /// <summary>Field number for the "creditcardref" field.</summary>
   public const int CreditcardrefFieldNumber = 6;
-  private long creditcardref_;
+  private int creditcardref_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Creditcardref {
+  public int Creditcardref {
     get { return creditcardref_; }
     set {
       creditcardref_ = value;
@@ -1178,12 +1178,12 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (Id != 0L) hash ^= Id.GetHashCode();
-    if (Customer != 0L) hash ^= Customer.GetHashCode();
+    if (Id != 0) hash ^= Id.GetHashCode();
+    if (Customer != 0) hash ^= Customer.GetHashCode();
     if (BookingType != 0) hash ^= BookingType.GetHashCode();
-    if (Booking != 0L) hash ^= Booking.GetHashCode();
+    if (Booking != 0) hash ^= Booking.GetHashCode();
     if (Status.Length != 0) hash ^= Status.GetHashCode();
-    if (Creditcardref != 0L) hash ^= Creditcardref.GetHashCode();
+    if (Creditcardref != 0) hash ^= Creditcardref.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1202,29 +1202,29 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
-    if (Customer != 0L) {
+    if (Customer != 0) {
       output.WriteRawTag(16);
-      output.WriteInt64(Customer);
+      output.WriteInt32(Customer);
     }
     if (BookingType != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(BookingType);
     }
-    if (Booking != 0L) {
+    if (Booking != 0) {
       output.WriteRawTag(32);
-      output.WriteInt64(Booking);
+      output.WriteInt32(Booking);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(Status);
     }
-    if (Creditcardref != 0L) {
+    if (Creditcardref != 0) {
       output.WriteRawTag(48);
-      output.WriteInt64(Creditcardref);
+      output.WriteInt32(Creditcardref);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -1236,29 +1236,29 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
-    if (Customer != 0L) {
+    if (Customer != 0) {
       output.WriteRawTag(16);
-      output.WriteInt64(Customer);
+      output.WriteInt32(Customer);
     }
     if (BookingType != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(BookingType);
     }
-    if (Booking != 0L) {
+    if (Booking != 0) {
       output.WriteRawTag(32);
-      output.WriteInt64(Booking);
+      output.WriteInt32(Booking);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(Status);
     }
-    if (Creditcardref != 0L) {
+    if (Creditcardref != 0) {
       output.WriteRawTag(48);
-      output.WriteInt64(Creditcardref);
+      output.WriteInt32(Creditcardref);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -1270,23 +1270,23 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (Id != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+    if (Id != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
     }
-    if (Customer != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Customer);
+    if (Customer != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Customer);
     }
     if (BookingType != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(BookingType);
     }
-    if (Booking != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Booking);
+    if (Booking != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Booking);
     }
     if (Status.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
     }
-    if (Creditcardref != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Creditcardref);
+    if (Creditcardref != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Creditcardref);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1300,22 +1300,22 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
     if (other == null) {
       return;
     }
-    if (other.Id != 0L) {
+    if (other.Id != 0) {
       Id = other.Id;
     }
-    if (other.Customer != 0L) {
+    if (other.Customer != 0) {
       Customer = other.Customer;
     }
     if (other.BookingType != 0) {
       BookingType = other.BookingType;
     }
-    if (other.Booking != 0L) {
+    if (other.Booking != 0) {
       Booking = other.Booking;
     }
     if (other.Status.Length != 0) {
       Status = other.Status;
     }
-    if (other.Creditcardref != 0L) {
+    if (other.Creditcardref != 0) {
       Creditcardref = other.Creditcardref;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1334,11 +1334,11 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 16: {
-          Customer = input.ReadInt64();
+          Customer = input.ReadInt32();
           break;
         }
         case 24: {
@@ -1346,7 +1346,7 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           break;
         }
         case 32: {
-          Booking = input.ReadInt64();
+          Booking = input.ReadInt32();
           break;
         }
         case 42: {
@@ -1354,7 +1354,7 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           break;
         }
         case 48: {
-          Creditcardref = input.ReadInt64();
+          Creditcardref = input.ReadInt32();
           break;
         }
       }
@@ -1373,11 +1373,11 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 16: {
-          Customer = input.ReadInt64();
+          Customer = input.ReadInt32();
           break;
         }
         case 24: {
@@ -1385,7 +1385,7 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           break;
         }
         case 32: {
-          Booking = input.ReadInt64();
+          Booking = input.ReadInt32();
           break;
         }
         case 42: {
@@ -1393,7 +1393,7 @@ public sealed partial class PaymentRequest : pb::IMessage<PaymentRequest>
           break;
         }
         case 48: {
-          Creditcardref = input.ReadInt64();
+          Creditcardref = input.ReadInt32();
           break;
         }
       }
@@ -1449,10 +1449,10 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
 
   /// <summary>Field number for the "id" field.</summary>
   public const int IdFieldNumber = 1;
-  private long id_;
+  private int id_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Id {
+  public int Id {
     get { return id_; }
     set {
       id_ = value;
@@ -1482,7 +1482,7 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (Id != 0L) hash ^= Id.GetHashCode();
+    if (Id != 0) hash ^= Id.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1501,9 +1501,9 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -1515,9 +1515,9 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -1529,8 +1529,8 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (Id != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+    if (Id != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1544,7 +1544,7 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
     if (other == null) {
       return;
     }
-    if (other.Id != 0L) {
+    if (other.Id != 0) {
       Id = other.Id;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1563,7 +1563,7 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
       }
@@ -1582,7 +1582,7 @@ public sealed partial class PaymentRequestById : pb::IMessage<PaymentRequestById
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
       }
@@ -1639,10 +1639,10 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
 
   /// <summary>Field number for the "id" field.</summary>
   public const int IdFieldNumber = 1;
-  private long id_;
+  private int id_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Id {
+  public int Id {
     get { return id_; }
     set {
       id_ = value;
@@ -1685,7 +1685,7 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (Id != 0L) hash ^= Id.GetHashCode();
+    if (Id != 0) hash ^= Id.GetHashCode();
     if (Status.Length != 0) hash ^= Status.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -1705,9 +1705,9 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(18);
@@ -1723,9 +1723,9 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(18);
@@ -1741,8 +1741,8 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (Id != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+    if (Id != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
     }
     if (Status.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
@@ -1759,7 +1759,7 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
     if (other == null) {
       return;
     }
-    if (other.Id != 0L) {
+    if (other.Id != 0) {
       Id = other.Id;
     }
     if (other.Status.Length != 0) {
@@ -1781,7 +1781,7 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 18: {
@@ -1804,7 +1804,7 @@ public sealed partial class PaymentStatusUpdateRequest : pb::IMessage<PaymentSta
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 18: {
@@ -1871,10 +1871,10 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
 
   /// <summary>Field number for the "id" field.</summary>
   public const int IdFieldNumber = 1;
-  private long id_;
+  private int id_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Id {
+  public int Id {
     get { return id_; }
     set {
       id_ = value;
@@ -1883,10 +1883,10 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
 
   /// <summary>Field number for the "customer" field.</summary>
   public const int CustomerFieldNumber = 2;
-  private long customer_;
+  private int customer_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Customer {
+  public int Customer {
     get { return customer_; }
     set {
       customer_ = value;
@@ -1907,10 +1907,10 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
 
   /// <summary>Field number for the "booking" field.</summary>
   public const int BookingFieldNumber = 4;
-  private long booking_;
+  private int booking_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Booking {
+  public int Booking {
     get { return booking_; }
     set {
       booking_ = value;
@@ -1931,10 +1931,10 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
 
   /// <summary>Field number for the "creditcardref" field.</summary>
   public const int CreditcardrefFieldNumber = 6;
-  private long creditcardref_;
+  private int creditcardref_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public long Creditcardref {
+  public int Creditcardref {
     get { return creditcardref_; }
     set {
       creditcardref_ = value;
@@ -1995,12 +1995,12 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (Id != 0L) hash ^= Id.GetHashCode();
-    if (Customer != 0L) hash ^= Customer.GetHashCode();
+    if (Id != 0) hash ^= Id.GetHashCode();
+    if (Customer != 0) hash ^= Customer.GetHashCode();
     if (BookingType != 0) hash ^= BookingType.GetHashCode();
-    if (Booking != 0L) hash ^= Booking.GetHashCode();
+    if (Booking != 0) hash ^= Booking.GetHashCode();
     if (Status.Length != 0) hash ^= Status.GetHashCode();
-    if (Creditcardref != 0L) hash ^= Creditcardref.GetHashCode();
+    if (Creditcardref != 0) hash ^= Creditcardref.GetHashCode();
     if (Success != false) hash ^= Success.GetHashCode();
     if (Message.Length != 0) hash ^= Message.GetHashCode();
     if (_unknownFields != null) {
@@ -2021,29 +2021,29 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
-    if (Customer != 0L) {
+    if (Customer != 0) {
       output.WriteRawTag(16);
-      output.WriteInt64(Customer);
+      output.WriteInt32(Customer);
     }
     if (BookingType != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(BookingType);
     }
-    if (Booking != 0L) {
+    if (Booking != 0) {
       output.WriteRawTag(32);
-      output.WriteInt64(Booking);
+      output.WriteInt32(Booking);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(Status);
     }
-    if (Creditcardref != 0L) {
+    if (Creditcardref != 0) {
       output.WriteRawTag(48);
-      output.WriteInt64(Creditcardref);
+      output.WriteInt32(Creditcardref);
     }
     if (Success != false) {
       output.WriteRawTag(56);
@@ -2063,29 +2063,29 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0L) {
+    if (Id != 0) {
       output.WriteRawTag(8);
-      output.WriteInt64(Id);
+      output.WriteInt32(Id);
     }
-    if (Customer != 0L) {
+    if (Customer != 0) {
       output.WriteRawTag(16);
-      output.WriteInt64(Customer);
+      output.WriteInt32(Customer);
     }
     if (BookingType != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(BookingType);
     }
-    if (Booking != 0L) {
+    if (Booking != 0) {
       output.WriteRawTag(32);
-      output.WriteInt64(Booking);
+      output.WriteInt32(Booking);
     }
     if (Status.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(Status);
     }
-    if (Creditcardref != 0L) {
+    if (Creditcardref != 0) {
       output.WriteRawTag(48);
-      output.WriteInt64(Creditcardref);
+      output.WriteInt32(Creditcardref);
     }
     if (Success != false) {
       output.WriteRawTag(56);
@@ -2105,23 +2105,23 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (Id != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+    if (Id != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
     }
-    if (Customer != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Customer);
+    if (Customer != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Customer);
     }
     if (BookingType != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(BookingType);
     }
-    if (Booking != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Booking);
+    if (Booking != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Booking);
     }
     if (Status.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
     }
-    if (Creditcardref != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Creditcardref);
+    if (Creditcardref != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Creditcardref);
     }
     if (Success != false) {
       size += 1 + 1;
@@ -2141,22 +2141,22 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
     if (other == null) {
       return;
     }
-    if (other.Id != 0L) {
+    if (other.Id != 0) {
       Id = other.Id;
     }
-    if (other.Customer != 0L) {
+    if (other.Customer != 0) {
       Customer = other.Customer;
     }
     if (other.BookingType != 0) {
       BookingType = other.BookingType;
     }
-    if (other.Booking != 0L) {
+    if (other.Booking != 0) {
       Booking = other.Booking;
     }
     if (other.Status.Length != 0) {
       Status = other.Status;
     }
-    if (other.Creditcardref != 0L) {
+    if (other.Creditcardref != 0) {
       Creditcardref = other.Creditcardref;
     }
     if (other.Success != false) {
@@ -2181,11 +2181,11 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 16: {
-          Customer = input.ReadInt64();
+          Customer = input.ReadInt32();
           break;
         }
         case 24: {
@@ -2193,7 +2193,7 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           break;
         }
         case 32: {
-          Booking = input.ReadInt64();
+          Booking = input.ReadInt32();
           break;
         }
         case 42: {
@@ -2201,7 +2201,7 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           break;
         }
         case 48: {
-          Creditcardref = input.ReadInt64();
+          Creditcardref = input.ReadInt32();
           break;
         }
         case 56: {
@@ -2228,11 +2228,11 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          Id = input.ReadInt64();
+          Id = input.ReadInt32();
           break;
         }
         case 16: {
-          Customer = input.ReadInt64();
+          Customer = input.ReadInt32();
           break;
         }
         case 24: {
@@ -2240,7 +2240,7 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           break;
         }
         case 32: {
-          Booking = input.ReadInt64();
+          Booking = input.ReadInt32();
           break;
         }
         case 42: {
@@ -2248,7 +2248,7 @@ public sealed partial class PaymentResponse : pb::IMessage<PaymentResponse>
           break;
         }
         case 48: {
-          Creditcardref = input.ReadInt64();
+          Creditcardref = input.ReadInt32();
           break;
         }
         case 56: {

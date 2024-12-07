@@ -1,4 +1,6 @@
-﻿public class CarDto
+﻿namespace Shared.Dto;
+
+public class CarDto
 {
     public int CarId { get; set; }
     public string Vin { get; set; }

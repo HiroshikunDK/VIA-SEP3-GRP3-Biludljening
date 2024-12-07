@@ -15,7 +15,7 @@ public class BookingCar {
   private String startTime;
   private String endDate;
   private String endTime;
-  private String price;
+  private double price;
   private int greenShare;
   private int carId;
   private int customerId;
@@ -25,7 +25,7 @@ public class BookingCar {
 
   // Parameterized constructor
   public BookingCar(int bookingNr, String status, String startDate, String startTime,
-      String endDate, String endTime, String price, int greenShare,
+      String endDate, String endTime, Double price, int greenShare,
       int carId, int customerId) {
     this.bookingNr = bookingNr;
     this.status = status;
@@ -89,11 +89,11 @@ public class BookingCar {
     this.endTime = endTime;
   }
 
-  public String getPrice() {
+  public double getPrice() {
     return price;
   }
 
-  public void setPrice(String price) {
+  public void setPrice(Double price) {
     this.price = price;
   }
 

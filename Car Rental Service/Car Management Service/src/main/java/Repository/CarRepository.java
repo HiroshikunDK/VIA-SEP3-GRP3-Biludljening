@@ -2,6 +2,7 @@ package Repository;
 
 import Model.Car;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 
@@ -9,41 +10,55 @@ import java.util.List;
 import java.util.Optional;
 
 public class CarRepository implements ICarRepository {
-    private final EntityManager entityManager;
+    private final EntityManagerFactory entityManagerFactory;
 
-    public CarRepository(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public CarRepository(EntityManagerFactory entityManagerFactory) {
+        this.entityManagerFactory = entityManagerFactory;
     }
 
     @Override
     public List<Car> getAllCars() {
-        String jpql = "SELECT c FROM Car c";
-        TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
-        return query.getResultList();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            String jpql = "SELECT c FROM Car c";
+            TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
+            return query.getResultList();
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public Optional<Car> getCarById(int carId) {
-        Car car = entityManager.find(Car.class, carId);
-        return car != null ? Optional.of(car) : Optional.empty();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            Car car = entityManager.find(Car.class, carId);
+            return car != null ? Optional.of(car) : Optional.empty();
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public Car addCar(Car car) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
             entityManager.persist(car);
             transaction.commit();
+            return car;
         } catch (Exception e) {
             transaction.rollback();
             throw new RuntimeException("Error adding car", e);
+        } finally {
+            entityManager.close();
         }
-        return car;
     }
 
     @Override
     public Car updateCar(Car car) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
@@ -53,11 +68,14 @@ public class CarRepository implements ICarRepository {
         } catch (Exception e) {
             transaction.rollback();
             throw new RuntimeException("Error updating car", e);
+        } finally {
+            entityManager.close();
         }
     }
 
     @Override
     public boolean deleteCar(int carId) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
@@ -72,15 +90,21 @@ public class CarRepository implements ICarRepository {
         } catch (Exception e) {
             transaction.rollback();
             throw new RuntimeException("Error deleting car", e);
+        } finally {
+            entityManager.close();
         }
     }
 
     @Override
     public List<Car> getAvailableCarsByLocation(int locationId) {
-        String jpql = "SELECT c FROM Car c WHERE c.locationHubRef = :locationId";
-        TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
-        query.setParameter("locationId", locationId);
-        return query.getResultList();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            String jpql = "SELECT c FROM Car c WHERE c.locationHubRef = :locationId";
+            TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
+            query.setParameter("locationId", locationId);
+            return query.getResultList();
+        } finally {
+            entityManager.close();
+        }
     }
-
 }

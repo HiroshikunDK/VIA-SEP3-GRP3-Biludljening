@@ -9,80 +9,100 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-public class LocationsHubRepository implements ILocationHubRepository
-{
+public class LocationsHubRepository implements ILocationHubRepository {
 
-  public final EntityManager entityManager;
+  private final EntityManagerFactory entityManagerFactory;
 
-  public LocationsHubRepository(EntityManager entityManager)
-  {
-    this.entityManager = entityManager;
+  public LocationsHubRepository(EntityManagerFactory entityManagerFactory) {
+    this.entityManagerFactory = entityManagerFactory;
   }
 
-  @Override public List<LocationHub> getAllLocationHubs()
-  {
-    String jpql = "SELECT l FROM LocationHub l";
-    TypedQuery<LocationHub> query = entityManager.createQuery(jpql, LocationHub.class);
-    return query.getResultList();
+  private EntityManager getEntityManager() {
+    return entityManagerFactory.createEntityManager();
   }
 
-  @Override public Optional<LocationHub> getLocationHubById(int locationHubId)
-  {
-    LocationHub locationHub = entityManager.find(LocationHub.class, locationHubId);
-    return locationHub != null ? Optional.of(locationHub) : Optional.empty();
+  @Override
+  public List<LocationHub> getAllLocationHubs() {
+    EntityManager entityManager = getEntityManager();
+    try {
+      String jpql = "SELECT l FROM LocationHub l";
+      TypedQuery<LocationHub> query = entityManager.createQuery(jpql, LocationHub.class);
+      return query.getResultList();
+    } finally {
+      entityManager.close();
+    }
   }
 
-  @Override public LocationHub addLocationHub(LocationHub locationHub)
-  {
+  @Override
+  public Optional<LocationHub> getLocationHubById(int locationHubId) {
+    EntityManager entityManager = getEntityManager();
+    try {
+      LocationHub locationHub = entityManager.find(LocationHub.class, locationHubId);
+      return locationHub != null ? Optional.of(locationHub) : Optional.empty();
+    } finally {
+      entityManager.close();
+    }
+  }
+
+  @Override
+  public LocationHub addLocationHub(LocationHub locationHub) {
+    EntityManager entityManager = getEntityManager();
     EntityTransaction transaction = entityManager.getTransaction();
-    try
-    {
+    try {
       transaction.begin();
       entityManager.persist(locationHub);
       transaction.commit();
-    } catch (Exception e)
-    {
-      transaction.rollback();
+      return locationHub;
+    } catch (Exception e) {
+      if (transaction.isActive()) {
+        transaction.rollback();
+      }
       throw new RuntimeException("Error adding location hub", e);
+    } finally {
+      entityManager.close();
     }
-    return locationHub;
   }
 
-  @Override public LocationHub updateLocationHub(LocationHub locationHub)
-  {
+  @Override
+  public LocationHub updateLocationHub(LocationHub locationHub) {
+    EntityManager entityManager = getEntityManager();
     EntityTransaction transaction = entityManager.getTransaction();
-    try
-    {
+    try {
       transaction.begin();
       LocationHub updatedLocationHub = entityManager.merge(locationHub);
       transaction.commit();
       return updatedLocationHub;
-    } catch (Exception e)
-    {
-      transaction.rollback();
+    } catch (Exception e) {
+      if (transaction.isActive()) {
+        transaction.rollback();
+      }
       throw new RuntimeException("Error updating location hub", e);
+    } finally {
+      entityManager.close();
     }
   }
 
-  @Override public boolean deleteLocationHub(int locationHubId)
-  {
+  @Override
+  public boolean deleteLocationHub(int locationHubId) {
+    EntityManager entityManager = getEntityManager();
     EntityTransaction transaction = entityManager.getTransaction();
-    try
-    {
+    try {
       transaction.begin();
       LocationHub locationHub = entityManager.find(LocationHub.class, locationHubId);
-      if (locationHub != null)
-      {
+      if (locationHub != null) {
         entityManager.remove(locationHub);
         transaction.commit();
         return true;
       }
       transaction.rollback();
       return false;
-    } catch (Exception e)
-    {
-      transaction.rollback();
+    } catch (Exception e) {
+      if (transaction.isActive()) {
+        transaction.rollback();
+      }
       throw new RuntimeException("Error deleting location hub", e);
+    } finally {
+      entityManager.close();
     }
   }
 }

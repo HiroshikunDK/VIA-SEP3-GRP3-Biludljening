@@ -1,8 +1,8 @@
 package Service;
 
 import Model.User;
-import Persistence.PasswordHelper;
-import Persistence.TokenHelper;
+import Shared.PasswordHelper;
+import Shared.TokenHelper;
 import Repository.IUserRepository;
 import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.*;
@@ -55,10 +55,6 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
     responseObserver.onCompleted();
   }
 
-
-
-
-
   @Override
   public void loginUser(LoginRequest request, StreamObserver<LoginResponse> responseObserver) {
     Optional<User> userOptional = userRepository.getUserByUsername(request.getUsername());
@@ -66,7 +62,7 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
     if (userOptional.isPresent() && PasswordHelper.checkPassword(request.getPassword(), userOptional.get().getPassword())) {
       User user = userOptional.get();
 
-      String token = TokenHelper.generateToken(user.getUsername(), user.getRole());
+      String token = TokenHelper.generateToken(user.getUsername(), user.getRole(), user.getId());
 
       LoginResponse response = LoginResponse.newBuilder()
               .setToken(token)

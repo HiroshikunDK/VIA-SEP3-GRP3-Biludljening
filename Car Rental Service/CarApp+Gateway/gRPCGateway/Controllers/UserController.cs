@@ -53,11 +53,25 @@ public class UserController : ControllerBase
 
 
     [HttpPost("login")]
-    [AllowAnonymous] 
+    [AllowAnonymous]
     public async Task<IActionResult> LoginUser([FromBody] LoginRequest request)
     {
-        var response = await _userClient.LoginUserAsync(request);
-        return Ok(response);
+        try
+        {
+            var response = await _userClient.LoginUserAsync(request);
+
+            if (!string.IsNullOrEmpty(response.Token))
+            {
+                // Return only the token to the client
+                return Ok(response.Token);
+            }
+
+            return BadRequest(new { Message = "Invalid username or password." });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
 
     [HttpGet("{id}")]

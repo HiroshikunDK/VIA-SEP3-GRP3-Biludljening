@@ -62,7 +62,7 @@ message BookingCar {
   string starttime = 4;
   string enddate = 5;
   string endtime = 6;
-  string price = 7;
+  double price = 7;
   int32 greenshare = 8;
   int32 carid = 9;
   int32 customerid = 10;

@@ -7,18 +7,17 @@ import jakarta.persistence.*;
 public class Payment  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    private Long customer;
+    private int customer;
     private int bookingType;
-    private Long booking;
+    private int booking;
     private String status;
-    private Long creditcardref;
+    private int creditcardref;
 
     public Payment() {}
 
-    public Payment(Long id, Long customer, int bookingType, Long booking, String status, Long creditcardref) {
-        this.id = id;
+    public Payment(int customer, int bookingType, int booking, String status, int creditcardref) {
         this.customer = customer;
         this.bookingType = bookingType;
         this.booking = booking;
@@ -26,22 +25,22 @@ public class Payment  {
         this.creditcardref = creditcardref;
     }
 
-    public Long getId()
+    public int getId()
     {
         return id;
     }
 
-    public void setId(Long id)
+    public void setId(int id)
     {
         this.id = id;
     }
 
-    public Long getCustomer()
+    public int getCustomer()
     {
         return customer;
     }
 
-    public void setCustomer(Long customer)
+    public void setCustomer(int customer)
     {
         this.customer = customer;
     }
@@ -56,12 +55,12 @@ public class Payment  {
         this.bookingType = bookingType;
     }
 
-    public Long getBooking()
+    public int getBooking()
     {
         return booking;
     }
 
-    public void setBooking(Long booking)
+    public void setBooking(int booking)
     {
         this.booking = booking;
     }
@@ -76,12 +75,12 @@ public class Payment  {
         this.status = status;
     }
 
-    public Long getCreditcardref()
+    public int getCreditcardref()
     {
         return creditcardref;
     }
 
-    public void setCreditcardref(Long creditcardref)
+    public void setCreditcardref(int creditcardref)
     {
         this.creditcardref = creditcardref;
     }

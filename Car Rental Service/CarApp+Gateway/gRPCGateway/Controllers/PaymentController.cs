@@ -32,7 +32,12 @@ public class PaymentController : ControllerBase
 
             if (response.Success)
             {
-                return Ok(new { PaymentId = response.Id, Message = response.Message });
+                var dto = new PaymentCreationResponseDto
+                {
+                    PaymentId = (int)response.Id,
+                    Message = response.Message
+                };
+                return Ok(dto);
             }
             else
             {
@@ -48,18 +53,34 @@ public class PaymentController : ControllerBase
 
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetPaymentById(long id)
+    public async Task<IActionResult> GetPaymentById(int id)
     {
-        var grpcRequest = new PaymentRequestById { Id = id };
-        var response = await _paymentClient.GetPaymentByIdAsync(grpcRequest);
+        try
+        {
+            var request = new PaymentRequestById { Id = id };
+            var response = await _paymentClient.GetPaymentByIdAsync(request);
 
-        if (response.Success)
-        {
-            return Ok(response);
+            if (!response.Success)
+            {
+                return NotFound(new { Message = response.Message });
+            }
+
+            var paymentDto = new PaymentResponseDto
+            {
+                Id = response.Id,
+                Customer = response.Customer,
+                BookingType = response.BookingType,
+                Booking = response.Booking,
+                Status = response.Status,
+                CreditCardRef = response.Creditcardref,
+                Price = 0 // or set as needed
+            };
+
+            return Ok(paymentDto);
         }
-        else
+        catch (Exception ex)
         {
-            return NotFound(new { Message = response.Message });
+            return StatusCode(500, new { Message = "An error occurred while retrieving the payment.", Details = ex.Message });
         }
     }
 

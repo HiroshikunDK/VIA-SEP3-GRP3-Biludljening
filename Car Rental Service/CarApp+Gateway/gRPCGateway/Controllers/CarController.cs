@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 
@@ -45,22 +46,33 @@ public class CarController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> ListAllCars()
     {
-        var request = new Google.Protobuf.WellKnownTypes.Empty();
-        var response = await _carServiceClient.getAllCarsAsync(request);
-        
-        var cars = response.Cars.ToList(); // turning into a list for filtering
-
-        if (cars.Any())
+        try
         {
+            var metadata = new Metadata();
+            if (Request.Headers.ContainsKey("Authorization"))
+            {
+                metadata.Add("Authorization", Request.Headers["Authorization"]);
+            }
+
+            
+            var response = await _carServiceClient.getAllCarsAsync(
+                new Google.Protobuf.WellKnownTypes.Empty(),
+                metadata,
+                null,
+                CancellationToken.None
+            );
+
             return Ok(response.Cars);
         }
-        else
+        catch (RpcException rpcEx) when (rpcEx.StatusCode == Grpc.Core.StatusCode.Unauthenticated)
         {
-            return NoContent();
+            return Unauthorized(new { Message = "Invalid or missing token." });
         }
-        
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
-
 
     [HttpPut]
     public async Task<IActionResult> UpdateCar([FromBody] AddCarRequestDto carDto)

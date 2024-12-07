@@ -1,4 +1,5 @@
 using System.Text;
+using Grpc.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Userservice;
@@ -43,6 +44,9 @@ builder.Services.AddGrpcClient<BookingCarService.BookingCarServiceClient>(option
 
 builder.Services.AddControllers();
 
+var base64EncodedKey = "RGVuRXJIZW1tZWxpZw=="; // Base64 of "DenErHemmelig"
+var decodedKey = Convert.FromBase64String(base64EncodedKey);
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -52,10 +56,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("DenErHemmelig"))
+            IssuerSigningKey = new SymmetricSecurityKey(decodedKey) // Use decoded key bytes
         };
     });
 
+Console.WriteLine($"Decoded Key: {BitConverter.ToString(decodedKey)}");
 
 builder.Services.AddAntiforgery(options =>
 {
@@ -79,5 +84,20 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Headers.ContainsKey("Authorization"))
+    {
+        Console.WriteLine($"Authorization Header in Broker: {context.Request.Headers["Authorization"]}");
+    }
+    else
+    {
+        Console.WriteLine("Authorization Header Missing in Broker");
+    }
+
+    await next();
+});
+
 
 app.Run();

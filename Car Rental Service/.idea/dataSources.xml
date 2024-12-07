@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\Database\UserService.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:Database\UserService.db</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
       </jdbc-additional-properties>
@@ -37,11 +37,11 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="UserService [2]" uuid="c653921f-2784-49b8-b912-bdce18419568">
+    <data-source source="LOCAL" name="PaymentService" uuid="74150234-0e6a-43f9-afde-2b668c333c01">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/Database/UserService.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:Database\PaymentService.db</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
       </jdbc-additional-properties>

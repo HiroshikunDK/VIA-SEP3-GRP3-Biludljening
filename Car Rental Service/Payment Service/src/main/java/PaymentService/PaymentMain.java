@@ -2,10 +2,10 @@ package PaymentService;
 
 import Repository.PaymentRepository;
 import Service.PaymentService;
-import Persistance.HibernateUtility;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.hibernate.SessionFactory;
+import Shared.HibernateUtility;
 
 import java.io.IOException;
 

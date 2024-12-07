@@ -14,23 +14,26 @@ public class AuthHandler : DelegatingHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        // Only try JavaScript interop if we are in an interactive environment
         string token = null;
 
         if (_jsRuntime is IJSInProcessRuntime jsInProcessRuntime)
         {
-            // Safe interop for interactive environments
             token = jsInProcessRuntime.Invoke<string>("localStorage.getItem", "authToken");
         }
         else if (!_jsRuntime.IsJSInteropRestricted())
         {
-            // Asynchronous interop for server-side interactive environments
             token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
         }
+
+        Console.WriteLine($"Retrieved Token: {token}");
 
         if (!string.IsNullOrEmpty(token))
         {
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        }
+        else
+        {
+            Console.WriteLine("No token found in localStorage.");
         }
 
         return await base.SendAsync(request, cancellationToken);

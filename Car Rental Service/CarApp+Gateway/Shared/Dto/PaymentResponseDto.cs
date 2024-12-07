@@ -8,4 +8,5 @@ public class PaymentResponseDto
     public int Booking { get; set; }
     public string Status { get; set; }
     public long CreditCardRef { get; set; }
+    public decimal Price { get; set; } 
 }

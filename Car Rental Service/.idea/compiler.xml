@@ -8,9 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Car_Management_Service" />
         <module name="User_Service" />
+        <module name="Shared_Library" />
         <module name="Payment_Service" />
         <module name="Rideshare_Service" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="User_Service" options="" />
+    </option>
   </component>
 </project>

@@ -1,4 +1,6 @@
-﻿public class CreatePaymentRequestDto
+﻿namespace Shared.Dto;
+
+public class CreatePaymentRequestDto
 {
     public int BookingId { get; set; }
     public string CreditCardNumber { get; set; } = string.Empty; // Add this property

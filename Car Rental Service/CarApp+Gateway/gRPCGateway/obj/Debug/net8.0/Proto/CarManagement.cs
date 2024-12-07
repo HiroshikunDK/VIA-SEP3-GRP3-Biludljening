@@ -34,7 +34,7 @@ public static partial class CarManagementReflection {
           "ASgFIr0BCgpCb29raW5nQ2FyEhEKCWJvb2tpbmduchgBIAEoBRIOCgZzdGF0",
           "dXMYAiABKAkSEQoJc3RhcnRkYXRvGAMgASgJEhEKCXN0YXJ0dGltZRgEIAEo",
           "CRIPCgdlbmRkYXRlGAUgASgJEg8KB2VuZHRpbWUYBiABKAkSDQoFcHJpY2UY",
-          "ByABKAkSEgoKZ3JlZW5zaGFyZRgIIAEoBRINCgVjYXJpZBgJIAEoBRISCgpj",
+          "ByABKAESEgoKZ3JlZW5zaGFyZRgIIAEoBRINCgVjYXJpZBgJIAEoBRISCgpj",
           "dXN0b21lcmlkGAogASgFIjMKDkJvb2tpbmdDYXJMaXN0EiEKDGJvb2tpbmdf",
           "Y2FycxgBIAMoCzILLkJvb2tpbmdDYXIiagoSQm9va2luZ0NhclJlc3BvbnNl",
           "Eg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIfCgpib29raW5n",
@@ -1566,13 +1566,13 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
 
   /// <summary>Field number for the "price" field.</summary>
   public const int PriceFieldNumber = 7;
-  private string price_ = "";
+  private double price_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Price {
+  public double Price {
     get { return price_; }
     set {
-      price_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      price_ = value;
     }
   }
 
@@ -1633,7 +1633,7 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
     if (Starttime != other.Starttime) return false;
     if (Enddate != other.Enddate) return false;
     if (Endtime != other.Endtime) return false;
-    if (Price != other.Price) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Price, other.Price)) return false;
     if (Greenshare != other.Greenshare) return false;
     if (Carid != other.Carid) return false;
     if (Customerid != other.Customerid) return false;
@@ -1650,7 +1650,7 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
     if (Starttime.Length != 0) hash ^= Starttime.GetHashCode();
     if (Enddate.Length != 0) hash ^= Enddate.GetHashCode();
     if (Endtime.Length != 0) hash ^= Endtime.GetHashCode();
-    if (Price.Length != 0) hash ^= Price.GetHashCode();
+    if (Price != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Price);
     if (Greenshare != 0) hash ^= Greenshare.GetHashCode();
     if (Carid != 0) hash ^= Carid.GetHashCode();
     if (Customerid != 0) hash ^= Customerid.GetHashCode();
@@ -1696,9 +1696,9 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
       output.WriteRawTag(50);
       output.WriteString(Endtime);
     }
-    if (Price.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(Price);
+    if (Price != 0D) {
+      output.WriteRawTag(57);
+      output.WriteDouble(Price);
     }
     if (Greenshare != 0) {
       output.WriteRawTag(64);
@@ -1746,9 +1746,9 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
       output.WriteRawTag(50);
       output.WriteString(Endtime);
     }
-    if (Price.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(Price);
+    if (Price != 0D) {
+      output.WriteRawTag(57);
+      output.WriteDouble(Price);
     }
     if (Greenshare != 0) {
       output.WriteRawTag(64);
@@ -1790,8 +1790,8 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
     if (Endtime.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Endtime);
     }
-    if (Price.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Price);
+    if (Price != 0D) {
+      size += 1 + 8;
     }
     if (Greenshare != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(Greenshare);
@@ -1832,7 +1832,7 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
     if (other.Endtime.Length != 0) {
       Endtime = other.Endtime;
     }
-    if (other.Price.Length != 0) {
+    if (other.Price != 0D) {
       Price = other.Price;
     }
     if (other.Greenshare != 0) {
@@ -1883,8 +1883,8 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
           Endtime = input.ReadString();
           break;
         }
-        case 58: {
-          Price = input.ReadString();
+        case 57: {
+          Price = input.ReadDouble();
           break;
         }
         case 64: {
@@ -1938,8 +1938,8 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
           Endtime = input.ReadString();
           break;
         }
-        case 58: {
-          Price = input.ReadString();
+        case 57: {
+          Price = input.ReadDouble();
           break;
         }
         case 64: {

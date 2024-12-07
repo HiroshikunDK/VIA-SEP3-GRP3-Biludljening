@@ -4643,16 +4643,10 @@ public final class CarManagement {
         getEndtimeBytes();
 
     /**
-     * <code>string price = 7;</code>
+     * <code>double price = 7;</code>
      * @return The price.
      */
-    java.lang.String getPrice();
-    /**
-     * <code>string price = 7;</code>
-     * @return The bytes for price.
-     */
-    com.google.protobuf.ByteString
-        getPriceBytes();
+    double getPrice();
 
     /**
      * <code>int32 greenshare = 8;</code>
@@ -4690,7 +4684,6 @@ public final class CarManagement {
       starttime_ = "";
       enddate_ = "";
       endtime_ = "";
-      price_ = "";
     }
 
     @java.lang.Override
@@ -4925,42 +4918,14 @@ public final class CarManagement {
     }
 
     public static final int PRICE_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object price_ = "";
+    private double price_ = 0D;
     /**
-     * <code>string price = 7;</code>
+     * <code>double price = 7;</code>
      * @return The price.
      */
     @java.lang.Override
-    public java.lang.String getPrice() {
-      java.lang.Object ref = price_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        price_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string price = 7;</code>
-     * @return The bytes for price.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPriceBytes() {
-      java.lang.Object ref = price_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        price_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public double getPrice() {
+      return price_;
     }
 
     public static final int GREENSHARE_FIELD_NUMBER = 8;
@@ -5028,8 +4993,8 @@ public final class CarManagement {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endtime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, price_);
+      if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+        output.writeDouble(7, price_);
       }
       if (greenshare_ != 0) {
         output.writeInt32(8, greenshare_);
@@ -5068,8 +5033,9 @@ public final class CarManagement {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endtime_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endtime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, price_);
+      if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, price_);
       }
       if (greenshare_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -5110,8 +5076,9 @@ public final class CarManagement {
           .equals(other.getEnddate())) return false;
       if (!getEndtime()
           .equals(other.getEndtime())) return false;
-      if (!getPrice()
-          .equals(other.getPrice())) return false;
+      if (java.lang.Double.doubleToLongBits(getPrice())
+          != java.lang.Double.doubleToLongBits(
+              other.getPrice())) return false;
       if (getGreenshare()
           != other.getGreenshare()) return false;
       if (getCarid()
@@ -5142,7 +5109,8 @@ public final class CarManagement {
       hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndtime().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrice().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPrice()));
       hash = (37 * hash) + GREENSHARE_FIELD_NUMBER;
       hash = (53 * hash) + getGreenshare();
       hash = (37 * hash) + CARID_FIELD_NUMBER;
@@ -5284,7 +5252,7 @@ public final class CarManagement {
         starttime_ = "";
         enddate_ = "";
         endtime_ = "";
-        price_ = "";
+        price_ = 0D;
         greenshare_ = 0;
         carid_ = 0;
         customerid_ = 0;
@@ -5425,10 +5393,8 @@ public final class CarManagement {
           bitField0_ |= 0x00000020;
           onChanged();
         }
-        if (!other.getPrice().isEmpty()) {
-          price_ = other.price_;
-          bitField0_ |= 0x00000040;
-          onChanged();
+        if (other.getPrice() != 0D) {
+          setPrice(other.getPrice());
         }
         if (other.getGreenshare() != 0) {
           setGreenshare(other.getGreenshare());
@@ -5495,11 +5461,11 @@ public final class CarManagement {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
-              case 58: {
-                price_ = input.readStringRequireUtf8();
+              case 57: {
+                price_ = input.readDouble();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 58
+              } // case 57
               case 64: {
                 greenshare_ = input.readInt32();
                 bitField0_ |= 0x00000080;
@@ -5924,74 +5890,34 @@ public final class CarManagement {
         return this;
       }
 
-      private java.lang.Object price_ = "";
+      private double price_ ;
       /**
-       * <code>string price = 7;</code>
+       * <code>double price = 7;</code>
        * @return The price.
        */
-      public java.lang.String getPrice() {
-        java.lang.Object ref = price_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          price_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public double getPrice() {
+        return price_;
       }
       /**
-       * <code>string price = 7;</code>
-       * @return The bytes for price.
-       */
-      public com.google.protobuf.ByteString
-          getPriceBytes() {
-        java.lang.Object ref = price_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          price_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string price = 7;</code>
+       * <code>double price = 7;</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+      public Builder setPrice(double value) {
+        
         price_ = value;
         bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>string price = 7;</code>
+       * <code>double price = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
-        price_ = getDefaultInstance().getPrice();
         bitField0_ = (bitField0_ & ~0x00000040);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string price = 7;</code>
-       * @param value The bytes for price to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPriceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        price_ = value;
-        bitField0_ |= 0x00000040;
+        price_ = 0D;
         onChanged();
         return this;
       }
@@ -11449,7 +11375,7 @@ public final class CarManagement {
       "est\022\021\n\tbookingNr\030\001 \001(\005\"\275\001\n\nBookingCar\022\021\n" +
       "\tbookingnr\030\001 \001(\005\022\016\n\006status\030\002 \001(\t\022\021\n\tstar" +
       "tdato\030\003 \001(\t\022\021\n\tstarttime\030\004 \001(\t\022\017\n\007enddat" +
-      "e\030\005 \001(\t\022\017\n\007endtime\030\006 \001(\t\022\r\n\005price\030\007 \001(\t\022" +
+      "e\030\005 \001(\t\022\017\n\007endtime\030\006 \001(\t\022\r\n\005price\030\007 \001(\001\022" +
       "\022\n\ngreenshare\030\010 \001(\005\022\r\n\005carid\030\t \001(\005\022\022\n\ncu" +
       "stomerid\030\n \001(\005\"3\n\016BookingCarList\022!\n\014book" +
       "ing_cars\030\001 \003(\0132\013.BookingCar\"j\n\022BookingCa" +

@@ -1,0 +1,82 @@
+﻿@page "/confirmation"
+@using Shared.Dto
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<h2>Booking Confirmation</h2>
+
+@if (bookingDetails == null || paymentDetails == null)
+{
+    <p>Loading your booking details...</p>
+}
+else
+{
+    <div>
+        <h3>Thank you for your booking!</h3>
+        <p>Your booking and payment were successful.</p>
+
+        <h4>Booking Details</h4>
+        <ul>
+            <li><strong>Booking ID:</strong> @bookingDetails.BookingNr</li>
+            <li><strong>Status:</strong> @bookingDetails.Status</li>
+            <li><strong>Start Date:</strong> @bookingDetails.StartDate</li>
+            <li><strong>End Date:</strong> @bookingDetails.EndDate</li>
+            <li><strong>Car ID:</strong> @bookingDetails.CarId</li>
+        </ul>
+
+        <h4>Payment Details</h4>
+        <ul>
+            <li><strong>Payment ID:</strong> @paymentDetails.Id</li>
+            <li><strong>Status:</strong> @paymentDetails.Status</li>
+            <li><strong>Credit Card Ref:</strong> @paymentDetails.CreditCardRef</li>
+        </ul>
+
+        <button @onclick="GoToHomepage">Back to Home</button>
+    </div>
+}
+
+@code {
+    private BookingDto? bookingDetails;
+    private PaymentResponseDto? paymentDetails;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Extract bookingId and paymentId from query parameters
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+        if (!int.TryParse(query.Get("bookingId"), out var bookingId))
+        {
+            Console.WriteLine("Invalid or missing bookingId in query");
+            return;
+        }
+
+        if (!int.TryParse(query.Get("paymentId"), out var paymentId))
+        {
+            Console.WriteLine("Invalid or missing paymentId in query");
+            return;
+        }
+
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        try
+        {
+            // Fetch booking details using bookingId
+            bookingDetails = await client.GetFromJsonAsync<BookingDto>($"api/bookingcar/{bookingId}");
+            Console.WriteLine($"Booking Details: {System.Text.Json.JsonSerializer.Serialize(bookingDetails)}");
+
+            // Fetch payment details using paymentId
+            paymentDetails = await client.GetFromJsonAsync<PaymentResponseDto>($"api/payment/{paymentId}");
+            Console.WriteLine($"Payment Details: {System.Text.Json.JsonSerializer.Serialize(paymentDetails)}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching confirmation details: {ex.Message}");
+        }
+    }
+
+    private void GoToHomepage()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

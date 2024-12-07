@@ -47,32 +47,50 @@ public class BookingCarService extends BookingCarServiceGrpc.BookingCarServiceIm
 
   @Override
   public void addBookingCar(CarManagement.BookingCar request, StreamObserver<CarManagement.BookingCarResponse> responseObserver) {
-    // Create a new BookingCar instance using all fields from the request
-    BookingCar newBookingCar = new BookingCar(
-        0,
-        request.getStatus(),
-        request.getStartdato(),
-        request.getStarttime(),
-        request.getEnddate(),
-        request.getEndtime(),
-        request.getPrice(),
-        request.getGreenshare(),
-        request.getCarid(),
-        request.getCustomerid()
-    );
+    try {
+      if (request.getCustomerid() <= 0 || request.getCarid() <= 0) {
+        throw new IllegalArgumentException("Invalid customer or car ID.");
+      }
 
-    // Add business logic to save 'newBookingCar' to the database
-    bookingCarRepository.addBookingCar(newBookingCar);
+      BookingCar newBookingCar = new BookingCar(
+              0,
+              request.getStatus(),
+              request.getStartdato(),
+              request.getStarttime(),
+              request.getEnddate(),
+              request.getEndtime(),
+              request.getPrice(),
+              request.getGreenshare(),
+              request.getCarid(),
+              request.getCustomerid()
+      );
 
-    // Build and return a response
-    CarManagement.BookingCarResponse response = CarManagement.BookingCarResponse.newBuilder()
-        .setSuccess(true)
-        .setMessage("Booking car added successfully.")
-        .build();
+      BookingCar savedBookingCar = bookingCarRepository.addBookingCar(newBookingCar);
 
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+      CarManagement.BookingCarResponse response = CarManagement.BookingCarResponse.newBuilder()
+              .setSuccess(true)
+              .setMessage("Booking car added successfully.")
+              .setBookingnr(savedBookingCar.getBookingNr())
+              .build();
+
+      responseObserver.onNext(response);
+    } catch (IllegalArgumentException e) {
+      responseObserver.onNext(CarManagement.BookingCarResponse.newBuilder()
+              .setSuccess(false)
+              .setMessage("Validation error: " + e.getMessage())
+              .build());
+    } catch (Exception e) {
+      e.printStackTrace();
+      responseObserver.onNext(CarManagement.BookingCarResponse.newBuilder()
+              .setSuccess(false)
+              .setMessage("Failed to add booking car: " + e.getMessage())
+              .build());
+    } finally {
+      responseObserver.onCompleted();
+    }
   }
+
+
 
   @Override
   public void updateBookingCar(CarManagement.BookingCar request, StreamObserver<CarManagement.BookingCarResponse> responseObserver) {

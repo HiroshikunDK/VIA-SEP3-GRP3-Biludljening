@@ -1,5 +1,5 @@
 ﻿@page "/register"
-@inject HttpClient HttpClient
+@inject IHttpClientFactory HttpClientFactory
 @inject IJSRuntime JS
 @inject NavigationManager NavigationManager
 @using Shared.Dto
@@ -64,7 +64,10 @@
             // Retrieve the anti-forgery token
             var token = await JS.InvokeAsync<string>("getAntiForgeryToken");
 
-            // Create a new HttpRequestMessage to ensure the header is only added for this request
+            // Create an HttpClient instance from the factory
+            var httpClient = HttpClientFactory.CreateClient("AuthorizedClient");
+
+            // Create a new HttpRequestMessage
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
             {
                 Content = JsonContent.Create(registerUser)
@@ -72,8 +75,7 @@
             requestMessage.Headers.Add("X-CSRF-TOKEN", token);
 
             // Send the request and handle response
-            var response = await HttpClient.SendAsync(requestMessage);
-            Console.WriteLine("Registration response status:", response.StatusCode);
+            var response = await httpClient.SendAsync(requestMessage);
 
             if (response.IsSuccessStatusCode)
             {
@@ -83,7 +85,7 @@
             else
             {
                 var errorResponse = await response.Content.ReadAsStringAsync();
-                registrationMessage = $"Registration failed: {errorResponse} ";
+                registrationMessage = $"Registration failed: {errorResponse}";
             }
         }
         catch (Exception ex)

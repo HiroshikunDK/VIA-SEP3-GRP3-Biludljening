@@ -1,7 +1,9 @@
 ﻿@page "/payment/{bookingId:int}"
+@using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <h3>Payment</h3>
 
@@ -30,35 +32,39 @@
     {
         payment.Booking = BookingId;
         payment.Status = "Pending";
-        payment.BookingType = 1; // Assuming 1 represents a car booking, adjust as needed
+        payment.BookingType = 1;
 
-        // Convert CreditCardNumber to a long for the request
-        if (long.TryParse(creditCardNumber.Replace(" ", ""), out var creditCardRef))
-        {
-            payment.CreditCardRef = creditCardRef;
-        }
-        else
+        // Validate credit card number
+        string sanitizedCreditCardNumber = creditCardNumber.Replace(" ", "").Trim();
+        if (!int.TryParse(sanitizedCreditCardNumber, out int creditCardRef))
         {
             Console.WriteLine("Invalid credit card number.");
             return;
         }
+        payment.CreditCardRef = creditCardRef;
+
+        // Retrieve the Customer ID dynamically
+        payment.Customer = await GetCurrentCustomerIdAsync();
 
         var client = HttpClientFactory.CreateClient("AuthorizedClient");
 
         try
         {
-            var payload = System.Text.Json.JsonSerializer.Serialize(payment, new System.Text.Json.JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-            Console.WriteLine("Payment Payload: " + payload);
-
             var response = await client.PostAsJsonAsync("api/payment", payment);
             if (response.IsSuccessStatusCode)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Payment Response: {responseContent}");
-                NavigationManager.NavigateTo("/confirmation");
+                var paymentObj = await response.Content.ReadFromJsonAsync<PaymentCreationResponseDto>();
+                Console.WriteLine($"Payment Response Data: {System.Text.Json.JsonSerializer.Serialize(paymentObj)}");
+                
+                if (paymentObj != null && paymentObj.PaymentId > 0)
+                {
+                    // Navigate to confirmation with bookingId & paymentId
+                    NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={paymentObj.PaymentId}");
+                }
+                else
+                {
+                    Console.WriteLine("PaymentId not found in response.");
+                }
             }
             else
             {
@@ -71,5 +77,22 @@
         {
             Console.WriteLine($"Error processing payment: {ex.Message}");
         }
+    }
+
+    private async Task<int> GetCurrentCustomerIdAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity != null && user.Identity.IsAuthenticated)
+        {
+            var customerIdClaim = user.FindFirst("id");
+            if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out var customerId))
+            {
+                return customerId;
+            }
+        }
+
+        throw new InvalidOperationException("Unable to retrieve CustomerId from claims.");
     }
 }
