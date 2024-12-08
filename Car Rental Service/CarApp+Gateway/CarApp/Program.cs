@@ -1,9 +1,11 @@
+using System.Collections.Immutable;
 using CarApp.Components;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CarApp.Authentication;
 using CarApp.Services;
+using CarApp.Services.RideShareOffer;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace CarApp;
@@ -28,6 +30,9 @@ public class Program
         builder.Services.AddScoped<LoginService>();
         builder.Services.AddScoped<RegisterService>();
         builder.Services.AddScoped<UserProfileService>();
+        builder.Services.AddScoped<RideShareOfferService>();
+        builder.Services.AddScoped<RideShareRequestService>();
+        
 
 
         // Configure JWT Authentication
