@@ -11,16 +11,20 @@
 }
 else if (cars.Any())
 {
-    <ul>
+    <div class="car-list">
         @foreach (var car in cars)
         {
-            <li>
-                <h4>@car.Model</h4>
-                <p>Seats: @car.Seats | Color: @car.Color</p>
-                <button @onclick="() => SelectCar(car.CarId)">Select</button>
-            </li>
+            <div class="car-item">
+                <h4>@car.Manufacturer @car.Model (@car.YearProduced)</h4>
+                <p><strong>VIN:</strong> @car.Vin</p>
+                <p><strong>Color:</strong> @car.Color</p>
+                <p><strong>Seats:</strong> @car.Seats</p>
+                <p><strong>Range:</strong> @car.CarRange km</p>
+                <p><strong>Location:</strong> Hub #@car.LocationHubRef</p>
+                <button class="select-button" @onclick="() => SelectCar(car.CarId)">Select</button>
+            </div>
         }
-    </ul>
+    </div>
 }
 else
 {

@@ -11,9 +11,9 @@ public class UserProfileService
         _httpClient = httpClientFactory.CreateClient("AuthorizedClient");
     }
 
-    public async Task<UpdateUserDTO> GetUserProfileAsync()
+    public async Task<UpdateUserDto> GetUserProfileAsync()
     {
-        var response = await _httpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
+        var response = await _httpClient.GetFromJsonAsync<UpdateUserDto>("api/user/profile");
         if (response == null)
         {
             throw new Exception("Failed to fetch user profile.");
@@ -21,7 +21,7 @@ public class UserProfileService
         return response;
     }
 
-    public async Task UpdateUserProfileAsync(UpdateUserDTO userProfile)
+    public async Task UpdateUserProfileAsync(UpdateUserDto userProfile)
     {
         var response = await _httpClient.PutAsJsonAsync("api/user/profile", userProfile);
         if (!response.IsSuccessStatusCode)

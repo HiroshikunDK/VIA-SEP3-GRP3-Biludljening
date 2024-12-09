@@ -1,11 +1,15 @@
 package UserService;
 
 import Repository.UserRepository;
+import Service.AuthenticationService;
+import Service.UserManagementService;
 import Service.UserService;
 import Shared.HibernateUtility;
+import Shared.PasswordHelper;
+import Shared.TokenHelper;
+
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-
 import jakarta.persistence.EntityManager;
 import java.io.IOException;
 
@@ -20,8 +24,23 @@ public class UserMain {
         // Create UserRepository with EntityManager
         UserRepository userRepository = new UserRepository(entityManager);
 
-        // Create UserService with UserRepository
-        UserService userService = new UserService(userRepository);
+        // Create AuthenticationService with required dependencies
+        AuthenticationService authenticationService = new AuthenticationService(
+                userRepository, // IRetrieveUserRepository
+                new PasswordHelper(),
+                new TokenHelper()
+        );
+
+        // Create UserManagementService with required dependencies
+        UserManagementService userManagementService = new UserManagementService(
+                userRepository, // IAddUserRepository
+                userRepository, // IRetrieveUserRepository
+                userRepository, // IDeleteUserRepository
+                userRepository  // IUpdateUserRepository
+        );
+
+        // Create UserService with AuthenticationService and UserManagementService
+        UserService userService = new UserService(authenticationService, userManagementService);
 
         // Start the gRPC server
         Server server = ServerBuilder.forPort(5006)
@@ -42,4 +61,3 @@ public class UserMain {
         server.awaitTermination();
     }
 }
-

@@ -38,6 +38,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb25maXJtYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/CreateRideShareOffer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVSaWRlU2hhcmVPZmZlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/CreateRideShareRequest.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVSaWRlU2hhcmVSZXF1ZXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/DeleteUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,6 +72,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShareOfferList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVPZmZlckxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShareRequestList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVSZXF1ZXN0TGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/UserProfile.razor]

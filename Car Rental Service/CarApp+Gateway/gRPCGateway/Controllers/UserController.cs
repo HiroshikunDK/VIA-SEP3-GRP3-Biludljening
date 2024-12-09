@@ -145,7 +145,7 @@ public async Task<IActionResult> GetCurrentUserProfile()
             return NotFound(new { Message = "User not found." });
         }
 
-        var userDto = new UpdateUserDTO
+        var userDto = new UpdateUserDto
         {
             UserFirstname = grpcResponse.User.UserFirstname,
             UserLastname = grpcResponse.User.UserLastname,
@@ -164,7 +164,7 @@ public async Task<IActionResult> GetCurrentUserProfile()
 }
 
 [HttpPut("profile")]
-public async Task<IActionResult> UpdateCurrentUserProfile([FromBody] UpdateUserDTO request)
+public async Task<IActionResult> UpdateCurrentUserProfile([FromBody] UpdateUserDto request)
 {
     try
     {

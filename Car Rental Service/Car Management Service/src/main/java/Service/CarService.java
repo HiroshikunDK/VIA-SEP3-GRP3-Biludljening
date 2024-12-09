@@ -133,10 +133,15 @@ public class CarService extends CarServiceGrpc.CarServiceImplBase {
     private CarManagement.Car convertToProtoCar(Car car) {
         return CarManagement.Car.newBuilder()
                 .setCarId(car.getCarId())
-                .setModel(car.getModel())
-                .setColor(car.getColor())
+                .setVin(car.getVin() != null ? car.getVin() : "")
+                .setYearproduced(car.getYearProduced())
+                .setManufactor(car.getManufacturer() != null ? car.getManufacturer() : "")
+                .setModel(car.getModel() != null ? car.getModel() : "")
+                .setColor(car.getColor() != null ? car.getColor() : "")
+                .setAltname(car.getAltName() != null ? car.getAltName() : "")
                 .setSeats(car.getSeats())
+                .setCarrange(car.getCarRange())
+                .setLocationhubref(car.getLocationHubRef())
                 .build();
-
     }
 }

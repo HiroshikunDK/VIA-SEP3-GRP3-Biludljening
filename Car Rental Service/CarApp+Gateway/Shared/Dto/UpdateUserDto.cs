@@ -1,6 +1,6 @@
 ﻿namespace Shared.Dto;
 
-public class UpdateUserDTO
+public class UpdateUserDto
 {
     public string UserFirstname { get; set; }
     public string UserLastname { get; set; }

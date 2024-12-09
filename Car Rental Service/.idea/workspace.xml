@@ -5,44 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Car Management Service/src/test/java/TokenValidationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Confirmation.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/BookingResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/PaymentCreationResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared Library/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/ContextKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/TokenHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/TokenValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/ICreatePaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IDeletePaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IReadPaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IUpdatePaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/TransactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Repository/IAddUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Repository/IDeleteUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Repository/IRetrieveUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Repository/IUpdateUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User Service/src/main/java/Service/UserManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/Proto/CarManagement.proto" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/Proto/CarManagement.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/CarManagementService/CarMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/CarManagementService/CarMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Model/BookingCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Model/BookingCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Persistence/HibernateUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/BookingCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/BookingCarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/LocationsHubRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/LocationsHubRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/BookingCarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/BookingCarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Persistence/HibernateUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/CarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Authentication/AuthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Authentication/AuthHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Authentication/AuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Authentication/AuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/BookingDetails.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/BookingDetails.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Service/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/Service/CarService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/CarSelection.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/CarSelection.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Register.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/UserProfile.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/UserProfile.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/UserProfileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/UserProfileService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" afterDir="false" />
@@ -52,7 +32,7 @@
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" afterDir="false" />
@@ -61,13 +41,8 @@
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/AddBookingCarRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/AddCarResponseDTO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/BookingDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/BookingDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/CarDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/CarDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/CreatePaymentRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/CreatePaymentRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/PaymentRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/PaymentRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/PaymentResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/PaymentResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/LoginResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/LoginResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/UpdateUserDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/UpdateUserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" afterDir="false" />
@@ -79,110 +54,43 @@
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/ref/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/ref/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/refint/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/refint/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/BookingCarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/BookingCarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/PaymentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/PaymentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/CarManagement.proto" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/CarManagement.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/Payment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/Payment.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/Proto/CarManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/Proto/CarManagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/Proto/Payment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/Proto/Payment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/CarService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/CarService.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/PaymentService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/PaymentService.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/UserService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/UserService.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/Proto/Payment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/Proto/Payment.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/RideshareService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/RideshareService.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/PaymentService/PaymentMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/java/PaymentService/PaymentMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Persistance/HibernateUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Persistance/PasswordHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IPaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IPaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/IPaymentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Repository/PaymentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Payment Service/src/main/java/Service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/java/Service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Model/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/Model/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardListResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestByIdOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestByIdOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardRequestOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponseOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$CreditcardResponseOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$Empty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListByCustomerRequestOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentListResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestByIdOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestByIdOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentRequestOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponseOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentResponseOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequestOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment$PaymentStatusUpdateRequestOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/PaymentService/grpc/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Persistance/HibernateUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Persistance/PasswordHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Repository/IPaymentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Repository/PaymentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/Repository/PaymentRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/Service/PaymentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/generated-sources/protobuf/java/PaymentService/grpc/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/generated-sources/protobuf/java/PaymentService/grpc/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/src/main/java/Persistence/HibernateUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/target/classes/Persistence/HibernateUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/target/classes/Rideshare.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Persistence/HibernateUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/HibernateUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Persistence/PasswordHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shared Library/src/main/java/Shared/PasswordHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Persistence/TokenHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rideshare Service/target/classes/Service/RideshareService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/target/classes/Service/RideshareService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Repository/IUserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/java/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/java/Service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User Service/src/main/java/UserService/UserMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/java/UserService/UserMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/target/classes/Persistence/HibernateUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/target/classes/Persistence/PasswordHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/target/classes/Persistence/TokenHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User Service/target/classes/Repository/IUserRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/User Service/target/classes/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/target/classes/Repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User Service/target/classes/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/target/classes/Service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +100,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -223,6 +132,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.CarMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataSeeder.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.PaymentMain.executor&quot;: &quot;Run&quot;,
     &quot;Application.RideShareMain.executor&quot;: &quot;Run&quot;,
@@ -247,6 +157,7 @@
     &quot;git-widget-placeholder&quot;: &quot;Alexander-Auth&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;liberica-full-23&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -284,6 +195,10 @@
       <workItem from="1733410369015" duration="35363000" />
       <workItem from="1733519076176" duration="3865000" />
       <workItem from="1733553860964" duration="11266000" />
+      <workItem from="1733575556623" duration="254000" />
+      <workItem from="1733578127089" duration="761000" />
+      <workItem from="1733599810589" duration="3094000" />
+      <workItem from="1733728122822" duration="2369000" />
     </task>
     <servers />
   </component>

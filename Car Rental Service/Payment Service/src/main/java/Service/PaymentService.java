@@ -2,41 +2,48 @@ package Service;
 
 import PaymentService.grpc.Payment;
 import PaymentService.grpc.PaymentServiceGrpc;
-import Repository.PaymentRepository;
-import Shared.HibernateUtility;
+import Repository.ICreatePaymentRepository;
+import Repository.IReadPaymentRepository;
+import Repository.IUpdatePaymentRepository;
 import io.grpc.stub.StreamObserver;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
 import java.util.List;
 import java.util.Optional;
 
-
 public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
-    private final PaymentRepository repository;
-    private final SessionFactory sessionFactory;
+    private final ICreatePaymentRepository createPaymentRepository;
+    private final IReadPaymentRepository readPaymentRepository;
+    private final IUpdatePaymentRepository updatePaymentRepository;
 
-
-    public PaymentService(PaymentRepository repository, SessionFactory sessionFactory) {
-        this.repository = repository;
-        this.sessionFactory = sessionFactory;
+    public PaymentService(ICreatePaymentRepository createPaymentRepository,
+                          IReadPaymentRepository readPaymentRepository,
+                          IUpdatePaymentRepository updatePaymentRepository) {
+        this.createPaymentRepository = createPaymentRepository;
+        this.readPaymentRepository = readPaymentRepository;
+        this.updatePaymentRepository = updatePaymentRepository;
     }
-
 
     @Override
     public void createPayment(Payment.PaymentRequest paymentRequest, StreamObserver<Payment.PaymentResponse> responseObserver) {
-        Transaction transaction = null;
-        Payment.PaymentResponse response;
-
-        try (Session session = HibernateUtility.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-
-            // Validate input
-            if (paymentRequest.getCustomer() <= 0 || paymentRequest.getBooking() <= 0 || paymentRequest.getStatus().isEmpty()) {
-                throw new IllegalArgumentException("Missing or invalid required fields in the payment request.");
+        try {
+            // Inline validation logic
+            if (paymentRequest.getCustomer() <= 0) {
+                throw new IllegalArgumentException("Customer ID must be greater than zero.");
             }
 
-            // Create and persist payment
+            if (paymentRequest.getBooking() <= 0) {
+                throw new IllegalArgumentException("Booking ID must be greater than zero.");
+            }
+
+            if (paymentRequest.getStatus() == null || paymentRequest.getStatus().isEmpty()) {
+                throw new IllegalArgumentException("Status cannot be null or empty.");
+            }
+
+            if (paymentRequest.getCreditcardref() <= 0) {
+                throw new IllegalArgumentException("Credit card reference must be greater than zero.");
+            }
+
+            // Map gRPC request to entity
             Model.Payment payment = new Model.Payment(
                     paymentRequest.getCustomer(),
                     paymentRequest.getBookingType(),
@@ -44,54 +51,41 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
                     paymentRequest.getStatus(),
                     paymentRequest.getCreditcardref()
             );
-            session.persist(payment);
 
-            // Flush and refresh to ensure ID is generated and loaded
-            session.flush();
-            session.refresh(payment);
+            // Persist the payment
+            boolean success = createPaymentRepository.createPayment(payment);
 
-            // Commit transaction
-            transaction.commit();
-
-            // Build success response with the now-populated payment ID
-            response = Payment.PaymentResponse.newBuilder()
-                    .setSuccess(true)
-                    .setMessage("Payment created successfully.")
+            // Build response
+            Payment.PaymentResponse response = Payment.PaymentResponse.newBuilder()
+                    .setSuccess(success)
+                    .setMessage(success ? "Payment created successfully." : "Failed to create payment.")
                     .setId(payment.getId())
                     .build();
+
+            responseObserver.onNext(response);
         } catch (IllegalArgumentException e) {
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-            response = Payment.PaymentResponse.newBuilder()
+            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
                     .setSuccess(false)
                     .setMessage("Validation error: " + e.getMessage())
-                    .build();
+                    .build());
         } catch (Exception e) {
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
-            response = Payment.PaymentResponse.newBuilder()
+            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
                     .setSuccess(false)
                     .setMessage("Failed to create payment: " + e.getMessage())
-                    .build();
+                    .build());
+        } finally {
+            responseObserver.onCompleted();
         }
-
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
     }
-
-
-
 
     @Override
     public void listPaymentsByCustomer(Payment.PaymentListByCustomerRequest request, StreamObserver<Payment.PaymentListResponse> responseObserver) {
         try {
-            List<Model.Payment> payments = repository.getPaymentsByCustomer(request.getCustomerId());
+            List<Model.Payment> payments = readPaymentRepository.getAllPayments();
 
             Payment.PaymentListResponse.Builder responseBuilder = Payment.PaymentListResponse.newBuilder();
             for (Model.Payment payment : payments) {
-                Payment.PaymentResponse response = Payment.PaymentResponse.newBuilder()
+                responseBuilder.addPayments(Payment.PaymentResponse.newBuilder()
                         .setId(payment.getId())
                         .setCustomer(payment.getCustomer())
                         .setBookingType(payment.getBookingType())
@@ -99,10 +93,10 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
                         .setStatus(payment.getStatus())
                         .setCreditcardref(payment.getCreditcardref())
                         .setSuccess(true)
-                        .setMessage("Payments retrieved successfully!")
-                        .build();
-                responseBuilder.addPayments(response);
+                        .setMessage("Payments retrieved successfully.")
+                        .build());
             }
+
             responseObserver.onNext(responseBuilder.build());
         } catch (Exception e) {
             responseObserver.onNext(Payment.PaymentListResponse.newBuilder()
@@ -118,39 +112,56 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
 
     @Override
     public void updatePaymentStatus(Payment.PaymentStatusUpdateRequest request, StreamObserver<Payment.PaymentResponse> responseObserver) {
-        Optional<Model.Payment> paymentOptional = repository.getPaymentById(request.getId());
-        if (paymentOptional.isPresent()) {
-            Model.Payment payment = paymentOptional.get();
-            payment.setStatus(request.getStatus());
-            repository.updatePayment(payment);
-            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
-                    .setSuccess(true)
-                    .setMessage("Payment status updated successfully.")
-                    .build());
-        } else {
-            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
-                    .setSuccess(false)
-                    .setMessage("Payment not found.")
-                    .build());
-        }
-        responseObserver.onCompleted();
-    }
+        try {
+            // Inline validation logic
+            if (request.getId() <= 0) {
+                throw new IllegalArgumentException("Payment ID must be greater than zero.");
+            }
 
-    @Override
-    public void getPaymentById(Payment.PaymentRequestById request, StreamObserver<Payment.PaymentResponse> responseObserver) {
-        try (Session session = sessionFactory.openSession()) {
-            // Retrieve payment from the database
-            Model.Payment payment = session.get(Model.Payment.class, request.getId());
+            if (request.getStatus() == null || request.getStatus().isEmpty()) {
+                throw new IllegalArgumentException("Status cannot be null or empty.");
+            }
 
-            if (payment == null) {
-                // If payment is not found, return an error response
+            // Retrieve and update payment
+            Optional<Model.Payment> paymentOptional = readPaymentRepository.getPaymentById(request.getId());
+            if (paymentOptional.isPresent()) {
+                Model.Payment payment = paymentOptional.get();
+                payment.setStatus(request.getStatus());
+                updatePaymentRepository.updatePayment(payment);
+
+                responseObserver.onNext(Payment.PaymentResponse.newBuilder()
+                        .setSuccess(true)
+                        .setMessage("Payment status updated successfully.")
+                        .build());
+            } else {
                 responseObserver.onNext(Payment.PaymentResponse.newBuilder()
                         .setSuccess(false)
                         .setMessage("Payment not found.")
                         .build());
-            } else {
-                // If payment is found, return the details
-                Payment.PaymentResponse response = Payment.PaymentResponse.newBuilder()
+            }
+        } catch (IllegalArgumentException e) {
+            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
+                    .setSuccess(false)
+                    .setMessage("Validation error: " + e.getMessage())
+                    .build());
+        } catch (Exception e) {
+            responseObserver.onNext(Payment.PaymentResponse.newBuilder()
+                    .setSuccess(false)
+                    .setMessage("Failed to update payment status: " + e.getMessage())
+                    .build());
+        } finally {
+            responseObserver.onCompleted();
+        }
+    }
+
+    @Override
+    public void getPaymentById(Payment.PaymentRequestById request, StreamObserver<Payment.PaymentResponse> responseObserver) {
+        try {
+            Optional<Model.Payment> paymentOptional = readPaymentRepository.getPaymentById(request.getId());
+            if (paymentOptional.isPresent()) {
+                Model.Payment payment = paymentOptional.get();
+
+                responseObserver.onNext(Payment.PaymentResponse.newBuilder()
                         .setSuccess(true)
                         .setMessage("Payment retrieved successfully.")
                         .setId(payment.getId())
@@ -159,12 +170,14 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
                         .setBooking(payment.getBooking())
                         .setStatus(payment.getStatus())
                         .setCreditcardref(payment.getCreditcardref())
-                        .build();
-
-                responseObserver.onNext(response);
+                        .build());
+            } else {
+                responseObserver.onNext(Payment.PaymentResponse.newBuilder()
+                        .setSuccess(false)
+                        .setMessage("Payment not found.")
+                        .build());
             }
         } catch (Exception e) {
-            e.printStackTrace();
             responseObserver.onNext(Payment.PaymentResponse.newBuilder()
                     .setSuccess(false)
                     .setMessage("Failed to retrieve payment: " + e.getMessage())

@@ -54,14 +54,14 @@
 }
 
 @code {
-    private UpdateUserDTO userProfile = new UpdateUserDTO();
+    private UpdateUserDto userProfile = new UpdateUserDto();
     private string updateMessage;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            var response = await HttpClient.GetFromJsonAsync<UpdateUserDTO>("api/user/profile");
+            var response = await HttpClient.GetFromJsonAsync<UpdateUserDto>("api/user/profile");
             if (response != null)
             {
                 userProfile = response;
