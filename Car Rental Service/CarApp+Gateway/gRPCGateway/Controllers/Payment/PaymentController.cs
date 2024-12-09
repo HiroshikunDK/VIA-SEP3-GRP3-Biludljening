@@ -15,17 +15,16 @@ public class PaymentController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreatePayment([FromBody] PaymentRequestDto paymentRequest)
+    public async Task<IActionResult> CreatePayment([FromBody] PaymentDto paymentRequest)
     {
         try
         {
             var grpcRequest = new PaymentRequest
             {
-                Customer = paymentRequest.Customer,
-                BookingType = paymentRequest.BookingType,
-                Booking = paymentRequest.Booking,
-                Status = paymentRequest.Status,
-                Creditcardref = paymentRequest.CreditCardRef
+                Customer = paymentRequest.CustomerId,
+                Booking = paymentRequest.BookingId,
+                Creditcardref = paymentRequest.CreditCardRef,
+                Status = paymentRequest.Status ?? "Pending"
             };
 
             var response = await _paymentClient.CreatePaymentAsync(grpcRequest);
@@ -46,10 +45,10 @@ public class PaymentController : ControllerBase
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Payment creation failed: {ex.Message}");
-            return StatusCode(500, new { Message = "Internal server error" });
+            return StatusCode(500, new { Message = $"Payment creation failed: {ex.Message}" });
         }
     }
+
 
 
     [HttpGet("{id}")]

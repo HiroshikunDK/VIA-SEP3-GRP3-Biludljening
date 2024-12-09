@@ -1,9 +1,10 @@
-﻿using Microsoft.JSInterop;
+﻿using CarApp.Services.User;
+using Microsoft.JSInterop;
 using Shared.Dto;
 
 namespace CarApp.Services;
 
-public class RegisterService
+public class RegisterService : IRegisterService
 {
     private readonly HttpClient _httpClient;
     private readonly IJSRuntime _jsRuntime;

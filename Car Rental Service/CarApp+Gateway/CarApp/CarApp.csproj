@@ -18,4 +18,18 @@
       <Content Remove="Components\Pages\ManageUsers.razor" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\Booking\BookingDetails.razor" />
+      <_ContentIncludedByDefault Remove="Components\Booking\CarSelection.razor" />
+      <_ContentIncludedByDefault Remove="Components\Booking\Confirmation.razor" />
+      <_ContentIncludedByDefault Remove="Components\Booking\Payment.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Components\Pages\Booking\BookingDetails.razor" />
+      <AdditionalFiles Include="Components\Pages\Booking\CarSelection.razor" />
+      <AdditionalFiles Include="Components\Pages\Booking\Confirmation.razor" />
+      <AdditionalFiles Include="Components\Pages\Booking\Payment.razor" />
+    </ItemGroup>
+
 </Project>

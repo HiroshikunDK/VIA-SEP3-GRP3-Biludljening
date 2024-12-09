@@ -1,9 +1,8 @@
 ﻿@page "/login"
-@using CarApp.Services
+@using CarApp.Services.User
 @using Shared.Dto
-@inject LoginService LoginService
+@inject ILoginService LoginService
 @inject NavigationManager NavigationManager
-@inject IHttpClientFactory HttpClientFactory
 
 <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
     <DataAnnotationsValidator />

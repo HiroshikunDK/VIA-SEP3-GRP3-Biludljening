@@ -1,7 +1,8 @@
 ﻿@page "/payment/{bookingId:int}"
+@using CarApp.Services
 @using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
-@inject IHttpClientFactory HttpClientFactory
+@inject IPaymentService PaymentService
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
@@ -24,17 +25,16 @@
 @code {
     [Parameter] public int BookingId { get; set; }
 
-    private PaymentRequestDto payment = new PaymentRequestDto();
+    private PaymentDto payment = new();
     private string creditCardNumber;
     private string expirationDate;
 
     private async Task SubmitPayment()
     {
-        payment.Booking = BookingId;
+        payment.BookingId = BookingId;
         payment.Status = "Pending";
-        payment.BookingType = 1;
 
-        // Validate credit card number
+        // Validate and sanitize credit card number
         string sanitizedCreditCardNumber = creditCardNumber.Replace(" ", "").Trim();
         if (!int.TryParse(sanitizedCreditCardNumber, out int creditCardRef))
         {
@@ -43,34 +43,20 @@
         }
         payment.CreditCardRef = creditCardRef;
 
-        // Retrieve the Customer ID dynamically
-        payment.Customer = await GetCurrentCustomerIdAsync();
-
-        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+        // Add additional fields
+        payment.CustomerId = await GetCurrentCustomerIdAsync();
+        payment.ExpirationDate = expirationDate;
 
         try
         {
-            var response = await client.PostAsJsonAsync("api/payment", payment);
-            if (response.IsSuccessStatusCode)
+            var response = await PaymentService.CreatePaymentAsync(payment);
+            if (response?.Id > 0) 
             {
-                var paymentObj = await response.Content.ReadFromJsonAsync<PaymentCreationResponseDto>();
-                Console.WriteLine($"Payment Response Data: {System.Text.Json.JsonSerializer.Serialize(paymentObj)}");
-                
-                if (paymentObj != null && paymentObj.PaymentId > 0)
-                {
-                    // Navigate to confirmation with bookingId & paymentId
-                    NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={paymentObj.PaymentId}");
-                }
-                else
-                {
-                    Console.WriteLine("PaymentId not found in response.");
-                }
+                NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={response.Id}");
             }
             else
             {
-                var errorResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Failed to process payment. Response Code: {response.StatusCode}");
-                Console.WriteLine("Error Response: " + errorResponse);
+                Console.WriteLine("Payment creation failed.");
             }
         }
         catch (Exception ex)
@@ -78,6 +64,7 @@
             Console.WriteLine($"Error processing payment: {ex.Message}");
         }
     }
+
 
     private async Task<int> GetCurrentCustomerIdAsync()
     {
@@ -87,7 +74,7 @@
         if (user.Identity != null && user.Identity.IsAuthenticated)
         {
             var customerIdClaim = user.FindFirst("id");
-            if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out var customerId))
+            if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out int customerId))
             {
                 return customerId;
             }
