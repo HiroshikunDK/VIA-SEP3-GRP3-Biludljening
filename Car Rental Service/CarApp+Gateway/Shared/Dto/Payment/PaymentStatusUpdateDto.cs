@@ -1,4 +1,4 @@
-﻿namespace Shared.Dto
+﻿namespace Shared.Dto.Payment
 {
     public class PaymentStatusUpdateDto
     {

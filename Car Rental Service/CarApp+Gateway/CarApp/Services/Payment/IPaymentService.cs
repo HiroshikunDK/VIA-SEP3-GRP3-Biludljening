@@ -1,9 +1,10 @@
 ﻿using Shared.Dto;
+using Shared.Dto.Payment;
 
-namespace CarApp.Services;
+namespace CarApp.Services.Payment;
 
 public interface IPaymentService
 {
-    Task<PaymentResponseDto?> CreatePaymentAsync(PaymentDto payment);
+    Task<PaymentCreationResponseDto?> CreatePaymentAsync(PaymentDto payment);
     Task<PaymentResponseDto?> GetPaymentByIdAsync(int id);
 }

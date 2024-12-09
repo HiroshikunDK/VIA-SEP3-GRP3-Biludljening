@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
+using Shared.Dto.Payment;
 
-namespace gRPC_Gateway.Controllers;
+namespace gRPC_Gateway.Controllers.Payment;
 
 [ApiController]
 [Route("api/payment")]
@@ -19,35 +20,50 @@ public class PaymentController : ControllerBase
     {
         try
         {
+            // Create the gRPC request object from the PaymentDto
             var grpcRequest = new PaymentRequest
             {
                 Customer = paymentRequest.CustomerId,
                 Booking = paymentRequest.BookingId,
                 Creditcardref = paymentRequest.CreditCardRef,
-                Status = paymentRequest.Status ?? "Pending"
+                Status = paymentRequest.Status ?? "Pending" 
             };
 
+            // Log the gRPC request for debugging
+            Console.WriteLine($"gRPC Request: {System.Text.Json.JsonSerializer.Serialize(grpcRequest)}");
+
+            // Call the gRPC service to create the payment
             var response = await _paymentClient.CreatePaymentAsync(grpcRequest);
 
+            // Log the gRPC response for debugging
+            Console.WriteLine($"gRPC Response: Success={response.Success}, Message={response.Message}, ID={response.Id}");
+
+            // Handle the response from the gRPC service
             if (response.Success)
             {
+                // Create the DTO to return to the frontend
                 var dto = new PaymentCreationResponseDto
                 {
-                    PaymentId = (int)response.Id,
+                    PaymentId = (int)response.Id, // Map gRPC response ID
                     Message = response.Message
                 };
+
                 return Ok(dto);
             }
             else
             {
+                // If the gRPC response indicates failure, return a BadRequest
                 return BadRequest(new { Message = response.Message });
             }
         }
         catch (Exception ex)
         {
+            // Log the exception for debugging
+            Console.WriteLine($"Error in CreatePayment: {ex.Message}");
             return StatusCode(500, new { Message = $"Payment creation failed: {ex.Message}" });
         }
     }
+
 
 
 

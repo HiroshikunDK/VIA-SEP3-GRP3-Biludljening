@@ -1,4 +1,4 @@
-﻿namespace Shared.Dto;
+﻿namespace Shared.Dto.Car;
 
 public class AddCarRequestDto
 {

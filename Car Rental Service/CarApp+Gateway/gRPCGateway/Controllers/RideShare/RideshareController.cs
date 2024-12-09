@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
+using Shared.Dto.RideShare;
 
-namespace gRPC_Gateway.Controllers;
+namespace gRPC_Gateway.Controllers.RideShare;
 
 [ApiController]
 [Route("api/rideshare")]

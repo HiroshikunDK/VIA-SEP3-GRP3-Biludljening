@@ -1,8 +1,8 @@
-﻿using CarApp.Services.User;
-using Microsoft.JSInterop;
+﻿using Microsoft.JSInterop;
 using Shared.Dto;
+using Shared.Dto.Authentication;
 
-namespace CarApp.Services;
+namespace CarApp.Services.User;
 
 public class RegisterService : IRegisterService
 {

@@ -1,10 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text.Json;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 
-namespace CarApp.Authentication;
+namespace CarApp.Services.Authentication;
 
 public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 {

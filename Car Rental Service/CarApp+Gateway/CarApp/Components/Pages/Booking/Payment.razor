@@ -1,7 +1,9 @@
 ﻿@page "/payment/{bookingId:int}"
-@using CarApp.Services
+@using System.Text.Json
+@using CarApp.Services.Payment
 @using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
+@using Shared.Dto.Payment
 @inject IPaymentService PaymentService
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -49,14 +51,18 @@
 
         try
         {
+            Console.WriteLine($"Submitting Payment: {JsonSerializer.Serialize(payment)}");
             var response = await PaymentService.CreatePaymentAsync(payment);
-            if (response?.Id > 0) 
+            Console.WriteLine($"Response received: {JsonSerializer.Serialize(response)}");
+
+            if (response?.PaymentId > 0)
             {
-                NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={response.Id}");
+                Console.WriteLine($"Navigation to confirmation: bookingId={BookingId}, paymentId={response.PaymentId}");
+                NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={response.PaymentId}");
             }
             else
             {
-                Console.WriteLine("Payment creation failed.");
+                Console.WriteLine("Payment creation failed or invalid PaymentId.");
             }
         }
         catch (Exception ex)
@@ -64,6 +70,7 @@
             Console.WriteLine($"Error processing payment: {ex.Message}");
         }
     }
+
 
 
     private async Task<int> GetCurrentCustomerIdAsync()

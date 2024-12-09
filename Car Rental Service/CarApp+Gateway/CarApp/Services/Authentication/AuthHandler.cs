@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using Microsoft.JSInterop;
 
-namespace CarApp.Authentication;
+namespace CarApp.Services.Authentication;
 
 public class AuthHandler : DelegatingHandler
 {

@@ -1,4 +1,6 @@
-﻿public class RideShareDto
+﻿namespace Shared.Dto.RideShare;
+
+public class RideShareDto
 {
     public int RideId { get; set; }
     public int CarId { get; set; }

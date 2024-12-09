@@ -2,6 +2,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 using Google.Protobuf.WellKnownTypes;
+using Shared.Dto.Booking;
 
 namespace gRPC_Gateway.Controllers;
 

@@ -1,7 +1,9 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Grpc.Core;
+﻿using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
+using Shared.Dto.Car;
+
+namespace gRPC_Gateway.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

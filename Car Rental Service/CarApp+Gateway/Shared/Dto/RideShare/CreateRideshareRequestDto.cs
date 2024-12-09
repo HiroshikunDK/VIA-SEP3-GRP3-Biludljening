@@ -1,4 +1,4 @@
-﻿namespace Shared.Dto;
+﻿namespace Shared.Dto.RideShare;
 
 public class CreateRideshareRequestDto
 {

@@ -1,7 +1,6 @@
-﻿using CarApp.Services.User;
-using Shared.Dto;
+﻿using Shared.Dto;
 
-namespace CarApp.Services
+namespace CarApp.Services.User
 {
     public class UserProfileService : IUserProfileService
     {

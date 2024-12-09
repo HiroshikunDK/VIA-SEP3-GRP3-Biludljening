@@ -2,8 +2,9 @@ using CarApp.Components;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using CarApp.Authentication;
 using CarApp.Services;
+using CarApp.Services.Authentication;
+using CarApp.Services.Payment;
 using CarApp.Services.User;
 using Microsoft.AspNetCore.Components.Authorization;
 
@@ -32,7 +33,7 @@ public class Program
         builder.Services.AddScoped<ILoginService, LoginService>();
         builder.Services.AddScoped<IRegisterService, RegisterService>();
         builder.Services.AddScoped<IUserProfileService, UserProfileService>();
-
+        builder.Services.AddScoped<IPaymentService, HttpPaymentService>();
 
         // Configure JWT Authentication
         var base64EncodedKey = "RGVuRXJIZW1tZWxpZw=="; // Base64 of "DenErHemmelig"

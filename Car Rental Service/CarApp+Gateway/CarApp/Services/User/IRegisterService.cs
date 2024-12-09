@@ -1,4 +1,5 @@
 ﻿using Shared.Dto;
+using Shared.Dto.Authentication;
 
 namespace CarApp.Services.User;
 

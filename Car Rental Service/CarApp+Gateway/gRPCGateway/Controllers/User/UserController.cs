@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
-using Microsoft.AspNetCore.Authorization;
+using Shared.Dto.Authentication;
 using Userservice;
 
-namespace gRPC_Gateway.Controllers;
+namespace gRPC_Gateway.Controllers.User;
 
 [ApiController]
 [Route("api/user")]
@@ -84,11 +85,11 @@ public class UserController : ControllerBase
 
     
     [HttpPut("updateUser")]
-    public async Task<IActionResult> UpdateUser([FromBody] User request)
+    public async Task<IActionResult> UpdateUser([FromBody] Userservice.User request)
     {
         try
         {
-            var grpcResponse = await _userClient.UpdateUserAsync(new User()
+            var grpcResponse = await _userClient.UpdateUserAsync(new Userservice.User()
             {
                 UserFirstname = request.UserFirstname,
                 UserLastname = request.UserLastname,
@@ -176,7 +177,7 @@ public async Task<IActionResult> UpdateCurrentUserProfile([FromBody] UpdateUserD
             return Forbid("You are not authorized to update this profile.");
         }
 
-        var grpcRequest = new User
+        var grpcRequest = new Userservice.User
         {
             UserFirstname = request.UserFirstname,
             UserLastname = request.UserLastname,

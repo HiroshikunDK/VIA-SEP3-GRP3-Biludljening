@@ -1,6 +1,7 @@
 ﻿using Shared.Dto;
+using Shared.Dto.Authentication;
 
-namespace CarApp.Services.User
+namespace CarApp.Services.Authentication
 {
     public interface ILoginService
     {
