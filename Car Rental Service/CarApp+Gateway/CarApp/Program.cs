@@ -23,7 +23,7 @@ public class Program
         builder.Services.AddScoped<AuthHandler>();
         builder.Services.AddHttpClient("AuthorizedClient", client =>
         {
-            client.BaseAddress = new Uri("http://localhost:5002");
+            client.BaseAddress = new Uri("https://localhost:7131");
         }).AddHttpMessageHandler<AuthHandler>();
 
         builder.Services.AddAuthorizationCore();

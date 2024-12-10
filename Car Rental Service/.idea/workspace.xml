@@ -4,41 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="Added Admin User">
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Car/EditCar.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Car/ManageCars.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="Switched from SQLite to Postgres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/BookingCarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/BookingCarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/BookingCarServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/BookingCarServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/CarServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/CarServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/LocationHubServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/LocationHubServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/CarService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/CarService.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rideshare Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User Service/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +164,7 @@
       <workItem from="1733599810589" duration="3094000" />
       <workItem from="1733728122822" duration="10509000" />
       <workItem from="1733785025449" duration="3159000" />
-      <workItem from="1733802204294" duration="8262000" />
+      <workItem from="1733802204294" duration="9641000" />
     </task>
     <task id="LOCAL-00001" summary="SOLID Changes">
       <option name="closed" value="true" />
@@ -191,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733811320617</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Switched from SQLite to Postgres">
+      <option name="closed" value="true" />
+      <created>1733815173754</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733815173754</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +210,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SOLID Changes" />
     <MESSAGE value="Added Admin User" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Admin User" />
+    <MESSAGE value="Switched from SQLite to Postgres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched from SQLite to Postgres" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
