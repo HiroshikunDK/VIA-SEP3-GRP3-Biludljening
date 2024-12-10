@@ -1,0 +1,7 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Launch CarApp + Broker" type="CompoundRunConfigurationType">
+    <toRun name="CarApp: https" type="LaunchSettings" />
+    <toRun name="gRPCGateway: https" type="LaunchSettings" />
+    <method v="2" />
+  </configuration>
+</component>
