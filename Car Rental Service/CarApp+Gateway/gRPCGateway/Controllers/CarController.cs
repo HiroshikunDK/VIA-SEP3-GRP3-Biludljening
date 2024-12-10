@@ -11,10 +11,12 @@ namespace gRPC_Gateway.Controllers;
 public class CarController : ControllerBase
 {
     private readonly CarService.CarServiceClient _carServiceClient;
+    private readonly BookingCarService.BookingCarServiceClient _bookingCarServiceClient;
 
-    public CarController(CarService.CarServiceClient carServiceClient)
+    public CarController(CarService.CarServiceClient carServiceClient, BookingCarService.BookingCarServiceClient bookingCarServiceClient)
     {
         _carServiceClient = carServiceClient;
+        _bookingCarServiceClient = bookingCarServiceClient;
     }
 
     [HttpPost]
@@ -57,7 +59,6 @@ public class CarController : ControllerBase
                 metadata.Add("Authorization", Request.Headers["Authorization"]);
             }
 
-            
             var response = await _carServiceClient.getAllCarsAsync(
                 new Google.Protobuf.WellKnownTypes.Empty(),
                 metadata,
@@ -65,7 +66,27 @@ public class CarController : ControllerBase
                 CancellationToken.None
             );
 
-            return Ok(response.Cars);
+            // Fetch all bookings
+            var bookingResponse = await _bookingCarServiceClient.GetAllBookingCarsAsync(new Google.Protobuf.WellKnownTypes.Empty());            var bookedCars = bookingResponse.BookingCars
+                .Where(b => b.Status == "Ongoing" || b.Status == "Pending")
+                .Select(b => b.Carid)
+                .ToHashSet();
+
+            // Mark cars as available or rented
+            var carsWithAvailability = response.Cars.Select(car => new
+            {
+                car.CarId,
+                car.Manufactor,
+                car.Model,
+                car.Vin,
+                car.Color,
+                car.Seats,
+                car.Carrange,
+                car.Locationhubref,
+                IsAvailable = !bookedCars.Contains(car.CarId)
+            });
+
+            return Ok(carsWithAvailability);
         }
         catch (RpcException rpcEx) when (rpcEx.StatusCode == Grpc.Core.StatusCode.Unauthenticated)
         {
@@ -76,6 +97,7 @@ public class CarController : ControllerBase
             return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
         }
     }
+
 
     [HttpPut]
     public async Task<IActionResult> UpdateCar([FromBody] AddCarRequestDto carDto)

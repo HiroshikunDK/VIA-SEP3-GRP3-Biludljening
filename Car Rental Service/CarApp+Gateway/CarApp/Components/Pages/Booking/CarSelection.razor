@@ -22,30 +22,46 @@
 
 @if (cars == null)
 {
-    <p>Loading...</p>
+<p>Loading...</p>
 }
 else if (cars.Any())
 {
-    <div class="car-list">
-        @foreach (var car in cars)
-        {
-            <div class="car-item">
-                <h4>@car.Manufacturer @car.Model (@car.YearProduced) (@car.AltName)</h4>
-                <p><strong>VIN:</strong> @car.Vin</p>
-                <p><strong>Color:</strong> @car.Color</p>
-                <p><strong>Seats:</strong> @car.Seats</p>
-                <p><strong>Range:</strong> @car.CarRange km</p>
-                <p><strong>Location:</strong> Hub #@car.LocationHubRef</p>
-                <button class="select-button" @onclick="() => SelectCar(car.CarId)">Select</button>
-                <p>---------------------------------------------------------------------</p>
-            </div>
-        }
-    </div>
+<div class="car-list">
+    @foreach (var car in cars)
+    {
+        <div class="car-item">
+            <h4>@car.Manufacturer @car.Model (@car.YearProduced) (@car.AltName)</h4>
+            <p><strong>VIN:</strong> @car.Vin</p>
+            <p><strong>Color:</strong> @car.Color</p>
+            <p><strong>Seats:</strong> @car.Seats</p>
+            <p><strong>Range:</strong> @car.CarRange km</p>
+            <p><strong>Location:</strong> Hub #@car.LocationHubRef</p>
+            <p><strong>Availability:</strong> @(car.IsAvailable ? "Available" : "Rented")</p>
+            <button 
+                class="select-button" 
+                @onclick="() => SelectCar(car.CarId)" 
+                disabled="@(car.IsAvailable == false)">
+                @if (car.IsAvailable)
+                {
+                    <text>Select</text>
+                }
+                else
+                {
+                    <text>Unavailable</text>
+                }
+            </button>
+            <p>---------------------------------------------------------------------</p>
+        </div>
+    }
+
+    }
+</div>
 }
 else
 {
-    <p>No cars available.</p>
+<p>No cars available.</p>
 }
+
 
 @code {
     private List<CarDto> cars = new();

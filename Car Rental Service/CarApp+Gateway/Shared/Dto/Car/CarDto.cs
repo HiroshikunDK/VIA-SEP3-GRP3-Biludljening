@@ -12,4 +12,5 @@ public class CarDto
     public int Seats { get; set; }
     public int CarRange { get; set; }
     public int LocationHubRef { get; set; }
+    public bool IsAvailable { get; set; }
 }
