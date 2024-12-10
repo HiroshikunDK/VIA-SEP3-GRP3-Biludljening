@@ -4,6 +4,20 @@
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager NavigationManager
 
+
+<h3>Search for a car</h3>
+<div>
+    <input type="text" @bind="searchModel" placeholder="Enteralternative name" />
+    <button @onclick="FilterCars">Search by Alternative name</button>
+</div>
+<div>
+    <input type="text" @bind="searchCarModel" placeholder="Enter car model" />
+    <button @onclick="FilterCarsBymodel">Search by car model</button>
+</div>
+<div>
+    <button @onclick="RefreshCars">Refresh</button>
+</div>
+
 <h3>Select a Car</h3>
 
 @if (cars == null)
@@ -16,13 +30,14 @@ else if (cars.Any())
         @foreach (var car in cars)
         {
             <div class="car-item">
-                <h4>@car.Manufacturer @car.Model (@car.YearProduced)</h4>
+                <h4>@car.Manufacturer @car.Model (@car.YearProduced) (@car.AltName)</h4>
                 <p><strong>VIN:</strong> @car.Vin</p>
                 <p><strong>Color:</strong> @car.Color</p>
                 <p><strong>Seats:</strong> @car.Seats</p>
                 <p><strong>Range:</strong> @car.CarRange km</p>
                 <p><strong>Location:</strong> Hub #@car.LocationHubRef</p>
                 <button class="select-button" @onclick="() => SelectCar(car.CarId)">Select</button>
+                <p>---------------------------------------------------------------------</p>
             </div>
         }
     </div>
@@ -34,8 +49,15 @@ else
 
 @code {
     private List<CarDto> cars = new();
+    private string searchModel = string.Empty;
+    string? searchCarModel = string.Empty;
 
     protected override async Task OnInitializedAsync()
+    {
+        await LoadAllCars();
+    }
+
+    private async Task LoadAllCars()
     {
         var client = HttpClientFactory.CreateClient("AuthorizedClient");
 
@@ -48,6 +70,55 @@ else
             Console.WriteLine($"Error fetching cars: {ex.Message}");
         }
     }
+
+    private async Task FilterCars()
+    {
+        if (string.IsNullOrWhiteSpace(searchModel))
+        {
+            await LoadAllCars();
+            return;
+        }
+
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        try
+        {
+            cars = await client.GetFromJsonAsync<List<CarDto>>($"api/car/altname/{searchModel}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching cars by alternative name: {ex.Message}");
+        }
+    }
+    private async Task FilterCarsBymodel()
+    {
+        
+        if (string.IsNullOrWhiteSpace(searchCarModel))
+        {
+            await LoadAllCars();
+            return;
+        }
+
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        try
+        {
+            cars = await client.GetFromJsonAsync<List<CarDto>>($"api/car/model/{searchCarModel}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching cars by alternative name: {ex.Message}");
+        }
+    }
+    private async Task RefreshCars()
+    {
+        
+        searchModel = string.Empty;
+
+       
+        await LoadAllCars();
+    }
+
 
     private void SelectCar(int carId)
     {

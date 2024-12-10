@@ -10,10 +10,19 @@ service CarService {
   rpc updateCar (Car) returns (CarResponse);
   rpc deleteCar (CarRequest) returns (CarResponse);
   rpc getAvailableCarsByLocation (LocationHubRequest) returns (CarList);
+  rpc getCarByALtname (AltnameRequest) returns (CarList);
+  rpc getCarByModel (CarModelRequest) returns (CarList);
+
 }
 
 // Shared Messages
 message Empty {}
+message CarModelRequest {
+  string model = 1;
+}
+message AltnameRequest {
+  string altName = 1;
+}
 
 message CarRequest {
   string car_id = 1;

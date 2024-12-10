@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
+using Shared;
 using Shared.Dto;
 using Shared.Dto.Car;
 
@@ -110,5 +111,65 @@ public class CarController : ControllerBase
         var response = await _carServiceClient.getAvailableCarsByLocationAsync(request);
         return Ok(response.Cars);
     }
+    [HttpGet("altname/{altName}")]
+    public async Task<IActionResult> GetCarsByAltName(string altName)
+    {
+        try
+        {
+            // Create the gRPC request
+            var request = new AltnameRequest { AltName = altName };
+
+            // Call the gRPC service
+            var response = await _carServiceClient.getCarByALtnameAsync(request);
+
+            // Check if any cars were found
+            if (response.Cars.Count == 0)
+            {
+                return NotFound(new { Message = $"No cars found with the alternative name: {altName}" });
+            }
+
+            // Return the list of cars
+            return Ok(response.Cars);
+        }
+        catch (RpcException rpcEx) when (rpcEx.StatusCode == Grpc.Core.StatusCode.NotFound)
+        {
+            return NotFound(new { Message = $"No cars found with the alternative name: {altName}" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
+    }
+   
+    [HttpGet("model/{model}")]
+    public async Task<IActionResult> GetCarsBymodel(string model)
+    {
+        try
+        {
+            // Create the gRPC request
+            var request = new CarModelRequest { Model = model };
+
+            // Call the gRPC service
+            var response =  _carServiceClient.getCarByModel(request);
+
+            // Check if any cars were found
+            if (response.Cars.Count == 0)
+            {
+                return NotFound(new { Message = $"No cars found with the alternative name: {model}" });
+            }
+
+            // Return the list of cars
+            return Ok(response.Cars);
+        }
+        catch (RpcException rpcEx) when (rpcEx.StatusCode == Grpc.Core.StatusCode.NotFound)
+        {
+            return NotFound(new { Message = $"No cars found with the alternative name: {model}" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
+    }
+    
 
 }
