@@ -13,7 +13,8 @@ namespace CarApp.Services.User
 
         public async Task<UpdateUserDto> GetUserProfileAsync()
         {
-            var response = await _httpClient.GetAsync("api/user/profile");
+            // Updated endpoint to align with UserController changes
+            var response = await _httpClient.GetAsync("api/users/me");
 
             if (response.IsSuccessStatusCode)
             {
@@ -23,10 +24,11 @@ namespace CarApp.Services.User
             throw new Exception($"Failed to retrieve profile: {response.StatusCode} {await response.Content.ReadAsStringAsync()}");
         }
 
-
         public async Task UpdateUserProfileAsync(UpdateUserDto userProfile)
         {
-            var response = await _httpClient.PutAsJsonAsync("api/user/profile", userProfile);
+            // Updated endpoint to align with UserController changes
+            var response = await _httpClient.PutAsJsonAsync("api/users/me", userProfile);
+
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync();

@@ -4,11 +4,11 @@ using Shared.Dto.Payment;
 
 namespace CarApp.Services.Payment;
 
-public class HttpPaymentService : IPaymentService
+public class PaymentService : IPaymentService
 {
     private readonly HttpClient _client;
 
-    public HttpPaymentService(IHttpClientFactory httpClientFactory)
+    public PaymentService(IHttpClientFactory httpClientFactory)
     {
         _client = httpClientFactory.CreateClient("AuthorizedClient");
     }

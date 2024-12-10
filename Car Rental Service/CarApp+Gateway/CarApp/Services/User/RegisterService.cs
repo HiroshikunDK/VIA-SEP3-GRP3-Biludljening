@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using Shared.Dto;
 using Shared.Dto.Authentication;
 
 namespace CarApp.Services.User;
@@ -25,8 +24,8 @@ public class RegisterService : IRegisterService
             throw new Exception("Failed to retrieve anti-forgery token.");
         }
 
-        // Create and send the request
-        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/user/register")
+        // Create and send the request to the updated endpoint
+        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/users") // Updated endpoint
         {
             Content = JsonContent.Create(registerModel)
         };

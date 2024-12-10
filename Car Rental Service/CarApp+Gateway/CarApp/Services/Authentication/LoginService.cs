@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using Shared.Dto;
 using Shared.Dto.Authentication;
 
 namespace CarApp.Services.Authentication
@@ -18,13 +17,16 @@ namespace CarApp.Services.Authentication
         public async Task<string> LoginAsync(LoginRequestDto loginModel)
         {
             var client = _httpClientFactory.CreateClient("AuthorizedClient");
-            var response = await client.PostAsJsonAsync("api/user/login", loginModel);
+
+            // Updated endpoint for login
+            var response = await client.PostAsJsonAsync("api/auth/login", loginModel);
 
             if (response.IsSuccessStatusCode)
             {
                 var token = await response.Content.ReadAsStringAsync();
                 Console.WriteLine($"Token received: {token}");
         
+                // Store the token in local storage
                 await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
 
                 // Verify the token is stored

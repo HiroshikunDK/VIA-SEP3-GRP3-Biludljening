@@ -33,7 +33,7 @@ public class Program
         builder.Services.AddScoped<ILoginService, LoginService>();
         builder.Services.AddScoped<IRegisterService, RegisterService>();
         builder.Services.AddScoped<IUserProfileService, UserProfileService>();
-        builder.Services.AddScoped<IPaymentService, HttpPaymentService>();
+        builder.Services.AddScoped<IPaymentService, PaymentService>();
 
         // Configure JWT Authentication
         var base64EncodedKey = "RGVuRXJIZW1tZWxpZw=="; // Base64 of "DenErHemmelig"

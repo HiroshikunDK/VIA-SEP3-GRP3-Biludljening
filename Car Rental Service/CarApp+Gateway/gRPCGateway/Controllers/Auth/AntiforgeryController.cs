@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Mvc;
 
-namespace gRPC_Gateway.Controllers
+namespace gRPC_Gateway.Controllers.Auth
 {
     [Route("api/antiforgery")]
     [ApiController]

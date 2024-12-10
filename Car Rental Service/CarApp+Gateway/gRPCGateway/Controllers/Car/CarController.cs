@@ -1,8 +1,7 @@
 ﻿using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
-using Shared;
-using Shared.Dto;
 using Shared.Dto.Car;
+
 
 namespace gRPC_Gateway.Controllers;
 
