@@ -79,6 +79,8 @@ public class CarController : ControllerBase
                 car.Model,
                 car.Vin,
                 car.Color,
+                car.Yearproduced,
+                car.Altname,
                 car.Seats,
                 car.Carrange,
                 car.Locationhubref,
