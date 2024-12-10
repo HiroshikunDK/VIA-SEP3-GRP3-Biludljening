@@ -1,18 +1,20 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"><hibernate-configuration>
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
-        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:./Database/RideshareService.db</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://ep-white-wildflower-a2iqvm19.eu-central-1.aws.neon.tech:5432/RideShareDb?sslmode=require</property>
+        <property name="hibernate.connection.username">CarDb_owner</property>
+        <property name="hibernate.connection.password">L14UWitfmYyM</property>
 
         <!-- JDBC connection pool settings -->
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
 
-
         <!-- SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <!-- Enable automatic schema generation -->
         <property name="hibernate.hbm2ddl.auto">update</property>

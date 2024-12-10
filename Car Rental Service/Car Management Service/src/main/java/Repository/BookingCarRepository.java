@@ -46,6 +46,7 @@ public class BookingCarRepository implements IBookingCarRepository {
     try {
       transaction.begin();
       entityManager.persist(bookingCar);
+      entityManager.flush();
       transaction.commit();
       return bookingCar;
     } catch (Exception e) {
@@ -55,6 +56,7 @@ public class BookingCarRepository implements IBookingCarRepository {
       entityManager.close();
     }
   }
+
 
   @Override
   public BookingCar updateBookingCar(BookingCar bookingCar) {
@@ -72,6 +74,7 @@ public class BookingCarRepository implements IBookingCarRepository {
       entityManager.close();
     }
   }
+
 
   @Override
   public boolean deleteBookingCar(int bookingCarId) {

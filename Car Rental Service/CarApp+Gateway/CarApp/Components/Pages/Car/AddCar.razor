@@ -1,5 +1,5 @@
 ﻿@page "/addcar"
-@inject HttpClient Http
+@inject IHttpClientFactory HttpClientFactory
 @using Shared.Dto
 @using Shared.Dto.Car
 
@@ -16,7 +16,7 @@
     
     <div class="mb-3">
         <label for="Year Produced" class="form-label">Year Produced:</label>
-        <InputNumber id="Year Produced" class="form-control" @bind-Value="_car.YearProduced" />
+        <InputNumber id="YearProduced" class="form-control" @bind-Value="_car.YearProduced" />
     </div>
 
     <div class="mb-3">
@@ -75,14 +75,18 @@
     {
         _successMessage = null;
         _errorMessage = null;
-        
+
         try
         {
-            var response = await Http.PostAsJsonAsync("api/car", _car);
+            // Create an HttpClient using IHttpClientFactory
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+            // Make the POST request
+            var response = await client.PostAsJsonAsync("api/car", _car);
             if (response.IsSuccessStatusCode)
             {
                 _successMessage = "Car added successfully!";
-                _car = new AddCarRequestDto(); 
+                _car = new AddCarRequestDto(); // Clear form
             }
             else
             {

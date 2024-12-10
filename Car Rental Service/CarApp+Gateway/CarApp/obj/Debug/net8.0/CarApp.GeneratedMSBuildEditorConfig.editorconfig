@@ -62,6 +62,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcQWRkQ2FyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/EditCar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcRWRpdENhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/ManageCars.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcTWFuYWdlQ2Fycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
