@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Start Microservices" type="CompoundRunConfigurationType">
+    <toRun name="CarMain" type="Application" />
+    <toRun name="PaymentMain" type="Application" />
+    <toRun name="RideShareMain" type="Application" />
+    <toRun name="UserMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

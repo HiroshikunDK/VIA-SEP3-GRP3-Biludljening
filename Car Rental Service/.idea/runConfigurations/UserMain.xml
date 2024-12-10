@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="UserMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="UserService.UserMain" />
+    <module name="User_Service" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

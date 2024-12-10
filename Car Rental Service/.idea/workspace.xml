@@ -94,6 +94,15 @@
       <recent name="" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.PaymentMain">
+    <list>
+      <item itemvalue="Application.UserMain" />
+      <item itemvalue="Application.RideShareMain" />
+      <item itemvalue="Application.PaymentMain" />
+      <item itemvalue="Application.CarMain" />
+      <item itemvalue="Compound.Start Microservices" />
+    </list>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -121,6 +130,7 @@
       <workItem from="1733728122822" duration="10509000" />
       <workItem from="1733785025449" duration="3159000" />
       <workItem from="1733802204294" duration="11055000" />
+      <workItem from="1733829493711" duration="446000" />
     </task>
     <task id="LOCAL-00001" summary="SOLID Changes">
       <option name="closed" value="true" />
