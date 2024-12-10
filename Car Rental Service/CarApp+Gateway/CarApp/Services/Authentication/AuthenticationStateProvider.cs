@@ -50,9 +50,3 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     }
 }
 
-// Token wrapper class for deserialization
-public class TokenWrapper
-{
-    public string Token { get; set; }
-    public string Role { get; set; }
-}
