@@ -112,6 +112,45 @@ public class BookingCarController : ControllerBase
             return BadRequest(new { Message = response.Message });
         }
     }
+    
+    [HttpPost("{id}/return")]
+    public async Task<IActionResult> ReturnCar(int id)
+    {
+        try
+        {
+            // Retrieve the booking details
+            var bookingRequest = new BookingCarRequest { BookingNr = id };
+            var bookingResponse = await _bookingCarServiceClient.GetBookingCarByIDAsync(bookingRequest);
+
+            if (bookingResponse.BookingCar == null)
+            {
+                return NotFound(new { Message = "Booking not found." });
+            }
+
+            // Mark booking as returned
+            var booking = bookingResponse.BookingCar;
+            booking.Status = "Returned";
+
+            // Update the booking
+            var updateResponse = await _bookingCarServiceClient.UpdateBookingCarAsync(booking);
+            if (!updateResponse.Success)
+            {
+                return BadRequest(new { Message = "Failed to update booking status." });
+            }
+
+            return Ok(new
+            {
+                Message = "Car successfully returned.",
+                BookingId = id
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
+    }
+
+
 
     // Helper Methods
     private BookingCar MapToGrpcRequest(BookingDto bookingDto)

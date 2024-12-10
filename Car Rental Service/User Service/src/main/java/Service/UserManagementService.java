@@ -6,6 +6,7 @@ import Repository.IDeleteUserRepository;
 import Repository.IRetrieveUserRepository;
 import Repository.IUpdateUserRepository;
 import Shared.PasswordHelper;
+import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.UserResponse;
 
 import java.util.Optional;
@@ -46,15 +47,34 @@ public class UserManagementService {
     public UserResponse getUserById(int userId) {
         Optional<User> userOptional = retrieveUserRepository.getUserById(userId);
 
-        return userOptional.map(user -> UserResponse.newBuilder()
-                        .setSuccess(true)
-                        .setMessage("User found.")
-                        .build())
-                .orElse(UserResponse.newBuilder()
-                        .setSuccess(false)
-                        .setMessage("User not found.")
-                        .build());
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+
+            // Map the domain User object to the gRPC User message
+            UserOuterClass.User grpcUser = UserOuterClass.User.newBuilder()
+                    .setId(user.getId())
+                    .setUsername(user.getUsername())
+                    .setEmail(user.getEmail())
+                    .setPhonenr(user.getPhonenr())
+                    .setTitle(user.getTitle())
+                    .setUserFirstname(user.getUserFirstname())
+                    .setUserLastname(user.getUserLastname())
+                    .setRole(user.getRole())
+                    .build();
+
+            return UserResponse.newBuilder()
+                    .setSuccess(true)
+                    .setMessage("User found.")
+                    .setUser(grpcUser) // Include the User in the response
+                    .build();
+        }
+
+        return UserResponse.newBuilder()
+                .setSuccess(false)
+                .setMessage("User not found.")
+                .build();
     }
+
 
     public UserResponse deleteUser(int userId) {
         boolean success = deleteUserRepository.deleteUserById(userId);

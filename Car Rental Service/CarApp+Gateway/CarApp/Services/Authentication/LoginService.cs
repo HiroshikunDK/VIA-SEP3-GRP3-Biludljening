@@ -18,14 +18,18 @@ namespace CarApp.Services.Authentication
         public async Task<string> LoginAsync(LoginRequestDto loginModel)
         {
             var client = _httpClientFactory.CreateClient("AuthorizedClient");
-
             var response = await client.PostAsJsonAsync("api/user/login", loginModel);
 
             if (response.IsSuccessStatusCode)
             {
                 var token = await response.Content.ReadAsStringAsync();
-                
+                Console.WriteLine($"Token received: {token}");
+        
                 await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
+
+                // Verify the token is stored
+                var storedToken = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
+                Console.WriteLine($"Token stored in localStorage: {storedToken}");
 
                 return token;
             }

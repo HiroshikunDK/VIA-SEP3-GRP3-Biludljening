@@ -131,39 +131,45 @@ public class UserController : ControllerBase
         return Ok(response);
     }
     
-    [HttpGet("profile")] 
-public async Task<IActionResult> GetCurrentUserProfile()
-{
-    try
+    [HttpGet("profile")]
+    public async Task<IActionResult> GetCurrentUserProfile()
     {
-        var username = User.Identity?.Name;
-
-        var grpcRequest = new UserRequest { Username = username };
-        var grpcResponse = await _userClient.GetUserByUsernameAsync(grpcRequest);
-
-        if (!grpcResponse.Success)
+        try
         {
-            return NotFound(new { Message = "User not found." });
+            // Extract user ID from claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "id");
+
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            {
+                return Unauthorized(new { Message = "User ID claim is missing or invalid." });
+            }
+
+            var grpcRequest = new UserRequest { Id = userId };
+            var grpcResponse = await _userClient.GetUserByIdAsync(grpcRequest);
+
+            if (!grpcResponse.Success)
+            {
+                return NotFound(new { Message = "User not found." });
+            }
+
+            var userDto = new UpdateUserDto
+            {
+                UserFirstname = grpcResponse.User.UserFirstname,
+                UserLastname = grpcResponse.User.UserLastname,
+                Title = grpcResponse.User.Title,
+                Email = grpcResponse.User.Email,
+                Phonenr = grpcResponse.User.Phonenr,
+                Username = grpcResponse.User.Username
+            };
+
+            return Ok(userDto);
         }
-
-        var userDto = new UpdateUserDto
+        catch (Exception ex)
         {
-            UserFirstname = grpcResponse.User.UserFirstname,
-            UserLastname = grpcResponse.User.UserLastname,
-            Title = grpcResponse.User.Title,
-            Email = grpcResponse.User.Email,
-            Phonenr = grpcResponse.User.Phonenr,
-            Username = grpcResponse.User.Username
-        };
-
-        return Ok(userDto);
+            return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+        }
     }
-    catch (Exception ex)
-    {
-        return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
-    }
-}
-
+    
 [HttpPut("profile")]
 public async Task<IActionResult> UpdateCurrentUserProfile([FromBody] UpdateUserDto request)
 {

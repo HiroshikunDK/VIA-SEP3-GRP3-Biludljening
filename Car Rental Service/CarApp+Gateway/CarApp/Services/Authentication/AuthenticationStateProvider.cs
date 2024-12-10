@@ -28,6 +28,8 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
         try
         {
             var jwt = new JwtSecurityTokenHandler().ReadJwtToken(token);
+            Console.WriteLine($"Decoded JWT: {jwt}");
+
             var claims = jwt.Claims;
             var identity = new ClaimsIdentity(claims, "jwt");
             var user = new ClaimsPrincipal(identity);
@@ -42,7 +44,6 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
         }
     }
     
-
     public void NotifyAuthenticationStateChanged(Task<AuthenticationState> authStateTask)
     {
         NotifyAuthenticationStateChanged(authStateTask);

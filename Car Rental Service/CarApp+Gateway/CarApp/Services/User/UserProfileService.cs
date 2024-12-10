@@ -13,13 +13,16 @@ namespace CarApp.Services.User
 
         public async Task<UpdateUserDto> GetUserProfileAsync()
         {
-            var response = await _httpClient.GetFromJsonAsync<UpdateUserDto>("api/user/profile");
-            if (response == null)
+            var response = await _httpClient.GetAsync("api/user/profile");
+
+            if (response.IsSuccessStatusCode)
             {
-                throw new Exception("Failed to fetch user profile.");
+                return await response.Content.ReadFromJsonAsync<UpdateUserDto>();
             }
-            return response;
+
+            throw new Exception($"Failed to retrieve profile: {response.StatusCode} {await response.Content.ReadAsStringAsync()}");
         }
+
 
         public async Task UpdateUserProfileAsync(UpdateUserDto userProfile)
         {

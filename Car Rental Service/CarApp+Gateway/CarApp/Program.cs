@@ -48,7 +48,9 @@ public class Program
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(decodedKey) // Use decoded key bytes
+                    IssuerSigningKey = new SymmetricSecurityKey(decodedKey),
+                    NameClaimType = "sub", 
+                    RoleClaimType = "role" 
                 };
             });
 

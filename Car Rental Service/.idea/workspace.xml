@@ -5,50 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="SOLID Changes">
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/Car/CarAltNameRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/Dto/Car/CarModelRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Booking/ReturnCar.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/Proto/CarManagement.proto" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/Proto/CarManagement.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/ICarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Repository/ICarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/BookingCarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/BookingCarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/src/main/java/Service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement$CarResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$AsyncService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$AsyncService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceBaseDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceBaseDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceBlockingStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceBlockingStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceFileDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceFileDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceFutureStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceFutureStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceImplBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceImplBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceMethodDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceMethodDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$CarServiceStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$MethodHandlers.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc$MethodHandlers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/CarManagementService/grpc/CarServiceGrpc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/CarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/ICarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/Repository/ICarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/classes/Service/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/classes/Service/CarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/BookingCarServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/BookingCarServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/CarServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/CarServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/LocationHubServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/grpc-java/CarManagementService/grpc/LocationHubServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Car Management Service/target/generated-sources/protobuf/java/CarManagementService/grpc/CarManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Booking/CarSelection.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Booking/CarSelection.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthenticationStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/UserProfileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/UserProfileService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" afterDir="false" />
@@ -97,8 +60,9 @@
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/CarManagement.proto" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Proto/CarManagement.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/BookingCarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/BookingCarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/User/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/User/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
@@ -137,6 +101,7 @@
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/CarService.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/CarService.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/Service/UserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/java/Service/UserManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +128,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/HiroshikunDK/VIA-SEP3-GRP3-Biludljening.git",
-    "accountId": "22eb0f03-2908-48cb-8ab2-815136b6364f"
+    "accountId": "80e31aad-e594-4306-87d4-bb13c9531234"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -246,6 +211,7 @@
       <workItem from="1733599810589" duration="3094000" />
       <workItem from="1733728122822" duration="10509000" />
       <workItem from="1733785025449" duration="3159000" />
+      <workItem from="1733802204294" duration="2588000" />
     </task>
     <task id="LOCAL-00001" summary="SOLID Changes">
       <option name="closed" value="true" />
