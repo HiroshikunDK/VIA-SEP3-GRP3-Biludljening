@@ -74,8 +74,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-Console.WriteLine($"Decoded Key: {BitConverter.ToString(decodedKey)}");
-
 // CSRF Configuration
 builder.Services.AddAntiforgery(options =>
 {
@@ -92,7 +90,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "gRPC Gateway API v1");
-        options.RoutePrefix = string.Empty; // Serve Swagger UI at application root
     });
 }
 
@@ -105,21 +102,6 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
-});
-
-// Middleware to log Authorization headers
-app.Use(async (context, next) =>
-{
-    if (context.Request.Headers.ContainsKey("Authorization"))
-    {
-        Console.WriteLine($"Authorization Header in Broker: {context.Request.Headers["Authorization"]}");
-    }
-    else
-    {
-        Console.WriteLine("Authorization Header Missing in Broker");
-    }
-
-    await next();
 });
 
 app.Run();

@@ -15,7 +15,7 @@ public class AuthenticationController : ControllerBase
         _userClient = userClient;
     }
 
-    [HttpPost("login")]
+    [HttpPost]
     [AllowAnonymous]
     public async Task<IActionResult> LoginUser([FromBody] LoginRequest request)
     {

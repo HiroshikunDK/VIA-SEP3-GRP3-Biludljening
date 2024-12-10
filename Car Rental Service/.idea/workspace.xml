@@ -4,8 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="Switched from SQLite to Postgres">
+    <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="Added Run Configuration for Microservices">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/RegisterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/RegisterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/UserProfileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/User/UserProfileService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Auth/AntiforgeryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Auth/AntiforgeryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Auth/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Auth/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +122,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PaymentMain">
+  <component name="RunManager" selected="Compound.Start Microservices">
     <list>
       <item itemvalue="Application.UserMain" />
       <item itemvalue="Application.RideShareMain" />
@@ -130,7 +158,7 @@
       <workItem from="1733728122822" duration="10509000" />
       <workItem from="1733785025449" duration="3159000" />
       <workItem from="1733802204294" duration="11055000" />
-      <workItem from="1733829493711" duration="446000" />
+      <workItem from="1733829493711" duration="1106000" />
     </task>
     <task id="LOCAL-00001" summary="SOLID Changes">
       <option name="closed" value="true" />
@@ -156,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733815173754</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Run Configuration for Microservices">
+      <option name="closed" value="true" />
+      <created>1733829963502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733829963503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +213,8 @@
     <MESSAGE value="SOLID Changes" />
     <MESSAGE value="Added Admin User" />
     <MESSAGE value="Switched from SQLite to Postgres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched from SQLite to Postgres" />
+    <MESSAGE value="Added Run Configuration for Microservices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Run Configuration for Microservices" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

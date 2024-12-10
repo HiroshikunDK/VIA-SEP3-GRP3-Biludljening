@@ -14,7 +14,7 @@ namespace gRPC_Gateway.Controllers.Auth
             _antiforgery = antiforgery;
         }
 
-        [HttpGet("token")]
+        [HttpGet]
         public IActionResult GetAntiForgeryToken()
         {
             var tokens = _antiforgery.GetAndStoreTokens(HttpContext);

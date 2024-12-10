@@ -17,36 +17,24 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
         var token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
-        Console.WriteLine($"Token retrieved in AuthenticationStateProvider: {token}");
 
         if (string.IsNullOrEmpty(token))
         {
-            Console.WriteLine("No token found or token is empty.");
             return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         }
 
         try
         {
             var jwt = new JwtSecurityTokenHandler().ReadJwtToken(token);
-            Console.WriteLine($"Decoded JWT: {jwt}");
-
             var claims = jwt.Claims;
             var identity = new ClaimsIdentity(claims, "jwt");
             var user = new ClaimsPrincipal(identity);
 
-            Console.WriteLine("Authentication state updated with token.");
             return new AuthenticationState(user);
         }
-        catch (Exception ex)
+        catch
         {
-            Console.WriteLine($"Error processing token: {ex.Message}");
             return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         }
     }
-    
-    public void NotifyAuthenticationStateChanged(Task<AuthenticationState> authStateTask)
-    {
-        NotifyAuthenticationStateChanged(authStateTask);
-    }
 }
-

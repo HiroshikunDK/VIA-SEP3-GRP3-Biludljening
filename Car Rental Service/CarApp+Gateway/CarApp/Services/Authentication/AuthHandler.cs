@@ -25,15 +25,9 @@ public class AuthHandler : DelegatingHandler
             token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
         }
 
-        Console.WriteLine($"Retrieved Token: {token}");
-
         if (!string.IsNullOrEmpty(token))
         {
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        }
-        else
-        {
-            Console.WriteLine("No token found in localStorage.");
         }
 
         return await base.SendAsync(request, cancellationToken);

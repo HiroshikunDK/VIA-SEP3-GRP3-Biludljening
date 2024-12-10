@@ -25,7 +25,7 @@ public class RegisterService : IRegisterService
         }
 
         // Create and send the request to the updated endpoint
-        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/users") // Updated endpoint
+        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/users") 
         {
             Content = JsonContent.Create(registerModel)
         };
