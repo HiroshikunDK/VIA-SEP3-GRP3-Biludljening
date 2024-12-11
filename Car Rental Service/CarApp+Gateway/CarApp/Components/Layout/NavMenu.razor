@@ -1,48 +1,106 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">CarApp</a>
+        <div class="d-flex">
+            @if (isLoggedIn)
+            {
+                <button class="btn btn-outline-light me-2" @onclick="Logout">Logout</button>
+            }
+            else
+            {
+                <NavLink class="btn btn-outline-light me-2" href="login">Login</NavLink>
+                <NavLink class="btn btn-outline-light" href="register">Register</NavLink>
+            }
+        </div>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
-        
+        @if (isLoggedIn)
+        {
+        @if (userRole == "Admin")
+        {
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="addcar">
-                <span class="bi bi-car-front-fill-nav-menu" aria-hidden="true"></span> Add Car
+            <NavLink class="nav-link" href="manage-cars">
+                <span class="bi bi-car-front-fill-nav-menu" aria-hidden="true"></span> Manage Cars
             </NavLink>
         </div>
-        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="register">
-                <span class="bi bi-person-plus-fill-nav-menu" aria-hidden="true"></span> Register
-            </NavLink>
-        </div>
+        }
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="createBooking">
-                <span class="bi bi-person-plus-fill-nav-menu" aria-hidden="true"></span> Book a car
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="createpayment">
-                <span class="bi bi-credit-card-fill" aria-hidden="true"></span> Create Payment
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="createrideshare">
-                <span class="oi oi-plus" aria-hidden="true"></span> Create Rideshare
+            <NavLink class="nav-link" href="carselection">
+                <span class="bi bi-search" aria-hidden="true"></span> Rent a Car
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="userprofile">
-                <span class="oi oi-plus" aria-hidden="true"></span> Profile
+            <NavLink class="nav-link" href="return-car">
+                <span class="bi bi-search" aria-hidden="true"></span>Your Reservations
             </NavLink>
         </div>
-
+        }
     </nav>
 </div>
+
+
+@code {
+    private bool isLoggedIn;
+    private string userRole = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
+        await UpdateLoginState();
+    }
+
+    private async Task UpdateLoginState()
+    {
+        try
+        {
+            var token = await JS.InvokeAsync<string>("localStorage.getItem", "authToken");
+            isLoggedIn = !string.IsNullOrEmpty(token);
+
+            if (isLoggedIn)
+            {
+                var jwt = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().ReadJwtToken(token);
+                userRole = jwt.Claims.FirstOrDefault(c => c.Type == "role")?.Value ?? string.Empty;
+            }
+            else
+            {
+                userRole = string.Empty;
+            }
+        }
+        catch
+        {
+            isLoggedIn = false;
+            userRole = string.Empty;
+        }
+
+        StateHasChanged(); // Force UI update
+    }
+
+    private async Task Logout()
+    {
+        await JS.InvokeVoidAsync("localStorage.removeItem", "authToken");
+        isLoggedIn = false;
+        userRole = string.Empty;
+        NavigationManager.NavigateTo("/login", true);
+    }
+
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
+    {
+        await UpdateLoginState();
+    }
+
+    public void Dispose()
+    {
+        AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
+    }
+}

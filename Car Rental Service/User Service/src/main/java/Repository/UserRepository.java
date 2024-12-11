@@ -6,7 +6,12 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.Optional;
 
-public class UserRepository implements IUserRepository {
+public class UserRepository implements
+        IAddUserRepository,
+        IRetrieveUserRepository,
+        IDeleteUserRepository,
+        IUpdateUserRepository {
+
   private final EntityManager entityManager;
 
   public UserRepository(EntityManager entityManager) {

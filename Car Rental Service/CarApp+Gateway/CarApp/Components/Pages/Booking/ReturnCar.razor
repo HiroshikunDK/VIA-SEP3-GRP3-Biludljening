@@ -1,0 +1,144 @@
+﻿@page "/return-car"
+@using Microsoft.AspNetCore.Components.Authorization
+@using Shared.Dto.Booking
+@using Shared.Dto.Car
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Return a Car</h3>
+
+@if (!string.IsNullOrEmpty(message))
+{
+<div class="alert alert-danger">@message</div>
+}
+
+@if (reservations == null || cars == null)
+{
+<p>Loading...</p>
+}
+else if (!reservations.Any())
+{
+<p>No reservations found. You have not rented any cars.</p>
+}
+else
+{
+<h4>Your Reservations</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Booking ID</th>
+        <th>Car ID</th>
+        <th>Car Name</th>
+        <th>VIN</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var reservation in reservations)
+    {
+    var car = cars.FirstOrDefault(c => c.CarId == reservation.CarId);
+
+    <tr>
+        <td>@reservation.BookingNr</td>
+        <td>@reservation.CarId</td>
+        <td>@(car?.Model ?? "Unknown")</td>
+        <td>@(car?.Vin ?? "Unknown")</td>
+        <td>@reservation.StartDate?.ToString("yyyy-MM-dd")</td>
+        <td>@reservation.EndDate?.ToString("yyyy-MM-dd")</td>
+        <td>@reservation.Status</td>
+        <td>
+            @if (reservation.Status == "Pending")
+            {
+            <button class="btn btn-success" @onclick="() => ReturnCarBooking(reservation.BookingNr.Value)">Return</button>
+            }
+            else
+            {
+            <span class="text-muted">Already Returned</span>
+            }
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+}
+
+
+<p>@message</p>
+
+@code {
+    private List<BookingDto> reservations = new();
+    private List<CarDto> cars = new();
+    private string message = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadReservationsAndCars();
+    }
+
+    private async Task LoadReservationsAndCars()
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+            // Fetch bookings
+            var allBookings = await client.GetFromJsonAsync<List<BookingDto>>("api/bookingcar");
+            var customerId = await GetCurrentCustomerIdAsync();
+            reservations = allBookings.Where(booking => booking.CustomerId == customerId).ToList();
+
+            // Fetch car details
+            cars = await client.GetFromJsonAsync<List<CarDto>>("api/car");
+
+            if (!reservations.Any())
+            {
+                message = "No reservations found. You have not rented any cars.";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error loading reservations or cars: {ex.Message}";
+        }
+    }
+
+    private async Task ReturnCarBooking(int bookingId)
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            var response = await client.PostAsync($"api/bookingcar/{bookingId}/return", null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Car successfully returned.";
+                await LoadReservationsAndCars(); // Refresh reservations and cars
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                message = $"Failed to return car: {errorResponse}";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error returning car: {ex.Message}";
+        }
+    }
+
+    private async Task<int> GetCurrentCustomerIdAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        var customerIdClaim = user.FindFirst("id");
+
+        if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out var customerId))
+        {
+            return customerId;
+        }
+
+        throw new InvalidOperationException("Unable to retrieve CustomerId from claims.");
+    }
+}

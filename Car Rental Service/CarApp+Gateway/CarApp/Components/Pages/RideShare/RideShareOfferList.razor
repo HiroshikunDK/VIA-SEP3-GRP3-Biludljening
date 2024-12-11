@@ -1,0 +1,290 @@
+﻿@page "/RideShareOfferList"
+@using CarApp.Services.RideShare
+@using Shared.Dto
+@using Shared.Dto.RideShare
+@inject RideShareOfferService RideShareOfferService
+
+<h3>Ride Share Offers</h3>
+
+@if (rideShareOffers == null)
+{
+    <p>Loading...</p>
+}
+else if (rideShareOffers.Length == 0)
+{
+    <p>No ride share offers available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ride ID</th>
+                <th>Available Spaces</th>
+                <th>Status</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var offer in rideShareOffers)
+            {
+                <tr>
+                    <td>@offer.RideId</td>
+                    <td>@offer.AvailableSpaces</td>
+                    <td>@offer.Status</td>
+                    <td>@offer.StartDate</td>
+                    <td>@offer.EndDate</td>
+                    <td>
+                        <button @onclick="() => OpenEditModal(offer)" class="btn btn-primary">Edit</button>
+                        <button @onclick="() => DeleteOffer(offer.RideId)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<!-- Edit Modal -->
+@if (isEditModalVisible)
+{
+<div class="modal-backdrop show"></div>
+<div class="modal show d-block" tabindex="-1" style="display: block;" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Ride Share Offer</h5>
+                <button type="button" class="close" @onclick="CloseModal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <EditForm Model="@editOffer">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="form-group">
+                        <label for="availableSpaces">Available Spaces</label>
+                        <InputNumber id="availableSpaces" class="form-control" @bind-Value="editOffer.AvailableSpaces" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <InputText id="startDate" class="form-control" @bind-Value="editOffer.StartDate" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startTime">Start Time</label>
+                        <InputText id="startTime" class="form-control" @bind-Value="editOffer.StartTime" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <InputText id="endDate" class="form-control" @bind-Value="editOffer.EndDate" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endTime">End Time</label>
+                        <InputText id="endTime" class="form-control" @bind-Value="editOffer.EndTime" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startLocation">Start Location</label>
+                        <InputText id="startLocation" class="form-control" @bind-Value="editOffer.StartLocation" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endLocation">End Location</label>
+                        <InputText id="endLocation" class="form-control" @bind-Value="editOffer.EndLocation" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <InputNumber id="price" class="form-control" @bind-Value="editOffer.Price" />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @onclick="CloseModal">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="SaveOffer">Save changes</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@code {
+    private RideShareOfferDto[] rideShareOffers;
+    private RideShareOfferDto editOffer;
+    private bool isEditModalVisible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            rideShareOffers = makeTestObjects();
+            //rideShareOffers = await RideShareOfferService.GetAllRideShareOffersAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        
+    }
+    
+    private void OpenEditModal(RideShareOfferDto offer)
+    {
+        editOffer = new RideShareOfferDto
+        {
+            RideId = offer.RideId,  // Read-only field
+            Status = offer.Status,  // Read-only field
+            CustomerId = offer.CustomerId,  // Read-only field
+            AvailableSpaces = offer.AvailableSpaces,
+            StartDate = offer.StartDate,
+            StartTime = offer.StartTime,
+            EndDate = offer.EndDate,
+            EndTime = offer.EndTime,
+            StartLocation = offer.StartLocation,
+            EndLocation = offer.EndLocation,
+            Price = offer.Price
+        };
+
+        isEditModalVisible = true;
+    }
+    
+    private void CloseModal()
+    {
+        isEditModalVisible = false;
+    }
+
+    private async Task SaveOffer()
+    {
+        try
+        {
+            var success = await RideShareOfferService.UpdateRideShareOfferAsync(editOffer);
+            if (success)
+            {
+                // Refresh the list with updated data
+                rideShareOffers = await RideShareOfferService.GetAllRideShareOffersAsync();
+                CloseModal();
+            }
+            else
+            {
+                Console.WriteLine("Error saving changes.");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+            CloseModal();
+        }
+    }
+
+    // Edit functionality (example)
+    private void EditOffer(string rideId)
+    {
+        // Redirect to edit page or handle edit logic
+        Console.WriteLine($"Edit offer with RideId: {rideId}");
+        // For example, navigate to an edit page:
+        // _navigationManager.NavigateTo($"/editrideshareoffer/{rideId}");
+    }
+
+    private async Task DeleteOffer(string rideId)
+    {
+        var success = await RideShareOfferService.DeleteRideShareOfferAsync(rideId);
+        if (success)
+        {
+            // Refresh the list after deletion
+            rideShareOffers = await RideShareOfferService.GetAllRideShareOffersAsync();
+        }
+        else
+        {
+            Console.WriteLine("Error deleting offer.");
+        }
+    }
+
+    private RideShareOfferDto[] makeTestObjects()
+    {
+        RideShareOfferDto[] rideShareOffersLocal = new RideShareOfferDto[]
+        {
+            new RideShareOfferDto
+            {
+                RideId = "RS123",
+                AvailableSpaces = 3,
+                Status = "Partially Booked",
+                StartDate = "2024-12-10",
+                StartTime = "08:00:00",
+                StartLocation = "Location A",
+                EndDate = "2024-12-10",
+                EndTime = "10:00:00",
+                EndLocation = "Location B",
+                Price = 50.0f,
+                CustomerId = "CUS001",
+                BookingRef = "BOOK123"
+            },
+            new RideShareOfferDto
+            {
+                RideId = "RS124",
+                AvailableSpaces = 5,
+                Status = "Available",
+                StartDate = "2024-12-12",
+                StartTime = "09:30:00",
+                StartLocation = "Location B",
+                EndDate = "2024-12-12",
+                EndTime = "11:30:00",
+                EndLocation = "Location C",
+                Price = 60.0f,
+                CustomerId = "CUS002",
+                BookingRef = "BOOK124"
+            },
+            new RideShareOfferDto
+            {
+                RideId = "RS125",
+                AvailableSpaces = 2,
+                Status = "Full",
+                StartDate = "2024-12-15",
+                StartTime = "07:30:00",
+                StartLocation = "Location D",
+                EndDate = "2024-12-15",
+                EndTime = "09:30:00",
+                EndLocation = "Location E",
+                Price = 40.0f,
+                CustomerId = "CUS003",
+                BookingRef = "BOOK125"
+            },
+            new RideShareOfferDto
+            {
+                RideId = "RS126",
+                AvailableSpaces = 4,
+                Status = "Available",
+                StartDate = "2024-12-18",
+                StartTime = "10:00:00",
+                StartLocation = "Location F",
+                EndDate = "2024-12-18",
+                EndTime = "12:00:00",
+                EndLocation = "Location G",
+                Price = 55.0f,
+                CustomerId = "CUS004",
+                BookingRef = "BOOK126"
+            },
+            new RideShareOfferDto
+            {
+                RideId = "RS127",
+                AvailableSpaces = 1,
+                Status = "Partially Booked",
+                StartDate = "2024-12-20",
+                StartTime = "14:00:00",
+                StartLocation = "Location H",
+                EndDate = "2024-12-20",
+                EndTime = "16:00:00",
+                EndLocation = "Location I",
+                Price = 70.0f,
+                CustomerId = "CUS005",
+                BookingRef = "BOOK127"
+            }
+        };
+        return rideShareOffersLocal;
+    }
+}

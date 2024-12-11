@@ -1,0 +1,82 @@
+﻿@page "/edit-car/{carId:int}"
+@using Shared.Dto.Car
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<h3>Edit Car</h3>
+
+<EditForm Model="_car" OnValidSubmit="HandleUpdateCar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="Vin" class="form-label">Vin:</label>
+        <InputText id="Vin" class="form-control" @bind-Value="_car.Vin" />
+    </div>
+    <div class="mb-3">
+        <label for="YearProduced" class="form-label">Year Produced:</label>
+        <InputNumber id="YearProduced" class="form-control" @bind-Value="_car.YearProduced" />
+    </div>
+    <div class="mb-3">
+        <label for="Manufacturer" class="form-label">Manufacturer:</label>
+        <InputText id="Manufacturer" class="form-control" @bind-Value="_car.Manufacturer" />
+    </div>
+    <!-- Other fields... -->
+    <button type="submit" class="btn btn-primary">Update Car</button>
+    <button type="button" class="btn btn-secondary" @onclick="NavigateBack">Cancel</button>
+</EditForm>
+
+@if (_errorMessage != null)
+{
+    <div class="alert alert-danger mt-3">@_errorMessage</div>
+}
+
+@code {
+    [Parameter] public int carId { get; set; }
+    private AddCarRequestDto _car = new();
+    private string? _errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCar();
+    }
+
+    private async Task LoadCar()
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            _car = await client.GetFromJsonAsync<AddCarRequestDto>($"api/car/{carId}");
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error loading car: {ex.Message}";
+        }
+    }
+
+    private async Task HandleUpdateCar()
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            var response = await client.PutAsJsonAsync("api/car", _car);
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/manage-cars");
+            }
+            else
+            {
+                _errorMessage = "Failed to update car.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private void NavigateBack()
+    {
+        NavigationManager.NavigateTo("/manage-cars");
+    }
+}

@@ -12,13 +12,18 @@ service CarService {
   rpc updateCar (Car) returns (CarResponse);
   rpc deleteCar (CarRequest) returns (CarResponse);
   rpc getAvailableCarsByLocation(LocationHubRequest) returns (CarList);
+  rpc getCarByALtname (AltnameRequest) returns (CarList);
+  rpc getCarByModel (CarModelRequest) returns (CarList);
+
 }
 
 
 message CarRequest {
   int32 car_id = 1;
 }
-
+message AltnameRequest {
+  string altName = 1;
+}
 message Car {
   int32 car_id = 1;
   string vin = 2;
@@ -41,6 +46,9 @@ message CarResponse {
   string message = 2;
   Car car = 3;
 }
+message CarModelRequest {
+  string model = 1;
+}
 
 // BookingCarService
 service BookingCarService {
@@ -49,6 +57,7 @@ service BookingCarService {
   rpc AddBookingCar (BookingCar) returns (BookingCarResponse);
   rpc UpdateBookingCar (BookingCar) returns (BookingCarResponse);
   rpc DeleteBookingCar (BookingCarRequest) returns (BookingCarResponse);
+
 }
 
 message BookingCarRequest {

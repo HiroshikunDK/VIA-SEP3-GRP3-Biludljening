@@ -38,6 +38,18 @@ public class CarRepository implements ICarRepository {
             entityManager.close();
         }
     }
+    @Override
+    public List<Car> getCarByAltName(String altName) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            String jpql = "SELECT c FROM Car c WHERE c.altName LIKE :altName";
+            return entityManager.createQuery(jpql, Car.class)
+                .setParameter("altName", "%" + altName + "%")
+                .getResultList();
+        } finally {
+            entityManager.close();
+        }
+    }
 
     @Override
     public Car addCar(Car car) {
@@ -103,6 +115,19 @@ public class CarRepository implements ICarRepository {
             TypedQuery<Car> query = entityManager.createQuery(jpql, Car.class);
             query.setParameter("locationId", locationId);
             return query.getResultList();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override public List<Car> getCarByModel(String model)
+    {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            String jpql = "SELECT c FROM Car c WHERE c.model LIKE :model";
+            return entityManager.createQuery(jpql, Car.class)
+                .setParameter("model", "%" + model + "%")
+                .getResultList();
         } finally {
             entityManager.close();
         }

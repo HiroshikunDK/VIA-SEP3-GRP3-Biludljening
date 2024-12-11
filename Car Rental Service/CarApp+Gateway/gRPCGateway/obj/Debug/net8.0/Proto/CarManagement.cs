@@ -23,58 +23,63 @@ public static partial class CarManagementReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChlQcm90by9DYXJNYW5hZ2VtZW50LnByb3RvGhtnb29nbGUvcHJvdG9idWYv",
-          "ZW1wdHkucHJvdG8iHAoKQ2FyUmVxdWVzdBIOCgZjYXJfaWQYASABKAUitAEK",
-          "A0NhchIOCgZjYXJfaWQYASABKAUSCwoDdmluGAIgASgJEhQKDHllYXJwcm9k",
-          "dWNlZBgDIAEoBRISCgptYW51ZmFjdG9yGAQgASgJEg0KBW1vZGVsGAUgASgJ",
-          "Eg0KBWNvbG9yGAYgASgJEg8KB2FsdG5hbWUYByABKAkSDQoFc2VhdHMYCCAB",
-          "KAUSEAoIY2FycmFuZ2UYCSABKAUSFgoObG9jYXRpb25odWJyZWYYCiABKAUi",
-          "HQoHQ2FyTGlzdBISCgRjYXJzGAEgAygLMgQuQ2FyIkIKC0NhclJlc3BvbnNl",
-          "Eg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIRCgNjYXIYAyAB",
-          "KAsyBC5DYXIiJgoRQm9va2luZ0NhclJlcXVlc3QSEQoJYm9va2luZ05yGAEg",
-          "ASgFIr0BCgpCb29raW5nQ2FyEhEKCWJvb2tpbmduchgBIAEoBRIOCgZzdGF0",
-          "dXMYAiABKAkSEQoJc3RhcnRkYXRvGAMgASgJEhEKCXN0YXJ0dGltZRgEIAEo",
-          "CRIPCgdlbmRkYXRlGAUgASgJEg8KB2VuZHRpbWUYBiABKAkSDQoFcHJpY2UY",
-          "ByABKAESEgoKZ3JlZW5zaGFyZRgIIAEoBRINCgVjYXJpZBgJIAEoBRISCgpj",
-          "dXN0b21lcmlkGAogASgFIjMKDkJvb2tpbmdDYXJMaXN0EiEKDGJvb2tpbmdf",
-          "Y2FycxgBIAMoCzILLkJvb2tpbmdDYXIiagoSQm9va2luZ0NhclJlc3BvbnNl",
-          "Eg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIfCgpib29raW5n",
-          "Q2FyGAMgASgLMgsuQm9va2luZ0NhchIRCglib29raW5nbnIYBCABKAUiIAoS",
-          "TG9jYXRpb25IdWJSZXF1ZXN0EgoKAmlkGAEgASgFIpQBCgtMb2NhdGlvbkh1",
-          "YhIKCgJpZBgBIAEoBRIUCgxsb2NhdGlvbm5hbWUYAiABKAkSDwoHYWRkcmVz",
-          "cxgDIAEoCRIMCgRjaXR5GAQgASgJEg8KB2NvdW50cnkYBSABKAkSDQoFZW1h",
-          "aWwYBiABKAkSDwoHcGhvbmVuchgHIAEoCRITCgtjYXJjYXBhY2l0eRgIIAEo",
-          "BSI0Cg9Mb2NhdGlvbkh1Ykxpc3QSIQoLbG9jYXRpb25odWIYASADKAsyDC5M",
-          "b2NhdGlvbkh1YiJaChNMb2NhdGlvbkh1YlJlc3BvbnNlEg8KB3N1Y2Nlc3MY",
-          "ASABKAgSDwoHbWVzc2FnZRgCIAEoCRIhCgtsb2NhdGlvbkh1YhgDIAEoCzIM",
-          "LkxvY2F0aW9uSHViMokCCgpDYXJTZXJ2aWNlEi4KCmdldEFsbENhcnMSFi5n",
-          "b29nbGUucHJvdG9idWYuRW1wdHkaCC5DYXJMaXN0EicKCmdldENhckJ5SUQS",
-          "Cy5DYXJSZXF1ZXN0GgwuQ2FyUmVzcG9uc2USHAoGYWRkQ2FyEgQuQ2FyGgwu",
-          "Q2FyUmVzcG9uc2USHwoJdXBkYXRlQ2FyEgQuQ2FyGgwuQ2FyUmVzcG9uc2US",
-          "JgoJZGVsZXRlQ2FyEgsuQ2FyUmVxdWVzdBoMLkNhclJlc3BvbnNlEjsKGmdl",
-          "dEF2YWlsYWJsZUNhcnNCeUxvY2F0aW9uEhMuTG9jYXRpb25IdWJSZXF1ZXN0",
-          "GgguQ2FyTGlzdDK1AgoRQm9va2luZ0NhclNlcnZpY2USPAoRR2V0QWxsQm9v",
-          "a2luZ0NhcnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDy5Cb29raW5nQ2Fy",
-          "TGlzdBI8ChFHZXRCb29raW5nQ2FyQnlJRBISLkJvb2tpbmdDYXJSZXF1ZXN0",
-          "GhMuQm9va2luZ0NhclJlc3BvbnNlEjEKDUFkZEJvb2tpbmdDYXISCy5Cb29r",
-          "aW5nQ2FyGhMuQm9va2luZ0NhclJlc3BvbnNlEjQKEFVwZGF0ZUJvb2tpbmdD",
-          "YXISCy5Cb29raW5nQ2FyGhMuQm9va2luZ0NhclJlc3BvbnNlEjsKEERlbGV0",
-          "ZUJvb2tpbmdDYXISEi5Cb29raW5nQ2FyUmVxdWVzdBoTLkJvb2tpbmdDYXJS",
-          "ZXNwb25zZTLEAgoSTG9jYXRpb25IdWJTZXJ2aWNlEj4KEkdldEFsbExvY2F0",
-          "aW9uSHVicxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoQLkxvY2F0aW9uSHVi",
-          "TGlzdBI/ChJHZXRMb2NhdGlvbkh1YkJ5SUQSEy5Mb2NhdGlvbkh1YlJlcXVl",
-          "c3QaFC5Mb2NhdGlvbkh1YlJlc3BvbnNlEjQKDkFkZExvY2F0aW9uSHViEgwu",
-          "TG9jYXRpb25IdWIaFC5Mb2NhdGlvbkh1YlJlc3BvbnNlEjcKEVVwZGF0ZUxv",
-          "Y2F0aW9uSHViEgwuTG9jYXRpb25IdWIaFC5Mb2NhdGlvbkh1YlJlc3BvbnNl",
-          "Ej4KEURlbGV0ZUxvY2F0aW9uSHViEhMuTG9jYXRpb25IdWJSZXF1ZXN0GhQu",
-          "TG9jYXRpb25IdWJSZXNwb25zZUIbChlDYXJNYW5hZ2VtZW50U2VydmljZS5n",
-          "cnBjYgZwcm90bzM="));
+          "ZW1wdHkucHJvdG8iHAoKQ2FyUmVxdWVzdBIOCgZjYXJfaWQYASABKAUiIQoO",
+          "QWx0bmFtZVJlcXVlc3QSDwoHYWx0TmFtZRgBIAEoCSK0AQoDQ2FyEg4KBmNh",
+          "cl9pZBgBIAEoBRILCgN2aW4YAiABKAkSFAoMeWVhcnByb2R1Y2VkGAMgASgF",
+          "EhIKCm1hbnVmYWN0b3IYBCABKAkSDQoFbW9kZWwYBSABKAkSDQoFY29sb3IY",
+          "BiABKAkSDwoHYWx0bmFtZRgHIAEoCRINCgVzZWF0cxgIIAEoBRIQCghjYXJy",
+          "YW5nZRgJIAEoBRIWCg5sb2NhdGlvbmh1YnJlZhgKIAEoBSIdCgdDYXJMaXN0",
+          "EhIKBGNhcnMYASADKAsyBC5DYXIiQgoLQ2FyUmVzcG9uc2USDwoHc3VjY2Vz",
+          "cxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEhEKA2NhchgDIAEoCzIELkNhciIg",
+          "Cg9DYXJNb2RlbFJlcXVlc3QSDQoFbW9kZWwYASABKAkiJgoRQm9va2luZ0Nh",
+          "clJlcXVlc3QSEQoJYm9va2luZ05yGAEgASgFIr0BCgpCb29raW5nQ2FyEhEK",
+          "CWJvb2tpbmduchgBIAEoBRIOCgZzdGF0dXMYAiABKAkSEQoJc3RhcnRkYXRv",
+          "GAMgASgJEhEKCXN0YXJ0dGltZRgEIAEoCRIPCgdlbmRkYXRlGAUgASgJEg8K",
+          "B2VuZHRpbWUYBiABKAkSDQoFcHJpY2UYByABKAESEgoKZ3JlZW5zaGFyZRgI",
+          "IAEoBRINCgVjYXJpZBgJIAEoBRISCgpjdXN0b21lcmlkGAogASgFIjMKDkJv",
+          "b2tpbmdDYXJMaXN0EiEKDGJvb2tpbmdfY2FycxgBIAMoCzILLkJvb2tpbmdD",
+          "YXIiagoSQm9va2luZ0NhclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoH",
+          "bWVzc2FnZRgCIAEoCRIfCgpib29raW5nQ2FyGAMgASgLMgsuQm9va2luZ0Nh",
+          "chIRCglib29raW5nbnIYBCABKAUiIAoSTG9jYXRpb25IdWJSZXF1ZXN0EgoK",
+          "AmlkGAEgASgFIpQBCgtMb2NhdGlvbkh1YhIKCgJpZBgBIAEoBRIUCgxsb2Nh",
+          "dGlvbm5hbWUYAiABKAkSDwoHYWRkcmVzcxgDIAEoCRIMCgRjaXR5GAQgASgJ",
+          "Eg8KB2NvdW50cnkYBSABKAkSDQoFZW1haWwYBiABKAkSDwoHcGhvbmVuchgH",
+          "IAEoCRITCgtjYXJjYXBhY2l0eRgIIAEoBSI0Cg9Mb2NhdGlvbkh1Ykxpc3QS",
+          "IQoLbG9jYXRpb25odWIYASADKAsyDC5Mb2NhdGlvbkh1YiJaChNMb2NhdGlv",
+          "bkh1YlJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEo",
+          "CRIhCgtsb2NhdGlvbkh1YhgDIAEoCzIMLkxvY2F0aW9uSHViMuQCCgpDYXJT",
+          "ZXJ2aWNlEi4KCmdldEFsbENhcnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHka",
+          "CC5DYXJMaXN0EicKCmdldENhckJ5SUQSCy5DYXJSZXF1ZXN0GgwuQ2FyUmVz",
+          "cG9uc2USHAoGYWRkQ2FyEgQuQ2FyGgwuQ2FyUmVzcG9uc2USHwoJdXBkYXRl",
+          "Q2FyEgQuQ2FyGgwuQ2FyUmVzcG9uc2USJgoJZGVsZXRlQ2FyEgsuQ2FyUmVx",
+          "dWVzdBoMLkNhclJlc3BvbnNlEjsKGmdldEF2YWlsYWJsZUNhcnNCeUxvY2F0",
+          "aW9uEhMuTG9jYXRpb25IdWJSZXF1ZXN0GgguQ2FyTGlzdBIsCg9nZXRDYXJC",
+          "eUFMdG5hbWUSDy5BbHRuYW1lUmVxdWVzdBoILkNhckxpc3QSKwoNZ2V0Q2Fy",
+          "QnlNb2RlbBIQLkNhck1vZGVsUmVxdWVzdBoILkNhckxpc3QytQIKEUJvb2tp",
+          "bmdDYXJTZXJ2aWNlEjwKEUdldEFsbEJvb2tpbmdDYXJzEhYuZ29vZ2xlLnBy",
+          "b3RvYnVmLkVtcHR5Gg8uQm9va2luZ0Nhckxpc3QSPAoRR2V0Qm9va2luZ0Nh",
+          "ckJ5SUQSEi5Cb29raW5nQ2FyUmVxdWVzdBoTLkJvb2tpbmdDYXJSZXNwb25z",
+          "ZRIxCg1BZGRCb29raW5nQ2FyEgsuQm9va2luZ0NhchoTLkJvb2tpbmdDYXJS",
+          "ZXNwb25zZRI0ChBVcGRhdGVCb29raW5nQ2FyEgsuQm9va2luZ0NhchoTLkJv",
+          "b2tpbmdDYXJSZXNwb25zZRI7ChBEZWxldGVCb29raW5nQ2FyEhIuQm9va2lu",
+          "Z0NhclJlcXVlc3QaEy5Cb29raW5nQ2FyUmVzcG9uc2UyxAIKEkxvY2F0aW9u",
+          "SHViU2VydmljZRI+ChJHZXRBbGxMb2NhdGlvbkh1YnMSFi5nb29nbGUucHJv",
+          "dG9idWYuRW1wdHkaEC5Mb2NhdGlvbkh1Ykxpc3QSPwoSR2V0TG9jYXRpb25I",
+          "dWJCeUlEEhMuTG9jYXRpb25IdWJSZXF1ZXN0GhQuTG9jYXRpb25IdWJSZXNw",
+          "b25zZRI0Cg5BZGRMb2NhdGlvbkh1YhIMLkxvY2F0aW9uSHViGhQuTG9jYXRp",
+          "b25IdWJSZXNwb25zZRI3ChFVcGRhdGVMb2NhdGlvbkh1YhIMLkxvY2F0aW9u",
+          "SHViGhQuTG9jYXRpb25IdWJSZXNwb25zZRI+ChFEZWxldGVMb2NhdGlvbkh1",
+          "YhITLkxvY2F0aW9uSHViUmVxdWVzdBoULkxvY2F0aW9uSHViUmVzcG9uc2VC",
+          "GwoZQ2FyTWFuYWdlbWVudFNlcnZpY2UuZ3JwY2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::CarRequest), global::CarRequest.Parser, new[]{ "CarId" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::AltnameRequest), global::AltnameRequest.Parser, new[]{ "AltName" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Car), global::Car.Parser, new[]{ "CarId", "Vin", "Yearproduced", "Manufactor", "Model", "Color", "Altname", "Seats", "Carrange", "Locationhubref" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CarList), global::CarList.Parser, new[]{ "Cars" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CarResponse), global::CarResponse.Parser, new[]{ "Success", "Message", "Car" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CarModelRequest), global::CarModelRequest.Parser, new[]{ "Model" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarRequest), global::BookingCarRequest.Parser, new[]{ "BookingNr" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCar), global::BookingCar.Parser, new[]{ "Bookingnr", "Status", "Startdato", "Starttime", "Enddate", "Endtime", "Price", "Greenshare", "Carid", "Customerid" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::BookingCarList), global::BookingCarList.Parser, new[]{ "BookingCars" }, null, null, null, null),
@@ -278,6 +283,195 @@ public sealed partial class CarRequest : pb::IMessage<CarRequest>
 
 }
 
+public sealed partial class AltnameRequest : pb::IMessage<AltnameRequest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<AltnameRequest> _parser = new pb::MessageParser<AltnameRequest>(() => new AltnameRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<AltnameRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public AltnameRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public AltnameRequest(AltnameRequest other) : this() {
+    altName_ = other.altName_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public AltnameRequest Clone() {
+    return new AltnameRequest(this);
+  }
+
+  /// <summary>Field number for the "altName" field.</summary>
+  public const int AltNameFieldNumber = 1;
+  private string altName_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string AltName {
+    get { return altName_; }
+    set {
+      altName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as AltnameRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(AltnameRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (AltName != other.AltName) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (AltName.Length != 0) hash ^= AltName.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (AltName.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(AltName);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (AltName.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(AltName);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (AltName.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(AltName);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(AltnameRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.AltName.Length != 0) {
+      AltName = other.AltName;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          AltName = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          AltName = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
 public sealed partial class Car : pb::IMessage<Car>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
@@ -292,7 +486,7 @@ public sealed partial class Car : pb::IMessage<Car>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[1]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -814,7 +1008,7 @@ public sealed partial class CarList : pb::IMessage<CarList>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[2]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -992,7 +1186,7 @@ public sealed partial class CarResponse : pb::IMessage<CarResponse>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[3]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1250,6 +1444,195 @@ public sealed partial class CarResponse : pb::IMessage<CarResponse>
 
 }
 
+public sealed partial class CarModelRequest : pb::IMessage<CarModelRequest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<CarModelRequest> _parser = new pb::MessageParser<CarModelRequest>(() => new CarModelRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pb::MessageParser<CarModelRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[5]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public CarModelRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public CarModelRequest(CarModelRequest other) : this() {
+    model_ = other.model_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public CarModelRequest Clone() {
+    return new CarModelRequest(this);
+  }
+
+  /// <summary>Field number for the "model" field.</summary>
+  public const int ModelFieldNumber = 1;
+  private string model_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Model {
+    get { return model_; }
+    set {
+      model_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override bool Equals(object other) {
+    return Equals(other as CarModelRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public bool Equals(CarModelRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Model != other.Model) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Model.Length != 0) hash ^= Model.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (Model.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(Model);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (Model.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(Model);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CalculateSize() {
+    int size = 0;
+    if (Model.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Model);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(CarModelRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Model.Length != 0) {
+      Model = other.Model;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          Model = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          Model = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
 public sealed partial class BookingCarRequest : pb::IMessage<BookingCarRequest>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
@@ -1264,7 +1647,7 @@ public sealed partial class BookingCarRequest : pb::IMessage<BookingCarRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[4]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1453,7 +1836,7 @@ public sealed partial class BookingCar : pb::IMessage<BookingCar>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[5]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1975,7 +2358,7 @@ public sealed partial class BookingCarList : pb::IMessage<BookingCarList>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[6]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2153,7 +2536,7 @@ public sealed partial class BookingCarResponse : pb::IMessage<BookingCarResponse
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[7]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2462,7 +2845,7 @@ public sealed partial class LocationHubRequest : pb::IMessage<LocationHubRequest
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[8]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2651,7 +3034,7 @@ public sealed partial class LocationHub : pb::IMessage<LocationHub>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[9]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[11]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3099,7 +3482,7 @@ public sealed partial class LocationHubList : pb::IMessage<LocationHubList>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[10]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[12]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3277,7 +3660,7 @@ public sealed partial class LocationHubResponse : pb::IMessage<LocationHubRespon
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::CarManagementReflection.Descriptor.MessageTypes[11]; }
+    get { return global::CarManagementReflection.Descriptor.MessageTypes[13]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

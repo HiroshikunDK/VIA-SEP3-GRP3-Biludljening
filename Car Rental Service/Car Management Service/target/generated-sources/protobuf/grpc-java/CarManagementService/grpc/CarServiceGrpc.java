@@ -204,6 +204,68 @@ public final class CarServiceGrpc {
     return getGetAvailableCarsByLocationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.AltnameRequest,
+      CarManagementService.grpc.CarManagement.CarList> getGetCarByALtnameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getCarByALtname",
+      requestType = CarManagementService.grpc.CarManagement.AltnameRequest.class,
+      responseType = CarManagementService.grpc.CarManagement.CarList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.AltnameRequest,
+      CarManagementService.grpc.CarManagement.CarList> getGetCarByALtnameMethod() {
+    io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.AltnameRequest, CarManagementService.grpc.CarManagement.CarList> getGetCarByALtnameMethod;
+    if ((getGetCarByALtnameMethod = CarServiceGrpc.getGetCarByALtnameMethod) == null) {
+      synchronized (CarServiceGrpc.class) {
+        if ((getGetCarByALtnameMethod = CarServiceGrpc.getGetCarByALtnameMethod) == null) {
+          CarServiceGrpc.getGetCarByALtnameMethod = getGetCarByALtnameMethod =
+              io.grpc.MethodDescriptor.<CarManagementService.grpc.CarManagement.AltnameRequest, CarManagementService.grpc.CarManagement.CarList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getCarByALtname"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  CarManagementService.grpc.CarManagement.AltnameRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  CarManagementService.grpc.CarManagement.CarList.getDefaultInstance()))
+              .setSchemaDescriptor(new CarServiceMethodDescriptorSupplier("getCarByALtname"))
+              .build();
+        }
+      }
+    }
+    return getGetCarByALtnameMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.CarModelRequest,
+      CarManagementService.grpc.CarManagement.CarList> getGetCarByModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getCarByModel",
+      requestType = CarManagementService.grpc.CarManagement.CarModelRequest.class,
+      responseType = CarManagementService.grpc.CarManagement.CarList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.CarModelRequest,
+      CarManagementService.grpc.CarManagement.CarList> getGetCarByModelMethod() {
+    io.grpc.MethodDescriptor<CarManagementService.grpc.CarManagement.CarModelRequest, CarManagementService.grpc.CarManagement.CarList> getGetCarByModelMethod;
+    if ((getGetCarByModelMethod = CarServiceGrpc.getGetCarByModelMethod) == null) {
+      synchronized (CarServiceGrpc.class) {
+        if ((getGetCarByModelMethod = CarServiceGrpc.getGetCarByModelMethod) == null) {
+          CarServiceGrpc.getGetCarByModelMethod = getGetCarByModelMethod =
+              io.grpc.MethodDescriptor.<CarManagementService.grpc.CarManagement.CarModelRequest, CarManagementService.grpc.CarManagement.CarList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getCarByModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  CarManagementService.grpc.CarManagement.CarModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  CarManagementService.grpc.CarManagement.CarList.getDefaultInstance()))
+              .setSchemaDescriptor(new CarServiceMethodDescriptorSupplier("getCarByModel"))
+              .build();
+        }
+      }
+    }
+    return getGetCarByModelMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -296,6 +358,20 @@ public final class CarServiceGrpc {
         io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAvailableCarsByLocationMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getCarByALtname(CarManagementService.grpc.CarManagement.AltnameRequest request,
+        io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCarByALtnameMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getCarByModel(CarManagementService.grpc.CarManagement.CarModelRequest request,
+        io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCarByModelMethod(), responseObserver);
+    }
   }
 
   /**
@@ -378,6 +454,22 @@ public final class CarServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAvailableCarsByLocationMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getCarByALtname(CarManagementService.grpc.CarManagement.AltnameRequest request,
+        io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCarByALtnameMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCarByModel(CarManagementService.grpc.CarManagement.CarModelRequest request,
+        io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCarByModelMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -439,6 +531,20 @@ public final class CarServiceGrpc {
     public CarManagementService.grpc.CarManagement.CarList getAvailableCarsByLocation(CarManagementService.grpc.CarManagement.LocationHubRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAvailableCarsByLocationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public CarManagementService.grpc.CarManagement.CarList getCarByALtname(CarManagementService.grpc.CarManagement.AltnameRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCarByALtnameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public CarManagementService.grpc.CarManagement.CarList getCarByModel(CarManagementService.grpc.CarManagement.CarModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCarByModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -508,6 +614,22 @@ public final class CarServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAvailableCarsByLocationMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<CarManagementService.grpc.CarManagement.CarList> getCarByALtname(
+        CarManagementService.grpc.CarManagement.AltnameRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCarByALtnameMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<CarManagementService.grpc.CarManagement.CarList> getCarByModel(
+        CarManagementService.grpc.CarManagement.CarModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCarByModelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ALL_CARS = 0;
@@ -516,6 +638,8 @@ public final class CarServiceGrpc {
   private static final int METHODID_UPDATE_CAR = 3;
   private static final int METHODID_DELETE_CAR = 4;
   private static final int METHODID_GET_AVAILABLE_CARS_BY_LOCATION = 5;
+  private static final int METHODID_GET_CAR_BY_ALTNAME = 6;
+  private static final int METHODID_GET_CAR_BY_MODEL = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -556,6 +680,14 @@ public final class CarServiceGrpc {
           break;
         case METHODID_GET_AVAILABLE_CARS_BY_LOCATION:
           serviceImpl.getAvailableCarsByLocation((CarManagementService.grpc.CarManagement.LocationHubRequest) request,
+              (io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList>) responseObserver);
+          break;
+        case METHODID_GET_CAR_BY_ALTNAME:
+          serviceImpl.getCarByALtname((CarManagementService.grpc.CarManagement.AltnameRequest) request,
+              (io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList>) responseObserver);
+          break;
+        case METHODID_GET_CAR_BY_MODEL:
+          serviceImpl.getCarByModel((CarManagementService.grpc.CarManagement.CarModelRequest) request,
               (io.grpc.stub.StreamObserver<CarManagementService.grpc.CarManagement.CarList>) responseObserver);
           break;
         default:
@@ -618,6 +750,20 @@ public final class CarServiceGrpc {
               CarManagementService.grpc.CarManagement.LocationHubRequest,
               CarManagementService.grpc.CarManagement.CarList>(
                 service, METHODID_GET_AVAILABLE_CARS_BY_LOCATION)))
+        .addMethod(
+          getGetCarByALtnameMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              CarManagementService.grpc.CarManagement.AltnameRequest,
+              CarManagementService.grpc.CarManagement.CarList>(
+                service, METHODID_GET_CAR_BY_ALTNAME)))
+        .addMethod(
+          getGetCarByModelMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              CarManagementService.grpc.CarManagement.CarModelRequest,
+              CarManagementService.grpc.CarManagement.CarList>(
+                service, METHODID_GET_CAR_BY_MODEL)))
         .build();
   }
 
@@ -672,6 +818,8 @@ public final class CarServiceGrpc {
               .addMethod(getUpdateCarMethod())
               .addMethod(getDeleteCarMethod())
               .addMethod(getGetAvailableCarsByLocationMethod())
+              .addMethod(getGetCarByALtnameMethod())
+              .addMethod(getGetCarByModelMethod())
               .build();
         }
       }

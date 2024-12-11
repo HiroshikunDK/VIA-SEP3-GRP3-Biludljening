@@ -1,0 +1,203 @@
+﻿@page "/manage-cars"
+@using Shared.Dto.Car
+@using Shared.Dto.Booking
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<h3>Manage Cars</h3>
+
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="alert alert-danger">@_errorMessage</div>
+}
+
+@if (_cars == null || _bookings == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div>
+        <input type="text" @bind="_searchTerm" placeholder="Search by VIN, Model, or Manufacturer" class="form-control mb-3" />
+        <button class="btn btn-secondary mb-3" @onclick="ClearSearch">Clear Search</button>
+    </div>
+
+    <h4>All Cars</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Car ID</th>
+            <th>VIN</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var car in FilteredCars)
+        {
+            <tr>
+                <td>@car.CarId</td>
+                <td>@car.Vin</td>
+                <td>@car.Model</td>
+                <td>@car.Manufacturer</td>
+                <td>
+                    <button class="btn btn-info" @onclick="() => NavigateToEditCar(car.CarId)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteCar(car.CarId)">Delete</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary mt-3" @onclick="NavigateToAddCar">Add New Car</button>
+
+    <h3 class="mt-5">Manage Bookings</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Car ID</th>
+            <th>Car Name</th>
+            <th>VIN</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var booking in _bookings)
+        {
+            var car = _cars.FirstOrDefault(c => c.CarId == booking.CarId);
+
+            <tr>
+                <td>@booking.BookingNr</td>
+                <td>@booking.CarId</td>
+                <td>@(car?.Model ?? "Unknown")</td> 
+                <td>@(car?.Vin ?? "Unknown")</td> 
+                <td>@booking.StartDate?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.EndDate?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.Status</td>
+                <td>
+                    @if (booking.Status == "Pending")
+                    {
+                    <button class="btn btn-success" @onclick="() => ReturnCar(booking.BookingNr.Value)">Return</button>
+                    }
+                    else
+                    {
+                    <span class="text-muted">Already Returned</span>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+}
+
+@code {
+    private List<CarDto> _cars = new();
+    private List<BookingDto> _bookings = new();
+    private string? _errorMessage;
+    private string _searchTerm = string.Empty;
+
+    // Filtered list based on search term
+    private IEnumerable<CarDto> FilteredCars =>
+        string.IsNullOrWhiteSpace(_searchTerm)
+            ? _cars
+            : _cars.Where(car =>
+                (car.Vin?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (car.Model?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (car.Manufacturer?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false));
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+            // Fetch all cars
+            _cars = await client.GetFromJsonAsync<List<CarDto>>("api/car") ?? new List<CarDto>();
+
+            // Fetch all bookings
+            _bookings = await client.GetFromJsonAsync<List<BookingDto>>("api/bookingcar") ?? new List<BookingDto>();
+
+            if (!_cars.Any() && !_bookings.Any())
+            {
+                _errorMessage = "No data found.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error loading data: {ex.Message}";
+        }
+    }
+
+    private void NavigateToAddCar()
+    {
+        NavigationManager.NavigateTo("/addcar");
+    }
+
+    private void NavigateToEditCar(int carId)
+    {
+        NavigationManager.NavigateTo($"/edit-car/{carId}");
+    }
+
+    private async Task ReturnCar(int bookingId)
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            var response = await client.PostAsync($"api/bookingcar/{bookingId}/return", null);
+            if (response.IsSuccessStatusCode)
+            {
+                // Update only the specific booking
+                var booking = _bookings.FirstOrDefault(b => b.BookingNr == bookingId);
+                if (booking != null)
+                {
+                    booking.Status = "Returned";
+                }
+            }
+            else
+            {
+                _errorMessage = "Failed to return booking.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error returning booking: {ex.Message}";
+        }
+    }
+
+    private async Task DeleteCar(int carId)
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            var response = await client.DeleteAsync($"api/car/{carId}");
+            if (response.IsSuccessStatusCode)
+            {
+                _cars = _cars.Where(car => car.CarId != carId).ToList();
+            }
+            else
+            {
+                _errorMessage = "Failed to delete car.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error deleting car: {ex.Message}";
+        }
+    }
+
+    private void ClearSearch()
+    {
+        _searchTerm = string.Empty;
+    }
+}

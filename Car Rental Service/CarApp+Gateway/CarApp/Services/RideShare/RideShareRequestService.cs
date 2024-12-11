@@ -1,9 +1,7 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using Shared.Dto;
+﻿using Shared.Dto;
+using Shared.Dto.RideShare;
 
-namespace CarApp.Services.RideShareOffer
+namespace CarApp.Services.RideShare
 {
     public class RideShareRequestService
     {

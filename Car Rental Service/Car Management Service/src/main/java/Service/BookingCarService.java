@@ -16,6 +16,7 @@ public class BookingCarService extends BookingCarServiceGrpc.BookingCarServiceIm
     this.bookingCarRepository = bookingCarRepository;
   }
 
+
   @Override
   public void getAllBookingCars(CarManagement.Empty request, StreamObserver<CarManagement.BookingCarList> responseObserver) {
     CarManagement.BookingCarList.Builder builder = CarManagement.BookingCarList.newBuilder();
@@ -148,4 +149,5 @@ public class BookingCarService extends BookingCarServiceGrpc.BookingCarServiceIm
         .setCustomerid(bookingCar.getCustomerId())
         .build();
   }
+
 }
