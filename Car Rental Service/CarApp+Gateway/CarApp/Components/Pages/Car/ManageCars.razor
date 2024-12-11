@@ -5,6 +5,11 @@
 
 <h3>Manage Cars</h3>
 
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="alert alert-danger">@_errorMessage</div>
+}
+
 @if (_cars == null)
 {
     <p>Loading...</p>
@@ -15,25 +20,36 @@ else if (!_cars.Any())
 }
 else
 {
+    <div>
+        <input type="text" @bind="_searchTerm" placeholder="Search by VIN, Model, or Manufacturer" class="form-control mb-3" />
+        <button class="btn btn-secondary mb-3" @onclick="ClearSearch">Clear Search</button>
+    </div>
+
     <table class="table">
         <thead>
-            <tr>
-                <th>Car ID</th>
-                <th>VIN</th>
-                <th>Model</th>
-                <th>Manufacturer</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Car ID</th>
+            <th>VIN</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Availability</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        @foreach (var car in _cars)
+        @foreach (var car in FilteredCars)
         {
             <tr>
                 <td>@car.CarId</td>
                 <td>@car.Vin</td>
                 <td>@car.Model</td>
                 <td>@car.Manufacturer</td>
+                <td>@(car.IsAvailable ? "Available" : "Rented")</td>
                 <td>
+                    @if (!car.IsAvailable)
+                    {
+                        <button class="btn btn-success" @onclick="() => ReturnCar(car.CarId)">Return</button>
+                    }
                     <button class="btn btn-info" @onclick="() => NavigateToEditCar(car.CarId)">Edit</button>
                     <button class="btn btn-danger" @onclick="() => DeleteCar(car.CarId)">Delete</button>
                 </td>
@@ -48,6 +64,16 @@ else
 @code {
     private List<CarDto> _cars = new();
     private string? _errorMessage;
+    private string _searchTerm = string.Empty;
+
+    // Filtered list based on search term
+    private IEnumerable<CarDto> FilteredCars =>
+        string.IsNullOrWhiteSpace(_searchTerm)
+            ? _cars
+            : _cars.Where(car =>
+                (car.Vin?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (car.Model?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (car.Manufacturer?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false));
 
     protected override async Task OnInitializedAsync()
     {
@@ -74,18 +100,45 @@ else
 
     private void NavigateToEditCar(int carId)
     {
-        NavigationManager.NavigateTo($"/editcar/{carId}");
+        NavigationManager.NavigateTo($"/edit-car/{carId}");
+    }
+
+    private async Task ReturnCar(int carId)
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("AuthorizedClient");
+            var response = await client.PostAsync($"api/car/{carId}/return", null);
+            if (response.IsSuccessStatusCode)
+            {
+                var car = _cars.FirstOrDefault(c => c.CarId == carId);
+                if (car != null)
+                {
+                    car.IsAvailable = true;
+                }
+            }
+            else
+            {
+                _errorMessage = "Failed to return car.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Error returning car: {ex.Message}";
+        }
     }
 
     private async Task DeleteCar(int carId)
     {
+        if (!await ConfirmDelete()) return;
+
         try
         {
             var client = HttpClientFactory.CreateClient("AuthorizedClient");
             var response = await client.DeleteAsync($"api/car/{carId}");
             if (response.IsSuccessStatusCode)
             {
-                _cars = _cars.Where(car => car.CarId != carId).ToList(); // Remove locally
+                _cars = _cars.Where(car => car.CarId != carId).ToList();
             }
             else
             {
@@ -96,5 +149,15 @@ else
         {
             _errorMessage = $"Error deleting car: {ex.Message}";
         }
+    }
+
+    private async Task<bool> ConfirmDelete()
+    {
+        return await Task.FromResult(true);
+    }
+
+    private void ClearSearch()
+    {
+        _searchTerm = string.Empty;
     }
 }

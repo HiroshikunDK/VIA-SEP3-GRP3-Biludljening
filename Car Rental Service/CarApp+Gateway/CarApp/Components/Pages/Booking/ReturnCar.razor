@@ -23,6 +23,8 @@ else
             <tr>
                 <th>Booking ID</th>
                 <th>Car ID</th>
+                <th>Car Name</th> <!-- New -->
+                <th>VIN</th> <!-- New -->
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Status</th>
@@ -41,13 +43,19 @@ else
                     <td>
                         @if (reservation.BookingNr.HasValue)
                         {
-                        <button class="btn btn-primary" @onclick="() => ReturnCarBooking(reservation.BookingNr.Value)">Return Car</button>
+                            @if (reservation.Status != "Returned")
+                            {
+                                <button class="btn btn-primary" @onclick="() => ReturnCarBooking(reservation.BookingNr.Value)">Return Car</button>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Already Returned</span>
+                            }
                         }
                         else
                         {
-                        <span class="text-muted">Invalid Booking ID</span>
+                            <span class="text-muted">Invalid Booking ID</span>
                         }
-
                     </td>
                 </tr>
             }
