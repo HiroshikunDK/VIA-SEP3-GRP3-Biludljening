@@ -33,7 +33,7 @@
         try
         {
             var token = await LoginService.LoginAsync(loginModel);
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/",forceLoad: true);
         }
         catch (Exception ex)
         {
