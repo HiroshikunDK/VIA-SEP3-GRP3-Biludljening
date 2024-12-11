@@ -1,5 +1,6 @@
 ﻿@page "/manage-cars"
 @using Shared.Dto.Car
+@using Shared.Dto.Booking
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager NavigationManager
 
@@ -10,13 +11,9 @@
     <div class="alert alert-danger">@_errorMessage</div>
 }
 
-@if (_cars == null)
+@if (_cars == null || _bookings == null)
 {
     <p>Loading...</p>
-}
-else if (!_cars.Any())
-{
-    <p>No cars available.</p>
 }
 else
 {
@@ -25,6 +22,7 @@ else
         <button class="btn btn-secondary mb-3" @onclick="ClearSearch">Clear Search</button>
     </div>
 
+    <h4>All Cars</h4>
     <table class="table">
         <thead>
         <tr>
@@ -32,7 +30,6 @@ else
             <th>VIN</th>
             <th>Model</th>
             <th>Manufacturer</th>
-            <th>Availability</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -44,12 +41,7 @@ else
                 <td>@car.Vin</td>
                 <td>@car.Model</td>
                 <td>@car.Manufacturer</td>
-                <td>@(car.IsAvailable ? "Available" : "Rented")</td>
                 <td>
-                    @if (!car.IsAvailable)
-                    {
-                        <button class="btn btn-success" @onclick="() => ReturnCar(car.CarId)">Return</button>
-                    }
                     <button class="btn btn-info" @onclick="() => NavigateToEditCar(car.CarId)">Edit</button>
                     <button class="btn btn-danger" @onclick="() => DeleteCar(car.CarId)">Delete</button>
                 </td>
@@ -57,12 +49,56 @@ else
         }
         </tbody>
     </table>
-}
 
-<button class="btn btn-primary mt-3" @onclick="NavigateToAddCar">Add New Car</button>
+    <button class="btn btn-primary mt-3" @onclick="NavigateToAddCar">Add New Car</button>
+
+    <h3 class="mt-5">Manage Bookings</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Car ID</th>
+            <th>Car Name</th>
+            <th>VIN</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var booking in _bookings)
+        {
+            var car = _cars.FirstOrDefault(c => c.CarId == booking.CarId);
+
+            <tr>
+                <td>@booking.BookingNr</td>
+                <td>@booking.CarId</td>
+                <td>@(car?.Model ?? "Unknown")</td> 
+                <td>@(car?.Vin ?? "Unknown")</td> 
+                <td>@booking.StartDate?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.EndDate?.ToString("yyyy-MM-dd")</td>
+                <td>@booking.Status</td>
+                <td>
+                    @if (booking.Status == "Pending")
+                    {
+                    <button class="btn btn-success" @onclick="() => ReturnCar(booking.BookingNr.Value)">Return</button>
+                    }
+                    else
+                    {
+                    <span class="text-muted">Already Returned</span>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+}
 
 @code {
     private List<CarDto> _cars = new();
+    private List<BookingDto> _bookings = new();
     private string? _errorMessage;
     private string _searchTerm = string.Empty;
 
@@ -77,19 +113,29 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadCars();
+        await LoadData();
     }
 
-    private async Task LoadCars()
+    private async Task LoadData()
     {
         try
         {
             var client = HttpClientFactory.CreateClient("AuthorizedClient");
-            _cars = await client.GetFromJsonAsync<List<CarDto>>("api/car");
+
+            // Fetch all cars
+            _cars = await client.GetFromJsonAsync<List<CarDto>>("api/car") ?? new List<CarDto>();
+
+            // Fetch all bookings
+            _bookings = await client.GetFromJsonAsync<List<BookingDto>>("api/bookingcar") ?? new List<BookingDto>();
+
+            if (!_cars.Any() && !_bookings.Any())
+            {
+                _errorMessage = "No data found.";
+            }
         }
         catch (Exception ex)
         {
-            _errorMessage = $"Error loading cars: {ex.Message}";
+            _errorMessage = $"Error loading data: {ex.Message}";
         }
     }
 
@@ -103,35 +149,34 @@ else
         NavigationManager.NavigateTo($"/edit-car/{carId}");
     }
 
-    private async Task ReturnCar(int carId)
+    private async Task ReturnCar(int bookingId)
     {
         try
         {
             var client = HttpClientFactory.CreateClient("AuthorizedClient");
-            var response = await client.PostAsync($"api/car/{carId}/return", null);
+            var response = await client.PostAsync($"api/bookingcar/{bookingId}/return", null);
             if (response.IsSuccessStatusCode)
             {
-                var car = _cars.FirstOrDefault(c => c.CarId == carId);
-                if (car != null)
+                // Update only the specific booking
+                var booking = _bookings.FirstOrDefault(b => b.BookingNr == bookingId);
+                if (booking != null)
                 {
-                    car.IsAvailable = true;
+                    booking.Status = "Returned";
                 }
             }
             else
             {
-                _errorMessage = "Failed to return car.";
+                _errorMessage = "Failed to return booking.";
             }
         }
         catch (Exception ex)
         {
-            _errorMessage = $"Error returning car: {ex.Message}";
+            _errorMessage = $"Error returning booking: {ex.Message}";
         }
     }
 
     private async Task DeleteCar(int carId)
     {
-        if (!await ConfirmDelete()) return;
-
         try
         {
             var client = HttpClientFactory.CreateClient("AuthorizedClient");
@@ -149,11 +194,6 @@ else
         {
             _errorMessage = $"Error deleting car: {ex.Message}";
         }
-    }
-
-    private async Task<bool> ConfirmDelete()
-    {
-        return await Task.FromResult(true);
     }
 
     private void ClearSearch()
