@@ -19,7 +19,7 @@ service CarService {
 
 
 message CarRequest {
-  int32 car_id = 1;
+  string car_id = 1;
 }
 message AltnameRequest {
   string altName = 1;
