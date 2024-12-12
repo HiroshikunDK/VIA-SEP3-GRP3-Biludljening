@@ -5,7 +5,11 @@ import PaymentService.grpc.PaymentServiceGrpc;
 import Repository.ICreatePaymentRepository;
 import Repository.IReadPaymentRepository;
 import Repository.IUpdatePaymentRepository;
+import Repository.PaymentRepository;
+import Shared.TransactionManager;
 import io.grpc.stub.StreamObserver;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +18,14 @@ public class PaymentService extends PaymentServiceGrpc.PaymentServiceImplBase {
     private final ICreatePaymentRepository createPaymentRepository;
     private final IReadPaymentRepository readPaymentRepository;
     private final IUpdatePaymentRepository updatePaymentRepository;
+
+    public PaymentService() {
+        SessionFactory sessionFactory = new Configuration().configure("hibernateTest.cfg.xml").buildSessionFactory();
+        PaymentRepository paymentRepository = new PaymentRepository(new TransactionManager(sessionFactory));
+        this.createPaymentRepository =paymentRepository;
+        this.readPaymentRepository = paymentRepository;
+        this.updatePaymentRepository = paymentRepository;
+    }
 
     public PaymentService(ICreatePaymentRepository createPaymentRepository,
                           IReadPaymentRepository readPaymentRepository,

@@ -1,10 +1,14 @@
 ﻿@page "/CreateRideShareOffer"
 @using CarApp.Services
-@using CarApp.Services.RideShareOffer
+@using CarApp.Services.Payment
+@using CarApp.Services.RideShare
 @using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
+@using Shared.Dto.Booking
+@using Shared.Dto.RideShare
 
 @inject RideShareOfferService RideShareService
+@inject PaymentService PaymentService
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
@@ -201,8 +205,9 @@
                 bool response = await RideShareService.updateBooking(bookingDto);
                 if (!response)
                 {
-                    throw new ApplicationException("Updating booking Ride Share member data failed");
+                    throw new ApplicationException("Updating booking Ride Share member data failed - while trying to greenShare member data");
                 }
+                NavigationManager.NavigateTo($"/payment/{bookingDto.BookingNr}");
             }
             showModal = true;
             
