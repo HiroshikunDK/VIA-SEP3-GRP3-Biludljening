@@ -42,7 +42,7 @@ public class CarController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCarById(int id)
     {
-        var request = new CarRequest { CarId = id };
+        var request = new CarRequest { CarId = id.ToString() };
         var response = await _carServiceClient.getCarByIDAsync(request);
         return Ok(response);
     }
@@ -120,7 +120,7 @@ public class CarController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCar(int id)
     {
-        var request = new CarRequest { CarId = id };
+        var request = new CarRequest { CarId = id.ToString() };
         var response = await _carServiceClient.deleteCarAsync(request);
         return Ok(response);
     }
