@@ -22,7 +22,6 @@
       <artifactId>grpc-netty-shaded</artifactId>
       <version>${grpc.version}</version>
     </dependency>
-
     <dependency>
       <groupId>Shared-Lib</groupId>
       <artifactId>Shared_Library</artifactId>

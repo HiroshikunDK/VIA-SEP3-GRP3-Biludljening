@@ -5,7 +5,6 @@ import Repository.IRetrieveUserRepository;
 import Shared.PasswordHelper;
 import Shared.TokenHelper;
 import UserService.grpc.UserOuterClass.LoginResponse;
-
 import java.util.Optional;
 
 public class AuthenticationService {

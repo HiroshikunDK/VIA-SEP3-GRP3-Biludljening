@@ -22,23 +22,23 @@ builder.Services.AddCors(options =>
 // Register gRPC Clients
 builder.Services.AddGrpcClient<RideShareService.RideShareServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5008");
+    options.Address = new Uri("https://localhost:5008");
 });
 builder.Services.AddGrpcClient<UserService.UserServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5006");
+    options.Address = new Uri("https://localhost:5006");
 });
 builder.Services.AddGrpcClient<PaymentService.PaymentServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5005");
+    options.Address = new Uri("https://localhost:5005");
 });
 builder.Services.AddGrpcClient<CarService.CarServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5004");
+    options.Address = new Uri("https://localhost:5004");
 });
 builder.Services.AddGrpcClient<BookingCarService.BookingCarServiceClient>(options =>
 {
-    options.Address = new Uri("http://localhost:5004");
+    options.Address = new Uri("https://localhost:5004");
 });
 
 // Add Controllers
