@@ -13,11 +13,11 @@ public class Payment  {
     private int bookingType;
     private int booking;
     private String status;
-    private int creditcardref;
+    private long creditcardref;
 
     public Payment() {}
 
-    public Payment(int customer, int bookingType, int booking, String status, int creditcardref) {
+    public Payment(int customer, int bookingType, int booking, String status, long creditcardref) {
         this.customer = customer;
         this.bookingType = bookingType;
         this.booking = booking;
@@ -75,7 +75,7 @@ public class Payment  {
         this.status = status;
     }
 
-    public int getCreditcardref()
+    public long getCreditcardref()
     {
         return creditcardref;
     }

@@ -9,115 +9,115 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CarApp
 build_property.RootNamespace = CarApp
-build_property.ProjectDir = C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\
+build_property.ProjectDir = C:\Users\sakaa\RiderProjects\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Nebul\Documents\GitHub\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp
+build_property.MSBuildProjectDirectory = C:\Users\sakaa\RiderProjects\VIA-SEP3-GRP3-Biludljening\Car Rental Service\CarApp+Gateway\CarApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/BookingDetails.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/BookingDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXEJvb2tpbmdEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/CarSelection.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/CarSelection.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXENhclNlbGVjdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/Confirmation.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/Confirmation.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXENvbmZpcm1hdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/Payment.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/Payment.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXFBheW1lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/App.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Authentication/Login.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Authentication/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoZW50aWNhdGlvblxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Authentication/Register.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Authentication/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoZW50aWNhdGlvblxSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/ReturnCar.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Booking/ReturnCar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXFJldHVybkNhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/AddCar.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/AddCar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcQWRkQ2FyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/EditCar.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/EditCar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcRWRpdENhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/ManageCars.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Car/ManageCars.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJcTWFuYWdlQ2Fycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Error.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Home.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/CreateRideShareOffer.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/CreateRideShareOffer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVcQ3JlYXRlUmlkZVNoYXJlT2ZmZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/CreateRideShareRequest.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/CreateRideShareRequest.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVcQ3JlYXRlUmlkZVNoYXJlUmVxdWVzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShare.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShare.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVcUmlkZVNoYXJlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShareOfferList.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShareOfferList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVcUmlkZVNoYXJlT2ZmZXJMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShareRequestList.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/RideShare/RideShareRequestList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSaWRlU2hhcmVcUmlkZVNoYXJlUmVxdWVzdExpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/User/DeleteUser.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/User/DeleteUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2VyXERlbGV0ZVVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/User/UserProfile.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Pages/User/UserProfile.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2VyXFVzZXJQcm9maWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Routes.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/_Imports.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Layout/MainLayout.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-v03smyenl4
 
-[C:/Users/Nebul/Documents/GitHub/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Layout/NavMenu.razor]
+[C:/Users/sakaa/RiderProjects/VIA-SEP3-GRP3-Biludljening/Car Rental Service/CarApp+Gateway/CarApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-9zzednftj2

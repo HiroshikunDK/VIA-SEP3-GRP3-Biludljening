@@ -38,7 +38,7 @@
 
         // Validate and sanitize credit card number
         string sanitizedCreditCardNumber = creditCardNumber.Replace(" ", "").Trim();
-        if (!int.TryParse(sanitizedCreditCardNumber, out int creditCardRef))
+        if (!long.TryParse(sanitizedCreditCardNumber, out long creditCardRef))
         {
             Console.WriteLine("Invalid credit card number.");
             return;
