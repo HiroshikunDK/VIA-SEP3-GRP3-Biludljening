@@ -9,9 +9,14 @@ import Shared.PasswordHelper;
 import Shared.TokenHelper;
 
 import io.grpc.Server;
-import io.grpc.ServerBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import jakarta.persistence.EntityManager;
+
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 
 public class UserMain {
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -42,13 +47,30 @@ public class UserMain {
         // Create UserService with AuthenticationService and UserManagementService
         UserService userService = new UserService(authenticationService, userManagementService);
 
-        // Start the gRPC server
-        Server server = ServerBuilder.forPort(5006)
+        // Load certificate and key using ClassLoader for relative path
+        ClassLoader classLoader = UserMain.class.getClassLoader();
+        URL certUrl = classLoader.getResource("server.crt");
+        URL keyUrl = classLoader.getResource("server.key");
+
+        if (certUrl == null || keyUrl == null) {
+            throw new RuntimeException("Certificate or Key file not found in resources.");
+        }
+
+        String certPath = URLDecoder.decode(certUrl.getFile(), StandardCharsets.UTF_8);
+        String keyPath = URLDecoder.decode(keyUrl.getFile(), StandardCharsets.UTF_8);
+
+        File certFile = new File(certPath);
+        File keyFile = new File(keyPath);
+
+
+        // Start the gRPC server with TLS
+        Server server = NettyServerBuilder.forPort(5006)
+                .useTransportSecurity(certFile, keyFile) // Enable TLS
                 .addService(userService)
                 .build()
                 .start();
 
-        System.out.println("UserService gRPC server started on port " + server.getPort());
+        System.out.println("UserService gRPC server started with HTTPS on port " + server.getPort());
 
         // Add a shutdown hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -58,6 +80,7 @@ public class UserMain {
             System.out.println("Server shut down successfully.");
         }));
 
+        // Keep the server running
         server.awaitTermination();
     }
 }

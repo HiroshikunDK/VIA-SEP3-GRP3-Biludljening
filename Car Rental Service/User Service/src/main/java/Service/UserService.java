@@ -1,18 +1,9 @@
 package Service;
 
-import Model.User;
-import Repository.IAddUserRepository;
-import Repository.IDeleteUserRepository;
-import Repository.IRetrieveUserRepository;
-import Repository.IUpdateUserRepository;
-import Shared.PasswordHelper;
-import Shared.TokenHelper;
 import UserService.grpc.UserOuterClass;
 import UserService.grpc.UserOuterClass.*;
 import UserService.grpc.UserServiceGrpc;
 import io.grpc.stub.StreamObserver;
-
-import java.util.Optional;
 
 public class UserService extends UserServiceGrpc.UserServiceImplBase {
   private final AuthenticationService authenticationService;
