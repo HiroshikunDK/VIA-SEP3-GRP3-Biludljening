@@ -106,7 +106,7 @@ public class IPS_RideShareOfferTest {
 
     @Test
     public void testCreateRideShareOffer() throws InterruptedException {
-
+        //ARRANGE part 2
         //Delete if the object exist in
         String testId = "RIDE12345";
         Rideshare.RideShareIDRequest rideShareIDRequest = Rideshare.RideShareIDRequest.newBuilder().setRideId(testId).build();
@@ -129,12 +129,12 @@ public class IPS_RideShareOfferTest {
                 .setCustomerid("USER1001")
                 .setBookingref("BOOK1234")
                 .build();
-
+        //ACT
         // Call the service method using the blockingStub
         Rideshare.RideShareResponse response = blockingStub.createRideShareOffer(request);
 
         System.out.println(response.getSuccess() + response.getMessage());
-        // Assert the response
+        // ASSERT
         assertNotNull(response);
         assertTrue(response.getSuccess());
     }
