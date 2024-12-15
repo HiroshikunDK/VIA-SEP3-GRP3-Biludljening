@@ -1,10 +1,12 @@
 ﻿@page "/booking-details/{carId:int}"
+@using CarApp.Services.RideShare
 @using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
 @using Shared.Dto.Booking
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject RideShareOfferService RideShareOfferService
 
 <h3>Booking Details</h3>
 
@@ -27,6 +29,15 @@
         <label>End Time:</label>
         <input type="time" @bind="_booking.EndTime" />
     </div>
+    
+    <fieldset>
+        <legend>Would you like to share your rented car?:</legend>
+        <div>
+            <input type="checkbox" id="rideshareCB" name="scales" @bind="_checkedValue"/>
+            <label for="rideshareCB">Create a Ride Share</label>
+        </div>
+    </fieldset>
+    
     <button type="submit">Proceed to Payment</button>
 </EditForm>
 
@@ -35,6 +46,8 @@
 
     private readonly BookingDto _booking = new BookingDto();
 
+    private bool _checkedValue;
+        
     private async Task SubmitBooking()
     {
         _booking.CarId = CarId;
@@ -60,6 +73,10 @@
                 if (responseObject != null && responseObject.BookingId > 0)
                 {
                     Console.WriteLine($"Booking ID: {responseObject.BookingId}");
+                    if (_checkedValue)
+                    {
+                        RideShareOfferService.RedirectToCreateRideShareOffer(responseObject.BookingId.ToString(),_booking.CustomerId.ToString(),NavigationManager);
+                    }
 
                     // Now that we have the bookingId, navigate to the payment page
                     NavigationManager.NavigateTo($"/payment/{responseObject.BookingId}");

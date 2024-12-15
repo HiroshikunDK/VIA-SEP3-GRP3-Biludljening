@@ -1,10 +1,16 @@
 ﻿@page "/CreateRideShareOffer"
+@using CarApp.Services
+@using CarApp.Services.Payment
 @using CarApp.Services.RideShare
+@using Microsoft.AspNetCore.Components.Authorization
 @using Shared.Dto
+@using Shared.Dto.Booking
 @using Shared.Dto.RideShare
 
 @inject RideShareOfferService RideShareService
+@inject PaymentService PaymentService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <h3>Create Ride Share Offer</h3>
 
@@ -67,7 +73,7 @@
         <label for="bookingRef" class="form-label">Booking Reference</label>
         <InputSelect id="bookingRef" class="form-control" @bind-Value="rideShareOffer.BookingRef">
             <option value="">Select Booking Reference</option>
-            @foreach (var booking in bookingRefList)
+            @foreach (var booking in _bookingRefList)
             {
                 <option value="@booking">@booking</option>
             }
@@ -141,12 +147,7 @@
     private string errorMessage = "";
 
     // Define a list of Booking References (this will be populated later)
-    private List<string> bookingRefList = new List<string>
-    {
-        "Booking1",
-        "Booking2",
-        "Booking3" 
-    };
+    private List<string> _bookingRefList = new List<string>(); 
 
     protected override void OnInitialized()
     {
@@ -155,7 +156,38 @@
         
         bookingId = queryParams["bookingId"];
         userId = queryParams["userId"];
-        
+
+        if (userId == null || bookingId == null)
+        {
+            try
+            {
+                userId = GetCurrentCustomerIdAsync().Result.ToString();
+                var bookingDtos= RideShareService.GetBookingList().Result;
+                foreach (var item in bookingDtos)
+                {
+                    if(item.CustomerId == int.Parse(userId))
+                    _bookingRefList.Add(item.BookingNr.ToString());    
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ApplicationException("Either GetCurrentCustomerIdAsync() or RideShareService.GetBookingList() failed: " + e.Message);
+            }
+            
+        }
+        else
+        {
+            try
+            {
+                BookingDto dto = RideShareService.GetBooking(bookingId).Result;
+                _bookingRefList.Add(dto.BookingNr.ToString());
+            }
+            catch (Exception e)
+            {
+                throw new ApplicationException("RideShareService.GetBooking(bookingId) failed: " + e.Message);
+            }
+            
+        }
     }
     
     // Handle the form submission
@@ -168,6 +200,14 @@
             {
                 isSuccess = true;
                 modalTitle = "Success!";
+                BookingDto bookingDto = RideShareService.GetBooking(rideShareOffer.BookingRef).Result;
+                bookingDto.GreenShare = true;
+                bool response = await RideShareService.updateBooking(bookingDto);
+                if (!response)
+                {
+                    throw new ApplicationException("Updating booking Ride Share member data failed - while trying to greenShare member data");
+                }
+                NavigationManager.NavigateTo($"/payment/{bookingDto.BookingNr}");
             }
             showModal = true;
             
@@ -184,5 +224,22 @@
     private void CloseModal()
     {
         showModal = false;
+    }
+    
+    private async Task<int> GetCurrentCustomerIdAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is { IsAuthenticated: true })
+        {
+            var customerIdClaim = user.FindFirst("id"); // Ensure the claim "id" exists
+            if (customerIdClaim != null && int.TryParse(customerIdClaim.Value, out var customerId))
+            {
+                return customerId;
+            }
+        }
+
+        throw new InvalidOperationException("Unable to retrieve CustomerId from claims.");
     }
 }

@@ -7,19 +7,18 @@ namespace CarApp.Services.RideShare
     public class RideShareOfferService
     {
         private readonly HttpClient _httpClient;
-        private readonly NavigationManager _navigationManager;
 
-        public RideShareOfferService(HttpClient httpClient,  NavigationManager navigationManager)
+        public RideShareOfferService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _navigationManager = navigationManager;
         }
 
 
-        public void RedirectToCreateRideShareOffer(string bookingId, string userId)
+        public void RedirectToCreateRideShareOffer(string bookingId, string userId, NavigationManager navigationManager)
         {
-            _navigationManager.NavigateTo("/CreateRideShareOffer?bookingId={bookingId}&userId={userId}");
+            navigationManager.NavigateTo("/CreateRideShareOffer?bookingId={bookingId}&userId={userId}");
         }
+
 
         // Get all RideShareOffers
         public async Task<RideShareOfferDto[]> GetAllRideShareOffersAsync()
@@ -51,6 +50,59 @@ namespace CarApp.Services.RideShare
             catch (Exception ex)
             {
                 // Handle errors (log, notify user, etc.)
+                throw new ApplicationException(ex.Message, ex);
+            }
+        }
+        
+        public async Task<List<BookingDto>> GetBookingList()
+        {
+            try
+            {
+                var response = await _httpClient.GetFromJsonAsync<List<BookingDto>>($"api/bookingcar/");
+                if (response == null)
+                {
+                    throw new KeyNotFoundException($"Ride share offer with not found.");
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                // Handle errors (log, notify user, etc.)
+                throw new ApplicationException(ex.Message, ex);
+            }
+        }
+        
+        public async Task<BookingDto> GetBooking(string bookingId)
+        {
+            try
+            {
+                var response = await _httpClient.GetFromJsonAsync<BookingDto>($"api/bookingcar/{bookingId}");
+                if (response == null)
+                {
+                    throw new KeyNotFoundException($"Booking with ID {bookingId} not found.");
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message, ex);
+            }
+        }
+        
+        public async Task<bool> updateBooking(BookingDto bookingDto)
+        {
+            try
+            {
+                var response = await _httpClient.PutAsJsonAsync($"api/bookingcar", bookingDto);
+                if (response == null)
+                {
+                    throw new KeyNotFoundException($"Booking with ID {bookingDto.BookingNr} not found.");
+                }
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+
                 throw new ApplicationException(ex.Message, ex);
             }
         }
