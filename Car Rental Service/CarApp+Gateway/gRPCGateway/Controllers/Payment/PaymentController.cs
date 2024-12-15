@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shared.Dto;
 using Shared.Dto.Payment;
+using System.ComponentModel.DataAnnotations;
 
 namespace gRPC_Gateway.Controllers.Payment;
 
@@ -18,6 +19,13 @@ public class PaymentController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreatePayment([FromBody] PaymentDto paymentRequest)
     {
+        // Validate credit card number and expiration date
+        var validationErrors = ValidatePayment(paymentRequest);
+        if (validationErrors.Any())
+        {
+            return BadRequest(new { Message = "Validation failed.", Errors = validationErrors });
+        }
+
         try
         {
             // Create the gRPC request object from the PaymentDto
@@ -26,7 +34,7 @@ public class PaymentController : ControllerBase
                 Customer = paymentRequest.CustomerId,
                 Booking = paymentRequest.BookingId,
                 Creditcardref = paymentRequest.CreditCardRef,
-                Status = paymentRequest.Status ?? "Pending" 
+                Status = paymentRequest.Status ?? "Pending"
             };
 
             // Log the gRPC request for debugging
@@ -41,7 +49,6 @@ public class PaymentController : ControllerBase
             // Handle the response from the gRPC service
             if (response.Success)
             {
-                // Create the DTO to return to the frontend
                 var dto = new PaymentCreationResponseDto
                 {
                     PaymentId = (int)response.Id, // Map gRPC response ID
@@ -52,20 +59,49 @@ public class PaymentController : ControllerBase
             }
             else
             {
-                // If the gRPC response indicates failure, return a BadRequest
                 return BadRequest(new { Message = response.Message });
             }
         }
         catch (Exception ex)
         {
-            // Log the exception for debugging
             Console.WriteLine($"Error in CreatePayment: {ex.Message}");
             return StatusCode(500, new { Message = $"Payment creation failed: {ex.Message}" });
         }
     }
 
+    private List<string> ValidatePayment(PaymentDto paymentRequest)
+    {
+        var errors = new List<string>();
 
+        // Validate credit card number
+        if (paymentRequest.CreditCardRef.ToString().Length != 16)
+        {
+            errors.Add("Credit Card Number must be exactly 16 digits.");
+        }
 
+        // Validate expiration date format (MM/YY)
+        var expirationDatePattern = @"^(0[1-9]|1[0-2])\/\d{2}$";
+        if (string.IsNullOrEmpty(paymentRequest.ExpirationDate) ||
+            !System.Text.RegularExpressions.Regex.IsMatch(paymentRequest.ExpirationDate, expirationDatePattern))
+        {
+            errors.Add("Expiration Date must be in MM/YY format.");
+        }
+
+        // Additional expiration date logic (e.g., must not be expired)
+        if (DateTime.TryParseExact("01/" + paymentRequest.ExpirationDate, "dd/MM/yy", null, System.Globalization.DateTimeStyles.None, out var expiration))
+        {
+            if (expiration < DateTime.Now)
+            {
+                errors.Add("Expiration Date must be in the future.");
+            }
+        }
+        else
+        {
+            errors.Add("Invalid Expiration Date.");
+        }
+
+        return errors;
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetPaymentById(int id)

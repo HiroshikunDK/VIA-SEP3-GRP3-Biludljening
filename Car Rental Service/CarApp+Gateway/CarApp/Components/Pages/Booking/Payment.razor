@@ -13,14 +13,25 @@
 <EditForm Model="payment" OnValidSubmit="SubmitPayment">
     <DataAnnotationsValidator />
     <ValidationSummary />
+
     <div>
         <label>Credit Card Number:</label>
         <InputText @bind-Value="creditCardNumber" />
+        @if (validationErrors.ContainsKey(nameof(PaymentDto.CreditCardRef)))
+        {
+            <div class="validation-message">@validationErrors[nameof(PaymentDto.CreditCardRef)]</div>
+        }
     </div>
+
     <div>
         <label>Expiration Date (MM/YY):</label>
         <InputText @bind-Value="expirationDate" />
+        @if (validationErrors.ContainsKey(nameof(PaymentDto.ExpirationDate)))
+        {
+            <div class="validation-message">@validationErrors[nameof(PaymentDto.ExpirationDate)]</div>
+        }
     </div>
+
     <button type="submit">Pay</button>
 </EditForm>
 
@@ -28,11 +39,16 @@
     [Parameter] public int BookingId { get; set; }
 
     private PaymentDto payment = new();
-    private string creditCardNumber;
-    private string expirationDate;
+    private string creditCardNumber = string.Empty;
+    private string expirationDate = string.Empty;
+
+    // A dictionary to hold validation errors returned from the broker
+    private Dictionary<string, string> validationErrors = new();
 
     private async Task SubmitPayment()
     {
+        validationErrors.Clear(); // Clear previous errors
+
         payment.BookingId = BookingId;
         payment.Status = "Pending";
 
@@ -40,7 +56,7 @@
         string sanitizedCreditCardNumber = creditCardNumber.Replace(" ", "").Trim();
         if (!long.TryParse(sanitizedCreditCardNumber, out long creditCardRef))
         {
-            Console.WriteLine("Invalid credit card number.");
+            validationErrors[nameof(PaymentDto.CreditCardRef)] = "Credit Card Number must be numeric.";
             return;
         }
         payment.CreditCardRef = creditCardRef;
@@ -51,26 +67,34 @@
 
         try
         {
-            Console.WriteLine($"Submitting Payment: {JsonSerializer.Serialize(payment)}");
             var response = await PaymentService.CreatePaymentAsync(payment);
-            Console.WriteLine($"Response received: {JsonSerializer.Serialize(response)}");
 
             if (response?.PaymentId > 0)
             {
-                Console.WriteLine($"Navigation to confirmation: bookingId={BookingId}, paymentId={response.PaymentId}");
+                // Redirect to confirmation page
                 NavigationManager.NavigateTo($"/confirmation?bookingId={BookingId}&paymentId={response.PaymentId}");
+            }
+            else if (response?.Errors != null && response.Errors.Any())
+            {
+                // Process validation errors returned by the broker
+                foreach (var error in response.Errors)
+                {
+                    if (error.Contains("Credit Card")) // Match error message to field
+                        validationErrors[nameof(PaymentDto.CreditCardRef)] = error;
+                    else if (error.Contains("Expiration Date"))
+                        validationErrors[nameof(PaymentDto.ExpirationDate)] = error;
+                }
             }
             else
             {
-                Console.WriteLine("Payment creation failed or invalid PaymentId.");
+                validationErrors["General"] = "Payment creation failed. Please try again.";
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error processing payment: {ex.Message}");
+            validationErrors["General"] = $"An unexpected error occurred: {ex.Message}";
         }
     }
-
 
 
     private async Task<int> GetCurrentCustomerIdAsync()

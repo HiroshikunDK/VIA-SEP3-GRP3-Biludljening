@@ -23,12 +23,31 @@ public class PaymentService : IPaymentService
             string responseContent = await response.Content.ReadAsStringAsync();
             Console.WriteLine($"API Response Content: {responseContent}");
 
+            var result = new PaymentCreationResponseDto();
+
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception($"Server Error: {response.StatusCode}. Content: {responseContent}");
+                // Try to parse error details from the response content
+                var errorResponse = JsonSerializer.Deserialize<PaymentCreationResponseDto>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (errorResponse != null && errorResponse.Errors != null)
+                {
+                    result.Errors = errorResponse.Errors;
+                    result.Message = errorResponse.Message ?? "Validation failed.";
+                }
+                else
+                {
+                    result.Errors = new List<string> { $"Server Error: {response.StatusCode}. Content: {responseContent}" };
+                }
+
+                return result; // Return the result with errors
             }
 
-            var result = JsonSerializer.Deserialize<PaymentCreationResponseDto>(responseContent, new JsonSerializerOptions
+            // Deserialize success response
+            result = JsonSerializer.Deserialize<PaymentCreationResponseDto>(responseContent, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
@@ -39,11 +58,13 @@ public class PaymentService : IPaymentService
         catch (Exception ex)
         {
             Console.WriteLine($"Error in CreatePaymentAsync: {ex.Message}");
-            throw;
+            return new PaymentCreationResponseDto
+            {
+                Errors = new List<string> { $"An unexpected error occurred: {ex.Message}" }
+            };
         }
     }
-
-
+    
     public async Task<PaymentResponseDto?> GetPaymentByIdAsync(int id)
     {
         HttpResponseMessage response = await _client.GetAsync($"api/payment/{id}");
