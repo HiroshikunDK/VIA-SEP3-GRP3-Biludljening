@@ -49,55 +49,65 @@
     private bool _checkedValue;
         
     private async Task SubmitBooking()
+{
+    _booking.CarId = CarId;
+
+    try
     {
-        _booking.CarId = CarId;
+        // Fetch CustomerId dynamically
+        _booking.CustomerId = await GetCurrentCustomerIdAsync();
 
-        try
+        var client = HttpClientFactory.CreateClient("AuthorizedClient");
+
+        var payload = System.Text.Json.JsonSerializer.Serialize(_booking, new System.Text.Json.JsonSerializerOptions
         {
-            // Fetch CustomerId dynamically
-            _booking.CustomerId = await GetCurrentCustomerIdAsync();
+            WriteIndented = true
+        });
+        Console.WriteLine("Booking Payload: " + payload);
 
-            var client = HttpClientFactory.CreateClient("AuthorizedClient");
-
-            var payload = System.Text.Json.JsonSerializer.Serialize(_booking, new System.Text.Json.JsonSerializerOptions
+        // Create the booking
+        var bookingResponse = await client.PostAsJsonAsync("api/bookingcar", _booking);
+        if (bookingResponse.IsSuccessStatusCode)
+        {
+            var responseObject = await bookingResponse.Content.ReadFromJsonAsync<BookingResponse>();
+            if (responseObject != null && responseObject.BookingId > 0)
             {
-                WriteIndented = true
-            });
-            Console.WriteLine("Booking Payload: " + payload);
+                Console.WriteLine($"Booking ID: {responseObject.BookingId}");
 
-            // Create the booking
-            var bookingResponse = await client.PostAsJsonAsync("api/bookingcar", _booking);
-            if (bookingResponse.IsSuccessStatusCode)
-            {
-                var responseObject = await bookingResponse.Content.ReadFromJsonAsync<BookingResponse>();
-                if (responseObject != null && responseObject.BookingId > 0)
+                // Handle RideShare and Payment navigation separately
+                if (_checkedValue)
                 {
-                    Console.WriteLine($"Booking ID: {responseObject.BookingId}");
-                    if (_checkedValue)
-                    {
-                        RideShareOfferService.RedirectToCreateRideShareOffer(responseObject.BookingId.ToString(),_booking.CustomerId.ToString(),NavigationManager);
-                    }
+                    // Redirect to RideShare creation and return to stop further processing
+                    RideShareOfferService.RedirectToCreateRideShareOffer(
+                        responseObject.BookingId.ToString(),
+                        _booking.CustomerId.ToString(),
+                        NavigationManager
+                    );
+                    return;
+                }
 
-                    // Now that we have the bookingId, navigate to the payment page
-                    NavigationManager.NavigateTo($"/payment/{responseObject.BookingId}");
-                }
-                else
-                {
-                    Console.WriteLine("BookingId not found in booking response.");
-                }
+                // Navigate to Payment page
+                var paymentUrl = $"/payment/{responseObject.BookingId}";
+                Console.WriteLine($"Navigating to Payment page: {paymentUrl}");
+                NavigationManager.NavigateTo(paymentUrl);
             }
             else
             {
-                var errorResponse = await bookingResponse.Content.ReadAsStringAsync();
-                Console.WriteLine($"Failed to create booking. Response Code: {bookingResponse.StatusCode}");
-                Console.WriteLine("Error Response: " + errorResponse);
+                Console.WriteLine("BookingId not found in booking response.");
             }
         }
-        catch (Exception ex)
+        else
         {
-            Console.WriteLine($"Error creating booking: {ex.Message}");
+            var errorResponse = await bookingResponse.Content.ReadAsStringAsync();
+            Console.WriteLine($"Failed to create booking. Response Code: {bookingResponse.StatusCode}");
+            Console.WriteLine("Error Response: " + errorResponse);
         }
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error creating booking: {ex.Message}");
+    }
+}
 
     private async Task<int> GetCurrentCustomerIdAsync()
     {

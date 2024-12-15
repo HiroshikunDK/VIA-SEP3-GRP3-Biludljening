@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Shared.Dto;
+using Shared.Dto.Booking;
 using Shared.Dto.RideShare;
 
 namespace CarApp.Services.RideShare
@@ -8,16 +9,17 @@ namespace CarApp.Services.RideShare
     {
         private readonly HttpClient _httpClient;
 
-        public RideShareOfferService(HttpClient httpClient)
+        public RideShareOfferService(IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient("AuthorizedClient");
         }
 
 
         public void RedirectToCreateRideShareOffer(string bookingId, string userId, NavigationManager navigationManager)
         {
-            navigationManager.NavigateTo("/CreateRideShareOffer?bookingId={bookingId}&userId={userId}");
+            navigationManager.NavigateTo($"/CreateRideShareOffer?bookingId={bookingId}&userId={userId}");
         }
+
 
 
         // Get all RideShareOffers
@@ -88,6 +90,7 @@ namespace CarApp.Services.RideShare
                 throw new ApplicationException(ex.Message, ex);
             }
         }
+
         
         public async Task<bool> updateBooking(BookingDto bookingDto)
         {

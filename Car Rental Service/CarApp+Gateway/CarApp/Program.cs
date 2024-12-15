@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using CarApp.Services.Authentication;
 using CarApp.Services.Payment;
+using CarApp.Services.RideShare;
 using CarApp.Services.User;
 using Microsoft.AspNetCore.Components.Authorization;
 
@@ -32,6 +33,9 @@ public class Program
         builder.Services.AddScoped<IRegisterService, RegisterService>();
         builder.Services.AddScoped<IUserProfileService, UserProfileService>();
         builder.Services.AddScoped<IPaymentService, PaymentService>();
+        builder.Services.AddScoped<RideShareOfferService>();
+        builder.Services.AddScoped<RideShareRequestService>();
+        builder.Services.AddScoped<PaymentService>();
         
         var base64EncodedKey = "RGVuRXJIZW1tZWxpZw=="; 
         var decodedKey = Convert.FromBase64String(base64EncodedKey);

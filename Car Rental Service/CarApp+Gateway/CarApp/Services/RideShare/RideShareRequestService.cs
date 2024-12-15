@@ -7,9 +7,9 @@ namespace CarApp.Services.RideShare
     {
         private readonly HttpClient _httpClient;
 
-        public RideShareRequestService(HttpClient httpClient)
+        public RideShareRequestService(IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient("AuthorizedClient");
         }
 
         // Get all ride share requests
