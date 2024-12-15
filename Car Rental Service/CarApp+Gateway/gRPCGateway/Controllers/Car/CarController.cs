@@ -21,22 +21,31 @@ public class CarController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddCar([FromBody] AddCarRequestDto carDto)
     {
-        var addCarRequest = new Car
+        try
         {
-            Vin = carDto.Vin,
-            Yearproduced = carDto.YearProduced,
-            Manufactor = carDto.Manufacturer,
-            Model = carDto.Model,   
-            Color = carDto.Color,
-            Altname = carDto.AltName,
-            Seats = carDto.Seats,
-            Carrange = carDto.CarRange,
-            Locationhubref = carDto.LocationHubRef
-        };
+            var addCarRequest = new Car
+            {
+                Vin = carDto.Vin,
+                Yearproduced = carDto.YearProduced,
+                Manufactor = carDto.Manufacturer,
+                Model = carDto.Model,   
+                Color = carDto.Color,
+                Altname = carDto.AltName,
+                Seats = carDto.Seats,
+                Carrange = carDto.CarRange,
+                Locationhubref = carDto.LocationHubRef
+            };
 
-        var response = await _carServiceClient.addCarAsync(addCarRequest);
+            var response = await _carServiceClient.addCarAsync(addCarRequest);
         
-        return Ok(response);
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, new {Message = "An unexpected error occured", Details = e.Message});
+        }
+        
     }
 
     [HttpGet("{id}")]
@@ -114,7 +123,15 @@ public class CarController : ControllerBase
             Locationhubref = carDto.LocationHubRef
         }; 
         var response = await _carServiceClient.updateCarAsync(updateCarRequest);
-        return Ok(response);
+        if (response.Success)
+        {
+            return Ok(response);
+        }
+        else
+        {
+            return BadRequest(response);
+        }
+        
     }
 
     [HttpDelete("{id}")]
@@ -122,7 +139,14 @@ public class CarController : ControllerBase
     {
         var request = new CarRequest { CarId = id.ToString() };
         var response = await _carServiceClient.deleteCarAsync(request);
-        return Ok(response);
+        if (response.Success)
+        {
+            return Ok(response);
+        }
+        else
+        {
+            return BadRequest(response);
+        }
     }
     
     [HttpGet("available/{locationId}")]
