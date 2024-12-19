@@ -7,7 +7,6 @@ using Userservice;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS Configuration
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -19,7 +18,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Register gRPC Clients
 builder.Services.AddGrpcClient<RideShareService.RideShareServiceClient>(options =>
 {
     options.Address = new Uri("https://localhost:5008");

@@ -74,13 +74,13 @@ public class CarController : ControllerBase
                 CancellationToken.None
             );
 
-            // Fetch all bookings
-            var bookingResponse = await _bookingCarServiceClient.GetAllBookingCarsAsync(new Google.Protobuf.WellKnownTypes.Empty());            var bookedCars = bookingResponse.BookingCars
+            var bookingResponse = await _bookingCarServiceClient.GetAllBookingCarsAsync(
+                new Google.Protobuf.WellKnownTypes.Empty());            
+                var bookedCars = bookingResponse.BookingCars
                 .Where(b => b.Status == "Ongoing" || b.Status == "Pending")
                 .Select(b => b.Carid)
                 .ToHashSet();
 
-            // Mark cars as available or rented
             var carsWithAvailability = response.Cars.Select(car => new
             {
                 car.CarId,

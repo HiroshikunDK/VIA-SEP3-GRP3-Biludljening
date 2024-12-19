@@ -6,48 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="4459952a-cd07-4232-8345-e4c8f4d93c6b" name="Changes" comment="Form Validation - Payment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Booking/BookingDetails.razor" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Components/Pages/Booking/BookingDetails.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/RideShare/RideShareOfferService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/RideShare/RideShareOfferService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/RideShare/RideShareRequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/RideShare/RideShareRequestService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/CarApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/AuthenticationStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/Services/Authentication/LoginService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/CarApp.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/ref/CarApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/Debug/net8.0/refint/CarApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/CarApp/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/Shared.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/ref/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/ref/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/refint/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/Shared/obj/Debug/net8.0/refint/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/bin/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Car/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Controllers/Car/CarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/gRPCGateway.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/ref/gRPCGateway.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/Debug/net8.0/refint/gRPCGateway.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment Service/target/classes/Service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment Service/target/classes/Service/PaymentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CarApp+Gateway/gRPCGateway/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rideshare Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rideshare Service/src/main/java/RideshareService/RideShareMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Rideshare Service/src/main/java/RideshareService/RideShareMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User Service/src/main/java/UserService/UserMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/User Service/src/main/java/UserService/UserMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +191,9 @@
       <workItem from="1734260147147" duration="491000" />
       <workItem from="1734260652883" duration="302000" />
       <workItem from="1734264868196" duration="2447000" />
-      <workItem from="1734273531495" duration="445000" />
+      <workItem from="1734273531495" duration="1044000" />
+      <workItem from="1734471641099" duration="1661000" />
+      <workItem from="1734611285411" duration="610000" />
     </task>
     <task id="LOCAL-00001" summary="SOLID Changes">
       <option name="closed" value="true" />
